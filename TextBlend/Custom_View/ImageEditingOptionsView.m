@@ -4,7 +4,7 @@
 //
 //  Created by Wayne Rooney on 05/12/15.
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
-//
+// ;)
 
 #import "ImageEditingOptionsView.h"
 @implementation ImageEditingOptionsView
