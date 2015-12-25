@@ -1,0 +1,29 @@
+//
+//  TextBlend-PrefixHeader.pch
+//  TextBlend
+//
+//  Created by Wayne Rooney on 03/12/15.
+//  Copyright © 2015 Wayne Rooney. All rights reserved.
+//
+
+#ifndef TextBlend_PrefixHeader_pch
+#define TextBlend_PrefixHeader_pch
+#import "Constants.h"
+#import "Utility.h"
+#import "NetworkEngine.h"
+#import "UpdateDataProcessor.h"
+#import "UIView+Animation.h"
+#import "MBProgressHUD.h"
+#import "PagingCollectionView.h"
+#import "PagingCollectionFlowLayout.h"
+#import "PageTableView.h"
+#import "SDWebImageManager.h"
+#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"
+#import "AppConstants.h"
+
+//#import <SDWebImage/UIImageView+WebCache.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* TextBlend_PrefixHeader_pch */

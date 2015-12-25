@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecenttListingCollectionViewCell" id="gTV-IL-0wX" customClass="RecentListingCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oV-6p-zfk">
+                        <rect key="frame" x="8" y="162" width="134" height="18"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="o7h-BB-KuS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yRg-tO-y7c">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="HHz-0O-RqF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HHz-0O-RqF"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstItem="yRg-tO-y7c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Zs-Vt-xXl"/>
+                <constraint firstAttribute="bottom" secondItem="yRg-tO-y7c" secondAttribute="bottom" id="7IQ-wP-f6M"/>
+                <constraint firstItem="yRg-tO-y7c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IEn-36-yzP"/>
+                <constraint firstItem="0oV-6p-zfk" firstAttribute="trailing" secondItem="yRg-tO-y7c" secondAttribute="trailing" constant="-8" id="OL5-O2-KDS"/>
+                <constraint firstItem="0oV-6p-zfk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="fIm-FJ-4Gb"/>
+                <constraint firstAttribute="trailing" secondItem="0oV-6p-zfk" secondAttribute="trailing" constant="8" id="iQw-R2-BJc"/>
+                <constraint firstAttribute="trailing" secondItem="yRg-tO-y7c" secondAttribute="trailing" id="lrH-fg-PE3"/>
+                <constraint firstAttribute="bottom" secondItem="0oV-6p-zfk" secondAttribute="bottom" constant="20" id="rkZ-m7-t6k"/>
+                <constraint firstItem="0oV-6p-zfk" firstAttribute="leading" secondItem="yRg-tO-y7c" secondAttribute="leading" constant="8" id="vU6-kn-2mu"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="OL5-O2-KDS"/>
+                    <exclude reference="vU6-kn-2mu"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="listingCollectionName" destination="0oV-6p-zfk" id="miq-Fu-S3M"/>
+                <outlet property="listingImageView" destination="yRg-tO-y7c" id="UmQ-JI-2dG"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
