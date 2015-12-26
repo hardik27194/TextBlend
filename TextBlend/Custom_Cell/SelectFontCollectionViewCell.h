@@ -11,6 +11,6 @@
 {
     
 }
-@property(nonatomic,strong)UIImageView *selected_font_image_view;
+@property(nonatomic,strong)UILabel * lbl_font_name;
 @property(nonatomic,strong)UIImageView *locked_image_view;
 @end

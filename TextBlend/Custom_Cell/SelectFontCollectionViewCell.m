@@ -9,6 +9,6 @@
 #import "SelectFontCollectionViewCell.h"
 
 @implementation SelectFontCollectionViewCell
-@synthesize selected_font_image_view,locked_image_view;
+@synthesize lbl_font_name,locked_image_view;
 
 @end

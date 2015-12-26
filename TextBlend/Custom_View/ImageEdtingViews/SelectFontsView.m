@@ -45,6 +45,17 @@
     [custom_collection_view registerClass:[SelectFontCollectionViewCell class] forCellWithReuseIdentifier:@"SelectFontCollectionViewCellIdentifier"];
     //  [custom_collection_view registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView"];
     [custom_collection_view setUpCollectionInitParms];
+    
+    if(!self.fonts_array)
+    {
+        self.fonts_array = [[NSMutableArray alloc]init];
+    }
+    
+    for (NSString *familyName in [UIFont familyNames])
+    {
+        [self.fonts_array addObject:familyName];
+    }
+    
 }
 #pragma mark - Collection View Delegate Methods -
 
@@ -54,16 +65,16 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    if (self.fonts_array.count>section) {
-        
-        NSDictionary *hash_tag_dict=[self.fonts_array objectAtIndex:section];
-        if ([hash_tag_dict valueForKey:@"Hash_post"] && [Utility validData:[hash_tag_dict valueForKey:@"Hash_post"]] && [[hash_tag_dict valueForKey:@"Hash_post"]isKindOfClass:[NSArray class]]) {
-            return [[hash_tag_dict valueForKey:@"Hash_post"] count];
-        }
-        
-    }
+//    if (self.fonts_array.count>section) {
+//        
+//        NSDictionary *hash_tag_dict=[self.fonts_array objectAtIndex:section];
+//        if ([hash_tag_dict valueForKey:@"Hash_post"] && [Utility validData:[hash_tag_dict valueForKey:@"Hash_post"]] && [[hash_tag_dict valueForKey:@"Hash_post"]isKindOfClass:[NSArray class]]) {
+//            return [[hash_tag_dict valueForKey:@"Hash_post"] count];
+//        }
     
-    return 50;
+//    }
+    
+    return self.fonts_array.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -77,34 +88,34 @@
     //cell.frame=CGRectMake(0, 0, 70, 70);
     cell.contentView.frame=CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50);
     
-    if (!cell.selected_font_image_view) {
-        cell.selected_font_image_view = [[UIImageView alloc]init];
-        cell.selected_font_image_view.frame = CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50);
-        cell.selected_font_image_view.clipsToBounds=YES;
-        cell.selected_font_image_view.layer.cornerRadius=5;
-        cell.selected_font_image_view.layer.borderWidth=0.8;
-//        cell.selected_font_image_view.layer.borderColor = DESC_TEXT_COLOR.CGColor;
-        [cell.contentView addSubview:cell.selected_font_image_view];
+    if (!cell.lbl_font_name) {
+        cell.lbl_font_name = [[UILabel alloc]init];
+        cell.lbl_font_name.frame = CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50);
+        cell.lbl_font_name.clipsToBounds=YES;
+        cell.lbl_font_name.layer.cornerRadius=5;
+        cell.lbl_font_name.layer.borderWidth=0.8;
+        [cell.contentView addSubview:cell.lbl_font_name];
         
     }
-    cell.selected_font_image_view.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, 40);
+    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, 40);
     ;
+//    [cell.lbl_font_name setFont:(UIFont*)[UIFont fontNamesForFamilyName:[[self.fonts_array objectAtIndex:indexPath.row] objectAtIndex:0]]];
+    [cell.lbl_font_name setText:(NSString*)[self.fonts_array objectAtIndex:indexPath.row]];
+    [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
     
-    int selected_button = arc4random()%3;
-    if (selected_button == 0) {
-        [cell.selected_font_image_view setImage:[UIImage imageNamed:@"tempHorse.jpg"] ];
-    }
-    else if (selected_button ==1){
-        [cell.selected_font_image_view setImage:[UIImage imageNamed:@"tempHouse.jpg"]];
-        
-    }
-    else{
-        [cell.selected_font_image_view setImage:[UIImage imageNamed:@"tempColor.jpg"] ];
-        
+    NSArray *fontNames =[UIFont fontNamesForFamilyName:[self.fonts_array objectAtIndex:indexPath.row]];
+    if(fontNames.count > 0)
+    {
+    NSString *actualFontName = [fontNames objectAtIndex:0];
+        UIFont * font = [UIFont fontWithName:actualFontName size:12.0];
+        if(font)
+        {
+            [cell.lbl_font_name setFont:font];
+        }
     }
     
+
     return cell;
-    
 }
 
 
@@ -132,7 +143,6 @@
 
 -(void)collectionView:(UICollectionView *)collection_view didReachEndOfPage:(int)page{
     
-    NSLog(@"reached end");
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
