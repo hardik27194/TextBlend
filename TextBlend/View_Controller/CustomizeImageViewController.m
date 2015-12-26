@@ -323,6 +323,15 @@
     [selectedLabel setNeedsDisplay];
     
     ZDStickerView*v = [self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+    
+    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+    CGSize size                                          = [selectedLabel.attributedText sizeConstrainedToSize:constraint];
+    CGFloat height                                       = MAX(size.height, 14.0f);
+    
+    CGRect rect                                          = v.bounds;
+    rect.size.height                                     = height;
+    rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
+    v.bounds                                       = rect;
     [v setNeedsDisplay];
 }
 
