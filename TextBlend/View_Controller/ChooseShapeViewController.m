@@ -10,7 +10,7 @@
 #import "ChooseShapeCollectionViewCell.h"
 #define DESC_TEXT_COLOR [UIColor colorWithRed:0.1568 green:0.1568 blue:0.1568 alpha:1]
 #define CELL_BACKGROUND_COLOR [UIColor colorWithRed:0.729 green:0.729 blue:0.729 alpha:1]
-#define TOP_HEIGHT 200
+#define TOP_HEIGHT 50
 
 
 @interface ChooseShapeViewController ()<UIGestureRecognizerDelegate>
@@ -35,7 +35,7 @@
 -(void)initializeMainView{
     
    
-    self.top_header_view = [[UIView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,30)];
+    self.top_header_view = [[UIView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,TOP_HEIGHT)];
     self.top_header_view.backgroundColor=[UIColor blackColor];
     [self.view addSubview:self.top_header_view];
     
@@ -53,7 +53,7 @@
 -(void)initializeAdbannerView{
     
     
-    UIView *banner_view=[[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50)];
+    UIView *banner_view=[[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, TOP_HEIGHT)];
     banner_view.backgroundColor=[UIColor blackColor];
     [self.view addSubview:banner_view];
     
@@ -72,6 +72,10 @@
      [self.adBannerView loadRequest:[GADRequest request]];
      [self.view addSubview:self.adBannerView];
      */
+    
+}
+
+-(void)addSwipeGetsureView{
     
 }
 -(void)initializeCollectionView{

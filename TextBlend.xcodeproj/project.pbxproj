@@ -10,6 +10,8 @@
 		8B025F181C2E715E005D2C3B /* MessageTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F171C2E715E005D2C3B /* MessageTextViewController.m */; };
 		8B025F1B1C2F0E1F005D2C3B /* ChooseShapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F1A1C2F0E1F005D2C3B /* ChooseShapeViewController.m */; };
 		8B025F1E1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */; };
+		8B025F211C2F186B005D2C3B /* ChooseOptionCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */; };
+		8B025F241C2F18CE005D2C3B /* ChooseOptionCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */; };
 		8BACE8FF1C109F9700CEDFE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BACE8FE1C109F9700CEDFE3 /* main.m */; };
 		8BACE9021C109F9700CEDFE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BACE9011C109F9700CEDFE3 /* AppDelegate.m */; };
 		8BACE9081C109F9700CEDFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BACE9061C109F9700CEDFE3 /* Main.storyboard */; };
@@ -217,6 +219,10 @@
 		8B025F1A1C2F0E1F005D2C3B /* ChooseShapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseShapeViewController.m; sourceTree = "<group>"; };
 		8B025F1C1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseShapeCollectionViewCell.h; sourceTree = "<group>"; };
 		8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseShapeCollectionViewCell.m; sourceTree = "<group>"; };
+		8B025F1F1C2F186B005D2C3B /* ChooseOptionCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionCustomView.h; sourceTree = "<group>"; };
+		8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomView.m; sourceTree = "<group>"; };
+		8B025F221C2F18CE005D2C3B /* ChooseOptionCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionCustomCell.h; sourceTree = "<group>"; };
+		8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomCell.m; sourceTree = "<group>"; };
 		8BACE8FA1C109F9700CEDFE3 /* TextBlend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextBlend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BACE8FE1C109F9700CEDFE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BACE9001C109F9700CEDFE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -632,6 +638,8 @@
 				8BBF90791C15F785001510FA /* SelectFontCollectionViewCell.m */,
 				8B025F1C1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.h */,
 				8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */,
+				8B025F221C2F18CE005D2C3B /* ChooseOptionCustomCell.h */,
+				8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */,
 			);
 			path = Custom_Cell;
 			sourceTree = "<group>";
@@ -653,6 +661,8 @@
 				8BC230F41C14499E000BB5CF /* ImageCropperView.m */,
 				8BBF90611C15DF75001510FA /* CustomZDStickerView.h */,
 				8BBF90621C15DF75001510FA /* CustomZDStickerView.m */,
+				8B025F1F1C2F186B005D2C3B /* ChooseOptionCustomView.h */,
+				8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */,
 			);
 			path = Custom_View;
 			sourceTree = "<group>";
@@ -1492,7 +1502,9 @@
 				8BACE9711C10A09500CEDFE3 /* KILabel.m in Sources */,
 				DB83E15E1C227566008F0B2C /* UIImage+KVNEmpty.m in Sources */,
 				8BACE9781C10A09500CEDFE3 /* UpdateDataProcessor.m in Sources */,
+				8B025F211C2F186B005D2C3B /* ChooseOptionCustomView.m in Sources */,
 				8BACE9A91C10A48300CEDFE3 /* UIImageView+HighlightedWebCache.m in Sources */,
+				8B025F241C2F18CE005D2C3B /* ChooseOptionCustomCell.m in Sources */,
 				DB83E15B1C227566008F0B2C /* KVNProgress.m in Sources */,
 				8BBF90861C15FB11001510FA /* Rotate3DView.m in Sources */,
 				8BACEA501C10AD1F00CEDFE3 /* OHTouchesGestureRecognizer.m in Sources */,
