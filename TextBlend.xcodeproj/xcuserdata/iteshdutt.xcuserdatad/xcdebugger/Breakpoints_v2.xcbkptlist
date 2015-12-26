@@ -74,45 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "471197240.532474"
+            timestampString = "472806074.938978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "-moveToMessageEditingView"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-next_button_pressed:onView:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CustomizeImageViewController moveToMessageEditingView]"
-                  moduleName = "TextBlend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iteshdutt/Documents/All%20Previous%20Codes/External%20Projects/TextBlend/TextBlend%20iOS/TextBlend/TextBlend/View_Controller/CustomizeImageViewController.m"
-                  timestampString = "471202794.422778"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "560">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__56-[CustomizeImageViewController moveToMessageEditingView]_block_invoke"
-                  moduleName = "TextBlend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iteshdutt/Documents/All%20Previous%20Codes/External%20Projects/TextBlend/TextBlend%20iOS/TextBlend/TextBlend/View_Controller/CustomizeImageViewController.m"
-                  timestampString = "471202794.423115"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "15">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

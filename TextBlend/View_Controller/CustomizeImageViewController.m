@@ -8,6 +8,7 @@
 
 #import "CustomizeImageViewController.h"
 #import "OHAttributedLabel.h"
+#import "MessageTextViewController.h"
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 145
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
@@ -751,6 +752,32 @@
     [sticker setNeedsDisplay];
     
     [self.image_edit_main_view setNeedsDisplay];
+    
+}
+
+-(void)handleDoubleTapToLabels:(UIGestureRecognizer *)sender{
+    
+    
+    MessageTextViewController *message_text_vc=[[MessageTextViewController alloc]init];
+    message_text_vc.view.backgroundColor=[UIColor whiteColor];
+    message_text_vc.custom_sticker=sender.view;
+    [self.navigationController pushViewController:message_text_vc animated:YES];
+    
+    /*
+    NSLog(@"%@",sender.view);
+    [self initailizeMessageTextView];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.scroll_view.contentOffset=CGPointMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+        
+        [self.message_editing_text_view.message_text_view becomeFirstResponder];
+    }];
+    */
+    
+    
+}
+
+-(void)updateZDStickerViewDetails:(NSNotification *)notification{
     
 }
 
