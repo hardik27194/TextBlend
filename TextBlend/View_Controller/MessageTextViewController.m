@@ -14,6 +14,9 @@
 @implementation MessageTextViewController
 @synthesize custom_sticker,message_text_view,outer_image_view,count_label;
 @synthesize top_header_view;
+@synthesize black_view,done_check_mark_button,select_color_button,left_text_alignment_button,center_text_alignment_button,right_text_alignment_button;;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -50,6 +53,7 @@
     self.message_text_view.layer.cornerRadius=2;
     self.message_text_view.delegate=self;
     self.message_text_view.returnKeyType = UIReturnKeyDone;
+    [self addCustomViewForKeyboard:self.message_text_view];
     //    self.message_text_view.layer.borderColor=[UIColor whiteColor].CGColor;
     //    self.message_text_view.layer.borderWidth=0.75;
     self.message_text_view.textAlignment=NSTextAlignmentLeft;
@@ -63,6 +67,46 @@
     self.count_label.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:self.count_label];
     
+    
+}
+
+-(void)addCustomViewForKeyboard:(UITextView *)text_view{
+    
+    self.black_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
+    self.black_view.backgroundColor=[UIColor blackColor];
+    //[self. addSubview:self.black_view];
+    
+    self.done_check_mark_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.done_check_mark_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.done_check_mark_button];
+    
+    self.select_color_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.select_color_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    [self.select_color_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.select_color_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.select_color_button];
+    
+    self.left_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.left_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    [self.left_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.left_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.left_text_alignment_button];
+    
+    self.center_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.center_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    [self.center_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.center_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.center_text_alignment_button];
+    
+    self.right_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.right_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    [self.right_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.right_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.right_text_alignment_button];
+    
+    [text_view setInputAccessoryView:self.black_view];
     
 }
 
@@ -97,6 +141,25 @@
 }
 
 
+#pragma mark - Misc Methods -
+
+-(void)updateTextAndPop{
+    
+    if (self.message_text_view && self.message_text_view.text.length) {
+        NSMutableDictionary *text_info_dict=[[NSMutableDictionary alloc]init];
+        [text_info_dict setValue:self.message_text_view forKey:@"TEXT_VIEW"];
+        [text_info_dict setValue:self.custom_sticker forKey:@"ZD_STICKER_VIEW"];
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_MESSAGE_TEXT_NOTIFICATION object:text_info_dict];
+
+    }
+       [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+
+#pragma mark - UIButton Pressed Methods -
+
 -(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -115,15 +178,34 @@
 }
 
 
--(void)updateTextAndPop{
-    NSMutableDictionary *text_info_dict=[[NSMutableDictionary alloc]init];
-    [text_info_dict setValue:self.message_text_view forKey:@"TEXT_VIEW"];
-    [text_info_dict setValue:self.custom_sticker forKey:@"ZD_STICKER_VIEW"];
 
-    [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_MESSAGE_TEXT_NOTIFICATION object:text_info_dict];
-    [self.navigationController popViewControllerAnimated:YES];
 
+
+-(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+    [self updateTextAndPop];
 }
+
+-(IBAction)select_color_button_pressed:(UIButton *)sender{
+    
+}
+
+-(IBAction)left_alignment_button_pressed:(UIButton *)sender{
+    
+}
+
+
+-(IBAction)center_alignment_button_pressed:(UIButton *)sender{
+    
+}
+
+
+-(IBAction)right_alignment_button_pressed:(UIButton *)sender{
+    
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

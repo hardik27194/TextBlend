@@ -20,5 +20,12 @@
 @property(nonatomic,strong)UILabel *count_label;
 @property(nonatomic,strong)UIImageView *outer_image_view;
 @property(nonatomic,strong)ZDStickerView * custom_sticker;
+@property(nonatomic,strong)UIView *black_view;
+@property(nonatomic,strong)UIButton * done_check_mark_button;
+@property(nonatomic,strong)UIButton * select_color_button;
+@property(nonatomic,strong)UIButton * left_text_alignment_button;
+@property(nonatomic,strong)UIButton * center_text_alignment_button;
+@property(nonatomic,strong)UIButton * right_text_alignment_button;
+
 @end
 
