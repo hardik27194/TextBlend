@@ -9,6 +9,7 @@
 #import "CustomizeImageViewController.h"
 #import "OHAttributedLabel.h"
 #import "MessageTextViewController.h"
+#import "ChooseShapeViewController.h"
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 145
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
@@ -24,6 +25,7 @@
 @synthesize selected_image,scroll_view;
 @synthesize image_editing_options_view,message_editing_text_view;
 @synthesize adBannerView,top_header_view,image_edit_main_view;
+@synthesize isFirstImageEditingOptionSelected;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -155,6 +157,15 @@
 #pragma mark - Customize Top Header Delegate Methods -
 
 -(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+    
+    if (isFirstImageEditingOptionSelected) {
+        
+        [add_text_view removeFromSuperview];
+        add_text_view = nil;
+        isFirstImageEditingOptionSelected=NO;
+        return;
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -205,11 +216,18 @@
         add_text_view.add_text_view_delegate=self;
         [self.view addSubview:add_text_view];
     }
+    isFirstImageEditingOptionSelected=YES;
+    [self.view bringSubviewToFront:add_text_view];
+    
     
     
 }
 
 -(void)shape_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
+    
+    ChooseShapeViewController *choose_shape_vc=[[ChooseShapeViewController alloc]init];
+    choose_shape_vc.view.backgroundColor=[UIColor whiteColor];
+    [self.navigationController pushViewController:choose_shape_vc animated:YES];
     
 }
 
@@ -259,6 +277,10 @@
         select_fonts_view.select_font_view_delegate=self;
         [self.view addSubview:select_fonts_view];
     }
+    
+    [self.view bringSubviewToFront:select_fonts_view];
+    
+    
 }
 
 -(void)text_tools_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -267,6 +289,8 @@
         text_tools_view.text_tools_delegate=self;
         [self.view addSubview:text_tools_view];
     }
+    [self.view bringSubviewToFront:text_tools_view];
+
 }
 
 -(void)colors_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -275,6 +299,8 @@
 //        add_color_view.text_tools_delegate=self;
         [self.view addSubview:add_color_view];
     }
+    [self.view bringSubviewToFront:add_color_view];
+
 }
 
 -(void)rotate_3d_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -283,6 +309,8 @@
         rotate_3d_view.rotate_3d_delegate=self;
         [self.view addSubview:rotate_3d_view];
     }
+    [self.view bringSubviewToFront:rotate_3d_view];
+
 }
 
 -(void)eraser_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -291,6 +319,8 @@
         eraser_view.eraser_delegate=self;
         [self.view addSubview:eraser_view];
     }
+    [self.view bringSubviewToFront:eraser_view];
+
 }
 
 #pragma - Select Font - 
@@ -510,6 +540,14 @@
 }
 -(void)text_tools_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(TextToolsView *)selected_view{
     
+    if (text_tools_view) {
+        [text_tools_view removeFromSuperview];
+        text_tools_view =  nil;
+    }
+    
+    
+    
+    
 }
 
 #pragma mark - Eraser View Delegate Methods -
@@ -521,7 +559,10 @@
     
 }
 -(void)eraser_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(EraserView *)selected_view{
-    
+    if (eraser_view) {
+        [eraser_view removeFromSuperview];
+        eraser_view=  nil;
+    }
 }
 -(void)undo_last_erase_button_pressed:(UIButton *)sender onSelectedView:(EraserView *)selected_view{
     
@@ -533,9 +574,14 @@
     
 }
 -(void)rotate_3d_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view{
-    
+    if (rotate_3d_view) {
+        [rotate_3d_view removeFromSuperview];
+        rotate_3d_view=  nil;
+    }
 }
 -(void)reset_3d_rotate_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view{
+    
+    
     
 }
 #pragma mark - ZDSticker View Delegate Methods -
@@ -849,7 +895,7 @@
 
 
 -(void)update_text_and_alignment_notification:(NSNotification *)notification{
-    NSLog(@"%@",notification);
+   // NSLog(@"%@",notification);
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UPDATE_MESSAGE_TEXT_NOTIFICATION object:nil];
     
     if ([notification.object valueForKey:@"TEXT_VIEW"] && [notification.object valueForKey:@"ZD_STICKER_VIEW"]) {
@@ -879,8 +925,16 @@
         
         [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle)
          {
-            
-             paragraphStyle.textAlignment = kCTTextAlignmentRight;
+             if (text_view.textAlignment == NSTextAlignmentRight ) {
+                 paragraphStyle.textAlignment = kCTTextAlignmentRight;
+
+             }
+             else if (text_view.textAlignment == NSTextAlignmentRight ) {
+                 paragraphStyle.textAlignment = kCTTextAlignmentCenter;
+
+             }
+             else
+             paragraphStyle.textAlignment = kCTTextAlignmentLeft;
          }];
 
         label.attributedText                                 = strattr;

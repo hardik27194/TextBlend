@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B025F181C2E715E005D2C3B /* MessageTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F171C2E715E005D2C3B /* MessageTextViewController.m */; };
+		8B025F1B1C2F0E1F005D2C3B /* ChooseShapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F1A1C2F0E1F005D2C3B /* ChooseShapeViewController.m */; };
+		8B025F1E1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */; };
 		8BACE8FF1C109F9700CEDFE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BACE8FE1C109F9700CEDFE3 /* main.m */; };
 		8BACE9021C109F9700CEDFE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BACE9011C109F9700CEDFE3 /* AppDelegate.m */; };
 		8BACE9081C109F9700CEDFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BACE9061C109F9700CEDFE3 /* Main.storyboard */; };
@@ -211,6 +213,10 @@
 		848C51EF6B8273FAC890162B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B025F161C2E715E005D2C3B /* MessageTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTextViewController.h; sourceTree = "<group>"; };
 		8B025F171C2E715E005D2C3B /* MessageTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTextViewController.m; sourceTree = "<group>"; };
+		8B025F191C2F0E1F005D2C3B /* ChooseShapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseShapeViewController.h; sourceTree = "<group>"; };
+		8B025F1A1C2F0E1F005D2C3B /* ChooseShapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseShapeViewController.m; sourceTree = "<group>"; };
+		8B025F1C1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseShapeCollectionViewCell.h; sourceTree = "<group>"; };
+		8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseShapeCollectionViewCell.m; sourceTree = "<group>"; };
 		8BACE8FA1C109F9700CEDFE3 /* TextBlend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextBlend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BACE8FE1C109F9700CEDFE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BACE9001C109F9700CEDFE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -624,6 +630,8 @@
 				8BACE9F21C10AA9200CEDFE3 /* SelectBackgroundCollectionViewCell.m */,
 				8BBF90781C15F785001510FA /* SelectFontCollectionViewCell.h */,
 				8BBF90791C15F785001510FA /* SelectFontCollectionViewCell.m */,
+				8B025F1C1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.h */,
+				8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */,
 			);
 			path = Custom_Cell;
 			sourceTree = "<group>";
@@ -746,6 +754,8 @@
 				8BACE9EE1C10A7E200CEDFE3 /* CustomizeImageViewController.xib */,
 				8B025F161C2E715E005D2C3B /* MessageTextViewController.h */,
 				8B025F171C2E715E005D2C3B /* MessageTextViewController.m */,
+				8B025F191C2F0E1F005D2C3B /* ChooseShapeViewController.h */,
+				8B025F1A1C2F0E1F005D2C3B /* ChooseShapeViewController.m */,
 			);
 			path = View_Controller;
 			sourceTree = "<group>";
@@ -1448,6 +1458,7 @@
 				8BACE9F31C10AA9200CEDFE3 /* SelectBackgroundCollectionViewCell.m in Sources */,
 				8BACE9A61C10A48300CEDFE3 /* UIImage+GIF.m in Sources */,
 				DB83E1481C227566008F0B2C /* AwesomeMenu.m in Sources */,
+				8B025F1E1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m in Sources */,
 				8BACE90B1C109F9700CEDFE3 /* TextBlend.xcdatamodeld in Sources */,
 				DBA384A01C13FC760009DF1E /* RecentListingCollectionViewCell.m in Sources */,
 				DB83E1581C227566008F0B2C /* HPGrowingTextView.m in Sources */,
@@ -1528,6 +1539,7 @@
 				DB83E14B1C227566008F0B2C /* BCMeshContentView.m in Sources */,
 				DB83E1791C227566008F0B2C /* SPGripViewBorderView.m in Sources */,
 				8BACE9E71C10A78D00CEDFE3 /* SelectInitialImageViewController.m in Sources */,
+				8B025F1B1C2F0E1F005D2C3B /* ChooseShapeViewController.m in Sources */,
 				DB83E1551C227566008F0B2C /* BCMutableMeshTransform+Convenience.m in Sources */,
 				DB83E17E1C227AA1008F0B2C /* HMSharedClass.m in Sources */,
 				8BACE9A31C10A48300CEDFE3 /* SDWebImageManager.m in Sources */,
