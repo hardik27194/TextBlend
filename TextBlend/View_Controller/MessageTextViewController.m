@@ -75,8 +75,10 @@
     }
     [self updateLabelCount:str];
     
-    NSLog(@"%@",str);
+//    NSLog(@"%@",str);
     if ([text isEqualToString:@"\n"]) {
+        [self updateTextAndPop];
+        
         [textView resignFirstResponder];
     }
     
@@ -96,6 +98,7 @@
 
 
 -(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -111,6 +114,16 @@
     
 }
 
+
+-(void)updateTextAndPop{
+    NSMutableDictionary *text_info_dict=[[NSMutableDictionary alloc]init];
+    [text_info_dict setValue:self.message_text_view forKey:@"TEXT_VIEW"];
+    [text_info_dict setValue:self.custom_sticker forKey:@"ZD_STICKER_VIEW"];
+
+    [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_MESSAGE_TEXT_NOTIFICATION object:text_info_dict];
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

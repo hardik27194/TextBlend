@@ -727,38 +727,38 @@
         
 //        label.font                                           = [UIFont fontWithName:label.font.fontName size:fontSize];
         
-        NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
-        [strattr setFontName:fontName size:fontSize];
-        label.attributedText                                 = strattr;
-        
-        CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
-        CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
-        CGFloat height                                       = MAX(size.height, 14.0f);
-        
-        CGRect rect                                          = sticker.bounds;
-        rect.size.height                                     = height;
-        rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
-        sticker.bounds                                       = rect;
-        
-        
-        for(UIView *v in self.image_edit_main_view.subviews){
-            if([v isKindOfClass:[ZDStickerView class]]){
-                ZDStickerView *sticker                               = (ZDStickerView*)v;
-                if(sticker.tag == AppDel.gloabalSelectedTag*5000){
-                    [sticker showEditingHandles];
-                }else{
-                    [sticker hideEditingHandles];
+            NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
+            [strattr setFontName:fontName size:fontSize];
+            label.attributedText                                 = strattr;
+            
+            CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+            CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
+            CGFloat height                                       = MAX(size.height, 14.0f);
+            
+            CGRect rect                                          = sticker.bounds;
+            rect.size.height                                     = height;
+            rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
+            sticker.bounds                                       = rect;
+            
+            
+            for(UIView *v in self.image_edit_main_view.subviews){
+                if([v isKindOfClass:[ZDStickerView class]]){
+                    ZDStickerView *sticker                               = (ZDStickerView*)v;
+                    if(sticker.tag == AppDel.gloabalSelectedTag*5000){
+                        [sticker showEditingHandles];
+                    }else{
+                        [sticker hideEditingHandles];
+                    }
                 }
             }
-        }
-        sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
-                                                                     sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
-        [sticker setNeedsDisplay];
-        
-        
-        [sticker setNeedsDisplay];
-        [self.image_edit_main_view setNeedsDisplay];
-    }
+            sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
+                                                                         sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
+            [sticker setNeedsDisplay];
+            
+            
+            [sticker setNeedsDisplay];
+            [self.image_edit_main_view setNeedsDisplay];
+          }
 }
 
 -(void)handlePan1:(UIPanGestureRecognizer *)recognizer {
@@ -809,6 +809,7 @@
 -(void)handleDoubleTapToLabels:(UIGestureRecognizer *)sender{
     
     NSLog(@"%@",sender.view);
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(update_text_and_alignment_notification:) name:UPDATE_MESSAGE_TEXT_NOTIFICATION object:nil];
 
     MessageTextViewController *message_text_vc=[[MessageTextViewController alloc]init];
     message_text_vc.view.backgroundColor=DARK_GRAY_COLOR;
@@ -830,6 +831,112 @@
 }
 
 -(void)updateZDStickerViewDetails:(NSNotification *)notification{
+    
+}
+
+
+
+#pragma mark - Notification Methods -
+
+
+-(void)update_text_and_alignment_notification:(NSNotification *)notification{
+    NSLog(@"%@",notification);
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UPDATE_MESSAGE_TEXT_NOTIFICATION object:nil];
+    
+    if ([notification.object valueForKey:@"TEXT_VIEW"] && [notification.object valueForKey:@"ZD_STICKER_VIEW"]) {
+        UITextView *text_view=[notification.object valueForKey:@"TEXT_VIEW"];
+        
+        ZDStickerView *sticker=[notification.object valueForKey:@"ZD_STICKER_VIEW"];
+        OHAttributedLabel *label=(OHAttributedLabel *)[self.view viewWithTag:sticker.tag/5000];
+//        [label setAttributedText:[[NSAttributedString alloc]initWithString:text_view.text]];
+//        [self getAllAttributes:label withStickerView:sticker];
+//        
+        
+        __block NSMutableDictionary *attributes_dict;
+        [label.attributedText enumerateAttributesInRange:NSMakeRange(0, [label.attributedText.string length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
+         ^(NSDictionary *attributes, NSRange range, BOOL *stop)
+         {
+             //Do something here
+             //NSLog(@"%@",attributes);
+             
+             attributes_dict = [attributes mutableCopy];
+             
+         }];
+
+
+//        NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText ];
+        NSMutableAttributedString *strattr                   =[[NSMutableAttributedString alloc ]initWithString:text_view.text attributes:attributes_dict];
+
+        
+        [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle)
+         {
+            
+             paragraphStyle.textAlignment = kCTTextAlignmentRight;
+         }];
+
+        label.attributedText                                 = strattr;
+        
+        CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+        CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
+        CGFloat height                                       = MAX(size.height, 14.0f);
+        
+        CGRect rect                                          = sticker.bounds;
+        rect.size.height                                     = height;
+        rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
+        sticker.bounds                                       = rect;
+        
+        
+        for(UIView *v in self.image_edit_main_view.subviews){
+            if([v isKindOfClass:[ZDStickerView class]]){
+                ZDStickerView *sticker                               = (ZDStickerView*)v;
+                if(sticker.tag == AppDel.gloabalSelectedTag*5000){
+                    [sticker showEditingHandles];
+                }else{
+                    [sticker hideEditingHandles];
+                }
+            }
+        }
+        sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
+                                                                     sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
+        [sticker setNeedsDisplay];
+        
+        
+        [sticker setNeedsDisplay];
+        [self.image_edit_main_view setNeedsDisplay];
+        
+        
+    }
+    
+}
+
+-(void)getAllAttributes:(OHAttributedLabel *)selected_label withStickerView:(ZDStickerView *)selected_sticker_view{
+    NSMutableAttributedString *res = [selected_label.attributedText mutableCopy];
+    
+    [res beginEditing];
+    __block BOOL found = NO;
+    [res enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, res.length) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
+        if (value) {
+            UIFont *oldFont = (UIFont *)value;
+            UIFont *newFont = [oldFont fontWithSize:oldFont.pointSize * 2];
+            [res removeAttribute:NSFontAttributeName range:range];
+            [res addAttribute:NSFontAttributeName value:newFont range:range];
+            found = YES;
+        }
+    }];
+    if (!found) {
+        // No font was found - do something else?
+    }
+    [res endEditing];
+    selected_label.attributedText = res;
+    [selected_label setNeedsDisplay];
+    [selected_sticker_view setNeedsDisplay];
+    
+}
+
+
+-(void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
     
 }
 

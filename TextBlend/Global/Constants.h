@@ -99,7 +99,7 @@
 #pragma mark - Derived Constants 
 #define SharedObj             [HMSharedClass sharedInstance]
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-
+#define UPDATE_MESSAGE_TEXT_NOTIFICATION @"UPDATE_MESSAGE_TEXT_NOTIFICATION"
 
 
 #endif
