@@ -35,8 +35,9 @@
     
 }
 -(void)initializeView{
+    int top_header_height =50;
     
-    self.outer_image_view=[[UIImageView alloc]initWithFrame:CGRectMake(15, 30, SCREEN_WIDTH-30, 200)];
+    self.outer_image_view=[[UIImageView alloc]initWithFrame:CGRectMake(15, 30+top_header_height, SCREEN_WIDTH-30, 200)];
     self.outer_image_view.backgroundColor=[UIColor clearColor];
     self.outer_image_view.layer.cornerRadius=2;
     self.outer_image_view.layer.borderColor=[UIColor whiteColor].CGColor;
@@ -59,7 +60,7 @@
     self.count_label.text=@"250";
     self.count_label.textColor = [UIColor whiteColor];
     self.count_label.textAlignment = NSTextAlignmentRight;
-    self.count_label.font = [UIFont systemFontOfSize:12];
+    self.count_label.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:self.count_label];
     
     
