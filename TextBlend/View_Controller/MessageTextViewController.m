@@ -7,19 +7,18 @@
 //
 
 #import "MessageTextViewController.h"
-
 @interface MessageTextViewController ()
 
 @end
 
 @implementation MessageTextViewController
 @synthesize custom_sticker,message_text_view,outer_image_view,count_label;
-
+@synthesize top_header_view;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-
+    [self initializeTopHeaderView];
     [self initializeView];
 
 }
@@ -29,7 +28,12 @@
     [super viewWillAppear:animated];
     [self.message_text_view becomeFirstResponder];
 }
-
+-(void)initializeTopHeaderView{
+    self.top_header_view = [[CustomizeImageTopHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    self.top_header_view.customize_screen_top_header_delegate=self;
+    [self.view addSubview:self.top_header_view];
+    
+}
 -(void)initializeView{
     
     self.outer_image_view=[[UIImageView alloc]initWithFrame:CGRectMake(15, 30, SCREEN_WIDTH-30, 200)];
@@ -88,6 +92,24 @@
     }
     
 }
+
+
+-(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)next_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+    
+}
+
+-(void)share_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+    
+}
+
+-(void)settings_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

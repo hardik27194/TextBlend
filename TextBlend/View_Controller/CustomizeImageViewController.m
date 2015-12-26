@@ -757,10 +757,11 @@
 
 -(void)handleDoubleTapToLabels:(UIGestureRecognizer *)sender{
     
-    
+    NSLog(@"%@",sender.view);
+
     MessageTextViewController *message_text_vc=[[MessageTextViewController alloc]init];
     message_text_vc.view.backgroundColor=[UIColor whiteColor];
-    message_text_vc.custom_sticker=sender.view;
+    message_text_vc.custom_sticker=(ZDStickerView *)sender.view;
     [self.navigationController pushViewController:message_text_vc animated:YES];
     
     /*

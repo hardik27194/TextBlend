@@ -80,5 +80,10 @@
   
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.pagingCollectionDelegate collectionView:self didSelectItemAtIndexPath:indexPath];
+
+}
+
 
 @end

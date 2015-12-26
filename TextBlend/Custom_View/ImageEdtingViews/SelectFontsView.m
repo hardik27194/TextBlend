@@ -146,7 +146,6 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
 }
 /*
 // Only override drawRect: if you perform custom drawing.

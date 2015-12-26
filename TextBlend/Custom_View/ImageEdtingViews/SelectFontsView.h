@@ -21,6 +21,8 @@
 }
 @property(nonatomic,strong)PagingCollectionView *custom_collection_view;
 @property(nonatomic,strong)NSMutableArray *fonts_array;
+//@property(nonatomic,strong)CGFloat font_size;
+
 @property(nonatomic,strong)id <SelectFontsViewDelegate> select_font_view_delegate;
 
 //select_font_view_delegate
