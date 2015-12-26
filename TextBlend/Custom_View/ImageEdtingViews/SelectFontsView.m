@@ -145,7 +145,10 @@
     
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    SelectFontCollectionViewCell *cell = (SelectFontCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    [self.select_font_view_delegate setFont:cell.lbl_font_name.font onSelectedView:nil];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

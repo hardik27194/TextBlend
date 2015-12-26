@@ -292,6 +292,40 @@
         [self.view addSubview:eraser_view];
     }
 }
+
+#pragma - Select Font - 
+-(void)setFont:(UIFont*)font onSelectedView:(ZDStickerView *)selected_view;
+{
+    OHAttributedLabel *selectedLabel = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
+    
+    NSAttributedString *str = selectedLabel.attributedText;
+    
+    [str enumerateAttributesInRange:NSMakeRange(0, [str length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop)
+    {
+         //Do something here
+        UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
+        if(!oldfont)
+        {
+            oldfont = [UIFont systemFontOfSize:12.0];
+        }
+        
+        NSMutableDictionary *dic = [attributes mutableCopy];
+        [dic setObject:[UIFont fontWithName:font.fontName size:oldfont.pointSize] forKey:NSFontAttributeName];
+        
+        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:str.string attributes:dic];
+        
+        [selectedLabel setAttributedText:attrString];
+    
+    
+    }
+     ];
+    [selectedLabel setNeedsDisplay];
+    
+    ZDStickerView*v = [self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+    [v setNeedsDisplay];
+}
+
 #pragma mark - Text Tools View Delegate Methods - 
 
 -(void)opacity_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
@@ -535,6 +569,7 @@
     
     NSString *strMain                                    =  @"This is how the things will work for me." ;
     NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithString:strMain];
+
     [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle)
     {
         paragraphStyle.lineSpacing                           = 3.f;
@@ -645,8 +680,24 @@
 {
     OHAttributedLabel *label                             = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
     ZDStickerView *sticker                               = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
-    NSString *fontName                               = label.font.fontName;
-    CGFloat fontSize                                     = label.font.pointSize;
+//    NSString *fontName                               = label.font.fontName;
+//    CGFloat fontSize                                     = label.font.pointSize;
+   __block NSString *fontName;
+   __block CGFloat fontSize;
+    
+    [label.attributedText enumerateAttributesInRange:NSMakeRange(0, [label.attributedText.string length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop)
+     {
+         //Do something here
+         UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
+         if(!oldfont)
+         {
+             oldfont = [UIFont systemFontOfSize:12.0];
+         }
+         fontName = oldfont.fontName;
+         fontSize = oldfont.pointSize;
+     }];
+    
     
     if(recognizer.state == UIGestureRecognizerStateChanged){
         CGFloat factor                                       = [(UIPinchGestureRecognizer *)recognizer scale];
@@ -674,9 +725,9 @@
         }
 //        _zoomSlider.value                                    = fontSize;
         
-        label.font                                           = [UIFont fontWithName:label.font.fontName size:fontSize];
+//        label.font                                           = [UIFont fontWithName:label.font.fontName size:fontSize];
         
-        NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
+        NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
         [strattr setFontName:fontName size:fontSize];
         label.attributedText                                 = strattr;
         

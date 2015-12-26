@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SelectFontCollectionViewCell.h"
+#import "ZDStickerView.h"
 @class SelectFontsView;
 
 @protocol SelectFontsViewDelegate <NSObject>
 
 @optional
 -(void)select_font:(PagingCollectionView *)collectionView forCell:(SelectFontCollectionViewCell *)cell forIndexPath:(NSIndexPath *)indexPath;
-
+-(void)setFont:(UIFont*)font onSelectedView:(ZDStickerView *)selected_view;
 @end
 @interface SelectFontsView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate>{
     
