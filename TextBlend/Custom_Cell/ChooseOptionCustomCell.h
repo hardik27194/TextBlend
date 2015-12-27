@@ -2,7 +2,7 @@
 //  ChooseOptionCustomCell.h
 //  TextBlend
 //
-//  Created by Itesh Dutt on 27/12/15.
+//  Created by Wayne Rooney on 27/12/15.
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 

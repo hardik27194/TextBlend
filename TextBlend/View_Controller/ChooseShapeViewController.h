@@ -2,7 +2,7 @@
 //  ChooseShapeViewController.h
 //  TextBlend
 //
-//  Created by Itesh Dutt on 26/12/15.
+//  Created by Wayne Rooney on 26/12/15.
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
