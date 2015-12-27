@@ -26,20 +26,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializeNavBarView];
+    [self initializeAllUI];
+    // Do any additional setup after loading the view.
+}
+
+-(void)initializeAllUI{
+    
     self.main_scroll_view=[[UIScrollView alloc]initWithFrame:CGRectMake(0, TOP_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-TOP_HEIGHT-TOP_HEIGHT)];
     self.main_scroll_view.delegate=self;
     [self.view addSubview:self.main_scroll_view];
     [self initializeSideView];
+    [self initializeNavBarView];
+
     [self initializeCollectionView];
     [self initializeAdbannerView];
     [self.main_scroll_view bringSubviewToFront:choose_option_view];
 
-    // Do any additional setup after loading the view.
 }
-
-
-
 -(void)initializeNavBarView{
     
    
@@ -54,6 +57,17 @@
     
     [self.back_button addTarget:self action:@selector(back_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.top_header_view addSubview:self.back_button];;
+    
+    
+    self.title_label=[[UILabel alloc]initWithFrame:CGRectMake(50, 0, SCREEN_WIDTH-100, TOP_HEIGHT)];
+    if (choose_option_view.list_array.count){
+    NSDictionary *name_dict=[choose_option_view.list_array objectAtIndex:0];
+        self.title_label.text=[name_dict valueForKey:@"name"];
+    }
+    self.title_label.textAlignment=NSTextAlignmentCenter;
+    self.title_label.textColor=[UIColor whiteColor];
+    [self.top_header_view addSubview:self.title_label];
+    
 }
 
 
@@ -347,7 +361,7 @@
 
 -(void)openShapesFromSelectedText:(NSString *)selected_text isLocked:(BOOL)is_locked{
     
-    
+    self.title_label.text=selected_text;
     //make parse api call
     
 }

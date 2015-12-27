@@ -26,6 +26,14 @@
         self.custom_table_view.pagingDelegate=self;
         [self.custom_table_view setupTablePaging];
         [self addSubview:self.custom_table_view];
+        self.list_array = [[NSMutableArray alloc]init];
+        
+        [self.list_array addObject:[NSDictionary dictionaryWithObject:@"Sports" forKey:@"name"]];
+        [self.list_array addObject:[NSDictionary dictionaryWithObject:@"Christmas" forKey:@"name"]];
+        [self.list_array addObject:[NSDictionary dictionaryWithObject:@"Valentine" forKey:@"name"]];
+        [self.list_array addObject:[NSDictionary dictionaryWithObject:@"Images" forKey:@"name"]];
+        [self.list_array addObject:[NSDictionary dictionaryWithObject:@"Fun" forKey:@"name"]];
+        [self.list_array addObject:[NSDictionary dictionaryWithObject:@"Inspiration" forKey:@"name"]];
         
     }
     return self;
@@ -100,10 +108,10 @@
         [cell.contentView addSubview:cell.liner_image_view];
         
     }
-    cell.name_text_label.frame=CGRectMake(60, 13, SCREEN_WIDTH-150, 37);
-    cell.icon_image_view.frame=CGRectMake(SCREEN_WIDTH-80, 15, 60, 33);
-    cell.locked_image_view.frame=CGRectMake(13, 13, 37, 37);
-    
+    cell.name_text_label.frame=CGRectMake(60, 0, SCREEN_WIDTH-150, CELL_ROW_HEIGHT);
+    cell.locked_image_view.frame=CGRectMake(SCREEN_WIDTH-80, 15, 60, 33);
+    cell.icon_image_view.frame=CGRectMake(10, 10, 30, 30);
+    cell.icon_image_view.backgroundColor=[UIColor lightGrayColor];
     cell.liner_image_view.frame = CGRectMake(0, cell.frame.size.height-1, SCREEN_WIDTH, 1);
     [self updateCellDetails:cell forIndexPath:indexPath];
     return cell;
@@ -112,14 +120,17 @@
 -(void) updateCellDetails:(ChooseOptionCustomCell *)cell forIndexPath:(NSIndexPath *)indexPath
 {
     
+    NSDictionary *name_dict=[self.list_array objectAtIndex:indexPath.row%6];
+    
+    cell.name_text_label.text=[name_dict valueForKey:@"name"];
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    if (self.list_array.count>indexPath.row) {
-        NSDictionary *list_dict=[self.list_array objectAtIndex:indexPath.row];
+    if (self.list_array.count>indexPath.row%6) {
+        NSDictionary *list_dict=[self.list_array objectAtIndex:indexPath.row%6];
         if ([list_dict valueForKey:@"name"] && [Utility validData:[list_dict valueForKey:@"name"]]) {
             
             NSString *name_text=[list_dict valueForKey:@"name"];
