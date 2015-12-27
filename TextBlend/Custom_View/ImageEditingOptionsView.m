@@ -77,13 +77,13 @@
     
     self.filters_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.filters_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/3, self.frame.size.height/2);
-    [self.filters_button setImage:nil forState:UIControlStateNormal];
+    [self.filters_button setImage:[UIImage imageNamed:@"image_editing_screen_filter.png"] forState:UIControlStateNormal];
     [self.filters_button addTarget:self action:@selector(filters_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.filters_button];
     
     self.colorize_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.colorize_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/3, self.frame.size.height/2);
-    [self.colorize_button setImage:nil forState:UIControlStateNormal];
+    [self.colorize_button setImage:[UIImage imageNamed:@"image_editing_screen_colorize.png"] forState:UIControlStateNormal];
     [self.colorize_button addTarget:self action:@selector(colorize_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.colorize_button];
     
@@ -91,13 +91,13 @@
     
     self.effects_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.effects_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/3, self.frame.size.height/2);
-    [self.effects_button setImage:nil forState:UIControlStateNormal];
+    [self.effects_button setImage:[UIImage imageNamed:@"image_editing_screen_effect.png"] forState:UIControlStateNormal];
     [self.effects_button addTarget:self action:@selector(effects_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.effects_button];
     
     self.spalsh_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.spalsh_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/3, self.frame.size.height/2);
-    [self.spalsh_button setImage:nil forState:UIControlStateNormal];
+    [self.spalsh_button setImage:[UIImage imageNamed:@"image_editing_screen_spalsh.png"] forState:UIControlStateNormal];
     [self.spalsh_button addTarget:self action:@selector(spalsh_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.spalsh_button];
     
