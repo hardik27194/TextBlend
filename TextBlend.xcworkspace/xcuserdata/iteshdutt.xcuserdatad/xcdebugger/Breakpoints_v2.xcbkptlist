@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "472893449.420557"
+            timestampString = "472895557.643499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "841"
-            endingLineNumber = "841"
+            startingLineNumber = "884"
+            endingLineNumber = "884"
             landmarkName = "-handlePan1:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "472893449.420557"
+            timestampString = "472895557.643499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "550"
-            endingLineNumber = "550"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
             landmarkName = "-text_tools_done_check_mark_button_pressed:onSelectedView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "472848059.781338"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "-back_button_pressed:onView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -80,6 +64,22 @@
             startingLineNumber = "279"
             endingLineNumber = "279"
             landmarkName = "-pan_gesture_recognizer:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
+            timestampString = "472895591.20901"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "-crop_image_button_pressed:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

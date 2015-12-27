@@ -133,6 +133,7 @@
 		8BC231431C146A0E000BB5CF /* select_background_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC231411C146A0E000BB5CF /* select_background_logo.png */; };
 		8BD573591C17330C00158DC0 /* done_check_mark_button.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8BD573581C17330C00158DC0 /* done_check_mark_button.PNG */; };
 		8BD5735B1C173CCE00158DC0 /* rotate_3d_info_text_image.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8BD5735A1C173CCE00158DC0 /* rotate_3d_info_text_image.PNG */; };
+		8BE7E5071C2FCB1B008B009B /* PhotoEditCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7E5061C2FCB1B008B009B /* PhotoEditCustomView.m */; };
 		9DCD667D4D76EC634A93587B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 848C51EF6B8273FAC890162B /* libPods.a */; };
 		DB18BF521C268F500086EE58 /* ZDBtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = DB18BF501C268F500086EE58 /* ZDBtn2.png */; };
 		DB18BF531C268F500086EE58 /* ZDBtn3.png in Resources */ = {isa = PBXBuildFile; fileRef = DB18BF511C268F500086EE58 /* ZDBtn3.png */; };
@@ -411,6 +412,8 @@
 		8BC231411C146A0E000BB5CF /* select_background_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_logo.png; sourceTree = "<group>"; };
 		8BD573581C17330C00158DC0 /* done_check_mark_button.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_check_mark_button.PNG; sourceTree = "<group>"; };
 		8BD5735A1C173CCE00158DC0 /* rotate_3d_info_text_image.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rotate_3d_info_text_image.PNG; sourceTree = "<group>"; };
+		8BE7E5051C2FCB1B008B009B /* PhotoEditCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditCustomView.h; sourceTree = "<group>"; };
+		8BE7E5061C2FCB1B008B009B /* PhotoEditCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditCustomView.m; sourceTree = "<group>"; };
 		B1C514321E50213C394C595F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DB18BF501C268F500086EE58 /* ZDBtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZDBtn2.png; path = ZDStickerView.bundle/ZDBtn2.png; sourceTree = "<group>"; };
 		DB18BF511C268F500086EE58 /* ZDBtn3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZDBtn3.png; path = ZDStickerView.bundle/ZDBtn3.png; sourceTree = "<group>"; };
@@ -647,6 +650,7 @@
 		8BACE9481C10A09400CEDFE3 /* Custom_View */ = {
 			isa = PBXGroup;
 			children = (
+				8BE7E5041C2FCAFF008B009B /* ImageEditingMainViews */,
 				8BC230CB1C141241000BB5CF /* CustomInheritedClasses */,
 				8BBF90641C15DFF0001510FA /* ImageEdtingViews */,
 				8BC230781C12FA4C000BB5CF /* ImageEditingOptionsView.h */,
@@ -985,6 +989,15 @@
 				8BC231411C146A0E000BB5CF /* select_background_logo.png */,
 			);
 			path = SelectBackgroundScreen;
+			sourceTree = "<group>";
+		};
+		8BE7E5041C2FCAFF008B009B /* ImageEditingMainViews */ = {
+			isa = PBXGroup;
+			children = (
+				8BE7E5051C2FCB1B008B009B /* PhotoEditCustomView.h */,
+				8BE7E5061C2FCB1B008B009B /* PhotoEditCustomView.m */,
+			);
+			path = ImageEditingMainViews;
 			sourceTree = "<group>";
 		};
 		DB1F5FDD1C18866C00F425DB /* Lib */ = {
@@ -1551,6 +1564,7 @@
 				DB83E14B1C227566008F0B2C /* BCMeshContentView.m in Sources */,
 				DB83E1791C227566008F0B2C /* SPGripViewBorderView.m in Sources */,
 				8BACE9E71C10A78D00CEDFE3 /* SelectInitialImageViewController.m in Sources */,
+				8BE7E5071C2FCB1B008B009B /* PhotoEditCustomView.m in Sources */,
 				8B025F1B1C2F0E1F005D2C3B /* ChooseShapeViewController.m in Sources */,
 				DB83E1551C227566008F0B2C /* BCMutableMeshTransform+Convenience.m in Sources */,
 				DB83E17E1C227AA1008F0B2C /* HMSharedClass.m in Sources */,

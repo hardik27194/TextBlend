@@ -21,6 +21,8 @@
 #import "UIButton+WebCache.h"
 #import "UIImageView+WebCache.h"
 #import "AppConstants.h"
+#import "CustomButton.h"
+
 
 //#import <SDWebImage/UIImageView+WebCache.h>
 // Include any system framework and library headers here that should be included in all compilation units.

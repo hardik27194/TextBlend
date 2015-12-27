@@ -162,6 +162,12 @@
         
         [add_text_view removeFromSuperview];
         add_text_view = nil;
+        [photo_edit_custom_view removeFromSuperview];
+        photo_edit_custom_view  = nil;
+        
+        [select_fonts_view removeFromSuperview];
+        select_fonts_view =nil;
+        
         isFirstImageEditingOptionSelected=NO;
         return;
     }
@@ -239,6 +245,13 @@
 
 -(void)photo_edit_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
     
+    if (!photo_edit_custom_view) {
+        photo_edit_custom_view=[[PhotoEditCustomView alloc]initWithFrame:BOTTOM_FRAME];
+        photo_edit_custom_view.photo_edit_tool_options_delegate=self;
+        [self.view addSubview:photo_edit_custom_view];
+    }
+    isFirstImageEditingOptionSelected=YES;
+    [self.view bringSubviewToFront:photo_edit_custom_view];
 }
 
 -(void)saying_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
@@ -366,6 +379,36 @@
     v.bounds                                       = rect;
     [v setNeedsDisplay];
 }
+
+
+#pragma mark - PhotoEditToolOptionsDelegate Methods -
+
+-(void)crop_image_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+}
+-(void)brightness_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+}
+
+
+-(void)tone_curve_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+}
+-(void)saturation_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+}
+
+
+-(void)blur_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+}
+-(void)contrast_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+}
+-(void)exposure_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+}
+
 
 #pragma mark - Text Tools View Delegate Methods - 
 
