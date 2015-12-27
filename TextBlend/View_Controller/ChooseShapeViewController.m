@@ -11,10 +11,14 @@
 #define DESC_TEXT_COLOR [UIColor colorWithRed:0.1568 green:0.1568 blue:0.1568 alpha:1]
 #define CELL_BACKGROUND_COLOR [UIColor colorWithRed:0.729 green:0.729 blue:0.729 alpha:1]
 #define TOP_HEIGHT 50
+#define CUSTOM_WIDTH 240
 
 
 @interface ChooseShapeViewController ()<UIGestureRecognizerDelegate>
-
+{
+    CGPoint start_point;
+    
+}
 @end
 
 @implementation ChooseShapeViewController
@@ -22,17 +26,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializeMainView];
-    
+    [self initializeNavBarView];
+    self.main_scroll_view=[[UIScrollView alloc]initWithFrame:CGRectMake(0, TOP_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-TOP_HEIGHT-TOP_HEIGHT)];
+    self.main_scroll_view.delegate=self;
+    [self.view addSubview:self.main_scroll_view];
+    [self initializeSideView];
     [self initializeCollectionView];
     [self initializeAdbannerView];
-    
+    [self.main_scroll_view bringSubviewToFront:choose_option_view];
+
     // Do any additional setup after loading the view.
 }
 
 
 
--(void)initializeMainView{
+-(void)initializeNavBarView{
     
    
     self.top_header_view = [[UIView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,TOP_HEIGHT)];
@@ -75,9 +83,30 @@
     
 }
 
--(void)addSwipeGetsureView{
+
+-(void)initializeSideView{
+ 
+    if (!choose_option_view) {
+        choose_option_view=[[ChooseOptionCustomView alloc]initWithFrame:CGRectMake(-CUSTOM_WIDTH, 0, CUSTOM_WIDTH, self.main_scroll_view.frame.size.height)];
+        choose_option_view.choose_option_delegate=self;
+        [self.main_scroll_view addSubview:choose_option_view];
+    }
+    [self addSwipeGetsureView];
     
 }
+
+-(void)addSwipeGetsureView{
+    
+    //if (!self.main_scroll_view.gestureRecognizers.count) {
+        UIPanGestureRecognizer *pan_gesture_recognizer=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan_gesture_recognizer:)];
+        pan_gesture_recognizer.delegate=self;
+        [self.main_scroll_view addGestureRecognizer:pan_gesture_recognizer];
+        
+    //}
+    
+}
+
+
 -(void)initializeCollectionView{
     PagingCollectionFlowLayout *layout=[[PagingCollectionFlowLayout alloc]init];
     layout.scrollDirection=UICollectionViewScrollDirectionVertical;
@@ -85,7 +114,7 @@
     layout.headerReferenceSize = CGSizeZero;
     
     //    cell.custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 0, 200, 140) collectionViewLayout:layout];
-    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, TOP_HEIGHT, SCREEN_WIDTH, self.view.frame.size.height-TOP_HEIGHT-40) collectionViewLayout:layout];
+    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.main_scroll_view.frame.size.height) collectionViewLayout:layout];
     custom_collection_view.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
     //<#CGFloat top#>, <#CGFloat left#>, <#CGFloat bottom#>, <#CGFloat right#>);
     custom_collection_view.dataSource=self;
@@ -93,7 +122,7 @@
     custom_collection_view.pagingCollectionDelegate=self;
     custom_collection_view.backgroundColor=CELL_BACKGROUND_COLOR;
     
-    [self.view addSubview:custom_collection_view];
+    [self.main_scroll_view addSubview:custom_collection_view];
     //[cell registerClass];
     [custom_collection_view registerClass:[ChooseShapeCollectionViewCell class] forCellWithReuseIdentifier:@"ChooseShapeCollectionViewCellIdentifier"];
     //  [custom_collection_view registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView"];
@@ -235,12 +264,81 @@
 
 
 
+#pragma mark - Gesture Methods -
 
+-(void)pan_gesture_recognizer:(UIPanGestureRecognizer *)recognizer{
+  
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            start_point=[recognizer translationInView:self.main_scroll_view];
+        }
+            break;
+            
+        case UIGestureRecognizerStateChanged:
+        {
+            CGPoint current_point=[recognizer translationInView:self.main_scroll_view];
+            CGFloat xDifference=current_point.x - start_point.x;
+            if (xDifference<0) {
+                xDifference=0;
+            }
+            else if (xDifference>CUSTOM_WIDTH){
+                xDifference=CUSTOM_WIDTH;
+            }
+            
+            [UIView animateWithDuration:0.2 animations:^{
+            
+                CGRect custom_side_frame=choose_option_view.frame;
+                custom_side_frame.origin.x= -CUSTOM_WIDTH+xDifference;
+                choose_option_view.frame=custom_side_frame;
+                
+            }];
+            
+            
+        
+        }
+            break;
+        
+        
+        case UIGestureRecognizerStateEnded:
+        {
+            CGPoint current_point=[recognizer translationInView:self.main_scroll_view];
+            CGFloat xDifference=current_point.x - start_point.x;
+            if (xDifference<0) {
+                xDifference=0;
+            }
+
+            else if (xDifference+30>=CUSTOM_WIDTH){
+                xDifference=CUSTOM_WIDTH;
+            }
+            else
+                xDifference=0;
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                
+                CGRect custom_side_frame=choose_option_view.frame;
+                custom_side_frame.origin.x= -CUSTOM_WIDTH+xDifference;
+                choose_option_view.frame=custom_side_frame;
+                
+            }];
+            
+            
+            
+        }
+            break;
+        
+            break;
+        default:
+            break;
+    }
+    
+    
+}
 
 #pragma mark - BUtton Pressed Methods - 
 
 -(IBAction)back_button_pressed:(UIButton *)sender{
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

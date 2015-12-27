@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChooseOptionCustomView.h"
 @import GoogleMobileAds;
 
-@interface ChooseShapeViewController : UIViewController<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate,GADBannerViewDelegate>
-{
+@interface ChooseShapeViewController : UIViewController<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate,GADBannerViewDelegate,ChooseOptionDelegate,UIGestureRecognizerDelegate>{
+    
+    ChooseOptionCustomView *choose_option_view;
     
 }
+@property(nonatomic,strong)UIScrollView *main_scroll_view;
 
 @property(nonatomic,strong)PagingCollectionView *custom_collection_view;
 @property(nonatomic,strong)UIView *top_header_view;
