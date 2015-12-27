@@ -22,5 +22,6 @@
 }
 @property(nonatomic,strong)PageTableView *custom_table_view;
 @property(nonatomic,strong)id <ChooseOptionDelegate> choose_option_delegate;
-
+@property(nonatomic,assign)CGFloat selectedIndex;
+@property(nonatomic,assign)NSMutableArray *list_array;
 @end

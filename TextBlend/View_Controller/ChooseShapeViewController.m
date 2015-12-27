@@ -252,17 +252,25 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+ 
+    [self updateImageAndPop:[UIImage imageNamed:@"tempHorse.jpg"]];
     
 }
 
 
 #pragma mark - Misc Methods -
 
--(void)popToCustomizeImageVC{
+-(void)updateImageAndPop:(UIImage *)image{
+    
+    NSMutableDictionary *text_info_dict=[[NSMutableDictionary alloc]init];
+    [text_info_dict setValue:image forKey:@"ZD_STICKER_VIEW_IMAGE"];
+        
+    [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:text_info_dict];
+        
+    
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
-
-
 
 #pragma mark - Gesture Methods -
 
@@ -335,6 +343,15 @@
     
 }
 
+#pragma mark - Choose Shape Delegate Methods -
+
+-(void)openShapesFromSelectedText:(NSString *)selected_text isLocked:(BOOL)is_locked{
+    
+    
+    //make parse api call
+    
+}
+
 #pragma mark - BUtton Pressed Methods - 
 
 -(IBAction)back_button_pressed:(UIButton *)sender{
@@ -355,7 +372,7 @@
     UIImage *image=[cell.selected_image_view image];
     NSLog(@"%@",image);
     
-    [self popToCustomizeImageVC];
+    [self updateImageAndPop:[UIImage imageNamed:@"tempHorse.jpg"]];
     
     
 }

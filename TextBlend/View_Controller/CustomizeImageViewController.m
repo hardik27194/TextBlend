@@ -225,8 +225,10 @@
 
 -(void)shape_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
     
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add_image_notification:) name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
+    
     ChooseShapeViewController *choose_shape_vc=[[ChooseShapeViewController alloc]init];
-    choose_shape_vc.view.backgroundColor=[UIColor whiteColor];
+    choose_shape_vc.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController pushViewController:choose_shape_vc animated:YES];
     
 }
@@ -599,10 +601,7 @@
     [((UITextView*)sticker.contentView) becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 #pragma mark - Sukhi Starts here -
 
@@ -903,9 +902,7 @@
         
         ZDStickerView *sticker=[notification.object valueForKey:@"ZD_STICKER_VIEW"];
         OHAttributedLabel *label=(OHAttributedLabel *)[self.view viewWithTag:sticker.tag/5000];
-//        [label setAttributedText:[[NSAttributedString alloc]initWithString:text_view.text]];
-//        [self getAllAttributes:label withStickerView:sticker];
-//        
+      
         
         __block NSMutableDictionary *attributes_dict;
         [label.attributedText enumerateAttributesInRange:NSMakeRange(0, [label.attributedText.string length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
@@ -972,6 +969,22 @@
     
 }
 
+
+
+-(void)add_image_notification:(NSNotification *)notification{
+    // NSLog(@"%@",notification);
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
+    
+    if ([notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"]) {
+        UIImage *image=[notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"];
+        
+        // Add new sticker view with image on the view
+        
+    }
+    
+}
+
+
 -(void)getAllAttributes:(OHAttributedLabel *)selected_label withStickerView:(ZDStickerView *)selected_sticker_view{
     NSMutableAttributedString *res = [selected_label.attributedText mutableCopy];
     
@@ -1003,6 +1016,9 @@
     
 }
 
-
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

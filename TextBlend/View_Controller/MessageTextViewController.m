@@ -190,17 +190,20 @@
 }
 
 -(IBAction)left_alignment_button_pressed:(UIButton *)sender{
+    self.message_text_view.textAlignment=NSTextAlignmentLeft;
     
 }
 
 
 -(IBAction)center_alignment_button_pressed:(UIButton *)sender{
-    
+    self.message_text_view.textAlignment=NSTextAlignmentCenter;
+ 
 }
 
 
 -(IBAction)right_alignment_button_pressed:(UIButton *)sender{
-    
+    self.message_text_view.textAlignment=NSTextAlignmentRight;
+
 }
 
 

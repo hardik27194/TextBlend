@@ -12,7 +12,7 @@
 #define CELL_ROW_HEIGHT 50
 @implementation ChooseOptionCustomView
 @synthesize custom_table_view,choose_option_delegate;
-
+@synthesize selectedIndex,list_array;
 
 
 -(id)initWithFrame:(CGRect)frame{
@@ -113,12 +113,26 @@
 {
     
 }
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if ([self.choose_option_delegate respondsToSelector:@selector(openShapesFromSelectedText:isLocked:)]) {
-        [self.choose_option_delegate openShapesFromSelectedText:nil isLocked:NO];
-        
+    
+    if (self.list_array.count>indexPath.row) {
+        NSDictionary *list_dict=[self.list_array objectAtIndex:indexPath.row];
+        if ([list_dict valueForKey:@"name"] && [Utility validData:[list_dict valueForKey:@"name"]]) {
+            
+            NSString *name_text=[list_dict valueForKey:@"name"];
+            BOOL isLocked=YES;
+            if ([self.choose_option_delegate respondsToSelector:@selector(openShapesFromSelectedText:isLocked:)]) {
+                [self.choose_option_delegate openShapesFromSelectedText:name_text isLocked:isLocked];
+                
+            }
+            
+        }
     }
+    
+    
     
 }
 
