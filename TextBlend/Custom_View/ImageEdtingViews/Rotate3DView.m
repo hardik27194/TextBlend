@@ -36,6 +36,8 @@
     [self addSubview:self.black_view];
     
     self.done_check_mark_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.done_check_mark_button.showsTouchWhenHighlighted=YES;
+
     self.done_check_mark_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
     [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
