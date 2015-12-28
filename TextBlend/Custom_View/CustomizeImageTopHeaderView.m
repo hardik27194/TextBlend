@@ -25,6 +25,7 @@
 -(void)initializeView{
     self.back_button= [UIButton buttonWithType:UIButtonTypeCustom];
     self.back_button.frame=CGRectMake(15,13, 32, 24);
+    self.back_button.showsTouchWhenHighlighted=YES;
     [self.back_button setImage:[UIImage imageNamed:@"back_button.png"] forState:UIControlStateNormal];
     
     [self.back_button addTarget:self action:@selector(back_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -33,6 +34,7 @@
     
     self.next_button= [UIButton buttonWithType:UIButtonTypeCustom];
     self.next_button.frame=CGRectMake(SCREEN_WIDTH-45,13, 32, 24);
+    self.next_button.showsTouchWhenHighlighted=YES;
     [self.next_button setImage:[UIImage imageNamed:@"next_button.png"] forState:UIControlStateNormal];
     [self.next_button addTarget:self action:@selector(next_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.next_button];;
@@ -40,6 +42,7 @@
     
     self.settings_button= [UIButton buttonWithType:UIButtonTypeCustom];
     self.settings_button.frame=CGRectMake(85,10, 30, 30);
+    self.settings_button.showsTouchWhenHighlighted=YES;
     [self.settings_button setImage:[UIImage imageNamed:@"settings_button.PNG"] forState:UIControlStateNormal];
     
     [self.settings_button addTarget:self action:@selector(settings_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -47,6 +50,7 @@
     
     self.share_button= [UIButton buttonWithType:UIButtonTypeCustom];
     self.share_button.frame=CGRectMake(SCREEN_WIDTH-47,13, 32, 24);
+    self.share_button.showsTouchWhenHighlighted=YES;
     [self.share_button setImage:[UIImage imageNamed:@"share_button.PNG"] forState:UIControlStateNormal];
     
     [self.share_button addTarget:self action:@selector(share_button_pressed:) forControlEvents:UIControlEventTouchUpInside];

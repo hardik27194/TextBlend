@@ -31,6 +31,7 @@
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.layer.borderWidth=0.4;
     self.imageEdgeInsets = UIEdgeInsetsMake(10,10,10,10);
+    self.showsTouchWhenHighlighted=YES;
     [[self imageView] setContentMode: UIViewContentModeScaleAspectFit];
 
 }

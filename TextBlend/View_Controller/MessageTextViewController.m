@@ -35,6 +35,9 @@
     self.top_header_view = [[CustomizeImageTopHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
     self.top_header_view.customize_screen_top_header_delegate=self;
     [self.view addSubview:self.top_header_view];
+    self.top_header_view.next_button.hidden=YES;
+    self.top_header_view.settings_button.hidden=YES;
+    
     
 }
 -(void)initializeView{
@@ -77,30 +80,40 @@
     //[self. addSubview:self.black_view];
     
     self.done_check_mark_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.done_check_mark_button.showsTouchWhenHighlighted=YES;
+
     self.done_check_mark_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
     [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.done_check_mark_button];
     
     self.select_color_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.select_color_button.showsTouchWhenHighlighted=YES;
+
     self.select_color_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
     [self.select_color_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.select_color_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.select_color_button];
     
     self.left_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.left_text_alignment_button.showsTouchWhenHighlighted=YES;
+
     self.left_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
     [self.left_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.left_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.left_text_alignment_button];
     
     self.center_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.center_text_alignment_button.showsTouchWhenHighlighted=YES;
+
     self.center_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
     [self.center_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.center_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.center_text_alignment_button];
     
     self.right_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.right_text_alignment_button.showsTouchWhenHighlighted=YES;
+
     self.right_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
     [self.right_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.right_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];

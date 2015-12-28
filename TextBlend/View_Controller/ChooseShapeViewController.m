@@ -41,7 +41,19 @@
     [self initializeCollectionView];
     [self initializeAdbannerView];
     [self.main_scroll_view bringSubviewToFront:choose_option_view];
+    [self openShapeDrawer];
+    
 
+}
+
+-(void)openShapeDrawer{
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        CGRect custom_side_frame=choose_option_view.frame;
+        custom_side_frame.origin.x= 0;
+        choose_option_view.frame=custom_side_frame;
+        
+    }];
 }
 -(void)initializeNavBarView{
     
@@ -53,6 +65,7 @@
     
     self.back_button= [UIButton buttonWithType:UIButtonTypeCustom];
     self.back_button.frame=CGRectMake(15,13, 32, 24);
+    self.back_button.showsTouchWhenHighlighted=YES;
     [self.back_button setImage:[UIImage imageNamed:@"back_button.png"] forState:UIControlStateNormal];
     
     [self.back_button addTarget:self action:@selector(back_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
