@@ -94,7 +94,20 @@
     [self.exposure_button addTarget:self action:@selector(exposure_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.exposure_button];
     
-       
+    
+    if(!self.SliderBackView)
+    {
+        self.SliderBackView = [[UIView alloc]initWithFrame:self.bounds];
+        [self.SliderBackView setBackgroundColor:[UIColor lightGrayColor]];
+        [self.SliderBackView setHidden:YES];
+        
+        self.commonSlider = [[UISlider alloc]init];
+        [self.commonSlider setFrame:CGRectMake(SCREEN_WIDTH/2-100 , self.bounds.size.height/2, 200, 10)];
+        [self.commonSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+        
+        [self.SliderBackView addSubview:self.commonSlider];
+        [self addSubview:self.SliderBackView];
+    }
 }
 
 #pragma mark - Button Pressed Methods -
@@ -110,6 +123,8 @@
     
     if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(saturation_button_pressed:onSelectedView:)]) {
         [self.photo_edit_tool_options_delegate saturation_button_pressed:sender onSelectedView:self];
+        [self.SliderBackView setHidden:NO];
+        [self.commonSlider setTag:4];
     }
 }
 
@@ -126,6 +141,9 @@
     
     if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(contrast_button_pressed:onSelectedView:)]) {
         [self.photo_edit_tool_options_delegate contrast_button_pressed:sender onSelectedView:self];
+        [self.SliderBackView setHidden:NO];
+        [self.commonSlider setTag:5];
+
     }
 }
 
@@ -133,6 +151,9 @@
     
     if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(blur_button_pressed:onSelectedView:)]) {
         [self.photo_edit_tool_options_delegate blur_button_pressed:sender onSelectedView:self];
+        [self.SliderBackView setHidden:NO];
+        [self.commonSlider setTag:1];
+
     }
 }
 
@@ -142,6 +163,8 @@
     
     if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(exposure_button_pressed:onSelectedView:)]) {
         [self.photo_edit_tool_options_delegate exposure_button_pressed:sender onSelectedView:self];
+        [self.SliderBackView setHidden:NO];
+        [self.commonSlider setTag:2];
     }
 }
 
@@ -150,9 +173,47 @@
     
     if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(brightness_button_pressed:onSelectedView:)]) {
         [self.photo_edit_tool_options_delegate brightness_button_pressed:sender onSelectedView:self];
+        [self.SliderBackView setHidden:NO];
+        [self.commonSlider setTag:3];
+
     }
 }
 
+-(void)sliderValueChanged:(UISlider *)slider
+{
+    switch (slider.tag)
+    {
+        case 1:
+        {
+            [self.photo_edit_tool_options_delegate blur_sliderValueChanged:slider onSelectedView:self];
+        }
+            break;
+        case 2:
+        {
+            [self.photo_edit_tool_options_delegate exposure_sliderValueChanged:slider onSelectedView:self];
+        }
+            break;
+        case 3:
+        {
+            [self.photo_edit_tool_options_delegate brightness_sliderValueChanged:slider onSelectedView:self];
+        }
+            break;
+        case 4:
+        {
+            [self.photo_edit_tool_options_delegate saturation_sliderValueChanged:slider onSelectedView:self];
+        }
+            break;
+        case 5:
+        {
+            [self.photo_edit_tool_options_delegate contrast_sliderValueChanged:slider onSelectedView:self];
+        }
+            break;
+
+            
+        default:
+            break;
+    }
+}
 
 /*
  // Only override drawRect: if you perform custom drawing.

@@ -356,23 +356,23 @@
         NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:str.string attributes:dic];
         
         [selectedLabel setAttributedText:attrString];
+        [selectedLabel setNeedsDisplay];
+
     
+        ZDStickerView*v = [self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+        
+        CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
+        CGSize size                                          = [selectedLabel.attributedText sizeConstrainedToSize:constraint];
+        CGFloat height                                       = MAX(size.height, 14.0f);
+        
+        CGRect rect                                          = v.bounds;
+        rect.size.height                                     = height;
+        rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
+        v.bounds                                       = rect;
+        [v setNeedsDisplay];
+
+    }];
     
-    }
-     ];
-    [selectedLabel setNeedsDisplay];
-    
-    ZDStickerView*v = [self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
-    
-    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
-    CGSize size                                          = [selectedLabel.attributedText sizeConstrainedToSize:constraint];
-    CGFloat height                                       = MAX(size.height, 14.0f);
-    
-    CGRect rect                                          = v.bounds;
-    rect.size.height                                     = height;
-    rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
-    v.bounds                                       = rect;
-    [v setNeedsDisplay];
 }
 
 
@@ -411,6 +411,186 @@
 -(void)exposure_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
     
 }
+
+
+-(void)blur_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
+{
+    
+   CGFloat blurLevel = MIN(1.0, MAX(0.0, slider.value));
+    
+    int boxSize = (int)(blurLevel * 0.1 * MIN(self.image_edit_main_view.main_image_view.image.size.width, self.image_edit_main_view.main_image_view.image.size.height));
+    boxSize = boxSize - (boxSize % 2) + 1;
+    
+    NSData *imageData = UIImageJPEGRepresentation(self.selected_image, 1);
+    UIImage *tmpImage = [UIImage imageWithData:imageData];
+    
+    CGImageRef img = tmpImage.CGImage;
+    vImage_Buffer inBuffer, outBuffer;
+    vImage_Error error;
+    void *pixelBuffer;
+    
+    //create vImage_Buffer with data from CGImageRef
+    CGDataProviderRef inProvider = CGImageGetDataProvider(img);
+    CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+    
+    inBuffer.width = CGImageGetWidth(img);
+    inBuffer.height = CGImageGetHeight(img);
+    inBuffer.rowBytes = CGImageGetBytesPerRow(img);
+    
+    inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
+    
+    //create vImage_Buffer for output
+    pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+    
+    outBuffer.data = pixelBuffer;
+    outBuffer.width = CGImageGetWidth(img);
+    outBuffer.height = CGImageGetHeight(img);
+    outBuffer.rowBytes = CGImageGetBytesPerRow(img);
+    
+    NSInteger windowR = boxSize/2;
+    CGFloat sig2 = windowR / 3.0;
+    if(windowR>0){ sig2 = -1/(2*sig2*sig2); }
+    
+    int16_t *kernel = (int16_t*)malloc(boxSize*sizeof(int16_t));
+    int32_t  sum = 0;
+    for(NSInteger i=0; i<boxSize; ++i){
+        kernel[i] = 255*exp(sig2*(i-windowR)*(i-windowR));
+        sum += kernel[i];
+    }
+    
+    // convolution
+    error = vImageConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, kernel, boxSize, 1, sum, NULL, kvImageEdgeExtend);
+    error = vImageConvolve_ARGB8888(&outBuffer, &inBuffer, NULL, 0, 0, kernel, 1, boxSize, sum, NULL, kvImageEdgeExtend);
+    outBuffer = inBuffer;
+    
+    if (error) {
+        NSLog(@"error from convolution %ld", error);
+    }
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef ctx = CGBitmapContextCreate(outBuffer.data,
+                                             outBuffer.width,
+                                             outBuffer.height,
+                                             8,
+                                             outBuffer.rowBytes,
+                                             colorSpace,
+                                             kCGBitmapAlphaInfoMask & kCGImageAlphaNoneSkipLast);
+    CGImageRef imageRef = CGBitmapContextCreateImage(ctx);
+    UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
+    
+    //clean up
+    CGContextRelease(ctx);
+    CGColorSpaceRelease(colorSpace);
+    free(pixelBuffer);
+    CFRelease(inBitmapData);
+    CGImageRelease(imageRef);
+
+    self.image_edit_main_view.main_image_view.image = returnImage;
+}
+-(void)contrast_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
+{
+
+    CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
+    CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
+    [filter setDefaults];
+    
+    filter = [CIFilter filterWithName:@"CIExposureAdjust" keysAndValues:kCIInputImageKey, [filter outputImage], nil];
+    [filter setDefaults];
+    
+    filter = [CIFilter filterWithName:@"CIGammaAdjust" keysAndValues:kCIInputImageKey, [filter outputImage], nil];
+    [filter setDefaults];
+    CGFloat contrast   = slider.value*slider.value;
+    [filter setValue:[NSNumber numberWithFloat:contrast] forKey:@"inputPower"];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *outputImage = [filter outputImage];
+    CGImageRef cgImage = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    UIImage *result = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    
+    self.image_edit_main_view.main_image_view.image = result;
+
+    
+    
+}
+-(void)exposure_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
+{
+    CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
+    CIFilter *filter = [CIFilter filterWithName:@"CIExposureAdjust" keysAndValues:kCIInputImageKey, ciImage, nil];
+    [filter setDefaults];
+    
+    CGFloat exposure = slider.value;
+    [filter setValue:[NSNumber numberWithFloat:exposure] forKey:@"inputEV"];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *outputImage = [filter outputImage];
+    CGImageRef cgImage = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    UIImage *result = [UIImage imageWithCGImage:cgImage];
+    
+    CGImageRelease(cgImage);
+    self.image_edit_main_view.main_image_view.image = result;
+
+}
+
+
+
+-(void)saturation_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
+{
+
+    CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
+    
+    CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
+    [filter setDefaults];
+    [filter setValue:[NSNumber numberWithFloat:slider.value] forKey:@"inputSaturation"];
+    
+    filter = [CIFilter filterWithName:@"CIExposureAdjust" keysAndValues:kCIInputImageKey, [filter outputImage], nil];
+    [filter setDefaults];
+    
+    filter = [CIFilter filterWithName:@"CIGammaAdjust" keysAndValues:kCIInputImageKey, [filter outputImage], nil];
+    [filter setDefaults];
+    
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *outputImage = [filter outputImage];
+    CGImageRef cgImage = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    UIImage *result = [UIImage imageWithCGImage:cgImage];
+    
+    CGImageRelease(cgImage);
+    
+    self.image_edit_main_view.main_image_view.image = result;
+
+    
+    
+}
+-(void)brightness_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
+{
+
+    CIImage *ciImage = [[CIImage alloc] initWithImage:selected_image];
+    CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
+    [filter setDefaults];
+    filter = [CIFilter filterWithName:@"CIExposureAdjust" keysAndValues:kCIInputImageKey, [filter outputImage], nil];
+    [filter setDefaults];
+    
+    CGFloat brightness = 2*slider.value;
+    [filter setValue:[NSNumber numberWithFloat:brightness] forKey:@"inputEV"];
+    
+    filter = [CIFilter filterWithName:@"CIGammaAdjust" keysAndValues:kCIInputImageKey, [filter outputImage], nil];
+    [filter setDefaults];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *outputImage = [filter outputImage];
+    CGImageRef cgImage = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    UIImage *result = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    
+    self.image_edit_main_view.main_image_view.image = result;
+    
+}
+
 
 
 #pragma mark - Text Tools View Delegate Methods - 
@@ -486,13 +666,13 @@
     label.attributedText                                 = strattr;
     [label setAccessibilityValue:[NSString stringWithFormat:@"%f",f]];
     
-    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
     CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
     CGFloat height                                       = MAX(size.height, 14.0f);
     
     CGRect rect                                          = sticker.bounds;
     rect.size.height                                     = height;
-    rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
+    rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
     sticker.bounds                                       = rect;
     
     sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
@@ -556,13 +736,13 @@
     
     [label setAccessibilityIdentifier:[NSString stringWithFormat:@"%f",f]];
     
-    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
     CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
     CGFloat height                                       = MAX(size.height, 40.0f);
     
     CGRect rect                                          = sticker.bounds;
     rect.size.height                                     = height;
-    rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
+    rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
     sticker.bounds                                       = rect;
     
     sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
@@ -579,8 +759,8 @@
         }
     }
     
-    [sticker setNeedsDisplay];
     [label setNeedsLayout];
+    [sticker setNeedsDisplay];
     [self.image_edit_main_view setNeedsDisplay];
 
 
@@ -640,6 +820,13 @@
 
 - (void)stickerViewDidClose:(ZDStickerView *)sticker
 {
+    OHAttributedLabel *label                             = (OHAttributedLabel *)[self.image_edit_main_view viewWithTag:sticker.tag/5000];
+    
+    [label   removeFromSuperview];
+    [sticker removeFromSuperview];
+    
+    [self.image_edit_main_view setNeedsDisplay];
+
 }
 
 - (void)stickerViewDidCustomButtonTap:(ZDStickerView *)sticker
@@ -667,8 +854,12 @@
     AppDel.gloabalSelectedTag                            = AppDel.mainLabelTag;
     AppDel.mainLabelTag++;
     
-    NSString *strMain                                    =  @"This is how the things will work for me." ;
+    NSString *strMain                                    =  @"Double tap to edit text." ;
     NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithString:strMain];
+    
+    [strattr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,strattr.length)];
+    [strattr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:25.0f] range:NSMakeRange(0,strattr.length)];
+
 
     [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle)
     {
@@ -676,17 +867,16 @@
     }];
     [strattr setCharacterSpacing:1.0];
     
-    self.lblAdd.font                                         = [UIFont systemFontOfSize:20.0];
     self.lblAdd.opaque                                   = NO;
     self.lblAdd.backgroundColor                    = [UIColor clearColor];
     self.lblAdd.attributedText                         = strattr;
     self.lblAdd.textAlignment                            = NSTextAlignmentCenter;
-    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+    CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
     CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
     CGFloat height                                       = MAX(size.height, 14.0f);
     CGRect rect                                          = self.lblAdd.bounds;
     rect.size.height                                     = height;
-    rect.size.width                                      = (isPad)?MIN(748.0, size.width):(isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
+    rect.size.width                                      = (isPad)?MIN(748.0, size.width):(isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
     self.lblAdd.bounds                                   = rect;
 
     
@@ -831,13 +1021,13 @@
             [strattr setFontName:fontName size:fontSize];
             label.attributedText                                 = strattr;
             
-            CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+            CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
             CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
             CGFloat height                                       = MAX(size.height, 14.0f);
             
             CGRect rect                                          = sticker.bounds;
             rect.size.height                                     = height;
-            rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(320.0, size.width);
+            rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
             sticker.bounds                                       = rect;
             
             
@@ -1018,7 +1208,7 @@
 
         label.attributedText                                 = strattr;
         
-        CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width, 200000.0f);
+        CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
         CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
         CGFloat height                                       = MAX(size.height, 14.0f);
         

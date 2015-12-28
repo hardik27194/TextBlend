@@ -25,6 +25,19 @@
 -(void)exposure_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
 
 
+-(void)blur_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
+-(void)contrast_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
+-(void)exposure_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
+-(void)saturation_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
+-(void)brightness_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
+
+
+
+
+
+
+
+
 @end
 @interface PhotoEditCustomView : UIView<UIScrollViewDelegate>
 {
@@ -39,6 +52,8 @@
 @property(nonatomic,strong)CustomButton *saturation_button;
 @property(nonatomic,strong)CustomButton *contrast_button;
 
+@property(nonatomic,strong)UISlider *commonSlider;
+@property(nonatomic,strong)UIView *SliderBackView;
 
 @property(nonatomic,strong)id <PhotoEditToolOptionsDelegate> photo_edit_tool_options_delegate;
 

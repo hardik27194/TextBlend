@@ -104,6 +104,8 @@
     self.line_spacing_slider = [[UISlider alloc]initWithFrame:CGRectMake(10+(SCREEN_WIDTH/2), height2, SCREEN_WIDTH/2-20, 30)];
     self.line_spacing_slider.value=0;
     [self.line_spacing_slider setMaximumValue:40.0];
+    [self.line_spacing_slider setMinimumValue:3.0];
+
     [self.line_spacing_slider setMaximumTrackTintColor:MIN_COLOR];
     [self.line_spacing_slider setMaximumTrackTintColor:MAX_COLOR];
     [self.line_spacing_slider addTarget:self action:@selector(line_spacing_slider_value_changed:) forControlEvents:UIControlEventValueChanged];
