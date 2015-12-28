@@ -309,13 +309,15 @@
 }
 
 -(void)colors_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
+   
+    /*
     if (!add_color_view) {
         add_color_view=[[AddColorView alloc]initWithFrame:BOTTOM_FRAME];
 //        add_color_view.text_tools_delegate=self;
         [self.view addSubview:add_color_view];
     }
     [self.view bringSubviewToFront:add_color_view];
-
+*/
 }
 
 -(void)rotate_3d_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -338,7 +340,7 @@
 
 }
 
-#pragma - Select Font - 
+#pragma mark - Select Font Delegate Methods  -
 -(void)setFont:(UIFont*)font onSelectedView:(ZDStickerView *)selected_view;
 {
     OHAttributedLabel *selectedLabel = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
@@ -380,6 +382,14 @@
     [v setNeedsDisplay];
 }
 
+
+-(void)select_font_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SelectFontsView *)selected_view{
+    if (select_fonts_view) {
+        [select_fonts_view removeFromSuperview];
+        select_fonts_view=  nil;
+    }
+
+}
 
 #pragma mark - PhotoEditToolOptionsDelegate Methods -
 

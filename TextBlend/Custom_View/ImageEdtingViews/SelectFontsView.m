@@ -11,12 +11,13 @@
 @implementation SelectFontsView
 @synthesize custom_collection_view;
 @synthesize fonts_array;
+@synthesize black_view,done_check_mark_button;
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
         
         self.backgroundColor=EDITING_BACKGROUND_COLOR;
-        [self initializeCollectionView];
+        [self initializeView];
         //[self getPopularPosts:YES];
     }
     return self;
@@ -25,6 +26,21 @@
 
 
 
+-(void)initializeView{
+    self.black_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
+    self.black_view.backgroundColor=[UIColor blackColor];
+    [self addSubview:self.black_view];
+    
+    self.done_check_mark_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.done_check_mark_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.done_check_mark_button];
+    
+    [self initializeCollectionView];
+    
+}
+
 -(void)initializeCollectionView{
     PagingCollectionFlowLayout *layout=[[PagingCollectionFlowLayout alloc]init];
     layout.scrollDirection=UICollectionViewScrollDirectionVertical;
@@ -32,7 +48,7 @@
     layout.headerReferenceSize = CGSizeZero;
     
     //    cell.custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 0, 200, 140) collectionViewLayout:layout];
-    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height) collectionViewLayout:layout];
+    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, self.frame.size.height-25) collectionViewLayout:layout];
     custom_collection_view.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
     //<#CGFloat top#>, <#CGFloat left#>, <#CGFloat bottom#>, <#CGFloat right#>);
     custom_collection_view.dataSource=self;
@@ -150,6 +166,17 @@
     SelectFontCollectionViewCell *cell = (SelectFontCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
     [self.select_font_view_delegate setFont:cell.lbl_font_name.font onSelectedView:nil];
 }
+
+
+-(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+    
+    if ([self.select_font_view_delegate respondsToSelector:@selector(select_font_done_check_mark_button_pressed:onSelectedView:)]) {
+        [self.select_font_view_delegate select_font_done_check_mark_button_pressed:sender onSelectedView:self];
+        
+    }
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

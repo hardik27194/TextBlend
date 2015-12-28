@@ -16,6 +16,8 @@
 @optional
 -(void)select_font:(PagingCollectionView *)collectionView forCell:(SelectFontCollectionViewCell *)cell forIndexPath:(NSIndexPath *)indexPath;
 -(void)setFont:(UIFont*)font onSelectedView:(ZDStickerView *)selected_view;
+-(void)select_font_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SelectFontsView *)selected_view;
+
 @end
 @interface SelectFontsView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate>{
     
@@ -25,6 +27,7 @@
 //@property(nonatomic,strong)CGFloat font_size;
 
 @property(nonatomic,strong)id <SelectFontsViewDelegate> select_font_view_delegate;
-
+@property(nonatomic,strong)UIView *black_view;
+@property(nonatomic,strong)UIButton *done_check_mark_button;
 //select_font_view_delegate
 @end

@@ -28,7 +28,7 @@
     
     self.image_edit_scroll_view =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
     self.image_edit_scroll_view.delegate=self;
-    self.image_edit_scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+    self.image_edit_scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH, self.frame.size.height);
     self.image_edit_scroll_view.contentOffset=CGPointZero;
     [self addSubview:self.image_edit_scroll_view];
     
