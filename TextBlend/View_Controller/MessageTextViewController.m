@@ -8,13 +8,17 @@
 
 #import "MessageTextViewController.h"
 @interface MessageTextViewController ()
-
+{
+    UIView *black_sub_view;
+    UIView *selected_color_view;
+    
+}
 @end
 
 @implementation MessageTextViewController
 @synthesize custom_sticker,message_text_view,outer_image_view,count_label;
 @synthesize top_header_view;
-@synthesize black_view,done_check_mark_button,select_color_button,left_text_alignment_button,center_text_alignment_button,right_text_alignment_button;;
+@synthesize black_view,done_check_mark_button,select_color_button,left_text_alignment_button,center_text_alignment_button,right_text_alignment_button,colorPreviewView;;
 
 
 - (void)viewDidLoad {
@@ -163,7 +167,10 @@
         NSMutableDictionary *text_info_dict=[[NSMutableDictionary alloc]init];
         [text_info_dict setValue:self.message_text_view forKey:@"TEXT_VIEW"];
         [text_info_dict setValue:self.custom_sticker forKey:@"ZD_STICKER_VIEW"];
-        
+        if (selected_color) {
+            [text_info_dict setValue:selected_color forKey:@"ZD_STICKER_VIEW_TEXT_COLOR"];
+ 
+        }
         [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_MESSAGE_TEXT_NOTIFICATION object:text_info_dict];
 
     }
@@ -172,13 +179,73 @@
 }
 
 
+- (void)imageView:(DTColorPickerImageView *)imageView didPickColorWithColor:(UIColor *)color
+{
+    //    [self.colorPreviewView setBackgroundColor:color];
+    selected_color=color;
+    selected_color_view.backgroundColor=color;
+    
+    CGFloat red, green, blue;
+    [color getRed:&red green:&green blue:&blue alpha:NULL];
+    
+    NSLog(@"Picked Color Components: %.0f, %.0f, %.0f", red * 255.0f, green * 255.0f, blue * 255.0f);
+}
+
+-(void)addSubview{
+    
+    black_sub_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
+    black_sub_view.backgroundColor=[UIColor blackColor];
+    [self.view addSubview:black_sub_view];
+    
+    
+    UIButton *back_sub_view_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    back_sub_view_button.frame=CGRectMake(15,13, 32, 24);
+    back_sub_view_button.showsTouchWhenHighlighted=YES;
+    [back_sub_view_button setImage:[UIImage imageNamed:@"back_button.png"] forState:UIControlStateNormal];
+    
+    [back_sub_view_button addTarget:self action:@selector(back_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [black_sub_view addSubview:back_sub_view_button];;
+    
+    
+    UIButton *next_sub_view_button= [UIButton buttonWithType:UIButtonTypeCustom];
+    next_sub_view_button.frame=CGRectMake(SCREEN_WIDTH-45,13, 32, 24);
+    next_sub_view_button.showsTouchWhenHighlighted=YES;
+    [next_sub_view_button setImage:[UIImage imageNamed:@"next_button.png"] forState:UIControlStateNormal];
+    [next_sub_view_button addTarget:self action:@selector(next_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [black_sub_view addSubview:next_sub_view_button];;
+    
+    
+    
+}
+
+-(void)addPickerColorView{
+    
+    UIView *bg_view=[[UIView alloc]initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, 50)];
+    bg_view.backgroundColor=[UIColor whiteColor];
+    [black_sub_view addSubview:bg_view];
+    
+    UIImageView *liner_image_view=[[UIImageView alloc]initWithFrame:CGRectMake(0, 49, SCREEN_WIDTH, 1)];
+    liner_image_view.backgroundColor=[UIColor grayColor];
+    [black_sub_view addSubview:liner_image_view];
+    
+    
+    selected_color_view=[[UIView alloc]initWithFrame:CGRectMake(100, 10, SCREEN_WIDTH-200, 30)];
+    selected_color_view.backgroundColor=[UIColor clearColor];
+    selected_color_view.layer.cornerRadius=5;
+    selected_color_view.layer.borderColor=[UIColor lightGrayColor].CGColor;
+    selected_color_view.layer.borderWidth=0.8;
+    [bg_view addSubview:selected_color_view];
+    
+    
+    
+}
 #pragma mark - UIButton Pressed Methods -
 
 -(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
     
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+/*
 -(void)next_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
     
 }
@@ -191,7 +258,7 @@
     
 }
 
-
+*/
 
 
 
@@ -200,7 +267,23 @@
 }
 
 -(IBAction)select_color_button_pressed:(UIButton *)sender{
+    [self.message_text_view resignFirstResponder];
     
+    if (!black_sub_view) {
+        [self addSubview];
+        [self addPickerColorView];
+        self.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_HEIGHT-100)];
+        self.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
+        self.colorPreviewView.delegate=self;
+        [self.view addSubview:self.colorPreviewView];
+    }
+    
+    black_sub_view.hidden=NO;
+    self.colorPreviewView.hidden=NO;
+    [self.view bringSubviewToFront:black_sub_view];
+    [self.view bringSubviewToFront:self.colorPreviewView];
+    [black_sub_view showViewWithAnimation];
+    [self.colorPreviewView showViewWithAnimation];
 }
 
 -(IBAction)left_alignment_button_pressed:(UIButton *)sender{
@@ -222,8 +305,21 @@
 
 
 
+-(IBAction)back_button_pressed:(UIButton *)sender{
+    [black_sub_view setHidden:YES];
+    [self.colorPreviewView setHidden:YES];
+    
+    selected_color=nil;
+    [self.message_text_view becomeFirstResponder];
+    
+    
+}
+ -(IBAction)next_button_pressed:(UIButton *)sender{
+     [black_sub_view setHidden:YES];
+     [self.colorPreviewView setHidden:YES];
+     [self.message_text_view becomeFirstResponder];
 
-
+ }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

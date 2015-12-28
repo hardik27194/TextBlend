@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ZDStickerView.h"
 #import "CustomizeImageTopHeaderView.h"
+#import "DTColorPickerImageView.h"
 
-@interface MessageTextViewController : UIViewController<UITextViewDelegate,CustomizeImageHeaderButtonsDelegate>
+@interface MessageTextViewController : UIViewController<UITextViewDelegate,CustomizeImageHeaderButtonsDelegate,DTColorPickerImageViewDelegate>
 {
-    
+    UIColor *selected_color;
 }
 @property(nonatomic,strong)CustomizeImageTopHeaderView *top_header_view;
 
@@ -26,6 +27,7 @@
 @property(nonatomic,strong)UIButton * left_text_alignment_button;
 @property(nonatomic,strong)UIButton * center_text_alignment_button;
 @property(nonatomic,strong)UIButton * right_text_alignment_button;
+@property(nonatomic,strong)    DTColorPickerImageView *colorPreviewView;
 
 @end
 

@@ -137,6 +137,9 @@
 		8BE7E2AE1C31CC2A0032E5B5 /* color_palette_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E2AA1C31CC2A0032E5B5 /* color_palette_icon.png */; };
 		8BE7E2AF1C31CC2A0032E5B5 /* left_aligned_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E2AB1C31CC2A0032E5B5 /* left_aligned_icon.png */; };
 		8BE7E2B01C31CC2A0032E5B5 /* right_aligned_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E2AC1C31CC2A0032E5B5 /* right_aligned_icon.png */; };
+		8BE7E2B61C31D50A0032E5B5 /* DTColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7E2B31C31D50A0032E5B5 /* DTColorPickerImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8BE7E2B71C31D50A0032E5B5 /* UIImage+ColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7E2B51C31D50A0032E5B5 /* UIImage+ColorPicker.m */; };
+		8BE7E2B91C31D6E70032E5B5 /* fontcolor_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E2B81C31D6E70032E5B5 /* fontcolor_bar.png */; };
 		8BE7E5071C2FCB1B008B009B /* PhotoEditCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7E5061C2FCB1B008B009B /* PhotoEditCustomView.m */; };
 		8BE7E50E1C2FE270008B009B /* image_editing_screen_colorize.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E50A1C2FE270008B009B /* image_editing_screen_colorize.png */; };
 		8BE7E50F1C2FE270008B009B /* image_editing_screen_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E50B1C2FE270008B009B /* image_editing_screen_effect.png */; };
@@ -431,6 +434,11 @@
 		8BE7E2AA1C31CC2A0032E5B5 /* color_palette_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_palette_icon.png; sourceTree = "<group>"; };
 		8BE7E2AB1C31CC2A0032E5B5 /* left_aligned_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_aligned_icon.png; sourceTree = "<group>"; };
 		8BE7E2AC1C31CC2A0032E5B5 /* right_aligned_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_aligned_icon.png; sourceTree = "<group>"; };
+		8BE7E2B21C31D50A0032E5B5 /* DTColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTColorPickerImageView.h; sourceTree = "<group>"; };
+		8BE7E2B31C31D50A0032E5B5 /* DTColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTColorPickerImageView.m; sourceTree = "<group>"; };
+		8BE7E2B41C31D50A0032E5B5 /* UIImage+ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorPicker.h"; sourceTree = "<group>"; };
+		8BE7E2B51C31D50A0032E5B5 /* UIImage+ColorPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorPicker.m"; sourceTree = "<group>"; };
+		8BE7E2B81C31D6E70032E5B5 /* fontcolor_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fontcolor_bar.png; sourceTree = "<group>"; };
 		8BE7E5051C2FCB1B008B009B /* PhotoEditCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditCustomView.h; sourceTree = "<group>"; };
 		8BE7E5061C2FCB1B008B009B /* PhotoEditCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditCustomView.m; sourceTree = "<group>"; };
 		8BE7E50A1C2FE270008B009B /* image_editing_screen_colorize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_editing_screen_colorize.png; sourceTree = "<group>"; };
@@ -680,6 +688,7 @@
 		8BACE9481C10A09400CEDFE3 /* Custom_View */ = {
 			isa = PBXGroup;
 			children = (
+				8BE7E2B11C31D50A0032E5B5 /* ColorPickerView */,
 				8BE7E5041C2FCAFF008B009B /* ImageEditingMainViews */,
 				8BC230CB1C141241000BB5CF /* CustomInheritedClasses */,
 				8BBF90641C15DFF0001510FA /* ImageEdtingViews */,
@@ -982,6 +991,7 @@
 		8BC230D51C141B13000BB5CF /* General Images */ = {
 			isa = PBXGroup;
 			children = (
+				8BE7E2B81C31D6E70032E5B5 /* fontcolor_bar.png */,
 				8BE7E2A91C31CC2A0032E5B5 /* center_aligned_icon.png */,
 				8BE7E2AA1C31CC2A0032E5B5 /* color_palette_icon.png */,
 				8BE7E2AB1C31CC2A0032E5B5 /* left_aligned_icon.png */,
@@ -1028,6 +1038,17 @@
 				8BC231411C146A0E000BB5CF /* select_background_logo.png */,
 			);
 			path = SelectBackgroundScreen;
+			sourceTree = "<group>";
+		};
+		8BE7E2B11C31D50A0032E5B5 /* ColorPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				8BE7E2B21C31D50A0032E5B5 /* DTColorPickerImageView.h */,
+				8BE7E2B31C31D50A0032E5B5 /* DTColorPickerImageView.m */,
+				8BE7E2B41C31D50A0032E5B5 /* UIImage+ColorPicker.h */,
+				8BE7E2B51C31D50A0032E5B5 /* UIImage+ColorPicker.m */,
+			);
+			path = ColorPickerView;
 			sourceTree = "<group>";
 		};
 		8BE7E5041C2FCAFF008B009B /* ImageEditingMainViews */ = {
@@ -1465,6 +1486,7 @@
 				8BACE9081C109F9700CEDFE3 /* Main.storyboard in Resources */,
 				DB83E17A1C227566008F0B2C /* ZDStickerView.bundle in Resources */,
 				8BACEA281C10ACC000CEDFE3 /* Hand_Pinch.png in Resources */,
+				8BE7E2B91C31D6E70032E5B5 /* fontcolor_bar.png in Resources */,
 				8BE7E2AE1C31CC2A0032E5B5 /* color_palette_icon.png in Resources */,
 				8BC230DC1C141B13000BB5CF /* settings_button.PNG in Resources */,
 				8BE7E2AF1C31CC2A0032E5B5 /* left_aligned_icon.png in Resources */,
@@ -1577,6 +1599,7 @@
 				8BACE99D1C10A48300CEDFE3 /* NSData+ImageContentType.m in Sources */,
 				8BACEA4B1C10AD1F00CEDFE3 /* OHASBasicHTMLParser.m in Sources */,
 				8BBF907A1C15F785001510FA /* SelectFontCollectionViewCell.m in Sources */,
+				8BE7E2B71C31D50A0032E5B5 /* UIImage+ColorPicker.m in Sources */,
 				DB83E16C1C227566008F0B2C /* MyLabel.m in Sources */,
 				8BC230E01C142A11000BB5CF /* ImageEditMainView.m in Sources */,
 				8BACE9A11C10A48300CEDFE3 /* SDWebImageDownloader.m in Sources */,
@@ -1593,6 +1616,7 @@
 				DB83E17B1C227566008F0B2C /* ZDStickerView.m in Sources */,
 				DB83E1531C227566008F0B2C /* BCMeshTransformAnimation.m in Sources */,
 				8BBF907D1C15FAB4001510FA /* TextToolsView.m in Sources */,
+				8BE7E2B61C31D50A0032E5B5 /* DTColorPickerImageView.m in Sources */,
 				8BACE9EB1C10A7AA00CEDFE3 /* SelectImageBackgroundViewController.m in Sources */,
 				8BBF90801C15FAEA001510FA /* AddColorView.m in Sources */,
 				8BACE9AE1C10A48C00CEDFE3 /* MBProgressHUD.m in Sources */,
