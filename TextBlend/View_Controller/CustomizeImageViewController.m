@@ -386,6 +386,14 @@
 
 #pragma mark - PhotoEditToolOptionsDelegate Methods -
 
+-(void)photo_edit_tool_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
+    
+    if (photo_edit_custom_view) {
+        [photo_edit_custom_view removeFromSuperview];
+        photo_edit_custom_view  = nil;
+    }
+}
+
 -(void)crop_image_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
     
 }

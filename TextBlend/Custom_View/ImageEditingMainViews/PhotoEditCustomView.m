@@ -10,6 +10,7 @@
 
 @implementation PhotoEditCustomView
 @synthesize image_edit_scroll_view,crop_image_button,tone_curve_button,blur_button,exposure_button,brightness_button,saturation_button,contrast_button,photo_edit_tool_options_delegate;
+@synthesize black_view,done_check_mark_button;
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
@@ -24,11 +25,27 @@
 
 
 
+-(void)addBlackView{
+    self.black_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
+    self.black_view.backgroundColor=[UIColor blackColor];
+    [self addSubview:self.black_view];
+    
+    self.done_check_mark_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.done_check_mark_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    self.done_check_mark_button.showsTouchWhenHighlighted=YES;
+    
+    [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.done_check_mark_button];
+    
+    
+}
 -(void)initializeView{
     
-    self.image_edit_scroll_view =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
+    [self addBlackView];
+    self.image_edit_scroll_view =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, self.frame.size.height-25)];
     self.image_edit_scroll_view.delegate=self;
-    self.image_edit_scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH, self.frame.size.height);
+    self.image_edit_scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH, self.frame.size.height-25);
     self.image_edit_scroll_view.contentOffset=CGPointZero;
     [self addSubview:self.image_edit_scroll_view];
     
@@ -36,7 +53,7 @@
     //int height_origin_button = 0;
 
     self.crop_image_button = [CustomButton buttonWithType:UIButtonTypeCustom];
-    self.crop_image_button.frame=CGRectMake(width_buttons,0, SCREEN_WIDTH/4, self.frame.size.height/2);
+    self.crop_image_button.frame=CGRectMake(width_buttons,0, SCREEN_WIDTH/4, self.image_edit_scroll_view.frame.size.height/2);
     [self.crop_image_button setImage:[UIImage imageNamed:@"photo_edit_tool_crop.png"] forState:UIControlStateNormal];
     
     [self.crop_image_button addTarget:self action:@selector(crop_image_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -45,7 +62,7 @@
     
     
     self.brightness_button = [CustomButton buttonWithType:UIButtonTypeCustom];
-    self.brightness_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/4, self.frame.size.height/2);
+    self.brightness_button.frame=CGRectMake(width_buttons, self.image_edit_scroll_view.frame.size.height/2, SCREEN_WIDTH/4, self.image_edit_scroll_view.frame.size.height/2);
     [self.brightness_button setImage:[UIImage imageNamed:@"photo_edit_tool_brightness.png"] forState:UIControlStateNormal];
     [self.brightness_button addTarget:self action:@selector(brightness_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.brightness_button];
@@ -53,14 +70,14 @@
     width_buttons +=SCREEN_WIDTH/4;
 
     self.tone_curve_button = [CustomButton buttonWithType:UIButtonTypeCustom];
-    self.tone_curve_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/4, self.frame.size.height/2);
+    self.tone_curve_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/4, self.image_edit_scroll_view.frame.size.height/2);
     [self.tone_curve_button setImage:[UIImage imageNamed:@"photo_edit_tool_tone_curve.png"] forState:UIControlStateNormal];
     [self.tone_curve_button addTarget:self action:@selector(tone_curve_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.tone_curve_button];
     
     
     self.saturation_button = [CustomButton buttonWithType:UIButtonTypeCustom];
-    self.saturation_button.frame=CGRectMake(width_buttons,  self.frame.size.height/2, SCREEN_WIDTH/4, self.frame.size.height/2);
+    self.saturation_button.frame=CGRectMake(width_buttons,  self.image_edit_scroll_view.frame.size.height/2, SCREEN_WIDTH/4, self.image_edit_scroll_view.frame.size.height/2);
     [self.saturation_button setImage:[UIImage imageNamed:@"photo_edit_tool_saturation.png"] forState:UIControlStateNormal];
     [self.saturation_button addTarget:self action:@selector(saturation_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.saturation_button];
@@ -69,14 +86,14 @@
     width_buttons +=SCREEN_WIDTH/4;
 
     self.blur_button = [CustomButton buttonWithType:UIButtonTypeCustom];
-    self.blur_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/4, self.frame.size.height/2);
+    self.blur_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/4, self.image_edit_scroll_view.frame.size.height/2);
     [self.blur_button setImage:[UIImage imageNamed:@"photo_edit_tool_blur.png"] forState:UIControlStateNormal];
     [self.blur_button addTarget:self action:@selector(blur_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.blur_button];
     
     
     self.contrast_button = [CustomButton buttonWithType:UIButtonTypeCustom];
-    self.contrast_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/4, self.frame.size.height/2);
+    self.contrast_button.frame=CGRectMake(width_buttons, self.image_edit_scroll_view.frame.size.height/2, SCREEN_WIDTH/4, self.image_edit_scroll_view.frame.size.height/2);
     [self.contrast_button setImage:[UIImage imageNamed:@"photo_edit_tool_contrast.png"] forState:UIControlStateNormal];
     [self.contrast_button addTarget:self action:@selector(contrast_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.contrast_button];
@@ -85,11 +102,9 @@
     
     
     
-   
-    
     
     self.exposure_button = [CustomButton buttonWithType:UIButtonTypeCustom];
-    self.exposure_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/4, self.frame.size.height/2);
+    self.exposure_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/4, self.image_edit_scroll_view.frame.size.height/2);
     [self.exposure_button setImage:[UIImage imageNamed:@"photo_edit_tool_exposure.png"] forState:UIControlStateNormal];
     [self.exposure_button addTarget:self action:@selector(exposure_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.exposure_button];
@@ -107,7 +122,23 @@
         
         [self.SliderBackView addSubview:self.commonSlider];
         [self addSubview:self.SliderBackView];
+        [self addInnerBlackView:self.SliderBackView];
     }
+}
+
+-(void)addInnerBlackView:(UIView *)superView{
+    UIView *black_sub_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
+    black_sub_view.backgroundColor=[UIColor blackColor];
+    [superView addSubview:black_sub_view];
+    
+    UIButton *done_check_mark_button_subview = [UIButton buttonWithType:UIButtonTypeCustom];
+    done_check_mark_button_subview.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    done_check_mark_button_subview.showsTouchWhenHighlighted=YES;
+    
+    [done_check_mark_button_subview setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [done_check_mark_button_subview addTarget:self action:@selector(done_check_mark_button_subview_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [black_sub_view addSubview:done_check_mark_button_subview];
+
 }
 
 #pragma mark - Button Pressed Methods -
@@ -213,6 +244,18 @@
         default:
             break;
     }
+}
+
+-(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+    
+    if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(photo_edit_tool_done_check_mark_button_pressed:onSelectedView:)]) {
+        [self.photo_edit_tool_options_delegate photo_edit_tool_done_check_mark_button_pressed:sender onSelectedView:self];
+        
+    }
+}
+
+-(IBAction)done_check_mark_button_subview_pressed:(UIButton *)sender{
+    self.SliderBackView.hidden=YES;
 }
 
 /*

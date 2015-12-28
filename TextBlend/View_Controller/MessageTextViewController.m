@@ -74,7 +74,7 @@
 }
 
 -(void)addCustomViewForKeyboard:(UITextView *)text_view{
-    
+   
     self.black_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
     self.black_view.backgroundColor=[UIColor blackColor];
     //[self. addSubview:self.black_view];
@@ -90,33 +90,34 @@
     self.select_color_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.select_color_button.showsTouchWhenHighlighted=YES;
 
-    self.select_color_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
-    [self.select_color_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
-    [self.select_color_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.select_color_button.frame=CGRectMake(10, 2, 21, 21);
+    [self.select_color_button setImage:[UIImage imageNamed:@"color_palette_icon.png"] forState:UIControlStateNormal];
+    [self.select_color_button addTarget:self action:@selector(select_color_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+//    self.select_color_button.backgroundColor=[UIColor whiteColor];
     [self.black_view addSubview:self.select_color_button];
     
     self.left_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.left_text_alignment_button.showsTouchWhenHighlighted=YES;
 
-    self.left_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
-    [self.left_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
-    [self.left_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.left_text_alignment_button.frame=CGRectMake(45, 2, 21, 21);
+    [self.left_text_alignment_button setImage:[UIImage imageNamed:@"left_aligned_icon.png"] forState:UIControlStateNormal];
+    [self.left_text_alignment_button addTarget:self action:@selector(left_alignment_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.left_text_alignment_button];
     
     self.center_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.center_text_alignment_button.showsTouchWhenHighlighted=YES;
 
-    self.center_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
-    [self.center_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
-    [self.center_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.center_text_alignment_button.frame=CGRectMake(80, 2, 21, 21);
+    [self.center_text_alignment_button setImage:[UIImage imageNamed:@"center_aligned_icon.png"] forState:UIControlStateNormal];
+    [self.center_text_alignment_button addTarget:self action:@selector(center_alignment_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.center_text_alignment_button];
     
     self.right_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.right_text_alignment_button.showsTouchWhenHighlighted=YES;
 
-    self.right_text_alignment_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
-    [self.right_text_alignment_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
-    [self.right_text_alignment_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.right_text_alignment_button.frame=CGRectMake(115, 2, 21, 21);
+    [self.right_text_alignment_button setImage:[UIImage imageNamed:@"right_aligned_icon.png"] forState:UIControlStateNormal];
+    [self.right_text_alignment_button addTarget:self action:@selector(right_alignment_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.right_text_alignment_button];
     
     [text_view setInputAccessoryView:self.black_view];
