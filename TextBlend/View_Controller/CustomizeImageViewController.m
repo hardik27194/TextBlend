@@ -153,20 +153,13 @@
     
 }
 
-
 #pragma mark - Customize Top Header Delegate Methods -
 
 -(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
     
     if (isFirstImageEditingOptionSelected) {
         
-        [add_text_view removeFromSuperview];
-        add_text_view = nil;
-        [photo_edit_custom_view removeFromSuperview];
-        photo_edit_custom_view  = nil;
-        
-        [select_fonts_view removeFromSuperview];
-        select_fonts_view =nil;
+        [self removeAllSubviews];
         
         isFirstImageEditingOptionSelected=NO;
         return;
@@ -941,7 +934,43 @@
     
 }
 
+#pragma mark - Misc Functions -
 
+
+-(void)removeAllSubviews{
+    [add_text_view removeFromSuperview];
+    add_text_view = nil;
+    
+    [photo_edit_custom_view removeFromSuperview];
+    photo_edit_custom_view  = nil;
+    
+    [select_fonts_view removeFromSuperview];
+    select_fonts_view =nil;
+    
+    if (add_color_view) {
+        [add_color_view removeFromSuperview];
+        add_color_view = nil;
+    }
+    
+    
+    if (text_tools_view) {
+        [text_tools_view removeFromSuperview];
+        text_tools_view = nil;
+    }
+    
+    
+    if (rotate_3d_view) {
+        [rotate_3d_view removeFromSuperview];
+        rotate_3d_view = nil;
+    }
+    
+    
+    if (eraser_view) {
+        [eraser_view removeFromSuperview];
+        eraser_view = nil;
+    }
+    
+}
 
 #pragma mark - Notification Methods -
 

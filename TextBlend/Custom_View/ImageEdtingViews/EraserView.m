@@ -7,7 +7,7 @@
 //
 
 #import "EraserView.h"
-#define MAX_COLOR [UIColor redColor]
+#define MAX_COLOR [UIColor grayColor]//[UIColor redColor]
 #define MIN_COLOR [UIColor greenColor]
 #define BUTTON_TITLE_COLOR [UIColor colorWithRed:0.0313 green:0.2549 blue:0.3490 alpha:1]
 #define BUTTON_BACKGROUND_COLOR [UIColor colorWithRed:0.64 green:0.8196 blue:0.7019 alpha:1]

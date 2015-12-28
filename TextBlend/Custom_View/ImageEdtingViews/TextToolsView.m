@@ -7,7 +7,7 @@
 //
 
 #import "TextToolsView.h"
-#define MAX_COLOR [UIColor redColor]
+#define MAX_COLOR [UIColor grayColor]//[UIColor redColor]
 #define MIN_COLOR [UIColor greenColor]
 @implementation TextToolsView
 @synthesize black_view,done_check_mark_button,opacity_label,curve_label,character_spacing_label,line_spacing_label,opacity_slider,curve_slider,character_spacing_slider,line_spacing_slider,text_tools_delegate;
@@ -15,7 +15,6 @@
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
-        
         self.backgroundColor=EDITING_BACKGROUND_COLOR;
         [self initializeView];
         //[self getPopularPosts:YES];
