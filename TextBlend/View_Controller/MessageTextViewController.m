@@ -59,7 +59,7 @@
     self.message_text_view.backgroundColor=[UIColor whiteColor];
     self.message_text_view.layer.cornerRadius=2;
     self.message_text_view.delegate=self;
-    self.message_text_view.returnKeyType = UIReturnKeyDone;
+    self.message_text_view.returnKeyType = UIReturnKeyDefault;
     [self addCustomViewForKeyboard:self.message_text_view];
     //    self.message_text_view.layer.borderColor=[UIColor whiteColor].CGColor;
     //    self.message_text_view.layer.borderWidth=0.75;
@@ -138,11 +138,11 @@
     [self updateLabelCount:str];
     
 //    NSLog(@"%@",str);
-    if ([text isEqualToString:@"\n"]) {
-        [self updateTextAndPop];
-        
-        [textView resignFirstResponder];
-    }
+//    if ([text isEqualToString:@"\n"]) {
+//        [self updateTextAndPop];
+//        
+//        [textView resignFirstResponder];
+//    }
     
     return YES;
     
@@ -263,12 +263,13 @@
 
 
 -(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+    [self.view endEditing:YES];
+
     [self updateTextAndPop];
 }
 
 -(IBAction)select_color_button_pressed:(UIButton *)sender{
     [self.message_text_view resignFirstResponder];
-    
     if (!black_sub_view) {
         [self addSubview];
         [self addPickerColorView];

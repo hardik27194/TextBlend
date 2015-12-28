@@ -47,6 +47,10 @@
     self.top_header_view = [[CustomizeImageTopHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
     self.top_header_view.customize_screen_top_header_delegate=self;
     [self.scroll_view addSubview:self.top_header_view];
+    self.top_header_view.next_button.hidden=YES;
+    self.top_header_view.share_button.hidden=YES;
+    self.top_header_view.settings_button.hidden=YES;
+
     
 }
 -(void)initializeView{
@@ -277,6 +281,7 @@
 
     ZDStickerView *v        = [self func_createDefaultTextLabel:NEW_LABEL_DEFAULT_TEXT];
     [self handleTapToLabels:v.gestureRecognizers.firstObject];
+    v.preventsPositionOutsideSuperview=YES;
 }
 
 -(void)fonts_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -862,7 +867,7 @@
     AppDel.gloabalSelectedTag                            = AppDel.mainLabelTag;
     AppDel.mainLabelTag++;
     
-    NSString *strMain                                    =  @"Double tap to edit text." ;
+    NSString *strMain                                    =  @"Double tap to edit text" ;
     NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithString:strMain];
     
     [strattr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,strattr.length)];
@@ -1108,10 +1113,21 @@
     
     NSLog(@"%@",sender.view);
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(update_text_and_alignment_notification:) name:UPDATE_MESSAGE_TEXT_NOTIFICATION object:nil];
+    ZDStickerView *sticker_view=(ZDStickerView *)sender.view;
+    OHAttributedLabel *label=[self.view viewWithTag:sticker_view.tag/5000];//=
+    NSString *text;
+    if (label && ![label isEqual:[NSNull null]]) {
+        text=label.attributedText.string;
 
+    }
+    
     MessageTextViewController *message_text_vc=[[MessageTextViewController alloc]init];
     message_text_vc.view.backgroundColor=DARK_GRAY_COLOR;
     message_text_vc.custom_sticker=(ZDStickerView *)sender.view;
+    if (text.length && ![text isEqualToString:@"Double tap to edit text"]) {
+        message_text_vc.message_text_view.text=text;
+        
+    }
     [self.navigationController pushViewController:message_text_vc animated:YES];
     
     /*
@@ -1182,7 +1198,6 @@
         
         ZDStickerView *sticker=[notification.object valueForKey:@"ZD_STICKER_VIEW"];
         OHAttributedLabel *label=(OHAttributedLabel *)[self.view viewWithTag:sticker.tag/5000];
-      
         
         __block NSMutableDictionary *attributes_dict;
         [label.attributedText enumerateAttributesInRange:NSMakeRange(0, [label.attributedText.string length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
@@ -1190,8 +1205,11 @@
          {
              //Do something here
              //NSLog(@"%@",attributes);
-             
+//              NSForegroundColorAttributeName : color
              attributes_dict = [attributes mutableCopy];
+             if ([[notification.object valueForKey:@"ZD_STICKER_VIEW_TEXT_COLOR"]isKindOfClass:[UIColor class]]) {
+                 [attributes_dict setValue:[notification.object valueForKey:@"ZD_STICKER_VIEW_TEXT_COLOR"] forKey:NSForegroundColorAttributeName];
+             }
              
          }];
 
@@ -1212,6 +1230,7 @@
              }
              else
              paragraphStyle.textAlignment = kCTTextAlignmentLeft;
+
          }];
 
         label.attributedText                                 = strattr;

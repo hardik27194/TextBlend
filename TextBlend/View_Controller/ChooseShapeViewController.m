@@ -375,6 +375,13 @@
 -(void)openShapesFromSelectedText:(NSString *)selected_text isLocked:(BOOL)is_locked{
     
     self.title_label.text=selected_text;
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        CGRect custom_side_frame=choose_option_view.frame;
+        custom_side_frame.origin.x= -CUSTOM_WIDTH;
+        choose_option_view.frame=custom_side_frame;
+        
+    }];
     //make parse api call
     
 }

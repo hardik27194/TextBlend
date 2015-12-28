@@ -57,6 +57,7 @@
 @property(nonatomic,strong)UIButton *done_check_mark_button;
 @property(nonatomic,strong)UISlider *commonSlider;
 @property(nonatomic,strong)UIView *SliderBackView;
+@property(nonatomic,strong)UILabel *selected_button_label;
 
 @property(nonatomic,strong)id <PhotoEditToolOptionsDelegate> photo_edit_tool_options_delegate;
 
