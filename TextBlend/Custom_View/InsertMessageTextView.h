@@ -6,10 +6,12 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is used for inserting text which will be added in the sticker view. This class is a subclass of UIView.
+
+
 #import <UIKit/UIKit.h>
 
-@interface InsertMessageTextView : UIView<UITextViewDelegate>
-{
+@interface InsertMessageTextView : UIView<UITextViewDelegate>{
     
 }
 @property(nonatomic,strong)UITextView *message_text_view;

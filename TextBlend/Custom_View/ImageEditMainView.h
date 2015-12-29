@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PECropView.h"
 
+//Image is displayed on this view after editing. However its core functionality is divided into number of views which are added on the main controller class. This class is a subclass of UIView.
 
-@interface ImageEditMainView : UIView<UIScrollViewDelegate>
-{
+@interface ImageEditMainView : UIView<UIScrollViewDelegate>{
     
 }
 @property(nonatomic,strong)UIScrollView *image_edit_scroll_view;

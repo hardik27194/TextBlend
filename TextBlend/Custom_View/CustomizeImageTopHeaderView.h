@@ -6,26 +6,24 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is global class for the navigation bar headers used in the application. This class is a subclass of UIView.
+
+
 #import <UIKit/UIKit.h>
+
 @class CustomizeImageTopHeaderView;
+
 @protocol CustomizeImageHeaderButtonsDelegate <NSObject>
 
 @optional
 -(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView;
-
 -(void)next_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView;
-;
-
 -(void)share_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView;
-;
-
 -(void)settings_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView;
-;
 @end
 
 
-@interface CustomizeImageTopHeaderView : UIView
-{
+@interface CustomizeImageTopHeaderView : UIView{
     
 }
 

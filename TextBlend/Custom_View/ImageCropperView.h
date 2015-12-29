@@ -6,6 +6,9 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is used for displaying all the differnt sizes in which the image can be cropped. This class is a subclass of UIView.
+
+
 #import <UIKit/UIKit.h>
 @class ImageCropperView;
 
@@ -13,38 +16,25 @@
 
 @optional
 -(void)original_image_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)instagram_post_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)facebook_post_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)facebook_cover_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)twitter_post_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)iPhone4_wallpaper_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)	iPhone5_6_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void) ratio3X2_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)ratio4X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)ratio5X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
 -(void)ratio16X9_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)ratio1X1_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
-
 -(void)ratio3X5_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
 -(void)ratio3X4_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
 -(void)ratio2X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view;
 
-
-
 @end
 
-@interface ImageCropperView : UIView<UIScrollViewDelegate>
-{
+
+@interface ImageCropperView : UIView<UIScrollViewDelegate>{
     
 }
 @property(nonatomic,strong)UIImageView *choose_image_size_view;

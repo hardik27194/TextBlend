@@ -6,6 +6,10 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+/*
+ This class is the heart of the application. This screen is responsible for image editing related activity. This class is a subclass of ImageCropperViewController.
+
+ */
 #import <UIKit/UIKit.h>
 #import "ImageEditingOptionsView.h"
 #import "InsertMessageTextView.h"

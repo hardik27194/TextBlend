@@ -9,24 +9,20 @@
 #import <UIKit/UIKit.h>
 @class PhotoEditCustomView;
 
+//Delegate Functions used for handling button actions in the PhotoEditCustomView.
+
 @protocol PhotoEditToolOptionsDelegate <NSObject>
 
 @optional
--(void)photo_edit_tool_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
 
+-(void)photo_edit_tool_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
 -(void)crop_image_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
 -(void)brightness_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
-
-
 -(void)tone_curve_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
 -(void)saturation_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
-
-
 -(void)blur_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
 -(void)contrast_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
 -(void)exposure_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view;
-
-
 -(void)blur_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
 -(void)contrast_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
 -(void)exposure_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
@@ -34,15 +30,13 @@
 -(void)brightness_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view;
 
 
-
-
-
-
-
-
 @end
-@interface PhotoEditCustomView : UIView<UIScrollViewDelegate>
-{
+
+
+//This class consists of photo editing tools like crop,tone curve,blur effect,exposure,brightness,saturation and contrast.This class is a subclass of UIView
+
+
+@interface PhotoEditCustomView : UIView<UIScrollViewDelegate>{
     
 }
 @property(nonatomic,strong)UIScrollView *image_edit_scroll_view;

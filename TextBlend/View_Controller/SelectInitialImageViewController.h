@@ -6,6 +6,9 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+/*
+This screen is the initial screen for the application. It is a sub class of UIViewController.
+ */
 #import <UIKit/UIKit.h>
 
 @interface SelectInitialImageViewController : UIViewController < UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
@@ -16,7 +19,6 @@
     UIImageView *scrollerImage1;
     UIImageView *scrollerImage2;
     UIImageView *scrollerImage3;
-
 
 }
 

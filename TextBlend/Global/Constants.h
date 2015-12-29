@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 //
 
+//This is constant header file and this class is a global class used for defining various constant variables which will be used during the lieftime of the application.
+
 #import "HMSharedClass.h"
 
 #ifndef budz_Constants_h

@@ -1,12 +1,14 @@
 //
 //  UpdateDataProcessor.h
-//  HeyApp
+//  TextBlend
 //
-//  Created by Kurt on 7/28/14.
-//  Copyright (c) 2014 Kurt. All rights reserved.
+//  Created by Wayne Rooney on 19/12/15.
+//  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 //
 
-
+/*
+ Class for genral functions specifically for saving and retrieving the data.It is used using a singleton shared instance. It is a sub class of NSObject.
+ */
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "Appdelegate.h"
@@ -32,16 +34,8 @@
 //- (void) deleteAllObjects: (NSString *) entityDescription ;
 //-(void)saveMainCategoriesDetails:(NSArray *)categoryDict;
 
-
-
 @property(strong,nonatomic) NSManagedObjectContext *dataContext;
 
 //@property(strong, nonatomic) UserInfo *currentUserInfo;
-
-
-
-
-
-
 
 @end

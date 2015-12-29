@@ -6,10 +6,14 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is used for erasing objects which are already added in the view during image editing. This functionality includes eraser intensity and size of the eraser.This class is a subclass of UIView
+
+
 #import <UIKit/UIKit.h>
 @class EraserView;
 
 @protocol EraserDelegate <NSObject>
+//Delegate Functions used for handling button actions in the Eraser View.
 
 @optional
 -(void)eraser_size_slider_value_changed:(UISlider *)slider onSelectedView:(EraserView *)selected_view;

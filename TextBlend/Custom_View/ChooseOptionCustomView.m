@@ -66,10 +66,10 @@
     
     if (!cell.icon_image_view) {
         cell.icon_image_view = [[UIImageView alloc]initWithFrame:CGRectZero];
-//        cell.icon_image_view.layer.cornerRadius=18.5;
+        //        cell.icon_image_view.layer.cornerRadius=18.5;
         cell.icon_image_view.clipsToBounds=YES;
-//        cell.icon_image_view.layer.borderWidth=0.8;
-//        cell.icon_image_view.layer.borderColor=[UIColor whiteColor].CGColor;
+        //        cell.icon_image_view.layer.borderWidth=0.8;
+        //        cell.icon_image_view.layer.borderColor=[UIColor whiteColor].CGColor;
         [cell.contentView addSubview:cell.icon_image_view];
         
     }
@@ -83,7 +83,7 @@
         
     }
     
-   
+    
     
     if (!cell.icon_image_view) {
         cell.icon_image_view = [[UIImageView alloc]initWithFrame:CGRectZero];
@@ -177,11 +177,11 @@
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

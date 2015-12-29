@@ -6,6 +6,10 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+
+//This view will used for selecting given set of options. This class is a subclass of UITableViewCell
+
+
 #import <UIKit/UIKit.h>
 
 @interface ChooseOptionCustomCell : UITableViewCell

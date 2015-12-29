@@ -24,10 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     [self initializeTopHeaderView];
     [self initializeView];
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -78,14 +78,14 @@
 }
 
 -(void)addCustomViewForKeyboard:(UITextView *)text_view{
-   
+    
     self.black_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
     self.black_view.backgroundColor=[UIColor blackColor];
     //[self. addSubview:self.black_view];
     
     self.done_check_mark_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.done_check_mark_button.showsTouchWhenHighlighted=YES;
-
+    
     self.done_check_mark_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
     [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -93,16 +93,16 @@
     
     self.select_color_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.select_color_button.showsTouchWhenHighlighted=YES;
-
+    
     self.select_color_button.frame=CGRectMake(10, 2, 21, 21);
     [self.select_color_button setImage:[UIImage imageNamed:@"color_palette_icon.png"] forState:UIControlStateNormal];
     [self.select_color_button addTarget:self action:@selector(select_color_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-//    self.select_color_button.backgroundColor=[UIColor whiteColor];
+    //    self.select_color_button.backgroundColor=[UIColor whiteColor];
     [self.black_view addSubview:self.select_color_button];
     
     self.left_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.left_text_alignment_button.showsTouchWhenHighlighted=YES;
-
+    
     self.left_text_alignment_button.frame=CGRectMake(45, 2, 21, 21);
     [self.left_text_alignment_button setImage:[UIImage imageNamed:@"left_aligned_icon.png"] forState:UIControlStateNormal];
     [self.left_text_alignment_button addTarget:self action:@selector(left_alignment_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -110,7 +110,7 @@
     
     self.center_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.center_text_alignment_button.showsTouchWhenHighlighted=YES;
-
+    
     self.center_text_alignment_button.frame=CGRectMake(80, 2, 21, 21);
     [self.center_text_alignment_button setImage:[UIImage imageNamed:@"center_aligned_icon.png"] forState:UIControlStateNormal];
     [self.center_text_alignment_button addTarget:self action:@selector(center_alignment_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -118,7 +118,7 @@
     
     self.right_text_alignment_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.right_text_alignment_button.showsTouchWhenHighlighted=YES;
-
+    
     self.right_text_alignment_button.frame=CGRectMake(115, 2, 21, 21);
     [self.right_text_alignment_button setImage:[UIImage imageNamed:@"right_aligned_icon.png"] forState:UIControlStateNormal];
     [self.right_text_alignment_button addTarget:self action:@selector(right_alignment_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -137,12 +137,12 @@
     }
     [self updateLabelCount:str];
     
-//    NSLog(@"%@",str);
-//    if ([text isEqualToString:@"\n"]) {
-//        [self updateTextAndPop];
-//        
-//        [textView resignFirstResponder];
-//    }
+    //    NSLog(@"%@",str);
+    //    if ([text isEqualToString:@"\n"]) {
+    //        [self updateTextAndPop];
+    //
+    //        [textView resignFirstResponder];
+    //    }
     
     return YES;
     
@@ -169,12 +169,12 @@
         [text_info_dict setValue:self.custom_sticker forKey:@"ZD_STICKER_VIEW"];
         if (selected_color) {
             [text_info_dict setValue:selected_color forKey:@"ZD_STICKER_VIEW_TEXT_COLOR"];
- 
+            
         }
         [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_MESSAGE_TEXT_NOTIFICATION object:text_info_dict];
-
+        
     }
-       [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
@@ -246,25 +246,25 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 /*
--(void)next_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
-    
-}
-
--(void)share_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
-    
-}
-
--(void)settings_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
-    
-}
-
-*/
+ -(void)next_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+ 
+ }
+ 
+ -(void)share_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+ 
+ }
+ 
+ -(void)settings_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+ 
+ }
+ 
+ */
 
 
 
 -(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
     [self.view endEditing:YES];
-
+    
     [self updateTextAndPop];
 }
 
@@ -295,13 +295,13 @@
 
 -(IBAction)center_alignment_button_pressed:(UIButton *)sender{
     self.message_text_view.textAlignment=NSTextAlignmentCenter;
- 
+    
 }
 
 
 -(IBAction)right_alignment_button_pressed:(UIButton *)sender{
     self.message_text_view.textAlignment=NSTextAlignmentRight;
-
+    
 }
 
 
@@ -315,25 +315,27 @@
     
     
 }
- -(IBAction)next_button_pressed:(UIButton *)sender{
-     [black_sub_view setHidden:YES];
-     [self.colorPreviewView setHidden:YES];
-     [self.message_text_view becomeFirstResponder];
+-(IBAction)next_button_pressed:(UIButton *)sender{
+    [black_sub_view setHidden:YES];
+    [self.colorPreviewView setHidden:YES];
+    [self.message_text_view becomeFirstResponder];
+    
+}
+#pragma mark - View Dealloc Methods -
 
- }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

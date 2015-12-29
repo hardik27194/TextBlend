@@ -36,10 +36,8 @@
     self.message_text_view.layer.cornerRadius=2;
     self.message_text_view.delegate=self;
     self.message_text_view.returnKeyType = UIReturnKeyDone;
-    //    self.message_text_view.layer.borderColor=[UIColor whiteColor].CGColor;
-    //    self.message_text_view.layer.borderWidth=0.75;
     self.message_text_view.textAlignment=NSTextAlignmentLeft;
-
+    
     [self addSubview:self.message_text_view];
     
     self.count_label = [[UILabel alloc]initWithFrame:CGRectMake(self.message_text_view.frame.origin.x+self.message_text_view.frame.size.width-50, self.message_text_view.frame.origin.y+self.message_text_view.frame.size.height+10, 50, 20)];
@@ -73,7 +71,7 @@
 
 -(void)updateLabelCount:(NSString *)selected_string{
     
-    self.count_label.text=[NSString stringWithFormat:@"%lu",250-selected_string.length];
+    self.count_label.text=[NSString stringWithFormat:@"%d",(int)250-(int)selected_string.length];
     if (selected_string.length >=250) {
         self.count_label.text = @"0";
     }
@@ -81,11 +79,11 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

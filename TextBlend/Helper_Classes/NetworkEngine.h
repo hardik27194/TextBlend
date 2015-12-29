@@ -1,9 +1,9 @@
 //
 //  NetworkEngine.h
-//  HeyApp
+//  TextBlend
 //
-//  Created by Kurt on 7/28/14.
-//  Copyright (c) 2014 Kurt. All rights reserved.
+//  Created by Wayne Rooney on 19/12/15.
+//  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 //
 /*
  Class used for declaring webservices. It is a sub class of NSObject.

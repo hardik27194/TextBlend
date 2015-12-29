@@ -37,13 +37,13 @@
     [self.view addSubview:self.main_scroll_view];
     [self initializeSideView];
     [self initializeNavBarView];
-
+    
     [self initializeCollectionView];
     [self initializeAdbannerView];
     [self.main_scroll_view bringSubviewToFront:choose_option_view];
     [self openShapeDrawer];
     
-
+    
 }
 
 -(void)openShapeDrawer{
@@ -57,7 +57,7 @@
 }
 -(void)initializeNavBarView{
     
-   
+    
     self.top_header_view = [[UIView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,TOP_HEIGHT)];
     self.top_header_view.backgroundColor=[UIColor blackColor];
     [self.view addSubview:self.top_header_view];
@@ -74,7 +74,7 @@
     
     self.title_label=[[UILabel alloc]initWithFrame:CGRectMake(50, 0, SCREEN_WIDTH-100, TOP_HEIGHT)];
     if (choose_option_view.list_array.count){
-    NSDictionary *name_dict=[choose_option_view.list_array objectAtIndex:0];
+        NSDictionary *name_dict=[choose_option_view.list_array objectAtIndex:0];
         self.title_label.text=[name_dict valueForKey:@"name"];
     }
     self.title_label.textAlignment=NSTextAlignmentCenter;
@@ -112,7 +112,7 @@
 
 
 -(void)initializeSideView{
- 
+    
     if (!choose_option_view) {
         choose_option_view=[[ChooseOptionCustomView alloc]initWithFrame:CGRectMake(-CUSTOM_WIDTH, 0, CUSTOM_WIDTH, self.main_scroll_view.frame.size.height)];
         choose_option_view.choose_option_delegate=self;
@@ -125,10 +125,10 @@
 -(void)addSwipeGetsureView{
     
     //if (!self.main_scroll_view.gestureRecognizers.count) {
-        UIPanGestureRecognizer *pan_gesture_recognizer=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan_gesture_recognizer:)];
-        pan_gesture_recognizer.delegate=self;
-        [self.main_scroll_view addGestureRecognizer:pan_gesture_recognizer];
-        
+    UIPanGestureRecognizer *pan_gesture_recognizer=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan_gesture_recognizer:)];
+    pan_gesture_recognizer.delegate=self;
+    [self.main_scroll_view addGestureRecognizer:pan_gesture_recognizer];
+    
     //}
     
 }
@@ -137,22 +137,16 @@
 -(void)initializeCollectionView{
     PagingCollectionFlowLayout *layout=[[PagingCollectionFlowLayout alloc]init];
     layout.scrollDirection=UICollectionViewScrollDirectionVertical;
-    //    layout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 22);
     layout.headerReferenceSize = CGSizeZero;
     
-    //    cell.custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 0, 200, 140) collectionViewLayout:layout];
     custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.main_scroll_view.frame.size.height) collectionViewLayout:layout];
     custom_collection_view.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
-    //<#CGFloat top#>, <#CGFloat left#>, <#CGFloat bottom#>, <#CGFloat right#>);
     custom_collection_view.dataSource=self;
-    //custom_collection_view.delegate=self;
     custom_collection_view.pagingCollectionDelegate=self;
     custom_collection_view.backgroundColor=CELL_BACKGROUND_COLOR;
     
     [self.main_scroll_view addSubview:custom_collection_view];
-    //[cell registerClass];
     [custom_collection_view registerClass:[ChooseShapeCollectionViewCell class] forCellWithReuseIdentifier:@"ChooseShapeCollectionViewCellIdentifier"];
-    //  [custom_collection_view registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView"];
     [custom_collection_view setUpCollectionInitParms];
 }
 
@@ -279,7 +273,7 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
- 
+    
     [self updateImageAndPop:[UIImage imageNamed:@"tempHorse.jpg"]];
     
 }
@@ -291,9 +285,9 @@
     
     NSMutableDictionary *text_info_dict=[[NSMutableDictionary alloc]init];
     [text_info_dict setValue:image forKey:@"ZD_STICKER_VIEW_IMAGE"];
-        
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:text_info_dict];
-        
+    
     
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -302,7 +296,7 @@
 #pragma mark - Gesture Methods -
 
 -(void)pan_gesture_recognizer:(UIPanGestureRecognizer *)recognizer{
-  
+    
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
         {
@@ -322,19 +316,17 @@
             }
             
             [UIView animateWithDuration:0.2 animations:^{
-            
+                
                 CGRect custom_side_frame=choose_option_view.frame;
                 custom_side_frame.origin.x= -CUSTOM_WIDTH+xDifference;
                 choose_option_view.frame=custom_side_frame;
                 
             }];
             
-            
-        
         }
             break;
-        
-        
+            
+            
         case UIGestureRecognizerStateEnded:
         {
             CGPoint current_point=[recognizer translationInView:self.main_scroll_view];
@@ -342,7 +334,7 @@
             if (xDifference<0) {
                 xDifference=0;
             }
-
+            
             else if (xDifference+30>=CUSTOM_WIDTH){
                 xDifference=CUSTOM_WIDTH;
             }
@@ -357,11 +349,9 @@
                 
             }];
             
-            
-            
         }
             break;
-        
+            
             break;
         default:
             break;
@@ -386,7 +376,7 @@
     
 }
 
-#pragma mark - BUtton Pressed Methods - 
+#pragma mark - BUtton Pressed Methods -
 
 -(IBAction)back_button_pressed:(UIButton *)sender{
     [self.navigationController popViewControllerAnimated:YES];

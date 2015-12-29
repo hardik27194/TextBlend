@@ -15,8 +15,6 @@
     if (self = [super initWithFrame:frame])
     {
         
-//        [self initializeView];
-        //[self getPopularPosts:YES];
     }
     return self;
 }
@@ -40,16 +38,16 @@
         self.image_edit_scroll_view.maximumZoomScale = 6.0;
         self.image_edit_scroll_view.contentSize = self.main_image_view.frame.size;
         self.image_edit_scroll_view.delegate = self;
-
+        
         
         [self.image_edit_scroll_view addSubview:self.main_image_view];
     }
     else
     {
-    self.cropView = [[PECropView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    self.cropView.image = self.selected_image;
-    self.cropView.keepingCropAspectRatio = NO;
-    [self addSubview:self.cropView];
+        self.cropView = [[PECropView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        self.cropView.image = self.selected_image;
+        self.cropView.keepingCropAspectRatio = NO;
+        [self addSubview:self.cropView];
     }
 }
 

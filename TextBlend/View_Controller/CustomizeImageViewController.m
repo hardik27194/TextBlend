@@ -16,9 +16,6 @@
 @interface CustomizeImageViewController ()<UIScrollViewDelegate>
 
 @property (strong, nonatomic) OHAttributedLabel *lblAdd;
-
-
-
 @end
 
 @implementation CustomizeImageViewController
@@ -29,10 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self initializeView];
     [self initializeAdbannerView];
-
+    
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -50,7 +47,7 @@
     self.top_header_view.next_button.hidden=YES;
     self.top_header_view.share_button.hidden=YES;
     self.top_header_view.settings_button.hidden=YES;
-
+    
     
 }
 -(void)initializeView{
@@ -70,11 +67,9 @@
     
     UIPanGestureRecognizer *panRecognizer1               = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan1:)];
     [self.image_edit_main_view addGestureRecognizer:panRecognizer1];
-
-//    UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
-//    [self.image_edit_main_view addGestureRecognizer:pinch];
-
     
+    //    UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
+    //    [self.image_edit_main_view addGestureRecognizer:pinch];
 }
 
 -(void)initializeMainImageView
@@ -93,7 +88,6 @@
         image_editing_options_view=[[ImageEditingOptionsView alloc]initWithFrame:BOTTOM_FRAME];
         image_editing_options_view.image_editing_options_delegate=self;
         [self.scroll_view addSubview:self.image_editing_options_view];
-        
     }
     
 }
@@ -112,14 +106,14 @@
     [banner_view addSubview:banner_label];
     
     /*
-    self.adBannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
-    self.adBannerView.delegate=self;
-    self.adBannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
-    self.adBannerView.rootViewController = self;
-    [self.adBannerView loadRequest:[GADRequest request]];
-    [self.view addSubview:self.adBannerView];
- */
-
+     self.adBannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
+     self.adBannerView.delegate=self;
+     self.adBannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
+     self.adBannerView.rootViewController = self;
+     [self.adBannerView loadRequest:[GADRequest request]];
+     [self.view addSubview:self.adBannerView];
+     */
+    
 }
 
 -(void)initailizeMessageTextView{
@@ -127,7 +121,6 @@
     if (!self.message_editing_text_view) {
         self.message_editing_text_view=[[InsertMessageTextView alloc]initWithFrame:CENTRE_FRAME];
         [self.scroll_view addSubview:self.message_editing_text_view];
-        
     }
     
 }
@@ -137,22 +130,25 @@
 
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView{
     bannerView.hidden = NO;
-
+    
 }
 
 - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error{
     NSLog(@"adView:didFailToReceiveAdWithError: %@", error.localizedDescription);
-
 }
+
 - (void)adViewWillPresentScreen:(GADBannerView *)bannerView{
     
 }
+
 - (void)adViewDidDismissScreen:(GADBannerView *)bannerView{
     
 }
+
 - (void)adViewWillDismissScreen:(GADBannerView *)bannerView{
     
 }
+
 - (void)adViewWillLeaveApplication:(GADBannerView *)bannerView{
     
 }
@@ -194,20 +190,17 @@
         CGRect message_view_frame=self.message_editing_text_view.frame;
         message_view_frame.origin.x=0;
         self.message_editing_text_view.frame=message_view_frame;
-
+        
         CGRect image_edit_main_view_frame=self.image_edit_main_view.frame;
         image_edit_main_view_frame.origin.x=-SCREEN_WIDTH;
         self.image_edit_main_view.frame=image_edit_main_view_frame;
-
+        
         
     } completion:^(BOOL finished) {
         [self.message_editing_text_view.message_text_view becomeFirstResponder];
         
     }];
     
-    
-   
-
 }
 #pragma mark - ImageEditingOptionsDelegate -
 
@@ -222,13 +215,11 @@
     isFirstImageEditingOptionSelected=YES;
     [self.view bringSubviewToFront:add_text_view];
     
-    
-    
 }
 
 -(void)shape_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
     
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add_image_notification:) name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add_image_notification:) name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
     
     ChooseShapeViewController *choose_shape_vc=[[ChooseShapeViewController alloc]init];
     choose_shape_vc.view.backgroundColor = [UIColor whiteColor];
@@ -278,7 +269,7 @@
 #pragma mark - Add Text View -
 
 -(void)add_text_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
-
+    
     ZDStickerView *v        = [self func_createDefaultTextLabel:NEW_LABEL_DEFAULT_TEXT];
     [self handleTapToLabels:v.gestureRecognizers.firstObject];
     v.preventsPositionOutsideSuperview=YES;
@@ -293,7 +284,6 @@
     
     [self.view bringSubviewToFront:select_fonts_view];
     
-    
 }
 
 -(void)text_tools_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -303,19 +293,19 @@
         [self.view addSubview:text_tools_view];
     }
     [self.view bringSubviewToFront:text_tools_view];
-
+    
 }
 
 -(void)colors_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
-   
+    
     /*
-    if (!add_color_view) {
-        add_color_view=[[AddColorView alloc]initWithFrame:BOTTOM_FRAME];
-//        add_color_view.text_tools_delegate=self;
-        [self.view addSubview:add_color_view];
-    }
-    [self.view bringSubviewToFront:add_color_view];
-*/
+     if (!add_color_view) {
+     add_color_view=[[AddColorView alloc]initWithFrame:BOTTOM_FRAME];
+     //        add_color_view.text_tools_delegate=self;
+     [self.view addSubview:add_color_view];
+     }
+     [self.view bringSubviewToFront:add_color_view];
+     */
 }
 
 -(void)rotate_3d_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -325,7 +315,7 @@
         [self.view addSubview:rotate_3d_view];
     }
     [self.view bringSubviewToFront:rotate_3d_view];
-
+    
 }
 
 -(void)eraser_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -335,7 +325,7 @@
         [self.view addSubview:eraser_view];
     }
     [self.view bringSubviewToFront:eraser_view];
-
+    
 }
 
 #pragma mark - Select Font Delegate Methods  -
@@ -347,36 +337,36 @@
     
     [str enumerateAttributesInRange:NSMakeRange(0, [str length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
      ^(NSDictionary *attributes, NSRange range, BOOL *stop)
-    {
+     {
          //Do something here
-        UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
-        if(!oldfont)
-        {
-            oldfont = [UIFont systemFontOfSize:12.0];
-        }
-        
-        NSMutableDictionary *dic = [attributes mutableCopy];
-        [dic setObject:[UIFont fontWithName:font.fontName size:oldfont.pointSize] forKey:NSFontAttributeName];
-        
-        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:str.string attributes:dic];
-        
-        [selectedLabel setAttributedText:attrString];
-        [selectedLabel setNeedsDisplay];
-
-    
-        ZDStickerView*v = [self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
-        
-        CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
-        CGSize size                                          = [selectedLabel.attributedText sizeConstrainedToSize:constraint];
-        CGFloat height                                       = MAX(size.height, 14.0f);
-        
-        CGRect rect                                          = v.bounds;
-        rect.size.height                                     = height;
-        rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
-        v.bounds                                       = rect;
-        [v setNeedsDisplay];
-
-    }];
+         UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
+         if(!oldfont)
+         {
+             oldfont = [UIFont systemFontOfSize:12.0];
+         }
+         
+         NSMutableDictionary *dic = [attributes mutableCopy];
+         [dic setObject:[UIFont fontWithName:font.fontName size:oldfont.pointSize] forKey:NSFontAttributeName];
+         
+         NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:str.string attributes:dic];
+         
+         [selectedLabel setAttributedText:attrString];
+         [selectedLabel setNeedsDisplay];
+         
+         
+         ZDStickerView*v = [self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+         
+         CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
+         CGSize size                                          = [selectedLabel.attributedText sizeConstrainedToSize:constraint];
+         CGFloat height                                       = MAX(size.height, 14.0f);
+         
+         CGRect rect                                          = v.bounds;
+         rect.size.height                                     = height;
+         rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
+         v.bounds                                       = rect;
+         [v setNeedsDisplay];
+         
+     }];
     
 }
 
@@ -386,7 +376,7 @@
         [select_fonts_view removeFromSuperview];
         select_fonts_view=  nil;
     }
-
+    
 }
 
 #pragma mark - PhotoEditToolOptionsDelegate Methods -
@@ -405,7 +395,6 @@
 -(void)brightness_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
     
 }
-
 
 -(void)tone_curve_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
     
@@ -429,7 +418,7 @@
 -(void)blur_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
 {
     
-   CGFloat blurLevel = MIN(1.0, MAX(0.0, slider.value));
+    CGFloat blurLevel = MIN(1.0, MAX(0.0, slider.value));
     
     int boxSize = (int)(blurLevel * 0.1 * MIN(self.image_edit_main_view.main_image_view.image.size.width, self.image_edit_main_view.main_image_view.image.size.height));
     boxSize = boxSize - (boxSize % 2) + 1;
@@ -497,12 +486,12 @@
     free(pixelBuffer);
     CFRelease(inBitmapData);
     CGImageRelease(imageRef);
-
+    
     self.image_edit_main_view.main_image_view.image = returnImage;
 }
 -(void)contrast_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
 {
-
+    
     CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
     CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
     [filter setDefaults];
@@ -523,8 +512,6 @@
     CGImageRelease(cgImage);
     
     self.image_edit_main_view.main_image_view.image = result;
-
-    
     
 }
 -(void)exposure_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
@@ -544,14 +531,13 @@
     
     CGImageRelease(cgImage);
     self.image_edit_main_view.main_image_view.image = result;
-
+    
 }
 
 
 
--(void)saturation_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
-{
-
+-(void)saturation_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view{
+    
     CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
     
     CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
@@ -564,7 +550,6 @@
     filter = [CIFilter filterWithName:@"CIGammaAdjust" keysAndValues:kCIInputImageKey, [filter outputImage], nil];
     [filter setDefaults];
     
-    
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *outputImage = [filter outputImage];
     CGImageRef cgImage = [context createCGImage:outputImage fromRect:[outputImage extent]];
@@ -574,13 +559,11 @@
     CGImageRelease(cgImage);
     
     self.image_edit_main_view.main_image_view.image = result;
-
-    
     
 }
 -(void)brightness_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
 {
-
+    
     CIImage *ciImage = [[CIImage alloc] initWithImage:selected_image];
     CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
     [filter setDefaults];
@@ -605,13 +588,12 @@
 }
 
 
-
-#pragma mark - Text Tools View Delegate Methods - 
+#pragma mark - Text Tools View Delegate Methods -
 
 -(void)opacity_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
 {
     float f;
-//    UISlider *slider                                     = (UISlider*)sender;
+    //    UISlider *slider                                     = (UISlider*)sender;
     f                                                    = 1-slider.value;
     
     OHAttributedLabel *selectedLabel                     = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
@@ -622,39 +604,39 @@
         
         if([checkColor isEqualToString:@"Image"])
         {/*
-            UIImage *img                                         = _patternFinalImage;
-            //UIImage *new = [img imageWithAlpha:f];
-            NSString *fontName                                   = selectedLabel.font.fontName;
-            selectedLabel.font                                   = [UIFont fontWithName:fontName size:selectedLabel.font.pointSize];
-            
-            NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithAttributedString:selectedLabel.attributedText];
-            selectedLabel.textColor                              = [[UIColor colorWithPatternImage:img] colorWithAlphaComponent:f];
-            [strattr setFontName:fontName size:selectedLabel.font.pointSize];
-            [strattr setTextColor:[[UIColor colorWithPatternImage:img] colorWithAlphaComponent:f]];
-            selectedLabel.attributedText                         = strattr;
-            [self.image_edit_main_view setNeedsDisplay];
-            */
+          UIImage *img                                         = _patternFinalImage;
+          //UIImage *new = [img imageWithAlpha:f];
+          NSString *fontName                                   = selectedLabel.font.fontName;
+          selectedLabel.font                                   = [UIFont fontWithName:fontName size:selectedLabel.font.pointSize];
+          
+          NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithAttributedString:selectedLabel.attributedText];
+          selectedLabel.textColor                              = [[UIColor colorWithPatternImage:img] colorWithAlphaComponent:f];
+          [strattr setFontName:fontName size:selectedLabel.font.pointSize];
+          [strattr setTextColor:[[UIColor colorWithPatternImage:img] colorWithAlphaComponent:f]];
+          selectedLabel.attributedText                         = strattr;
+          [self.image_edit_main_view setNeedsDisplay];
+          */
         }
-    else
-    {
-//            const CGFloat *components                            = CGColorGetComponents(selectedLabel.textColor.CGColor);
-//            CGFloat red                                         = components[0];
-//            CGFloat green                                      = components[1];
-//            CGFloat blue                                        = components[2];
-//            
-//            NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithAttributedString:selectedLabel.attributedText];
-//            if(selectedLabel.isIn3DMode)
-//            {
-//                if(f<0.3)
-//                {
-//                    f                                                    = 0.3;
-//                }
-//            }
-//            [strattr setTextColor:[UIColor colorWithRed:red green:green blue:blue alpha:f]];
-//            selectedLabel.textColor                              = [UIColor colorWithRed:red green:green blue:blue alpha:f];
-//            selectedLabel.attributedText                         = strattr;
-        
-        [selectedLabel setAlpha:f];
+        else
+        {
+            //            const CGFloat *components                            = CGColorGetComponents(selectedLabel.textColor.CGColor);
+            //            CGFloat red                                         = components[0];
+            //            CGFloat green                                      = components[1];
+            //            CGFloat blue                                        = components[2];
+            //
+            //            NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithAttributedString:selectedLabel.attributedText];
+            //            if(selectedLabel.isIn3DMode)
+            //            {
+            //                if(f<0.3)
+            //                {
+            //                    f                                                    = 0.3;
+            //                }
+            //            }
+            //            [strattr setTextColor:[UIColor colorWithRed:red green:green blue:blue alpha:f]];
+            //            selectedLabel.textColor                              = [UIColor colorWithRed:red green:green blue:blue alpha:f];
+            //            selectedLabel.attributedText                         = strattr;
+            
+            [selectedLabel setAlpha:f];
             [self.image_edit_main_view setNeedsDisplay];
         }
     }
@@ -662,7 +644,7 @@
 
 -(void)curve_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
 {
-
+    
 }
 -(void)character_spacing_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
 {
@@ -714,14 +696,14 @@
     [sticker setNeedsDisplay];
     [self.image_edit_main_view setNeedsDisplay];
     
-
-
+    
+    
 }
 -(void)line_spacing_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
 {
-
+    
     CGFloat f;
-//    UISlider *slider                                     = (UISlider*)sender;
+    //    UISlider *slider                                     = (UISlider*)sender;
     f                                                    = slider.value;
     
     OHAttributedLabel *label                             = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
@@ -775,9 +757,9 @@
     [label setNeedsLayout];
     [sticker setNeedsDisplay];
     [self.image_edit_main_view setNeedsDisplay];
-
-
-
+    
+    
+    
 }
 -(void)text_tools_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(TextToolsView *)selected_view{
     
@@ -785,10 +767,6 @@
         [text_tools_view removeFromSuperview];
         text_tools_view =  nil;
     }
-    
-    
-    
-    
 }
 
 #pragma mark - Eraser View Delegate Methods -
@@ -809,7 +787,7 @@
     
 }
 
-#pragma mark - Rotate 3D Delegate Methods - 
+#pragma mark - Rotate 3D Delegate Methods -
 
 -(void)rotate_3d_intensity_slider_value_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view{
     
@@ -839,15 +817,13 @@
     [sticker removeFromSuperview];
     
     [self.image_edit_main_view setNeedsDisplay];
-
+    
 }
 
 - (void)stickerViewDidCustomButtonTap:(ZDStickerView *)sticker
 {
     [((UITextView*)sticker.contentView) becomeFirstResponder];
 }
-
-
 
 #pragma mark - Sukhi Starts here -
 
@@ -872,12 +848,12 @@
     
     [strattr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,strattr.length)];
     [strattr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:25.0f] range:NSMakeRange(0,strattr.length)];
-
-
+    
+    
     [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle)
-    {
-        paragraphStyle.lineSpacing                           = 3.f;
-    }];
+     {
+         paragraphStyle.lineSpacing                           = 3.f;
+     }];
     [strattr setCharacterSpacing:1.0];
     
     self.lblAdd.opaque                                   = NO;
@@ -891,7 +867,7 @@
     rect.size.height                                     = height;
     rect.size.width                                      = (isPad)?MIN(748.0, size.width):(isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
     self.lblAdd.bounds                                   = rect;
-
+    
     
     ZDStickerView *userResizableView1                    = [[ZDStickerView alloc] initWithFrame:self.lblAdd.frame];
     userResizableView1.tag                               = self.lblAdd.tag*5000;
@@ -902,7 +878,7 @@
     userResizableView1.center                            = CGPointMake(self.image_edit_main_view.center.x, self.image_edit_main_view.center.y);
     UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
     [userResizableView1 addGestureRecognizer:pinch];
-
+    
     
     
     for(UIView *v in image_edit_main_view.subviews)
@@ -983,10 +959,10 @@
 {
     OHAttributedLabel *label                             = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
     ZDStickerView *sticker                               = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
-//    NSString *fontName                               = label.font.fontName;
-//    CGFloat fontSize                                     = label.font.pointSize;
-   __block NSString *fontName;
-   __block CGFloat fontSize;
+    //    NSString *fontName                               = label.font.fontName;
+    //    CGFloat fontSize                                     = label.font.pointSize;
+    __block NSString *fontName;
+    __block CGFloat fontSize;
     
     [label.attributedText enumerateAttributesInRange:NSMakeRange(0, [label.attributedText.string length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
      ^(NSDictionary *attributes, NSRange range, BOOL *stop)
@@ -1026,42 +1002,42 @@
         if (fontSize <10) {
             return;
         }
-//        _zoomSlider.value                                    = fontSize;
+        //        _zoomSlider.value                                    = fontSize;
         
-//        label.font                                           = [UIFont fontWithName:label.font.fontName size:fontSize];
+        //        label.font                                           = [UIFont fontWithName:label.font.fontName size:fontSize];
         
-            NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
-            [strattr setFontName:fontName size:fontSize];
-            label.attributedText                                 = strattr;
-            
-            CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
-            CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
-            CGFloat height                                       = MAX(size.height, 14.0f);
-            
-            CGRect rect                                          = sticker.bounds;
-            rect.size.height                                     = height;
-            rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
-            sticker.bounds                                       = rect;
-            
-            
-            for(UIView *v in self.image_edit_main_view.subviews){
-                if([v isKindOfClass:[ZDStickerView class]]){
-                    ZDStickerView *sticker                               = (ZDStickerView*)v;
-                    if(sticker.tag == AppDel.gloabalSelectedTag*5000){
-                        [sticker showEditingHandles];
-                    }else{
-                        [sticker hideEditingHandles];
-                    }
+        NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
+        [strattr setFontName:fontName size:fontSize];
+        label.attributedText                                 = strattr;
+        
+        CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
+        CGSize size                                          = [strattr sizeConstrainedToSize:constraint];
+        CGFloat height                                       = MAX(size.height, 14.0f);
+        
+        CGRect rect                                          = sticker.bounds;
+        rect.size.height                                     = height;
+        rect.size.width                                      = (isPad)?MIN(758.0, size.width):MIN(self.image_edit_main_view.frame.size.width-20, size.width);
+        sticker.bounds                                       = rect;
+        
+        
+        for(UIView *v in self.image_edit_main_view.subviews){
+            if([v isKindOfClass:[ZDStickerView class]]){
+                ZDStickerView *sticker                               = (ZDStickerView*)v;
+                if(sticker.tag == AppDel.gloabalSelectedTag*5000){
+                    [sticker showEditingHandles];
+                }else{
+                    [sticker hideEditingHandles];
                 }
             }
-            sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
-                                                                         sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
-            [sticker setNeedsDisplay];
-            
-            
-            [sticker setNeedsDisplay];
-            [self.image_edit_main_view setNeedsDisplay];
-          }
+        }
+        sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
+                                                                     sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
+        [sticker setNeedsDisplay];
+        
+        
+        [sticker setNeedsDisplay];
+        [self.image_edit_main_view setNeedsDisplay];
+    }
 }
 
 -(void)handlePan1:(UIPanGestureRecognizer *)recognizer {
@@ -1118,7 +1094,7 @@
     NSString *text;
     if (label && ![label isEqual:[NSNull null]]) {
         text=label.attributedText.string;
-
+        
     }
     
     MessageTextViewController *message_text_vc=[[MessageTextViewController alloc]init];
@@ -1131,15 +1107,15 @@
     [self.navigationController pushViewController:message_text_vc animated:YES];
     
     /*
-    NSLog(@"%@",sender.view);
-    [self initailizeMessageTextView];
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        self.scroll_view.contentOffset=CGPointMake(SCREEN_WIDTH, SCREEN_HEIGHT);
-        
-        [self.message_editing_text_view.message_text_view becomeFirstResponder];
-    }];
-    */
+     NSLog(@"%@",sender.view);
+     [self initailizeMessageTextView];
+     
+     [UIView animateWithDuration:0.3 animations:^{
+     self.scroll_view.contentOffset=CGPointMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+     
+     [self.message_editing_text_view.message_text_view becomeFirstResponder];
+     }];
+     */
     
     
 }
@@ -1190,7 +1166,7 @@
 
 
 -(void)update_text_and_alignment_notification:(NSNotification *)notification{
-   // NSLog(@"%@",notification);
+    // NSLog(@"%@",notification);
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UPDATE_MESSAGE_TEXT_NOTIFICATION object:nil];
     
     if ([notification.object valueForKey:@"TEXT_VIEW"] && [notification.object valueForKey:@"ZD_STICKER_VIEW"]) {
@@ -1205,34 +1181,34 @@
          {
              //Do something here
              //NSLog(@"%@",attributes);
-//              NSForegroundColorAttributeName : color
+             //              NSForegroundColorAttributeName : color
              attributes_dict = [attributes mutableCopy];
              if ([[notification.object valueForKey:@"ZD_STICKER_VIEW_TEXT_COLOR"]isKindOfClass:[UIColor class]]) {
                  [attributes_dict setValue:[notification.object valueForKey:@"ZD_STICKER_VIEW_TEXT_COLOR"] forKey:NSForegroundColorAttributeName];
              }
              
          }];
-
-
-//        NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText ];
+        
+        
+        //        NSMutableAttributedString *strattr                   =[NSMutableAttributedString attributedStringWithAttributedString:label.attributedText ];
         NSMutableAttributedString *strattr                   =[[NSMutableAttributedString alloc ]initWithString:text_view.text attributes:attributes_dict];
-
+        
         
         [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle)
          {
              if (text_view.textAlignment == NSTextAlignmentRight ) {
                  paragraphStyle.textAlignment = kCTTextAlignmentRight;
-
+                 
              }
              else if (text_view.textAlignment == NSTextAlignmentRight ) {
                  paragraphStyle.textAlignment = kCTTextAlignmentCenter;
-
+                 
              }
              else
-             paragraphStyle.textAlignment = kCTTextAlignmentLeft;
-
+                 paragraphStyle.textAlignment = kCTTextAlignmentLeft;
+             
          }];
-
+        
         label.attributedText                                 = strattr;
         
         CGSize constraint                                    = CGSizeMake(self.image_edit_main_view.frame.size.width-20, 200000.0f);
@@ -1275,7 +1251,7 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
     
     if ([notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"]) {
-        UIImage *image=[notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"];
+        //UIImage *image=[notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"];
         
         // Add new sticker view with image on the view
         
@@ -1307,7 +1283,6 @@
     [selected_sticker_view setNeedsDisplay];
     
 }
-
 
 -(void)dealloc{
     

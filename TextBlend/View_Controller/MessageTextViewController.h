@@ -6,6 +6,8 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is used for inserting text which will be added in the sticker view. This class is a subclass of UIViewController.
+
 #import <UIKit/UIKit.h>
 #import "ZDStickerView.h"
 #import "CustomizeImageTopHeaderView.h"

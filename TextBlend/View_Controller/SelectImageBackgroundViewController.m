@@ -24,14 +24,14 @@
     
     [self initializeCollectionView];
     [self addBottomView];
-
+    
     // Do any additional setup after loading the view.
 }
 
 
 
 -(void)initializeMainView{
-
+    
     self.main_view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TOP_HEIGHT)];
     self.main_view.backgroundColor=CELL_BACKGROUND_COLOR;
     [self.view addSubview:self.main_view];
@@ -45,7 +45,7 @@
     choose_a_background_logo_image_view.image=[UIImage imageNamed:@"select_background_choose_background.png"];
     [self.main_view addSubview:choose_a_background_logo_image_view];
     
-
+    
     
     self.top_header_view = [[UIView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,30)];
     self.top_header_view.backgroundColor=[UIColor blackColor];
@@ -64,13 +64,13 @@
     self.camera_roll_button.frame=CGRectMake(SCREEN_WIDTH-110, 0, 110, 30);
     [self.camera_roll_button setTitle:@"CAMERA ROLL" forState:UIControlStateNormal];
     self.camera_roll_button.titleLabel.font = [UIFont systemFontOfSize:12];
-
+    
     [self.camera_roll_button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.camera_roll_button addTarget:self action:@selector(cameraRollButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.top_header_view addSubview:self.camera_roll_button];
     
     //camera_roll_button;
-
+    
 }
 
 -(void)addBottomView{
@@ -84,31 +84,25 @@
     self.choose_from_camera_roll_button.frame=CGRectMake(0, 0, SCREEN_WIDTH, 40);
     [self.choose_from_camera_roll_button setTitle:@"OR CHOOSE FROM YOUR CAMERA ROLL" forState:UIControlStateNormal];
     self.choose_from_camera_roll_button.titleLabel.font = [UIFont systemFontOfSize:12];
-
+    
     [self.choose_from_camera_roll_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [self.choose_from_camera_roll_button addTarget:self action:@selector(cameraRollButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.choose_from_camera_roll_button addTarget:self action:@selector(cameraRollButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.bottom_view addSubview:self.choose_from_camera_roll_button];
-
+    
 }
 -(void)initializeCollectionView{
     PagingCollectionFlowLayout *layout=[[PagingCollectionFlowLayout alloc]init];
     layout.scrollDirection=UICollectionViewScrollDirectionVertical;
-//    layout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 22);
     layout.headerReferenceSize = CGSizeZero;
-
-    //    cell.custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 0, 200, 140) collectionViewLayout:layout];
+    
     custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, TOP_HEIGHT, SCREEN_WIDTH, self.view.frame.size.height-TOP_HEIGHT-40) collectionViewLayout:layout];
     custom_collection_view.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
-    //<#CGFloat top#>, <#CGFloat left#>, <#CGFloat bottom#>, <#CGFloat right#>);
     custom_collection_view.dataSource=self;
-    //custom_collection_view.delegate=self;
     custom_collection_view.pagingCollectionDelegate=self;
     custom_collection_view.backgroundColor=CELL_BACKGROUND_COLOR;
     
     [self.view addSubview:custom_collection_view];
-    //[cell registerClass];
     [custom_collection_view registerClass:[SelectBackgroundCollectionViewCell class] forCellWithReuseIdentifier:@"CollectionViewCellIdentifier"];
-  //  [custom_collection_view registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView"];
     [custom_collection_view setUpCollectionInitParms];
 }
 
@@ -164,43 +158,38 @@
     }
     else if (selected_button ==1){
         [cell.selected_button setImage:[UIImage imageNamed:@"tempHouse.jpg"] forState:UIControlStateNormal];
-
+        
     }
     else{
         [cell.selected_button setImage:[UIImage imageNamed:@"tempColor.jpg"] forState:UIControlStateNormal];
- 
+        
     }
-    
-    
     /*
-    if (self.posts_array.count>indexPath.section) {
-        NSDictionary *hash_tag_dict=[self.posts_array objectAtIndex:indexPath.section];
-        
-        if ([hash_tag_dict valueForKey:@"Hash_post"] && [Utility validData:[hash_tag_dict valueForKey:@"Hash_post"]] && [[hash_tag_dict valueForKey:@"Hash_post"]isKindOfClass:[NSArray class]]) {
-            
-            NSArray *hash_tag_array=[hash_tag_dict valueForKey:@"Hash_post"];
-            
-            if (hash_tag_array.count>indexPath.row) {
-                NSDictionary *image_dict=[hash_tag_array objectAtIndex:indexPath.row];
-                
-                if ([image_dict valueForKey:@"Post_img"] && [Utility validData:[image_dict valueForKey:@"Post_img"]]) {
-                    
-                }
-                
-            }
-            
-            
-        }
-        
-    }
-    */
-    
+     if (self.posts_array.count>indexPath.section) {
+     NSDictionary *hash_tag_dict=[self.posts_array objectAtIndex:indexPath.section];
+     
+     if ([hash_tag_dict valueForKey:@"Hash_post"] && [Utility validData:[hash_tag_dict valueForKey:@"Hash_post"]] && [[hash_tag_dict valueForKey:@"Hash_post"]isKindOfClass:[NSArray class]]) {
+     
+     NSArray *hash_tag_array=[hash_tag_dict valueForKey:@"Hash_post"];
+     
+     if (hash_tag_array.count>indexPath.row) {
+     NSDictionary *image_dict=[hash_tag_array objectAtIndex:indexPath.row];
+     
+     if ([image_dict valueForKey:@"Post_img"] && [Utility validData:[image_dict valueForKey:@"Post_img"]]) {
+     
+     }
+     
+     }
+     
+     
+     }
+     
+     }
+     */
     
     return cell;
     
 }
-
-
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -222,56 +211,6 @@
     return CGSizeZero;;
 }
 
-/*
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *reusableview = nil;
-    
-    if (kind == UICollectionElementKindSectionHeader) {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-        headerView.backgroundColor = [UIColor clearColor];
-        
-        for (id obj in headerView.subviews) {
-            
-            if ([obj isKindOfClass:[UIButton class]]) {
-                UIButton *button_obj=obj;
-                
-                [button_obj removeFromSuperview];
-                button_obj=nil;
-            }
-            
-        }
-        
-        UIButton *hash_tag_button=[UIButton buttonWithType:UIButtonTypeCustom];hash_tag_button.frame=CGRectMake(0, 0, SCREEN_WIDTH, 25);
-        [hash_tag_button setTitle:@"" forState:UIControlStateNormal];
-        [hash_tag_button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-        [hash_tag_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [hash_tag_button addTarget:self action:@selector(hash_tag_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-        hash_tag_button.titleLabel.font=CUSTOM_SEMIBOLD_FONT_SIZE(15);
-        [headerView addSubview:hash_tag_button];
-        if (self.posts_array.count>indexPath.section) {
-            
-            NSDictionary *hash_tag_dict=[self.posts_array objectAtIndex:indexPath.section];
-            if ([hash_tag_dict valueForKey:@"Hashtag_name"] && [Utility validData:[hash_tag_dict valueForKey:@"Hashtag_name"]]) {
-                [hash_tag_button setTitle:[NSString stringWithFormat:@"#%@",[hash_tag_dict valueForKey:@"Hashtag_name"]] forState:UIControlStateNormal];
-                
-            }
-            
-        }
-     
-        
-        reusableview = headerView;
-    }
-    
-    if (kind == UICollectionElementKindSectionFooter) {
-        UICollectionReusableView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
-        
-        reusableview = footerview;
-    }
-    
-    return reusableview;
-}
-*/
 
 -(void)collectionView:(UICollectionView *)collection_view didReachEndOfPage:(int)page{
     
@@ -293,7 +232,7 @@
 -(void)pushViewController:(UIImage *)image{
     
     ImageCropperViewController *customize_image_vc=[[ImageCropperViewController alloc]init];
-//    CustomizeImageViewController *customize_image_vc = [[CustomizeImageViewController alloc]init];
+    //    CustomizeImageViewController *customize_image_vc = [[CustomizeImageViewController alloc]init];
     customize_image_vc.view.backgroundColor=DARK_GRAY_COLOR;
     customize_image_vc.selected_image=image;
     [customize_image_vc initializeView];
@@ -305,10 +244,10 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
-     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     selected_image=image;
     [picker dismissViewControllerAnimated:YES completion:^{
-       // [self saveInfoDetails:info];
+        // [self saveInfoDetails:info];
         selected_image=image;
         [self pushViewController:selected_image];
         
@@ -320,11 +259,7 @@
     
 }
 
-
-
 #pragma mark - Misc Methods -
-
-
 
 -(void)choosePhoto{
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -355,7 +290,7 @@
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
-#pragma mark - Button Pressed Methods - 
+#pragma mark - Button Pressed Methods -
 
 -(IBAction)cameraRollButtonPressed:(UIButton *)sender{
     
@@ -376,15 +311,13 @@
     
 }
 -(IBAction)selected_image_pressed:(UIButton *)sender{
-   
+    
     UIView *superView = sender.superview;
     while (![superView isKindOfClass:[SelectBackgroundCollectionViewCell class]]) {
         superView = superView.superview;
     }
     
     SelectBackgroundCollectionViewCell *cell=(SelectBackgroundCollectionViewCell *)superView;
-//    NSIndexPath *indexPath=[self.custom_collection_view indexPathForCell:cell];
-    
     UIImage *image=[[cell.selected_button imageView]image];
     NSLog(@"%@",image);
     
@@ -405,13 +338,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

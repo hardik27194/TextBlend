@@ -6,6 +6,10 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is responsible for handling all actions performed on the image editing view. These actions includes text edit of an image, add a new shape in existing image, add a quote, edit the photo using photo editing tool, add a saying, draw an object using a pencil on the image, add certain filters on the image, colorize an image and add different effects on the image. This class is a subclass of UIView.
+//Delegate Functions used for handling button actions in the ImageEditingOptions View.
+
+
 #import <UIKit/UIKit.h>
 #import "CustomButton.h"
 @class ImageEditingOptionsView;
@@ -13,6 +17,7 @@
 @protocol ImageEditingOptionsDelegate <NSObject>
 
 @optional
+
 -(void)text_edit_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view;
 
 -(void)shape_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view;
@@ -35,8 +40,7 @@
 
 @end
 
-@interface ImageEditingOptionsView : UIView<UIScrollViewDelegate>
-{
+@interface ImageEditingOptionsView : UIView<UIScrollViewDelegate>{
     
 }
 @property(nonatomic,strong)UIScrollView *image_edit_scroll_view;

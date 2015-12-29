@@ -1,167 +1,15 @@
 //
 //  Utility.m
-//  HeyApp
+//  TextBlend
 //
-//  Created by Kurt on 7/28/14.
-//
+//  Created by Wayne Rooney on 19/12/15.
+//  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 
 #import "Utility.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "UIView+Toast.h"
-//#import "UIImage+animatedGIF.h"
 @implementation Utility
-
-
-
-
-//+(NSMutableURLRequest *) makeRequestForservicePathString:(NSString *)service httpMethod:(NSString *)method params:(NSString *)paramDict isSSL:(BOOL)is_SSL withURLParam:(NSString*)param{
-//    
-//    NSString *httpRequest=is_SSL?@"https://":@"http://";
-//    NSString *servicePath=[NSString stringWithFormat:@"%@%@%@",httpRequest,kServerHostName,service];
-//    if(param &&[param length]>0)
-//        servicePath = [servicePath stringByAppendingFormat:@"/%@",param];
-//    
-//    
-//    servicePath=[servicePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSURL *url=[NSURL URLWithString:servicePath];
-//    NSMutableURLRequest *request=[[NSMutableURLRequest alloc]initWithURL:url];
-//    //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//    
-//    [request setHTTPMethod:method];
-//    if ([method isEqualToString:@"POST"]) {
-//        [request setHTTPBody:[paramDict JSONData]];
-//        
-//        //NSLog(@"%@",[paramDict JSONData]);
-//        //NSLog(@"%@",[paramDict JSONString]);
-//    
-//        //NSLog(@"%@",[NSArray arrayWithObjects:[NSJSONSerialization JSONObjectWithData:[paramDict JSONData] options:0 error:nil],nil]);
-//        
-//       // [NSJSONSerialization JSONObjectWithData:[paramDict JSONString] options:0 error:nil],nil]
-//      //  NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:[paramDict dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil]);
-//               //        if ([paramDict count] > 0) {
-//        //            NSMutableString *postString = [[NSMutableString alloc] init];
-//        //            NSArray *allKeys = [paramDict allKeys];
-//        //            for (int i = 0; i < [allKeys count]; i++) {
-//        //                NSString *key = [allKeys objectAtIndex:i];
-//        //                NSString *value = [paramDict objectForKey:key];
-//        //                [postString appendFormat:( (i == 0) ? @"%@=%@" : @"&%@=%@"),key,value];
-//        //            }
-//        //
-//        //            //[request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-//        //            [request setHTTPBody:[paramDict JSONData]];
-//        ////NSLog(@"Dict %@",[postString dataUsingEncoding:NSUTF8StringEncoding]);
-//        //            NSError *error=nil;
-//        //            NSLog(@"Json Data%@",[NSJSONSerialization dataWithJSONObject:paramDict  options:kNilOptions error:&error]);
-//        //        }
-//    }
-//    
-//    NSLog(@"%@",[request description]);
-//    return request;
-//    
-//    
-//}
-//
-//
-//+(NSMutableURLRequest *) makeRequestForservicePathArray:(NSString *)service httpMethod:(NSString *)method params:(NSArray*)paramDict isSSL:(BOOL)is_SSL withURLParam:(NSString*)param{
-//    
-//    NSString *httpRequest=is_SSL?@"https://":@"http://";
-//    NSString *servicePath=[NSString stringWithFormat:@"%@%@%@",httpRequest,kServerHostName,service];
-//    if(param &&[param length]>0)
-//        servicePath = [servicePath stringByAppendingFormat:@"/%@",param];
-//    
-//    
-//    servicePath=[servicePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSURL *url=[NSURL URLWithString:servicePath];
-//    NSMutableURLRequest *request=[[NSMutableURLRequest alloc]initWithURL:url];
-//    //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//
-//    [request setHTTPMethod:method];
-//    if ([method isEqualToString:@"POST"]) {
-//        NSError *error=nil;
-//        
-//        NSData *jsonData=[NSJSONSerialization dataWithJSONObject:paramDict
-//                                                         options:kNilOptions
-//                                                           error:&error];
-//        [request setHTTPBody:jsonData];
-//       // NSLog(@"JSON Array \n%@\n",[paramDict JSONString]);
-//        
-//        //        if ([paramDict count] > 0) {
-//        //            NSMutableString *postString = [[NSMutableString alloc] init];
-//        //            NSArray *allKeys = [paramDict allKeys];
-//        //            for (int i = 0; i < [allKeys count]; i++) {
-//        //                NSString *key = [allKeys objectAtIndex:i];
-//        //                NSString *value = [paramDict objectForKey:key];
-//        //                [postString appendFormat:( (i == 0) ? @"%@=%@" : @"&%@=%@"),key,value];
-//        //            }
-//        //
-//        //            [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-//        //
-//        //        }
-//    }
-//    
-//    NSLog(@"%@",[request description]);
-//    return request;
-//    
-//    
-//}
-//
-//+(NSMutableURLRequest *) makeRequestForservicePath:(NSString *)service httpMethod:(NSString *)method params:(NSDictionary*)paramDict isSSL:(BOOL)is_SSL withURLParam:(NSString*)param{
-//    
-//    NSString *httpRequest=is_SSL?@"https://":@"http://";
-//    NSString *servicePath=[NSString stringWithFormat:@"%@%@%@",httpRequest,kServerHostName,service];
-//    if(param &&[param length]>0)
-//        servicePath = [servicePath stringByAppendingFormat:@"/%@",param];
-//    
-//    
-//    servicePath=[servicePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSURL *url=[NSURL URLWithString:servicePath];
-//    NSMutableURLRequest *request=[[NSMutableURLRequest alloc]initWithURL:url];
-//    //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//
-//    [request setHTTPMethod:method];
-//    if ([method isEqualToString:@"POST"]) {
-////        NSError *error=nil;
-////        
-////        NSData *jsonData=[NSJSONSerialization dataWithJSONObject:paramDict
-////                                                         options:kNilOptions
-////                                                           error:&error];
-////        [request setHTTPBody:[paramDict JSONData]];
-////        NSLog(@"JSON Array \n%@\n",[paramDict JSONString]);
-////
-//////        NSError *error=nil;
-//////        
-//////        NSData *jsonData=[NSJSONSerialization dataWithJSONObject:paramDict
-//////                                                         options:kNilOptions
-//////                                                           error:&error];
-////       // [request setHTTPBody:[paramDict JSONData]];
-////        //NSLog(@"JSON Array \n%@\n",[paramDict JSONString]);
-//        
-//        if ([paramDict count] > 0) {
-//            NSMutableString *postString = [[NSMutableString alloc] init];
-//            NSArray *allKeys = [paramDict allKeys];
-//            for (int i = 0; i < [allKeys count]; i++) {
-//                NSString *key = [allKeys objectAtIndex:i];
-//                NSString *value = [paramDict objectForKey:key];
-//                [postString appendFormat:( (i == 0) ? @"%@=%@" : @"&%@=%@"),key,value];
-//            }
-//            
-//            [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-//            //[request setHTTPBody:[paramDict JSONData]];
-//            //NSLog(@"Dict %@",[postString dataUsingEncoding:NSUTF8StringEncoding]);
-//            //NSError *error=nil;
-//            //NSLog(@"Json Data%@",[NSJSONSerialization dataWithJSONObject:paramDict  options:kNilOptions error:&error]);
-//        }
-//    }
-//    
-//    NSLog(@"%@",[request description]);
-//    return request;
-//    
-//    
-//}
 
 
 +(UIImage *)resizeImageForDevice:(UIImage *)image{
@@ -175,62 +23,62 @@
     }
     else if ([UIScreen mainScreen].scale >0.9){
         scaledImage=     [UIImage imageWithCGImage:[image CGImage] scale:(image.scale * 0.33) orientation:(image.imageOrientation)];
-  
+        
     }
     return scaledImage;
     
 }
 +(void)saveUserDetails:(id)object{
     
-  /*
-    if ([self validData:[object valueForKey:kCoverImage]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kCoverImage] forKey:kCoverImage];
-    }
-    
-    if ([self validData:[object valueForKey:kUserBio]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kUserBio] forKey:kUserBio];
-    }
-    
-    if ([self validData:[object valueForKey:kCountry]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kCountry] forKey:kCountry];
-    }
-    
-    if ([self validData:[object valueForKey:kProfileImage]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kProfileImage] forKey:kProfileImage];
-    }
-    if ([self validData:[object valueForKey:kThumbImage]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kThumbImage] forKey:kThumbImage];
-    }
-    
-    if ([self validData:[object valueForKey:kUserID]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kUserID] forKey:kUserID];
-    }
-    if ([self validData:[object valueForKey:kUserEmail]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kUserEmail] forKey:kUserEmail];
-    }
-    if ([self validData:[object valueForKey:kUserStatusLevel]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kUserStatusLevel] forKey:kUserStatusLevel];
-    }
-    if ([self validData:[object valueForKey:kUserType]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kUserType] forKey:kUserType];
-    }
-    
-    if ([self validData:[object valueForKey:kUserName]]) {
-        [USER_DEFAULTS setValue:[object valueForKey:kUserName] forKey:kUserName];
-    }
-
-    [USER_DEFAULTS synchronize];
-    */
+    /*
+     if ([self validData:[object valueForKey:kCoverImage]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kCoverImage] forKey:kCoverImage];
+     }
+     
+     if ([self validData:[object valueForKey:kUserBio]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kUserBio] forKey:kUserBio];
+     }
+     
+     if ([self validData:[object valueForKey:kCountry]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kCountry] forKey:kCountry];
+     }
+     
+     if ([self validData:[object valueForKey:kProfileImage]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kProfileImage] forKey:kProfileImage];
+     }
+     if ([self validData:[object valueForKey:kThumbImage]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kThumbImage] forKey:kThumbImage];
+     }
+     
+     if ([self validData:[object valueForKey:kUserID]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kUserID] forKey:kUserID];
+     }
+     if ([self validData:[object valueForKey:kUserEmail]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kUserEmail] forKey:kUserEmail];
+     }
+     if ([self validData:[object valueForKey:kUserStatusLevel]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kUserStatusLevel] forKey:kUserStatusLevel];
+     }
+     if ([self validData:[object valueForKey:kUserType]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kUserType] forKey:kUserType];
+     }
+     
+     if ([self validData:[object valueForKey:kUserName]]) {
+     [USER_DEFAULTS setValue:[object valueForKey:kUserName] forKey:kUserName];
+     }
+     
+     [USER_DEFAULTS synchronize];
+     */
 }
 
 +(void)saveUserSpecificDetail:(NSString *)value forkeyName:(NSString *)key_name{
-
+    
     if ([self validData:value]) {
         [USER_DEFAULTS setValue:value forKey:key_name];
     }
     
     [USER_DEFAULTS synchronize];
-
+    
 }
 
 +(void)removeUserDetails{
@@ -255,7 +103,7 @@
     if ([self validData:[USER_DEFAULTS valueForKey:kUserName]]) {
         [USER_DEFAULTS removeObjectForKey:kUserName];
     }
-        [USER_DEFAULTS synchronize];
+    [USER_DEFAULTS synchronize];
     
 }
 
@@ -265,42 +113,42 @@
 
 
 +(NSString*)getFormattedNumberStringFor:(int)number {
-
+    
     float float_num = (float)number;
     NSString *formatted_number = @"";
     if(number>1000) {
-          float remainder =(float)(number%1000);
-if(remainder>0)
-        formatted_number = [NSString stringWithFormat:@"%.1fK", (float_num/1000)];
-else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
-
+        float remainder =(float)(number%1000);
+        if(remainder>0)
+            formatted_number = [NSString stringWithFormat:@"%.1fK", (float_num/1000)];
+        else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
+        
         
     }
     else if(number>10000){
         float remainder =(float)(number%10000);
-
+        
         if(remainder>0)
-        formatted_number = [NSString stringWithFormat:@"%.1fK", float_num/10000];
+            formatted_number = [NSString stringWithFormat:@"%.1fK", float_num/10000];
         else formatted_number = [NSString stringWithFormat:@"%dK", (number/10000)];
-
+        
     }
     else if(number>1000000){
         float remainder =(float)(number%1000000);
         
         if(remainder>0)
-        formatted_number = [NSString stringWithFormat:@"%.1fM", float_num/1000000];
+            formatted_number = [NSString stringWithFormat:@"%.1fM", float_num/1000000];
         
         else formatted_number = [NSString stringWithFormat:@"%dM", (number/1000000)];
-
+        
     }
     else if(number>10000000){
         
         float remainder =(float)(number%10000000);
-
+        
         if(remainder>0)
-        formatted_number = [NSString stringWithFormat:@"%.1fM", float_num/10000000];
+            formatted_number = [NSString stringWithFormat:@"%.1fM", float_num/10000000];
         else formatted_number = [NSString stringWithFormat:@"%dM", (number/10000000)];
-
+        
         
     }
     
@@ -326,232 +174,115 @@ else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
     
     
 }
-//+(UIImage*)loadImageWithName:(NSString*)file_name {
-//NSString * filePath = [AppDelegate applicationDocumentsDirectory];
-//    filePath = [filePath stringByAppendingPathComponent:file_name];
-//
-//    return [[UIImage alloc]initWithContentsOfFile:filePath];
-//}
 
-//+ (BOOL)savePic:(UIImage*)image {
-//    
-//    NSData * imageData = UIImagePNGRepresentation(image);
-//    NSString * filePath = [AppDelegate applicationDocumentsDirectory];
-//    
-//    
-//    NSString * fileName = @"user_cover_image";
-//    
-//    fileName = [fileName stringByAppendingPathExtension:@"png"];
-//    filePath = [filePath stringByAppendingPathComponent:fileName];
-//    
-//    if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
-//       [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
-//
-//    return [imageData writeToFile:filePath atomically:YES];
-//}
-
-
-
-
-
-
-
-+(CGSize)sizeOfTextString:(NSString *)aString andFont:(UIFont *)aFont maxSize:(CGSize)aSize
-{
++(CGSize)sizeOfTextString:(NSString *)aString andFont:(UIFont *)aFont maxSize:(CGSize)aSize{
     
     CGSize sizeOfText = [aString boundingRectWithSize: aSize options: (NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes: [NSDictionary dictionaryWithObject:aFont forKey:NSFontAttributeName] context: nil].size;
-        
+    
     return sizeOfText;
-       
+    
 }
 
 + (NSMutableURLRequest*) makeMultipartDataForParams:(NSDictionary*)paramDict path:(NSString *)service httpMethod:(NSString *)method{
     
     
-        NSString *boundary = [NSString stringWithFormat:@"---------------------------44247638221121663601275327610"];
-        NSMutableData *body = [NSMutableData data];
+    NSString *boundary = [NSString stringWithFormat:@"---------------------------44247638221121663601275327610"];
+    NSMutableData *body = [NSMutableData data];
     
     for (NSString *key in [paramDict allKeys]) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-         
+        
         if([key isEqualToString:@"recomm_image_url"]){
-             [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\";filename=\"user_pic.png\"\r\n",key] dataUsingEncoding:NSUTF8StringEncoding]];
+            [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\";filename=\"user_pic.png\"\r\n",key] dataUsingEncoding:NSUTF8StringEncoding]];
             [body appendData:[[NSString stringWithFormat:@"Content-Type: image/png\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-               [body appendData:[paramDict objectForKey:key] ];
+            [body appendData:[paramDict objectForKey:key] ];
         }
-    
+        
         else {
-          [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key] dataUsingEncoding:NSUTF8StringEncoding]];
+            [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key] dataUsingEncoding:NSUTF8StringEncoding]];
             [body appendData:[[paramDict valueForKey:key] dataUsingEncoding:NSUTF8StringEncoding]];
         }
-
-     
-       
+        
+        
+        
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-      //  [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-
+        //  [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        
     }
     
     [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"submit\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-   [body appendData:[@"SUBMIT" dataUsingEncoding:NSUTF8StringEncoding]];
-
+    [body appendData:[@"SUBMIT" dataUsingEncoding:NSUTF8StringEncoding]];
+    
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
-     NSString *httpRequest=@"http://";
+    NSString *httpRequest=@"http://";
     
     NSString *servicePath=[NSString stringWithFormat:@"%@%@%@",httpRequest,kServerHostName,service];
-
+    
     servicePath=[servicePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url=[NSURL URLWithString:servicePath];
     NSMutableURLRequest *request=[[NSMutableURLRequest alloc]initWithURL:url];
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
     [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:method];
-
+    
     [request setHTTPBody:body];
     NSLog(@"%@",request);
     return request;
     //
-//        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//        [body appendData:[@"Content-Disposition: form-data; name= \"user[display_photo]\"; filename=\hulk.jpg\\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-//    //    //this appends the image data
-//        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//        [body appendData:[[NSString stringWithFormat:@"Content-Type: image/jpg\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-//        [body appendData:[[NSString stringWithFormat:@"Content-Transfer-Encoding: binary\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-//    
-//       // [body appendData:data];
-//       [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    //        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    //        [body appendData:[@"Content-Disposition: form-data; name= \"user[display_photo]\"; filename=\hulk.jpg\\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    //    //    //this appends the image data
+    //        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    //        [body appendData:[[NSString stringWithFormat:@"Content-Type: image/jpg\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    //        [body appendData:[[NSString stringWithFormat:@"Content-Transfer-Encoding: binary\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    //
+    //       // [body appendData:data];
+    //       [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
     //   return body;
 }
 
 +(void)showAlertForError:(NSError*)error {
-
+    
     [Utility showAlertWithString:[NSString stringWithFormat:@"Error: %@",error.localizedDescription]];
 }
 
 +(void)showAlertWithString:(NSString*)message {
-
+    
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alertView show];
     
 }
 +(NSDate *) getDateFromString:(NSString *)dateString{
-
+    
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM-DD HH:mm:ss"];
-  //  NSLog(@"%@",[dateFormatter dateFromString:dateString]);
+    //  NSLog(@"%@",[dateFormatter dateFromString:dateString]);
     
     return [dateFormatter dateFromString:dateString];
     
     
 }
-//+(NSMutableURLRequest *) makeRequestForservicePath:(NSString *)service httpMethod:(NSString *)method params:(NSDictionary*)paramDict isSSL:(BOOL)is_SSL withURLParam:(NSString*)param{
-//
-//    NSString *httpRequest=is_SSL?@"https://":@"http://";
-//    NSString *servicePath=[NSString stringWithFormat:@"%@%@/%@/%@",httpRequest,kServerHostName,service,kAPIKey];
-//    if(param &&[param length]>0)
-//        servicePath = [servicePath stringByAppendingFormat:@"/%@",param];
-//    
-//    
-//    servicePath=[servicePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSURL *url=[NSURL URLWithString:servicePath];
-//    NSMutableURLRequest *request=[[NSMutableURLRequest alloc]initWithURL:url];
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request setHTTPMethod:method];
-//    if ([method isEqualToString:@"POST"]) {
-//        if ([paramDict count] > 0) {
-//            NSMutableString *postString = [[NSMutableString alloc] init];
-//            NSArray *allKeys = [paramDict allKeys];
-//            for (int i = 0; i < [allKeys count]; i++) {
-//                NSString *key = [allKeys objectAtIndex:i];
-//                NSString *value = [paramDict objectForKey:key];
-//                [postString appendFormat:( (i == 0) ? @"%@=%@" : @"&%@=%@"),key,value];
-//            }
-//            
-//            [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-//            
-//        }
-//    }
-//    
-//    NSLog(@"%@",[request description]);
-//    return request;
-//
-//    
-//}
 
-+(void) paddingTextField:(UITextField *) textField
-
-{
-
++(void) paddingTextField:(UITextField *) textField{
+    
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, 20)];
-	textField.leftView = paddingView;
-	textField.leftViewMode = UITextFieldViewModeAlways;
+    textField.leftView = paddingView;
+    textField.leftViewMode = UITextFieldViewModeAlways;
     
 }
 
 +(void) paddingTextFieldInSearchController:(UITextField *) textField
 {
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 20)];
-	textField.leftView = paddingView;
-	textField.leftViewMode = UITextFieldViewModeAlways;
-
+    textField.leftView = paddingView;
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    
 }
 
-//+(NSMutableURLRequest *) makeRequestForservicePath:(NSString *)service httpMethod:(NSString *)method params:(NSDictionary*)paramDict isSSL:(BOOL)is_SSL{
-//    
-//    return [Utility makeRequestForservicePath:service httpMethod:method params:paramDict isSSL:is_SSL withURLParam:nil];
-//
-//}
-
-//+(void)openImagePickerControllerForViewController:(UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>*)vc source:(UIImagePickerControllerSourceType)source_type overLay:(UIView*)overlayView {
-//    
-//    
-//    
-//    UIImagePickerController * imagePickerController = [[UIImagePickerController alloc]init];
-//    if([vc conformsToProtocol:@protocol(UIImagePickerControllerDelegate)])
-//        imagePickerController.delegate = vc;
-//    imagePickerController.allowsEditing = YES;
-//    
-//    imagePickerController.wantsFullScreenLayout = YES;
-//    
-//       
-//    NSArray * media = [UIImagePickerController availableMediaTypesForSourceType:
-//                       UIImagePickerControllerSourceTypeCamera];
-//    if([media count] && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])  {
-//        if(overlayView){
-//            imagePickerController.showsCameraControls = NO;
-//
-//            imagePickerController.cameraOverlayView = overlayView;
-//        }
-//
-//        imagePickerController.mediaTypes = [NSArray arrayWithObject:@"public.image"];
-//        [imagePickerController setSourceType:source_type];
-//        
-//    }
-//    else {
-//        
-//        [imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//        
-//    }
-//    [vc presentViewController:imagePickerController animated:YES completion:nil];
-//    
-//}
-//
-//+(void)openImagePickerControllerForViewController:(UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>*)vc source:(UIImagePickerControllerSourceType)source_type {
-//  
-//    return [Utility openImagePickerControllerForViewController:vc source:source_type overLay:nil];
-//
-//}
-//+(void)openImagePickerControllerForViewController:(UIViewController<  UIImagePickerControllerDelegate,UINavigationControllerDelegate>*)vc {
-//
-//    return [Utility openImagePickerControllerForViewController:vc source:UIImagePickerControllerSourceTypePhotoLibrary];
-//    
-//}
-
-+(UIImage* )resizedImage:(UIImage *)inImage rect:(CGRect) thumbRect
-{
++(UIImage* )resizedImage:(UIImage *)inImage rect:(CGRect) thumbRect{
     CGImageRef	imageRef = [inImage CGImage];
     CGImageAlphaInfo	alphaInfo = CGImageGetAlphaInfo(imageRef);
     // There's a wierdness with kCGImageAlphaNone and CGBitmapContextCreate
@@ -587,18 +318,15 @@ else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
     return result;
 }
 
-+ (UIImage*)resizeImage:(UIImage*)image withWidth:(CGFloat)width withHeight:(CGFloat)height
-{
++ (UIImage*)resizeImage:(UIImage*)image withWidth:(CGFloat)width withHeight:(CGFloat)height{
     CGSize newSize = CGSizeMake(width, height);
     CGFloat widthRatio = newSize.width/image.size.width;
     CGFloat heightRatio = newSize.height/image.size.height;
     
-    if(widthRatio > heightRatio)
-    {
+    if(widthRatio > heightRatio){
         newSize=CGSizeMake(image.size.width*heightRatio,image.size.height*heightRatio);
     }
-    else
-    {
+    else{
         newSize=CGSizeMake(image.size.width*widthRatio,image.size.height*widthRatio);
     }
     
@@ -612,7 +340,7 @@ else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
 }
 
 +(void)setGridImage:(UIImage*)image forButton:(UIButton *)button {
-
+    
     UIImageView *gridImageView;
     gridImageView = (UIImageView*)[button viewWithTag:1];
     
@@ -624,7 +352,7 @@ else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
     }
     gridImageView.hidden = NO;
     gridImageView.image = image;
-   
+    
     UIImageView *placeholderImageView;
     placeholderImageView = (UIImageView*)[button viewWithTag:2];
     
@@ -650,8 +378,8 @@ else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
         playImageView.image = [UIImage imageNamed:@"feed_play_watermark.png"];
         playImageView.hidden = YES;
     }
-
-
+    
+    
 }
 
 
@@ -660,15 +388,15 @@ else formatted_number = [NSString stringWithFormat:@"%dK", (number/1000)];
     NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil];
     for(id currentObject in topLevelObjects)
         if([currentObject isKindOfClass:forClass])
-    {
-        //[currentObject retain];
-        // [topLevelObjects release];
-                  return currentObject ;
-    }
+        {
+            //[currentObject retain];
+            // [topLevelObjects release];
+            return currentObject ;
+        }
     
-return nil;
-
-
+    return nil;
+    
+    
 }
 
 +(void)showAlertControllerWithMessage:(NSString *)message withCustonTitle:(NSString *)title onView:(UIViewController *)view_controller withButtonTitles:(NSArray *)button_titles_array withAlertCompletionBlock:(alert_completion_block)alert_block
@@ -692,11 +420,11 @@ return nil;
                                            alert_block(action,button_title);
                                        }];
         [alertController addAction:alert_action];
-
+        
     }
     
     [view_controller presentViewController:alertController animated:YES completion:nil];
-   
+    
 }
 +(void)showAlertControllerWithMessage:(NSString *)message withCustonTitle:(NSString *)title onView:(UIViewController *)view_controller
 {
@@ -740,10 +468,10 @@ return nil;
 +(void)showActionSheetControllerWithMessage:(NSString *)message withCustonTitle:(NSString *)title onView:(UIViewController *)view_controller withButtonTitles:(NSArray *)button_titles_array withAlertCompletionBlock:(alert_completion_block)alert_block
 {
     
-//    if (!title || [title isEqualToString:@""])
-//    {
-//        title = @"TextBlend";
-//    }
+    //    if (!title || [title isEqualToString:@""])
+    //    {
+    //        title = @"TextBlend";
+    //    }
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:title
                                           message:message
@@ -773,7 +501,7 @@ return nil;
         }
         else if ([Utility validData:[message_dict valueForKey:@"Error"]]){
             [Utility showAlertControllerWithMessage:[message_dict valueForKey:@"Error"] withCustonTitle:nil onView:selected_view_controller];
-
+            
         }
         else
             [Utility showAlertControllerWithMessage:TRY_LATER withCustonTitle:nil onView:selected_view_controller];
@@ -840,7 +568,7 @@ return nil;
     NSRegularExpression *regEx = [[NSRegularExpression alloc] initWithPattern:regExPattern options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger regExMatches = [regEx numberOfMatchesInString:emailString options:0 range:NSMakeRange(0, [emailString length])];
     
-   // NSLog(@"%lu", (unsigned long)regExMatches);
+    // NSLog(@"%lu", (unsigned long)regExMatches);
     if (regExMatches == 0) {
         return NO;
     } else {
@@ -897,12 +625,6 @@ return nil;
     
     return [difference second];
 }
-
-
-
-
-
-
 
 
 + (UIColor *) colorWithHexString: (NSString *) hexString {
@@ -973,7 +695,6 @@ return nil;
 
 +(NSString *)getFormattedString:(NSNumber *)selected_amount_num{
     
-    // NSString *converted_amount=selected_amount;
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setGroupingSize:3];
     [numberFormatter setGroupingSeparator:@","];
@@ -987,12 +708,6 @@ return nil;
     NSString *formattedNumberString = [numberFormatter stringFromNumber:selected_amount_num];
     return formattedNumberString;
     
-    
-    
-    
 }
-
-
-
 
 @end

@@ -19,12 +19,9 @@
         //[self getPopularPosts:YES];
     }
     return self;
-    
 }
 
 -(void)initializeView{
-    
-    
     
     int width_buttons = 0;
     
@@ -43,8 +40,9 @@
     [self.colors_button addTarget:self action:@selector(colors_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.colors_button];
     
+    
     width_buttons +=SCREEN_WIDTH/3;
-
+    
     
     self.fonts_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.fonts_button.frame=CGRectMake(width_buttons,  0, SCREEN_WIDTH/3, self.frame.size.height/2);
@@ -58,8 +56,10 @@
     [self.rotate_3d_button setImage:[UIImage imageNamed:@"add_text_view_3d_rotate.PNG"] forState:UIControlStateNormal];
     [self.rotate_3d_button addTarget:self action:@selector(rotate_3d_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.rotate_3d_button];
+    
+    
     width_buttons +=SCREEN_WIDTH/3;
-
+    
     
     self.text_tools_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.text_tools_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/3, self.frame.size.height/2);
@@ -67,15 +67,12 @@
     [self.text_tools_button addTarget:self action:@selector(text_tools_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.text_tools_button];
     
-  
     
     self.eraser_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.eraser_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/3, self.frame.size.height/2);
     [self.eraser_button setImage:[UIImage imageNamed:@"add_text_view_eraser.PNG"] forState:UIControlStateNormal];
     [self.eraser_button addTarget:self action:@selector(eraser_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.eraser_button];
-    
-    
     
 }
 
@@ -126,11 +123,11 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

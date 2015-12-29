@@ -15,7 +15,6 @@
 @synthesize black_view,done_check_mark_button,eraser_label,intensity_label,opacity_slider,curve_slider,eraser_size_slider,intensity_slider,undo_last_erase_button,eraser_delegate;
 
 
-
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
         
@@ -24,7 +23,6 @@
         //[self getPopularPosts:YES];
     }
     return self;
-    
 }
 
 
@@ -74,8 +72,6 @@
     [self addSubview:self.intensity_label];
     
     
-   
-    
     self.intensity_slider = [[UISlider alloc]initWithFrame:CGRectMake(orginForSlider, height, SCREEN_WIDTH-20-orginForSlider, 25)];
     self.intensity_slider.value=0;
     [self.intensity_slider setMaximumTrackTintColor:MIN_COLOR];
@@ -84,7 +80,7 @@
     [self addSubview:self.intensity_slider];
     
     height+=36;
-
+    
     
     self.undo_last_erase_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.undo_last_erase_button.frame=CGRectMake(20, height, SCREEN_WIDTH-40, 30);
@@ -124,7 +120,7 @@
         
     }
 }
-#pragma mark - SLider Value Methods -
+#pragma mark - Slider Value Methods -
 
 -(IBAction)eraser_size_slider_changed:(UISlider *)slider{
     if ([self.eraser_delegate respondsToSelector:@selector(eraser_size_slider_value_changed:onSelectedView:)]) {
@@ -143,11 +139,11 @@
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

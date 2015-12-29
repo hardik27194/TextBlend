@@ -5,7 +5,9 @@
 //  Created by Wayne Rooney on 03/12/15.
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
-
+/*
+ This screen is used for selecting set of background images.It is a sub class of UIViewController.
+ */
 #import <UIKit/UIKit.h>
 #import "SelectBackgroundCollectionViewCell.h"
 #import "CustomizeImageViewController.h"

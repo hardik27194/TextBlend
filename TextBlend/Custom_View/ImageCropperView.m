@@ -59,7 +59,6 @@
     [self.scroll_view addSubview:self.facebook_post_button];
     width_buttons+=85;
     
-   
     
     self.facebook_cover_button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.facebook_cover_button.frame=CGRectMake(width_buttons,0, 75, self.scroll_view.frame.size.height);
@@ -152,7 +151,7 @@
     self.scroll_view.contentSize=CGSizeMake(width_buttons, self.scroll_view.frame.size.height);
     self.scroll_view.showsHorizontalScrollIndicator=NO;
     self.scroll_view.showsVerticalScrollIndicator=NO;
-
+    
     
     [[self.original_image_button imageView]setContentMode:UIViewContentModeScaleAspectFit];
     [[self.instagram_post_button imageView]setContentMode:UIViewContentModeScaleAspectFit];
@@ -171,6 +170,9 @@
     [[self.ratio_2X3_button imageView]setContentMode:UIViewContentModeScaleAspectFit];
     
 }
+
+#pragma mark - Button Pressed Methods -
+
 
 -(IBAction)original_image_button_pressed:(UIButton *)sender{
     
@@ -293,11 +295,11 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

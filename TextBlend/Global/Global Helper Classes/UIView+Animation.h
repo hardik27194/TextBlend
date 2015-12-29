@@ -2,8 +2,8 @@
 //  UIView+Animation.h
 //  TrueAirSync
 //
-//  Created by Brian Russel Davis on 19/10/12.
-//  Copyright (c) 2012 Apptree Studio. All rights reserved.
+//  Created by Wayne Rooney on 19/10/15.
+//  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

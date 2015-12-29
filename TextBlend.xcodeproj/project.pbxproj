@@ -1741,8 +1741,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gourav Arora (59886MRHX7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gourav Arora (59886MRHX7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1764,7 +1764,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "34827df0-5089-4aa6-845f-5d292dcbd3ff";
+				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1786,8 +1786,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gourav Arora (59886MRHX7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gourav Arora (59886MRHX7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1802,7 +1802,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "34827df0-5089-4aa6-845f-5d292dcbd3ff";
+				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1813,8 +1813,8 @@
 			baseConfigurationReference = B1C514321E50213C394C595F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gourav Arora (59886MRHX7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gourav Arora (59886MRHX7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1827,9 +1827,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gourav.textBlend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muntaha.textblend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "34827df0-5089-4aa6-845f-5d292dcbd3ff";
+				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
 			};
 			name = Debug;
 		};
@@ -1838,8 +1838,8 @@
 			baseConfigurationReference = 148389D7BC25AA5E0CA0661E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gourav Arora (59886MRHX7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gourav Arora (59886MRHX7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chowdhury Muntaha (53VJAYQSZ4)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1852,9 +1852,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gourav.textBlend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muntaha.textblend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "34827df0-5089-4aa6-845f-5d292dcbd3ff";
+				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
 			};
 			name = Release;
 		};

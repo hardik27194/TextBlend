@@ -10,7 +10,6 @@
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 138
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 
-
 @interface ImageCropperViewController ()
 
 @end
@@ -22,8 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self initializeView];
-//    [self initializeAdbannerView];
+    //    [self initializeView];
+    //    [self initializeAdbannerView];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -67,7 +66,6 @@
     
 }
 
-
 -(void)initializeAdbannerView{
     
     UIView *banner_view=[[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50)];
@@ -91,9 +89,6 @@
     
 }
 
-
-
-
 #pragma mark - Banner View Delegate -
 
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView{
@@ -105,20 +100,20 @@
     NSLog(@"adView:didFailToReceiveAdWithError: %@", error.localizedDescription);
     
 }
-- (void)adViewWillPresentScreen:(GADBannerView *)bannerView
-{
 
-}
-- (void)adViewDidDismissScreen:(GADBannerView *)bannerView
-{
+- (void)adViewWillPresentScreen:(GADBannerView *)bannerView{
     
 }
-- (void)adViewWillDismissScreen:(GADBannerView *)bannerView
-{
+
+- (void)adViewDidDismissScreen:(GADBannerView *)bannerView{
     
 }
-- (void)adViewWillLeaveApplication:(GADBannerView *)bannerView
-{
+
+- (void)adViewWillDismissScreen:(GADBannerView *)bannerView{
+    
+}
+
+- (void)adViewWillLeaveApplication:(GADBannerView *)bannerView{
     
 }
 
@@ -158,15 +153,15 @@
 -(void)facebook_post_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
     
-
+    
     [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
     CGFloat ratio = 394.0f / 470.0f;
     CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
     CGFloat width = CGRectGetWidth(cropRect);
     cropRect.size = CGSizeMake(width, width * ratio);
     self.image_edit_main_view.cropView.cropRect = cropRect;
-
-
+    
+    
 }
 
 -(void)facebook_cover_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
@@ -177,7 +172,7 @@
     CGFloat width = CGRectGetWidth(cropRect);
     cropRect.size = CGSizeMake(width, width * ratio);
     self.image_edit_main_view.cropView.cropRect = cropRect;
-
+    
     
 }
 
@@ -199,7 +194,7 @@
     CGFloat width = CGRectGetWidth(cropRect);
     cropRect.size = CGSizeMake(width, width * ratio);
     self.image_edit_main_view.cropView.cropRect = cropRect;
-
+    
     
 }
 
@@ -211,7 +206,7 @@
     CGFloat width = CGRectGetWidth(cropRect);
     cropRect.size = CGSizeMake(width, width * ratio);
     self.image_edit_main_view.cropView.cropRect = cropRect;
-
+    
 }
 
 -(void) ratio3X2_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
@@ -221,7 +216,7 @@
     CGFloat width = CGRectGetWidth(cropRect);
     cropRect.size = CGSizeMake(width, width * ratio);
     self.image_edit_main_view.cropView.cropRect = cropRect;
-
+    
 }
 
 -(void)ratio4X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
@@ -231,7 +226,7 @@
     CGFloat width = CGRectGetWidth(cropRect);
     cropRect.size = CGSizeMake(width, width * ratio);
     self.image_edit_main_view.cropView.cropRect = cropRect;
-
+    
 }
 
 -(void)ratio5X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
@@ -241,7 +236,7 @@
     CGFloat width = CGRectGetWidth(cropRect);
     cropRect.size = CGSizeMake(width, width * ratio);
     self.image_edit_main_view.cropView.cropRect = cropRect;
-
+    
 }
 -(void)ratio16X9_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
@@ -255,7 +250,7 @@
 
 -(void)ratio1X1_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-
+    
     //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
     CGFloat ratio = 1.0f / 1.0f;
     CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
@@ -330,13 +325,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

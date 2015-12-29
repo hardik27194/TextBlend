@@ -6,6 +6,9 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is used for displaying all the differnt categories used for choosing shape. This class is a subclass of UIView.
+
+
 #import <UIKit/UIKit.h>
 @class ChooseOptionCustomView;
 
@@ -16,8 +19,7 @@
 
 @end
 
-@interface ChooseOptionCustomView : UIView<PagingDelegate,UITableViewDataSource>
-{
+@interface ChooseOptionCustomView : UIView<PagingDelegate,UITableViewDataSource>{
     
 }
 @property(nonatomic,strong)PageTableView *custom_table_view;

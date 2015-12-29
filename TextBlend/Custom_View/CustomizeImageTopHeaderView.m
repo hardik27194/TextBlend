@@ -56,7 +56,7 @@
     [self.share_button addTarget:self action:@selector(share_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.share_button];;
     self.share_button.hidden=YES;
-
+    
 }
 
 #pragma mark - Button Pressed Methods -
@@ -90,11 +90,11 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

@@ -6,15 +6,19 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+//This class is used for changing text properties added on the selected image. This includes character spacing, line spacing, curve text and opacity. This class is a subclass of UIView
+
+
 #import <UIKit/UIKit.h>
 
 @class TextToolsView;
+//Delegate Functions used for handling button actions in the TextToolsView.
 
 @protocol TextToolsDelegate <NSObject>
 
 @optional
--(void)opacity_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view;
 
+-(void)opacity_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view;
 -(void)curve_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view;
 -(void)character_spacing_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view;
 -(void)line_spacing_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view;

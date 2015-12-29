@@ -6,6 +6,11 @@
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
 
+
+//This class is used for rotating view in 3d. This class is a subclass of UIView.
+//Delegate Functions used for handling button actions in the Rotate 3D View.
+
+
 #import <UIKit/UIKit.h>
 @class Rotate3DView;
 @protocol Rotate3DDelegate <NSObject>

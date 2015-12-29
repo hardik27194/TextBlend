@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "CustomButton.h"
 
+//This class consists of image editing functions like add text, font selection, color selection, 3d rotation and erase.This class is a subclass of UIView
+
+
 @class AddTextView;
+//Delegate Functions used for handling button actions in the AddTextView.
 
 @protocol AddTextViewDelegate <NSObject>
 
@@ -28,8 +32,7 @@
 @end
 
 
-@interface AddTextView : UIView
-{
+@interface AddTextView : UIView{
     
 }
 @property(nonatomic,strong)CustomButton *add_text_button;

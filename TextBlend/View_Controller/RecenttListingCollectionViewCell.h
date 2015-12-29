@@ -1,17 +1,19 @@
 //
-//  BouquetListingCollectionViewCell.h
-//  ContainerApp
+//  RecentListingCollectionViewCell.h
+//  TextBlend
 //
-//  Created by  Ryan  on 13/08/15.
-//  Copyright (c) 2015  Ryan . All rights reserved.
+//  Created by Wayne Rooney on 19/12/15.
+//  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 //
+
+//This view will used for displaying background image and list the name. This class is a subclass of UICollectionViewCell
 
 #import <UIKit/UIKit.h>
 
 @interface RecentListingCollectionViewCell : UICollectionViewCell
 
-@property (retain, nonatomic) IBOutlet UIImageView *listingImageView;
-@property (retain, nonatomic) IBOutlet UILabel *listingCollectionName;
+@property (strong, nonatomic) IBOutlet UIImageView *listingImageView;
+@property (strong, nonatomic) IBOutlet UILabel *listingCollectionName;
 
 
 @end

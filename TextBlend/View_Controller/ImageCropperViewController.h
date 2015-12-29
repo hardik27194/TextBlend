@@ -5,7 +5,9 @@
 //  Created by Wayne on 06/12/15.
 //  Copyright © 2015 Wayne Rooney. All rights reserved.
 //
-
+/*
+ This class is used for displaying all the differnt sizes in which the image can be cropped. This class is a subclass of ImageCropperViewController.
+*/
 #import <UIKit/UIKit.h>
 #import "ImageCropperView.h"
 #import "ImageEditingOptionsView.h"

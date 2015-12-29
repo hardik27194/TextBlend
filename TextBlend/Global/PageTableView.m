@@ -1,9 +1,8 @@
+//  PageTableView.h
+//  TextBlend
 //
-//  PageTableView.m
-//  HeyApp
-//
-//  Created by Kurt on 7/28/14.
-//  Copyright (c) 2014 Kurt. All rights reserved.
+//  Created by Wayne Rooney on 19/12/15.
+//  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 //
 
 #import "PageTableView.h"
@@ -37,25 +36,25 @@
     //self.pagingDelegate=self;
     self.delegate = self;
     self.pageSize = 20;
-//    activityIndicator=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-//    activityIndicator.frame=CGRectMake(130,0,30,20);
-//    [self.tableFooterView addSubview:activityIndicator];
+    //    activityIndicator=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //    activityIndicator.frame=CGRectMake(130,0,30,20);
+    //    [self.tableFooterView addSubview:activityIndicator];
     
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // if([self.pagingDelegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)])
-
-   return [self.pagingDelegate tableView:self heightForRowAtIndexPath:indexPath];
-
+    // if([self.pagingDelegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)])
+    
+    return [self.pagingDelegate tableView:self heightForRowAtIndexPath:indexPath];
+    
     
 }
 
 -(UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
-   
-   
+    
+    
     return [self.pagingDelegate tableView:self viewForFooterInSection:section];
 }
 
@@ -80,15 +79,15 @@
 }
 //
 //-(UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-//    
+//
 //    return [self.pagingDelegate tableView:self viewForFooterInSection:section];
 //}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-if([self.pagingDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
-    [self.pagingDelegate tableView:self didSelectRowAtIndexPath:indexPath];
-   
+    if([self.pagingDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
+        [self.pagingDelegate tableView:self didSelectRowAtIndexPath:indexPath];
+    
     
 }
 
@@ -106,61 +105,61 @@ if([self.pagingDelegate respondsToSelector:@selector(tableView:didSelectRowAtInd
 }
 
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{ 
-
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
     if([self.pagingDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
-    [self.pagingDelegate scrollViewDidEndDragging:self willDecelerate:decelerate];
+        [self.pagingDelegate scrollViewDidEndDragging:self willDecelerate:decelerate];
 }
 
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     isScrolling=YES;
-
+    
     
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
+    
     
     
     //NSIndexPath *indexPath=[self indexPathForSelectedRow];
     if(self.pagingDelegate && [self.pagingDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
-    [self.pagingDelegate scrollViewDidScroll:self];
-
+        [self.pagingDelegate scrollViewDidScroll:self];
+    
     NSArray *paths = [self indexPathsForVisibleRows];
     for (NSIndexPath *path in paths) {
         //NSLog(@"%d",path.row);
         //if(path.row==[self.dataSource tableView:self numberOfRowsInSection:indexPath.section] &&!pageLocked){
-
-       // NSLog(@"%d",path.row);
         
-//        NSLog(@"%d",path.row);
-//        NSLog(@"%@",self);
-//        NSLog(@"%@",self.dataSource);
-//        NSLog(@"%d",[self.dataSource tableView:self numberOfRowsInSection:0]);
-       // NSLog(@"%d",[self.dataSource tableView:self numberOfRowsInSection:0]);
+        // NSLog(@"%d",path.row);
+        
+        //        NSLog(@"%d",path.row);
+        //        NSLog(@"%@",self);
+        //        NSLog(@"%@",self.dataSource);
+        //        NSLog(@"%d",[self.dataSource tableView:self numberOfRowsInSection:0]);
+        // NSLog(@"%d",[self.dataSource tableView:self numberOfRowsInSection:0]);
         
         if(path.row== [self.dataSource tableView:self numberOfRowsInSection:0]-1 && !pageLocked){
-          //  NSLog(@"REACHED END");
+            //  NSLog(@"REACHED END");
             //if(self.selectedPageNumber<self.total_pages) {
-//            
-//            if(self.remaining_records>0) {
-//
-//            pageLocked = YES;
-//            self.selectedPageNumber +=1;
-//        
-//            if([self.pagingDelegate respondsToSelector:@selector(tableView:didReachEndOfPage:)])
-//                
-//                [self.pagingDelegate tableView:self didReachEndOfPage:self.selectedPageNumber];
-//            }
-
+            //
+            //            if(self.remaining_records>0) {
+            //
+            //            pageLocked = YES;
+            //            self.selectedPageNumber +=1;
+            //
+            //            if([self.pagingDelegate respondsToSelector:@selector(tableView:didReachEndOfPage:)])
+            //
+            //                [self.pagingDelegate tableView:self didReachEndOfPage:self.selectedPageNumber];
+            //            }
+            
             pageLocked = YES;
             self.selectedPageNumber +=1;
             
             if([self.pagingDelegate respondsToSelector:@selector(tableView:didReachEndOfPage:)])
                 
                 [self.pagingDelegate tableView:self didReachEndOfPage:self.selectedPageNumber];
-
+            
             break;
         }
     }

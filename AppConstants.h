@@ -103,8 +103,7 @@ viewclass *var = [[viewclass alloc] initWithNibName:nibname bundle:nil]
 #define    WINDOW_WIDTH_ORIENTED    (IsPortrait ? WINDOW_WIDTH : WINDOW_HEIGHT)          ///< i.e. 320 for portrait and 480 for landscape orientation
 #define    WINDOW_HEIGHT_ORIENTED   (IsPortrait ? WINDOW_HEIGHT : WINDOW_WIDTH)          ///< i.e. 460 for portrait and 320 for landscape orientation
 
-#define    SCREEN_WIDTH             [UIScreen mainScreen].bounds.size.width
-#define    SCREEN_HEIGHT            [UIScreen mainScreen].bounds.size.height
+
 #define    SCREEN_WIDTH_ORIENTED    (IsPortrait ? SCREEN_WIDTH : SCREEN_HEIGHT)
 #define    SCREEN_HEIGHT_ORIENTED   (IsPortrait ? SCREEN_HEIGHT : SCREEN_WIDTH)
 #define    NAVBAR_HEIGHT            44.
@@ -189,17 +188,12 @@ viewclass *var = [[viewclass alloc] initWithNibName:nibname bundle:nil]
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 #define IS_IPHONE_SIMULATOR TARGET_IPHONE_SIMULATOR
-#define IS_IPHONE ([[[UIDevice currentDevice] model] rangeOfString:@"iPhone"].location!=NSNotFound)
 #define IS_IPOD   ([[[UIDevice currentDevice] model] rangeOfString:@"iPod"].location!=NSNotFound)
-#define IS_IPAD   ([[[UIDevice currentDevice] model] rangeOfString:@"iPad"].location!=NSNotFound)
 #define IS_HEIGHT_GTE_568 [[UIScreen mainScreen ] bounds].size.height == 568.0f
 #define IS_HEIGHT_LTE_568 [[UIScreen mainScreen ] bounds].size.height < 568.0f
-#define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
-#define IS_IPHONE_5 (( IS_IPHONE || IS_IPOD) && IS_HEIGHT_GTE_568 )
 #define IS_IPHONE_4 (( IS_IPHONE || IS_IPOD) && IS_HEIGHT_LTE_568 && IS_RETINA)
 #define IS_IPHONE_3 (( IS_IPHONE || IS_IPOD) && IS_HEIGHT_LTE_568 && !IS_RETINA)
-#define IS_IPHONE_6 (IS_IPHONE && [UIScreen mainScreen].bounds.size.height == 667.0)
-#define IS_IPHONE_6P (IS_IPHONE && [UIScreen mainScreen].bounds.size.height == 736.0)
+
 #define IS_IPAD_2 (IS_IPAD && !IS_RETINA)
 #define IS_IPAD_3 (IS_IPAD && IS_RETINA)
 

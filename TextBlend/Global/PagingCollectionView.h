@@ -1,10 +1,14 @@
 //
 //  PagingCollectionView.h
-//  ScrollCollectionView
+//  TextBlend
 //
 //  Created by Wayne Rooney on 9/8/15.
 //  Copyright (c) 2015 Wayne Rooney. All rights reserved.
 //
+/*
+ 
+ Class for implementing the custom collection view for pagination.It is a sub class of UICollectionView.
+ */
 
 #import <UIKit/UIKit.h>
 @protocol PagingCollectionDelegate<UICollectionViewDelegateFlowLayout>

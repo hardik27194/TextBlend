@@ -34,7 +34,7 @@
     self.text_edit_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.text_edit_button.frame=CGRectMake(width_buttons,0, SCREEN_WIDTH/3, self.frame.size.height/2);
     [self.text_edit_button setImage:[UIImage imageNamed:@"image_editing_screen_text_edit.PNG"] forState:UIControlStateNormal];
-
+    
     [self.text_edit_button addTarget:self action:@selector(text_edit_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.image_edit_scroll_view addSubview:self.text_edit_button];
     
@@ -108,7 +108,7 @@
 #pragma mark - Button Pressed Methods -
 
 -(IBAction)text_edit_button_pressed:(UIButton *)sender{
- 
+    
     if ([self.image_editing_options_delegate respondsToSelector:@selector(text_edit_button_pressed:onSelectedView:)]) {
         [self.image_editing_options_delegate text_edit_button_pressed:sender onSelectedView:self];
     }
@@ -120,7 +120,7 @@
         [self.image_editing_options_delegate shape_button_pressed:sender onSelectedView:self];
     }
 }
-    
+
 
 
 -(IBAction)quotes_button_pressed:(UIButton *)sender{
@@ -182,11 +182,11 @@
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end
