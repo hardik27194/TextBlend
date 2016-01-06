@@ -60,12 +60,22 @@
     if(!self.fonts_array){
         self.fonts_array = [[NSMutableArray alloc]init];
     }
+    [self getArrayDetails];
     
-    for (NSString *familyName in [UIFont familyNames])
-    {
-        [self.fonts_array addObject:familyName];
-    }
+//    for (NSString *familyName in [UIFont familyNames])
+//    {
+//        [self.fonts_array addObject:familyName];
+//    }
     
+    
+}
+
+-(void)getArrayDetails{
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
+    self.fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
+    NSLog(@"%@",self.fonts_array);
+    NSIndexSet *indexSet=[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(5, self.fonts_array.count-1-5)];
+    [self.fonts_array removeObjectsAtIndexes:indexSet];
 }
 #pragma mark - Collection View Delegate Methods -
 
