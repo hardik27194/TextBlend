@@ -10,6 +10,7 @@
 #import "OHAttributedLabel.h"
 #import "MessageTextViewController.h"
 #import "ChooseShapeViewController.h"
+#import "ChooseQuoteViewController.h"
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 145
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
@@ -228,7 +229,12 @@
 }
 
 -(void)quotes_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add_image_notification:) name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
     
+    ChooseQuoteViewController *choose_quote_vc=[[ChooseQuoteViewController alloc]init];
+    choose_quote_vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:choose_quote_vc animated:YES];
+
 }
 
 -(void)photo_edit_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
@@ -243,7 +249,11 @@
 }
 
 -(void)saying_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add_image_notification:) name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
     
+    ChooseQuoteViewController *choose_quote_vc=[[ChooseQuoteViewController alloc]init];
+    choose_quote_vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:choose_quote_vc animated:YES];
 }
 
 -(void)draw_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
