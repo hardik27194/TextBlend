@@ -31,23 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "375"
             endingLineNumber = "375"
-            landmarkName = "-setFont:onSelectedView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextBlend/Lib/UIImage+PECrop.m"
-            timestampString = "473029399.053462"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-rotatedImageWithtransform:croppedToRect:"
+            landmarkName = "-select_font_done_check_mark_button_pressed:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

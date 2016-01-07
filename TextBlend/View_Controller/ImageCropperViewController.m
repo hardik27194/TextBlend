@@ -7,6 +7,8 @@
 //
 
 #import "ImageCropperViewController.h"
+#import "UIImage+PECrop.h"
+
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 138
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 
@@ -121,172 +123,181 @@
 
 -(void)original_image_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    [self.image_edit_main_view.cropView resetCropRectAnimated:YES];
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGSize size = self.image_edit_main_view.cropView.image.size;
-    CGFloat width = size.width;
-    CGFloat height = size.height;
-    CGFloat ratio;
-    if (width < height)
-    {
-        ratio = width / height;
-        cropRect.size = CGSizeMake(CGRectGetHeight(cropRect) * ratio, CGRectGetHeight(cropRect));
-    } else
-    {
-        ratio = height / width;
-        cropRect.size = CGSizeMake(CGRectGetWidth(cropRect), CGRectGetWidth(cropRect) * ratio);
-    }
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+//    [self.image_edit_main_view.cropView resetCropRectAnimated:YES];
+//    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
+//    CGSize size = self.image_edit_main_view.cropView.image.size;
+//    CGFloat width = size.width;
+//    CGFloat height = size.height;
+//    CGFloat ratio;
+//    if (width < height)
+//    {
+//        ratio = width / height;
+//        cropRect.size = CGSizeMake(CGRectGetHeight(cropRect) * ratio, CGRectGetHeight(cropRect));
+//    } else
+//    {
+//        ratio = height / width;
+//        cropRect.size = CGSizeMake(CGRectGetWidth(cropRect), CGRectGetWidth(cropRect) * ratio);
+//    }
+//    self.image_edit_main_view.cropView.cropRect = cropRect;
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:self.image_edit_main_view.main_image_view.frame];
 }
 
 
 -(void)instagram_post_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 470.0f / 470.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    [self ratio1X1_button_pressed:nil onSelectedView:nil];
 }
 
 -(void)facebook_post_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake(width, width * 394/470);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
     
-    
-    [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 394.0f / 470.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
-    
-    
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
--(void)facebook_cover_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
+-(void)facebook_cover_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
+{
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake(width, width * 315/851);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
     
-    [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 315 / 851.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
-    
-    
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 -(void)twitter_post_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 1.0f / 2.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake(width, width * 1/2);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
+    
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 -(void)iPhone4_wallpaper_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 480 / 320.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat height = CGRectGetHeight(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake((height*320)/480, height);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
     
-    
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 -(void)	iPhone5_6_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 568.0f / 320.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat height = CGRectGetHeight(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake((height*320)/568, height);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
     
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 -(void) ratio3X2_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
-    [self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 2.0f / 3.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake(width, width * 2/3);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
     
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 -(void)ratio4X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
-    //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 3.0f / 4.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake(width, width * 3/4);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
     
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 -(void)ratio5X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
-    //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 3.0f / 5.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake(width, width * 3/5);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
     
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
+
 -(void)ratio16X9_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 9.0f / 16.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake(width, width * 9/16);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
+
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 -(void)ratio1X1_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
     
     //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 1.0f / 1.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat height = CGRectGetHeight(self.image_edit_main_view.main_image_view.frame);
+    CGFloat width = CGRectGetWidth(self.image_edit_main_view.main_image_view.frame);
+    if(width<height)
+    {
+        cropRect.size = CGSizeMake(width, width);
+    }
+    else
+    {
+        cropRect.size = CGSizeMake(height, height);
+    }
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
+
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
+
 }
 
 -(void)ratio3X5_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 5.0f / 3.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat height = CGRectGetHeight(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake((height*3)/5, height);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
+
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 -(void)ratio3X4_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view{
     
-    //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 4.0f / 3.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat height = CGRectGetHeight(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake((height*3)/4, height);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
+
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 -(void)ratio2X3_button_pressed:(UIButton *)sender onSelectedView:(ImageCropperView *)selected_view
 {
-    //[self.image_edit_main_view .cropView resetCropRectAnimated:YES];
-    CGFloat ratio = 3.0f / 2.0f;
-    CGRect cropRect = self.image_edit_main_view.cropView.cropRect;
-    CGFloat width = CGRectGetWidth(cropRect);
-    cropRect.size = CGSizeMake(width, width * ratio);
-    self.image_edit_main_view.cropView.cropRect = cropRect;
+    CGRect cropRect = self.image_edit_main_view.main_image_view.frame;
+    CGFloat height = CGRectGetHeight(self.image_edit_main_view.main_image_view.frame);
+    cropRect.size = CGSizeMake((height*2)/3, height);
+    cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
+    cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
+
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
+//h= 3/2w
 
 #pragma mark - Customize Top Header Delegate Methods -
 
@@ -296,8 +307,40 @@
 
 -(void)next_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView
 {
-    self.selected_image = self.image_edit_main_view.cropView.croppedImage;
-    [self pushViewController:self.selected_image];
+    
+//    self.selected_image = [self.image_edit_main_view.main_image_view.image rotatedImageWithtransform:self.image_edit_main_view.main_image_view.transform croppedToRect:self.image_edit_main_view.cropRectView] ;
+
+    UIImage *image  =self.image_edit_main_view.main_image_view.image;
+    CGRect rect = self.image_edit_main_view.cropRectView;
+    
+    CGFloat heightRatio = image.size.height/self.image_edit_main_view.main_image_view.frame.size.height;
+    CGFloat widthRatio = image.size.width/self.image_edit_main_view.main_image_view.frame.size.width;
+    
+    CGFloat newHeight = rect.size.height *heightRatio;
+    CGFloat newWidth  =  rect.size.width *widthRatio;
+    
+    CGRect newFrameRect = CGRectMake((image.size.width - newWidth)/2, (image.size.height - newHeight)/2, newWidth, newHeight);
+    
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], newFrameRect);
+    
+    UIImage *img = [UIImage imageWithCGImage:imageRef];
+    
+    CGImageRelease(imageRef);
+
+
+/*    CGImageRef subImageRef = CGImageCreateWithImageInRect(image.CGImage, rect);
+    CGRect smallBounds = CGRectMake(rect.origin.x, rect.origin.y, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
+    UIGraphicsBeginImageContext(smallBounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, smallBounds, subImageRef);
+    UIImage* smallImg = [UIImage imageWithCGImage:subImageRef];
+    UIGraphicsEndImageContext();
+    [self pushViewController:smallImg];
+*/
+    
+    
+    [self pushViewController:img];
+
 }
 
 -(void)share_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
