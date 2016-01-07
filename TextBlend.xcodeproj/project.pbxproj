@@ -131,6 +131,8 @@
 		8BC231161C144CEE000BB5CF /* image_cropper_twitter_post.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8BC231061C144CEE000BB5CF /* image_cropper_twitter_post.PNG */; };
 		8BC231421C146A0E000BB5CF /* select_background_choose_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC231401C146A0E000BB5CF /* select_background_choose_background.png */; };
 		8BC231431C146A0E000BB5CF /* select_background_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC231411C146A0E000BB5CF /* select_background_logo.png */; };
+		8BD2DD9F1C3D82ED0069B80C /* ChooseQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2DD9E1C3D82ED0069B80C /* ChooseQuoteViewController.m */; };
+		8BD2DDA21C3D838E0069B80C /* ChooseQuoteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2DDA11C3D838E0069B80C /* ChooseQuoteCollectionViewCell.m */; };
 		8BD573591C17330C00158DC0 /* done_check_mark_button.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8BD573581C17330C00158DC0 /* done_check_mark_button.PNG */; };
 		8BD5735B1C173CCE00158DC0 /* rotate_3d_info_text_image.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8BD5735A1C173CCE00158DC0 /* rotate_3d_info_text_image.PNG */; };
 		8BE7E2AD1C31CC2A0032E5B5 /* center_aligned_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E2A91C31CC2A0032E5B5 /* center_aligned_icon.png */; };
@@ -1090,6 +1092,10 @@
 		8BC231061C144CEE000BB5CF /* image_cropper_twitter_post.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_cropper_twitter_post.PNG; sourceTree = "<group>"; };
 		8BC231401C146A0E000BB5CF /* select_background_choose_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_choose_background.png; sourceTree = "<group>"; };
 		8BC231411C146A0E000BB5CF /* select_background_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_logo.png; sourceTree = "<group>"; };
+		8BD2DD9D1C3D82ED0069B80C /* ChooseQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseQuoteViewController.h; sourceTree = "<group>"; };
+		8BD2DD9E1C3D82ED0069B80C /* ChooseQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseQuoteViewController.m; sourceTree = "<group>"; };
+		8BD2DDA01C3D838E0069B80C /* ChooseQuoteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseQuoteCollectionViewCell.h; sourceTree = "<group>"; };
+		8BD2DDA11C3D838E0069B80C /* ChooseQuoteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseQuoteCollectionViewCell.m; sourceTree = "<group>"; };
 		8BD573581C17330C00158DC0 /* done_check_mark_button.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_check_mark_button.PNG; sourceTree = "<group>"; };
 		8BD5735A1C173CCE00158DC0 /* rotate_3d_info_text_image.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rotate_3d_info_text_image.PNG; sourceTree = "<group>"; };
 		8BE7E2A91C31CC2A0032E5B5 /* center_aligned_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center_aligned_icon.png; sourceTree = "<group>"; };
@@ -2006,6 +2012,8 @@
 				8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */,
 				8B025F221C2F18CE005D2C3B /* ChooseOptionCustomCell.h */,
 				8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */,
+				8BD2DDA01C3D838E0069B80C /* ChooseQuoteCollectionViewCell.h */,
+				8BD2DDA11C3D838E0069B80C /* ChooseQuoteCollectionViewCell.m */,
 			);
 			path = Custom_Cell;
 			sourceTree = "<group>";
@@ -2134,6 +2142,8 @@
 				8B025F171C2E715E005D2C3B /* MessageTextViewController.m */,
 				8B025F191C2F0E1F005D2C3B /* ChooseShapeViewController.h */,
 				8B025F1A1C2F0E1F005D2C3B /* ChooseShapeViewController.m */,
+				8BD2DD9D1C3D82ED0069B80C /* ChooseQuoteViewController.h */,
+				8BD2DD9E1C3D82ED0069B80C /* ChooseQuoteViewController.m */,
 			);
 			path = View_Controller;
 			sourceTree = "<group>";
@@ -4412,11 +4422,13 @@
 				8BACE9741C10A09500CEDFE3 /* PagingCollectionView.m in Sources */,
 				DB83E1811C227C1D008F0B2C /* NetConnection.m in Sources */,
 				8BBF90631C15DF75001510FA /* CustomZDStickerView.m in Sources */,
+				8BD2DDA21C3D838E0069B80C /* ChooseQuoteCollectionViewCell.m in Sources */,
 				8BACE9761C10A09500CEDFE3 /* Utility.m in Sources */,
 				8BACEA4E1C10AD1F00CEDFE3 /* OHAttributedLabel.m in Sources */,
 				8BACE9A51C10A48300CEDFE3 /* UIButton+WebCache.m in Sources */,
 				8BACE9701C10A09500CEDFE3 /* UIView+Toast.m in Sources */,
 				DB83E16D1C227566008F0B2C /* MyView.m in Sources */,
+				8BD2DD9F1C3D82ED0069B80C /* ChooseQuoteViewController.m in Sources */,
 				8BACE9A71C10A48300CEDFE3 /* UIImage+MultiFormat.m in Sources */,
 				DB83E1541C227566008F0B2C /* BCMeshTransformView.m in Sources */,
 				8BBF90771C15F6F5001510FA /* SelectFontsView.m in Sources */,
