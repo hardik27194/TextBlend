@@ -69,8 +69,8 @@
     UIPanGestureRecognizer *panRecognizer1               = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan1:)];
     [self.image_edit_main_view addGestureRecognizer:panRecognizer1];
     
-    //    UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
-    //    [self.image_edit_main_view addGestureRecognizer:pinch];
+        UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
+        [self.image_edit_main_view addGestureRecognizer:pinch];
 }
 
 -(void)initializeMainImageView
@@ -352,7 +352,7 @@
          UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
          if(!oldfont)
          {
-             oldfont = [UIFont systemFontOfSize:12.0];
+             oldfont = [UIFont boldSystemFontOfSize:25.0f];
          }
          
          NSMutableDictionary *dic = [attributes mutableCopy];
@@ -799,18 +799,52 @@
 
 #pragma mark - Rotate 3D Delegate Methods -
 
--(void)rotate_3d_intensity_slider_value_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view{
-    
+-(void)rotate_3d_intensity_slider_value_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view
+{
+/* ZdSticker */
+ ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    if(sticker == nil)
+    {
+        return;
+    }
+    OHAttributedLabel *label = (OHAttributedLabel*)sticker.contentView1;
+    label.isIn3DMode = YES;
+    [sticker hideDelHandle];
+
+    CALayer *layer                                       = sticker.layer;
+    layer.zPosition = 300;
+    CATransform3D rotationAndPerspectiveTransform        = CATransform3DIdentity;
+    if(slider.value  > 1)
+    {
+        rotationAndPerspectiveTransform.m34                  = -1.0 /300;
+        rotationAndPerspectiveTransform                      = CATransform3DRotate(rotationAndPerspectiveTransform, slider.value * M_PI / 180.0f, 0.0f,0.5f, 0.0f);
+    }
+    else
+    {
+        rotationAndPerspectiveTransform.m34                  = 1.0 /300;
+        rotationAndPerspectiveTransform                      = CATransform3DRotate(rotationAndPerspectiveTransform, -slider.value * M_PI / 180.0f, 0.0f,0.5f, 0.0f);
+    }
+    layer.transform                                      = rotationAndPerspectiveTransform;
+
+    sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
+                                                                 sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
+    [label setNeedsDisplay];
+    [sticker setNeedsDisplay];
+    [self.image_edit_main_view  setNeedsDisplay];
 }
+
+
+
 -(void)rotate_3d_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view{
     if (rotate_3d_view) {
         [rotate_3d_view removeFromSuperview];
         rotate_3d_view=  nil;
     }
 }
--(void)reset_3d_rotate_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view{
+-(void)reset_3d_rotate_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view
+{
     
-    
+        
     
 }
 #pragma mark - ZDSticker View Delegate Methods -
@@ -857,6 +891,7 @@
     NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithString:strMain];
     
     [strattr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,strattr.length)];
+    
     [strattr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:25.0f] range:NSMakeRange(0,strattr.length)];
     
     
@@ -886,8 +921,8 @@
     userResizableView1.preventsPositionOutsideSuperview  = NO;
     [userResizableView1 showEditingHandles];
     userResizableView1.center                            = CGPointMake(self.image_edit_main_view.center.x, self.image_edit_main_view.center.y);
-    UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
-    [userResizableView1 addGestureRecognizer:pinch];
+//    UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
+//    [userResizableView1 addGestureRecognizer:pinch];
     
     
     
@@ -981,7 +1016,7 @@
          UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
          if(!oldfont)
          {
-             oldfont = [UIFont systemFontOfSize:12.0];
+             oldfont = [UIFont boldSystemFontOfSize:25.0f];
          }
          fontName = oldfont.fontName;
          fontSize = oldfont.pointSize;

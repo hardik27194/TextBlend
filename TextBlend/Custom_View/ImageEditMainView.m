@@ -25,74 +25,52 @@
 {
     if(self.hasSelectedImage)
     {
-//        self.image_edit_scroll_view =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-//        self.image_edit_scroll_view.delegate=self;
-//        self.image_edit_scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH, self.frame.size.height);
-//        self.image_edit_scroll_view.contentOffset=CGPointZero;
-//        [self addSubview:self.image_edit_scroll_view];
         
         self.main_image_view =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         self.main_image_view.image=self.selected_image;
         [self.main_image_view setContentMode:UIViewContentModeScaleAspectFit];
-        
-//
-//        
-//        self.image_edit_scroll_view.minimumZoomScale = 1.0;
-//        self.image_edit_scroll_view.maximumZoomScale = 3.0;
-//        self.image_edit_scroll_view.contentSize = self.main_image_view.frame.size;
-//        self.image_edit_scroll_view.delegate = self;
-        
-        
         [self addSubview:self.main_image_view];
     }
     else
     {
-//        self.cropView = [[PECropView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-//        self.cropView.image = self.selected_image;
-//        self.cropView.keepingCropAspectRatio = NO;
-//        [self addSubview:self.cropView];
-        
+        //Create image scroll.
+        self.image_edit_scroll_view =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        self.image_edit_scroll_view.minimumZoomScale = 1.0;
+        self.image_edit_scroll_view.maximumZoomScale = 3.0;
+        self.image_edit_scroll_view.contentSize = self.main_image_view.frame.size;
+        self.image_edit_scroll_view.delegate = self;
+//        [self addSubview:self.image_edit_scroll_view];
 
-                self.image_edit_scroll_view =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-                self.image_edit_scroll_view.delegate=self;
-                self.image_edit_scroll_view.contentOffset=CGPointZero;
-//                [self addSubview:self.image_edit_scroll_view];
-        //
-        //
-                self.image_edit_scroll_view.minimumZoomScale = 1.0;
-                self.image_edit_scroll_view.maximumZoomScale = 3.0;
-                self.image_edit_scroll_view.contentSize = self.main_image_view.frame.size;
-                self.image_edit_scroll_view.delegate = self;
-        
-
-        
-        
         self.main_image_view  = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.selected_image.size.width, self.selected_image.size.height)];
         [self.main_image_view setImage:self.selected_image];
-        [self addSubview:self.main_image_view];
-//        [self.main_image_view setClipsToBounds:NO];
+        self.image_edit_scroll_view.contentSize= self.main_image_view.frame.size;
         [self.image_edit_scroll_view setClipsToBounds:NO];
-        
-//        self.image_edit_scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH, self.frame.size.height);
-        self.image_edit_scroll_view.contentSize= self.selected_image.size;
-
+//        [self.image_edit_scroll_view addSubview:self.main_image_view];
+        [self addSubview:self.main_image_view];
         
         self.topOverlayView = [[UIView alloc] init];
         self.topOverlayView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
         [self addSubview:self.topOverlayView];
         
+        
+        
         self.leftOverlayView = [[UIView alloc] init];
         self.leftOverlayView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
         [self addSubview:self.leftOverlayView];
+        
+        
         
         self.rightOverlayView = [[UIView alloc] init];
         self.rightOverlayView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
         [self addSubview:self.rightOverlayView];
         
+        
+        
+        
         self.bottomOverlayView = [[UIView alloc] init];
         self.bottomOverlayView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
         [self addSubview:self.bottomOverlayView];
-
+        
         
         
         if(self.main_image_view.frame.size.height > self.main_image_view.frame.size.width)
@@ -107,7 +85,7 @@
                 rect.origin.y = (self.frame.size.height - rect.size.height)/2;
                 [self.main_image_view setFrame:rect];
                 [self layoutOverlayViewsWithCropRect:rect];
-
+                
             }
             else
             {
@@ -118,7 +96,7 @@
                 rect.origin.y = (self.frame.size.height - rect.size.height)/2;
                 [self.main_image_view setFrame:rect];
                 [self layoutOverlayViewsWithCropRect:rect];
-
+                
             }
         }
         else
@@ -133,7 +111,7 @@
                 rect.origin.y = (self.frame.size.height - rect.size.height)/2;
                 [self.main_image_view setFrame:rect];
                 [self layoutOverlayViewsWithCropRect:rect];
-
+                
             }
             else
             {
@@ -153,27 +131,31 @@
 - (void)layoutOverlayViewsWithCropRect:(CGRect)cropRect
 {
     self.cropRectView = cropRect;
+    [self.image_edit_scroll_view setFrame:cropRect];
+    [self.image_edit_scroll_view setContentSize:self.main_image_view.frame.size];
+    [self.image_edit_scroll_view scrollRectToVisible:CGRectMake(self.image_edit_scroll_view.center.x-self.image_edit_scroll_view.frame.size.width/2, self.image_edit_scroll_view.center.y-self.image_edit_scroll_view.frame.size.height/2, self.image_edit_scroll_view.frame.size.width, self.image_edit_scroll_view.frame.size.height) animated:NO];
+    
     
     [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         
-    self.topOverlayView.frame = CGRectMake(0.0f,
-                                           0.0f,
-                                           CGRectGetWidth(self.bounds),
-                                           CGRectGetMinY(cropRect));
-    self.leftOverlayView.frame = CGRectMake(0.0f,
-                                            CGRectGetMinY(cropRect),
-                                            CGRectGetMinX(cropRect),
-                                            CGRectGetHeight(cropRect));
-    self.rightOverlayView.frame = CGRectMake(CGRectGetMaxX(cropRect),
-                                             CGRectGetMinY(cropRect),
-                                             CGRectGetWidth(self.bounds) - CGRectGetMaxX(cropRect),
-                                             CGRectGetHeight(cropRect));
-    self.bottomOverlayView.frame = CGRectMake(0.0f,
-                                              CGRectGetMaxY(cropRect),
-                                              CGRectGetWidth(self.bounds),
-                                              CGRectGetHeight(self.bounds) - CGRectGetMaxY(cropRect));
+        self.topOverlayView.frame = CGRectMake(0.0f,
+                                               0.0f,
+                                               CGRectGetWidth(self.bounds),
+                                               CGRectGetMinY(cropRect));
+        self.leftOverlayView.frame = CGRectMake(0.0f,
+                                                CGRectGetMinY(cropRect),
+                                                CGRectGetMinX(cropRect),
+                                                CGRectGetHeight(cropRect));
+        self.rightOverlayView.frame = CGRectMake(CGRectGetMaxX(cropRect),
+                                                 CGRectGetMinY(cropRect),
+                                                 CGRectGetWidth(self.bounds) - CGRectGetMaxX(cropRect),
+                                                 CGRectGetHeight(cropRect));
+        self.bottomOverlayView.frame = CGRectMake(0.0f,
+                                                  CGRectGetMaxY(cropRect),
+                                                  CGRectGetWidth(self.bounds),
+                                                  CGRectGetHeight(self.bounds) - CGRectGetMaxY(cropRect));
     } completion:NULL];
-
+    
 }
 
 
@@ -201,8 +183,8 @@
     self.main_image_view.frame = fr;
     
     CGSize scrSize = scrollView.frame.size;
-//    float offx = (scrSize.width > realImgSize.width ? (scrSize.width - realImgSize.width) / 2 : 0);
-
+    //    float offx = (scrSize.width > realImgSize.width ? (scrSize.width - realImgSize.width) / 2 : 0);
+    
     
     
     float offx;
@@ -225,11 +207,13 @@
     {
         offy = (realImgSize.height - scrSize.height) / 2;
     }
-
+    
     
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.25];
-    scrollView.contentInset = UIEdgeInsetsMake(offy, offx, offy, offx);
+//    scrollView.contentInset = UIEdgeInsetsMake(offy, offx, offy, offx);
+    [scrollView setContentSize:imgViewSize];
+    
     [UIView commitAnimations];
 }
 

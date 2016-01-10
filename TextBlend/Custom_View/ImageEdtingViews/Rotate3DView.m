@@ -63,6 +63,9 @@
     self.intensity_slider.value=0;
     [self.intensity_slider setMaximumTrackTintColor:MIN_COLOR];
     [self.intensity_slider setMaximumTrackTintColor:MAX_COLOR];
+    self.intensity_slider.minimumValue = -80.0;
+    self.intensity_slider.maximumValue = 80.0;
+    [self.intensity_slider setValue:1.1 animated:YES];
     [self.intensity_slider addTarget:self action:@selector(intensity_slider_value_changed:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:self.intensity_slider];
     

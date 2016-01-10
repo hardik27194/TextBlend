@@ -310,6 +310,8 @@
     
 //    self.selected_image = [self.image_edit_main_view.main_image_view.image rotatedImageWithtransform:self.image_edit_main_view.main_image_view.transform croppedToRect:self.image_edit_main_view.cropRectView] ;
 
+/*
+    
     UIImage *image  =self.image_edit_main_view.main_image_view.image;
     CGRect rect = self.image_edit_main_view.cropRectView;
     
@@ -326,7 +328,7 @@
     UIImage *img = [UIImage imageWithCGImage:imageRef];
     
     CGImageRelease(imageRef);
-
+*/
 
 /*    CGImageRef subImageRef = CGImageCreateWithImageInRect(image.CGImage, rect);
     CGRect smallBounds = CGRectMake(rect.origin.x, rect.origin.y, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
@@ -339,7 +341,9 @@
 */
     
     
-    [self pushViewController:img];
+    
+    
+    [self pushViewController:self.selected_image];
 
 }
 
