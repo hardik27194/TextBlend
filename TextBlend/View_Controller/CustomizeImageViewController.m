@@ -952,7 +952,8 @@
     return userResizableView1;
 }
 
--(void)addGesturesToView:(ZDStickerView*)sticker{
+-(void)addGesturesToView:(ZDStickerView*)sticker
+{
     UITapGestureRecognizer *gesture                      = [[UITapGestureRecognizer alloc]
                                                             initWithTarget:self
                                                             
@@ -960,7 +961,8 @@
     gesture.numberOfTapsRequired                         = 1;
     [sticker addGestureRecognizer:gesture];
     
-    
+    if([sticker.contentView1 isKindOfClass:[OHAttributedLabel class]])
+    {
     UITapGestureRecognizer *gestureDoubleTap             = [[UITapGestureRecognizer alloc]
                                                             initWithTarget:self
                                                             
@@ -968,6 +970,7 @@
     gestureDoubleTap.numberOfTapsRequired                = 2;
     [sticker addGestureRecognizer:gestureDoubleTap];
     [gesture requireGestureRecognizerToFail:gestureDoubleTap];
+    }
 }
 
 -(void)handleTapToLabels:(UITapGestureRecognizer*)recognizer{
@@ -999,6 +1002,51 @@
         }
     }
 }
+
+-(ZDStickerView *)func_createDefaultImageSticker:(UIImage*)image{
+    
+    UIImageView *imageHolder = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+    [imageHolder setContentMode:UIViewContentModeScaleAspectFit];
+    [imageHolder setImage:image];
+    AppDel.gloabalSelectedTag                            = AppDel.mainLabelTag;
+    AppDel.mainLabelTag++;
+    [imageHolder setTag:AppDel.gloabalSelectedTag];
+    
+    
+    
+    ZDStickerView *userResizableView1                    = [[ZDStickerView alloc] initWithFrame:imageHolder.frame];
+    userResizableView1.tag                               = imageHolder.tag*5000;
+    userResizableView1.delegate                          = self;
+    userResizableView1.contentView1                      = imageHolder;//contentView;
+    userResizableView1.preventsPositionOutsideSuperview  = NO;
+    [userResizableView1 showEditingHandles];
+    userResizableView1.center                            = CGPointMake(self.image_edit_main_view.center.x, self.image_edit_main_view.center.y);
+    
+    for(UIView *v in image_edit_main_view.subviews)
+    {
+        if([v isKindOfClass:[ZDStickerView class]])
+        {
+            ZDStickerView *sticker = (ZDStickerView*)v;
+            if(sticker.tag ==  (AppDel.gloabalSelectedTag*5000))
+            {
+                [sticker showEditingHandles];
+            }
+            else
+            {
+                [sticker hideEditingHandles];
+            }
+        }
+    }
+    
+    [self addGesturesToView:userResizableView1];
+    [userResizableView1 setNeedsDisplay];
+    [self.image_edit_main_view addSubview:userResizableView1];
+    
+    AppDel.gloabalSelectedTag                            = userResizableView1.tag/5000;
+    [self.image_edit_main_view setNeedsDisplay];
+    return userResizableView1;
+}
+
 
 - (void)handlePinchLabel:(UIPinchGestureRecognizer *)recognizer
 {
@@ -1291,17 +1339,17 @@
 
 
 
--(void)add_image_notification:(NSNotification *)notification{
-    // NSLog(@"%@",notification);
+-(void)add_image_notification:(NSNotification *)notification
+{
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:nil];
     
     if ([notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"]) {
-        //UIImage *image=[notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"];
-        
-        // Add new sticker view with image on the view
-        
+        UIImage *image=[notification.object valueForKey:@"ZD_STICKER_VIEW_IMAGE"];
+        if (image)
+        {
+            [self func_createDefaultImageSticker:image];
+        }
     }
-    
 }
 
 

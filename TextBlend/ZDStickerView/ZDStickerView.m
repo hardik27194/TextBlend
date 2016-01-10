@@ -496,12 +496,19 @@
     } else {
         deleteControl.hidden = YES;
     }
-    if (NO == preventsResizing) {
+    if (NO == preventsResizing)
+    {
+        if([self.contentView1 isKindOfClass:[OHAttributedLabel class]])
+        {
         OHAttributedLabel *label = (OHAttributedLabel*)self.contentView1;
-        if(label.isIn3DMode){
+        if(label && label.isIn3DMode)
+        {
             resizingControl.hidden = YES;
-        }else{
+        }
+        else
+        {
             resizingControl.hidden = NO;
+        }
         }
         
     } else {

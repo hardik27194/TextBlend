@@ -152,22 +152,14 @@
 
 #pragma mark - Collection View Delegate Methods -
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;//self.posts_array.count;
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    if (self.posts_array.count>section) {
-        
-        NSDictionary *hash_tag_dict=[self.posts_array objectAtIndex:section];
-        if ([hash_tag_dict valueForKey:@"Hash_post"] && [Utility validData:[hash_tag_dict valueForKey:@"Hash_post"]] && [[hash_tag_dict valueForKey:@"Hash_post"]isKindOfClass:[NSArray class]]) {
-            return [[hash_tag_dict valueForKey:@"Hash_post"] count];
-        }
-        
-    }
-    
-    return 50;
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 21;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -192,16 +184,16 @@
         
     }
     cell.selected_image_view.frame=CGRectMake(1, 6, (SCREEN_WIDTH/3)-10, (SCREEN_WIDTH/3)-10);
-    [cell.selected_image_view setImage:nil ];
+    [cell.selected_image_view setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Shape_%ld.png",(long)indexPath.row+1]]];
     
     if (!cell.selected_image_view) {
         UITapGestureRecognizer *tap_gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selected_image_view_pressed:)];
         tap_gesture.delegate=self;
         tap_gesture.numberOfTouchesRequired=1;
         [cell.selected_image_view addGestureRecognizer:tap_gesture];
-        
     }
     
+/*
     int selected_button = arc4random()%3;
     if (selected_button == 0) {
         [cell.selected_image_view setImage:[UIImage imageNamed:@"tempHorse.jpg"]];
@@ -214,7 +206,7 @@
         [cell.selected_image_view setImage:[UIImage imageNamed:@"tempColor.jpg"] ];
         
     }
-    
+    */
     
     /*
      if (self.posts_array.count>indexPath.section) {
@@ -274,7 +266,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    [self updateImageAndPop:[UIImage imageNamed:@"tempHorse.jpg"]];
+    [self updateImageAndPop:[UIImage imageNamed:[NSString stringWithFormat:@"Shape_%ld.png",(long)indexPath.row+1]]];
     
 }
 
@@ -287,7 +279,6 @@
     [text_info_dict setValue:image forKey:@"ZD_STICKER_VIEW_IMAGE"];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION object:text_info_dict];
-    
     
     [self.navigationController popViewControllerAnimated:YES];
     

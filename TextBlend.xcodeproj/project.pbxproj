@@ -825,6 +825,27 @@
 		DB1F5FEC1C18866C00F425DB /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB1F5FE41C18866C00F425DB /* PEPhotoCropEditor.bundle */; };
 		DB1F5FED1C18866C00F425DB /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5FE61C18866C00F425DB /* PEResizeControl.m */; };
 		DB1F5FEE1C18866C00F425DB /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5FE81C18866C00F425DB /* UIImage+PECrop.m */; };
+		DB66F3EA1C42656300CC8ABF /* Shape_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3D51C42656300CC8ABF /* Shape_1.png */; };
+		DB66F3EB1C42656300CC8ABF /* Shape_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3D61C42656300CC8ABF /* Shape_2.png */; };
+		DB66F3EC1C42656300CC8ABF /* Shape_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3D71C42656300CC8ABF /* Shape_3.png */; };
+		DB66F3ED1C42656300CC8ABF /* Shape_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3D81C42656300CC8ABF /* Shape_4.png */; };
+		DB66F3EE1C42656300CC8ABF /* Shape_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3D91C42656300CC8ABF /* Shape_5.png */; };
+		DB66F3EF1C42656300CC8ABF /* Shape_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3DA1C42656300CC8ABF /* Shape_6.png */; };
+		DB66F3F01C42656300CC8ABF /* Shape_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3DB1C42656300CC8ABF /* Shape_7.png */; };
+		DB66F3F11C42656300CC8ABF /* Shape_8.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3DC1C42656300CC8ABF /* Shape_8.png */; };
+		DB66F3F21C42656300CC8ABF /* Shape_9.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3DD1C42656300CC8ABF /* Shape_9.png */; };
+		DB66F3F31C42656300CC8ABF /* Shape_10.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3DE1C42656300CC8ABF /* Shape_10.png */; };
+		DB66F3F41C42656300CC8ABF /* Shape_11.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3DF1C42656300CC8ABF /* Shape_11.png */; };
+		DB66F3F51C42656300CC8ABF /* Shape_12.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E01C42656300CC8ABF /* Shape_12.png */; };
+		DB66F3F61C42656300CC8ABF /* Shape_13.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E11C42656300CC8ABF /* Shape_13.png */; };
+		DB66F3F71C42656300CC8ABF /* Shape_14.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E21C42656300CC8ABF /* Shape_14.png */; };
+		DB66F3F81C42656300CC8ABF /* Shape_15.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E31C42656300CC8ABF /* Shape_15.png */; };
+		DB66F3F91C42656300CC8ABF /* Shape_16.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E41C42656300CC8ABF /* Shape_16.png */; };
+		DB66F3FA1C42656300CC8ABF /* Shape_17.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E51C42656300CC8ABF /* Shape_17.png */; };
+		DB66F3FB1C42656300CC8ABF /* Shape_18.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E61C42656300CC8ABF /* Shape_18.png */; };
+		DB66F3FC1C42656300CC8ABF /* Shape_19.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E71C42656300CC8ABF /* Shape_19.png */; };
+		DB66F3FD1C42656300CC8ABF /* Shape_20.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E81C42656300CC8ABF /* Shape_20.png */; };
+		DB66F3FE1C42656300CC8ABF /* Shape_21.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E91C42656300CC8ABF /* Shape_21.png */; };
 		DB7D2A291C145E7C00076342 /* tempHorse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB7D2A261C145E7C00076342 /* tempHorse.jpg */; };
 		DB7D2A2A1C145E7C00076342 /* tempHouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB7D2A271C145E7C00076342 /* tempHouse.jpg */; };
 		DB7D2A2B1C145E7C00076342 /* tempColor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB7D2A281C145E7C00076342 /* tempColor.jpg */; };
@@ -1796,6 +1817,27 @@
 		DB1F5FE61C18866C00F425DB /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
 		DB1F5FE71C18866C00F425DB /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
 		DB1F5FE81C18866C00F425DB /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
+		DB66F3D51C42656300CC8ABF /* Shape_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_1.png; path = Resources/Shapes/Shape_1.png; sourceTree = "<group>"; };
+		DB66F3D61C42656300CC8ABF /* Shape_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_2.png; path = Resources/Shapes/Shape_2.png; sourceTree = "<group>"; };
+		DB66F3D71C42656300CC8ABF /* Shape_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_3.png; path = Resources/Shapes/Shape_3.png; sourceTree = "<group>"; };
+		DB66F3D81C42656300CC8ABF /* Shape_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_4.png; path = Resources/Shapes/Shape_4.png; sourceTree = "<group>"; };
+		DB66F3D91C42656300CC8ABF /* Shape_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_5.png; path = Resources/Shapes/Shape_5.png; sourceTree = "<group>"; };
+		DB66F3DA1C42656300CC8ABF /* Shape_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_6.png; path = Resources/Shapes/Shape_6.png; sourceTree = "<group>"; };
+		DB66F3DB1C42656300CC8ABF /* Shape_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_7.png; path = Resources/Shapes/Shape_7.png; sourceTree = "<group>"; };
+		DB66F3DC1C42656300CC8ABF /* Shape_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_8.png; path = Resources/Shapes/Shape_8.png; sourceTree = "<group>"; };
+		DB66F3DD1C42656300CC8ABF /* Shape_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_9.png; path = Resources/Shapes/Shape_9.png; sourceTree = "<group>"; };
+		DB66F3DE1C42656300CC8ABF /* Shape_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_10.png; path = Resources/Shapes/Shape_10.png; sourceTree = "<group>"; };
+		DB66F3DF1C42656300CC8ABF /* Shape_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_11.png; path = Resources/Shapes/Shape_11.png; sourceTree = "<group>"; };
+		DB66F3E01C42656300CC8ABF /* Shape_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_12.png; path = Resources/Shapes/Shape_12.png; sourceTree = "<group>"; };
+		DB66F3E11C42656300CC8ABF /* Shape_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_13.png; path = Resources/Shapes/Shape_13.png; sourceTree = "<group>"; };
+		DB66F3E21C42656300CC8ABF /* Shape_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_14.png; path = Resources/Shapes/Shape_14.png; sourceTree = "<group>"; };
+		DB66F3E31C42656300CC8ABF /* Shape_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_15.png; path = Resources/Shapes/Shape_15.png; sourceTree = "<group>"; };
+		DB66F3E41C42656300CC8ABF /* Shape_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_16.png; path = Resources/Shapes/Shape_16.png; sourceTree = "<group>"; };
+		DB66F3E51C42656300CC8ABF /* Shape_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_17.png; path = Resources/Shapes/Shape_17.png; sourceTree = "<group>"; };
+		DB66F3E61C42656300CC8ABF /* Shape_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_18.png; path = Resources/Shapes/Shape_18.png; sourceTree = "<group>"; };
+		DB66F3E71C42656300CC8ABF /* Shape_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_19.png; path = Resources/Shapes/Shape_19.png; sourceTree = "<group>"; };
+		DB66F3E81C42656300CC8ABF /* Shape_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_20.png; path = Resources/Shapes/Shape_20.png; sourceTree = "<group>"; };
+		DB66F3E91C42656300CC8ABF /* Shape_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_21.png; path = Resources/Shapes/Shape_21.png; sourceTree = "<group>"; };
 		DB7D2A261C145E7C00076342 /* tempHorse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempHorse.jpg; sourceTree = "<group>"; };
 		DB7D2A271C145E7C00076342 /* tempHouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempHouse.jpg; sourceTree = "<group>"; };
 		DB7D2A281C145E7C00076342 /* tempColor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempColor.jpg; sourceTree = "<group>"; };
@@ -2268,6 +2310,7 @@
 				8BC230F61C144CEE000BB5CF /* ImageCropper */,
 				8BC230D51C141B13000BB5CF /* General Images */,
 				8BC230A91C141235000BB5CF /* ImageEditingTools */,
+				DB66F3FF1C42656A00CC8ABF /* SharingScreen */,
 				8BC230B01C141235000BB5CF /* InitialScreen */,
 			);
 			path = Resources;
@@ -3273,6 +3316,35 @@
 			path = ../Lib;
 			sourceTree = "<group>";
 		};
+		DB66F3FF1C42656A00CC8ABF /* SharingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DB66F3D51C42656300CC8ABF /* Shape_1.png */,
+				DB66F3D61C42656300CC8ABF /* Shape_2.png */,
+				DB66F3D71C42656300CC8ABF /* Shape_3.png */,
+				DB66F3D81C42656300CC8ABF /* Shape_4.png */,
+				DB66F3D91C42656300CC8ABF /* Shape_5.png */,
+				DB66F3DA1C42656300CC8ABF /* Shape_6.png */,
+				DB66F3DB1C42656300CC8ABF /* Shape_7.png */,
+				DB66F3DC1C42656300CC8ABF /* Shape_8.png */,
+				DB66F3DD1C42656300CC8ABF /* Shape_9.png */,
+				DB66F3DE1C42656300CC8ABF /* Shape_10.png */,
+				DB66F3DF1C42656300CC8ABF /* Shape_11.png */,
+				DB66F3E01C42656300CC8ABF /* Shape_12.png */,
+				DB66F3E11C42656300CC8ABF /* Shape_13.png */,
+				DB66F3E21C42656300CC8ABF /* Shape_14.png */,
+				DB66F3E31C42656300CC8ABF /* Shape_15.png */,
+				DB66F3E41C42656300CC8ABF /* Shape_16.png */,
+				DB66F3E51C42656300CC8ABF /* Shape_17.png */,
+				DB66F3E61C42656300CC8ABF /* Shape_18.png */,
+				DB66F3E71C42656300CC8ABF /* Shape_19.png */,
+				DB66F3E81C42656300CC8ABF /* Shape_20.png */,
+				DB66F3E91C42656300CC8ABF /* Shape_21.png */,
+			);
+			name = SharingScreen;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		DB83E0DE1C227528008F0B2C /* ThirdPartyBlend */ = {
 			isa = PBXGroup;
 			children = (
@@ -3640,10 +3712,12 @@
 				8BFE1F871C3696FC001450DF /* TATTI___.TTF in Resources */,
 				8BFE1DC61C3696FC001450DF /* stripefest.ttf in Resources */,
 				DB83E1681C227566008F0B2C /* loading1@2x.png in Resources */,
+				DB66F3F51C42656300CC8ABF /* Shape_12.png in Resources */,
 				8BFE1FE31C3696FC001450DF /* Respective_Slanted.ttf in Resources */,
 				8BFE1E491C3696FC001450DF /* Font (el&font bubble).ttf in Resources */,
 				8BFE1EBB1C3696FC001450DF /* 28 Days Later.ttf in Resources */,
 				8BFE1F5B1C3696FC001450DF /* KR Winter Sports.ttf in Resources */,
+				DB66F3F71C42656300CC8ABF /* Shape_14.png in Resources */,
 				8BFE1E681C3696FC001450DF /* Cylburn.ttf in Resources */,
 				8BFE1F2E1C3696FC001450DF /* Reckoner.ttf in Resources */,
 				8BFE1EE31C3696FC001450DF /* here_be_dubstep.ttf in Resources */,
@@ -3692,6 +3766,7 @@
 				8BFE1DC71C3696FC001450DF /* SWEEHB__.TTF in Resources */,
 				8BFE1F3E1C3696FC001450DF /* CircusOrnate.ttf in Resources */,
 				8BFE1E841C3696FC001450DF /* Bloodthirsty.ttf in Resources */,
+				DB66F3ED1C42656300CC8ABF /* Shape_4.png in Resources */,
 				8BC230DB1C141B13000BB5CF /* next_button.png in Resources */,
 				DB83E15D1C227566008F0B2C /* KVNProgressView.xib in Resources */,
 				8BFE1D591C3696FC001450DF /* libertylegion3d.ttf in Resources */,
@@ -3701,6 +3776,7 @@
 				8BFE1D681C3696FC001450DF /* SF Square Head Italic.ttf in Resources */,
 				8BFE1F931C3696FC001450DF /* F25_BlackletterTypewriter.otf in Resources */,
 				8BFE1F071C3696FC001450DF /* Maxxi Dots.ttf in Resources */,
+				DB66F3F81C42656300CC8ABF /* Shape_15.png in Resources */,
 				8BFE1F421C3696FC001450DF /* FORTSSH_.ttf in Resources */,
 				8BFE1DAE1C3696FC001450DF /* Candr___.ttf in Resources */,
 				8BFE1EDE1C3696FC001450DF /* DSBallade.ttf in Resources */,
@@ -3741,6 +3817,7 @@
 				8BFE1D721C3696FC001450DF /* Brush Strokes.ttf in Resources */,
 				8BFE1F5C1C3696FC001450DF /* lpsports2.ttf in Resources */,
 				8BFE1EFC1C3696FC001450DF /* DK Courant.ttf in Resources */,
+				DB66F3F21C42656300CC8ABF /* Shape_9.png in Resources */,
 				8BC231421C146A0E000BB5CF /* select_background_choose_background.png in Resources */,
 				8BFE1EBA1C3696FC001450DF /* 007 GoldenEye.ttf in Resources */,
 				8BFE1FD71C3696FC001450DF /* CHOCD TRIAL___ 2.otf in Resources */,
@@ -3776,6 +3853,7 @@
 				8BFE1F6C1C3696FC001450DF /* TeamSpiritNF.ttf in Resources */,
 				8BFE1DCC1C3696FC001450DF /* Blah blah bang.ttf in Resources */,
 				8BFE1F721C3696FC001450DF /* Canterbury.ttf in Resources */,
+				DB66F3F31C42656300CC8ABF /* Shape_10.png in Resources */,
 				8BFE1EED1C3696FC001450DF /* Snake.ttf in Resources */,
 				8BFE1E751C3696FC001450DF /* Oswald-Bold.ttf in Resources */,
 				8BFE1E5B1C3696FC001450DF /* urban decay.ttf in Resources */,
@@ -3798,6 +3876,7 @@
 				8BFE1D581C3696FC001450DF /* Jocoba.ttf in Resources */,
 				8BFE1DCE1C3696FC001450DF /* Colored Crayons.ttf in Resources */,
 				8BFE1DB61C3696FC001450DF /* CandyTime-2.ttf in Resources */,
+				DB66F3FD1C42656300CC8ABF /* Shape_20.png in Resources */,
 				8BFE1E031C3696FC001450DF /* Snowflake Letters.ttf in Resources */,
 				8BFE1DE31C3696FC001450DF /* Smudgie Crayon.ttf in Resources */,
 				8BFE1D9E1C3696FC001450DF /* NinaScriptDemo.ttf in Resources */,
@@ -3836,10 +3915,13 @@
 				8BFE1D5F1C3696FC001450DF /* libertylegionlaser.ttf in Resources */,
 				8BFE1E371C3696FC001450DF /* Lucian Schoenschrift CAT.ttf in Resources */,
 				8BFE1EF81C3696FC001450DF /* CFMetropolis.ttf in Resources */,
+				DB66F3F61C42656300CC8ABF /* Shape_13.png in Resources */,
 				8BFE1EF31C3696FC001450DF /* VTKS ROCK GARAGE BAND.ttf in Resources */,
+				DB66F3EE1C42656300CC8ABF /* Shape_5.png in Resources */,
 				8BFE1ECD1C3696FC001450DF /* Scream Real.ttf in Resources */,
 				8BFE1FE81C369723001450DF /* FontsList.plist in Resources */,
 				8BFE1E251C3696FC001450DF /* Arabella.ttf in Resources */,
+				DB66F3FE1C42656300CC8ABF /* Shape_21.png in Resources */,
 				8BFE1EB61C3696FC001450DF /* ThrowMyHandsUpintheAirBold.ttf in Resources */,
 				8BFE1F991C3696FC001450DF /* L.C. Smith 5 typewriter.ttf in Resources */,
 				8BFE1E041C3696FC001450DF /* Snowinter-Free-For-Personal-Use.ttf in Resources */,
@@ -3862,6 +3944,7 @@
 				8BFE1FD61C3696FC001450DF /* Brotherhood_Script 2.ttf in Resources */,
 				8BFE1F7A1C3696FC001450DF /* Head Case.ttf in Resources */,
 				8BC2310F1C144CEE000BB5CF /* image_cropper_choose_crop_size.png in Resources */,
+				DB66F3F01C42656300CC8ABF /* Shape_7.png in Resources */,
 				8BFE1F181C3696FC001450DF /* AlphaRuler-bold.otf in Resources */,
 				8BFE1F221C3696FC001450DF /* Kankin.ttf in Resources */,
 				8BFE1D6A1C3696FC001450DF /* Star Force TTF.TTF in Resources */,
@@ -3939,6 +4022,7 @@
 				8BC230BD1C141235000BB5CF /* image_editing_screen_quotes.PNG in Resources */,
 				8BFE1F041C3696FC001450DF /* Lady-Jane-old_free-version.ttf in Resources */,
 				8BFE1E1B1C3696FC001450DF /* rm_playtime.ttf in Resources */,
+				DB66F3FC1C42656300CC8ABF /* Shape_19.png in Resources */,
 				8BFE1F011C3696FC001450DF /* HeadlinerNo.45 DEMO.ttf in Resources */,
 				8BFE1DE51C3696FC001450DF /* VTCAllSkratchedUpOne.ttf in Resources */,
 				8BFE1DF01C3696FC001450DF /* Christbaumkugeln.ttf in Resources */,
@@ -3988,6 +4072,7 @@
 				8BFE1EF71C3696FC001450DF /* CARDIF__.TTF in Resources */,
 				8BFE1F6D1C3696FC001450DF /* vtks university.ttf in Resources */,
 				8BFE1EA31C3696FC001450DF /* GoodDog.otf in Resources */,
+				DB66F3EC1C42656300CC8ABF /* Shape_3.png in Resources */,
 				8BFE1DB11C3696FC001450DF /* Candy Script.ttf in Resources */,
 				8BFE1EAF1C3696FC001450DF /* rabiohead.ttf in Resources */,
 				8BC230C71C141235000BB5CF /* initial_screen_select_images.PNG in Resources */,
@@ -4015,6 +4100,7 @@
 				8BACE9F01C10A7E200CEDFE3 /* CustomizeImageViewController.xib in Resources */,
 				8BC231131C144CEE000BB5CF /* image_cropper_iPhone4_wallpaper.PNG in Resources */,
 				8BFE1F5F1C3696FC001450DF /* MLB Blue Jays Vintage.ttf in Resources */,
+				DB66F3FB1C42656300CC8ABF /* Shape_18.png in Resources */,
 				8BFE1D7A1C3696FC001450DF /* edo.ttf in Resources */,
 				DB83E1621C227566008F0B2C /* centralImage.png in Resources */,
 				8BFE1EBF1C3696FC001450DF /* AVENGEANCE.otf in Resources */,
@@ -4042,6 +4128,7 @@
 				8BFE1F7F1C3696FC001450DF /* LittleLordFontleroyNF.ttf in Resources */,
 				8BFE1EDB1C3696FC001450DF /* bonjovi.ttf in Resources */,
 				8BFE1F341C3696FC001450DF /* AeroviasBrasilNF.ttf in Resources */,
+				DB66F3EA1C42656300CC8ABF /* Shape_1.png in Resources */,
 				8BFE1E391C3696FC001450DF /* MarketingScript-Shadow.ttf in Resources */,
 				8BFE1FC31C3696FC001450DF /* LuncheonetteNF.otf in Resources */,
 				8BFE1DB91C3696FC001450DF /* Double_Bubble_shadow.otf in Resources */,
@@ -4129,10 +4216,12 @@
 				8BFE1FA21C3696FC001450DF /* SpecialElite.ttf in Resources */,
 				8BFE1F441C3696FC001450DF /* GramophoneShadedNF.ttf in Resources */,
 				8BFE1F8E1C3696FC001450DF /* anchorless_echo.ttf in Resources */,
+				DB66F3FA1C42656300CC8ABF /* Shape_17.png in Resources */,
 				8BFE1F831C3696FC001450DF /* Pentagon.ttf in Resources */,
 				8BFE1FD11C3696FC001450DF /* BeakedTyrant_PersonalUseOnly.ttf in Resources */,
 				8BFE1EFE1C3696FC001450DF /* Elusion-Regular.ttf in Resources */,
 				8BFE1FDB1C3696FC001450DF /* DJB Fresh Start Bold.ttf in Resources */,
+				DB66F3F41C42656300CC8ABF /* Shape_11.png in Resources */,
 				8BFE1E7D1C3696FC001450DF /* Vtks_Blank.ttf in Resources */,
 				8BFE1DA41C3696FC001450DF /* Sable.ttf in Resources */,
 				8BFE1FA81C3696FC001450DF /* xero4.ttf in Resources */,
@@ -4148,6 +4237,7 @@
 				8BFE1DEB1C3696FC001450DF /* CalamityJaneNF-Bold.ttf in Resources */,
 				8BC231151C144CEE000BB5CF /* image_cropper_original.png in Resources */,
 				8BFE1F1C1C3696FC001450DF /* BEYNO.ttf in Resources */,
+				DB66F3F11C42656300CC8ABF /* Shape_8.png in Resources */,
 				8BFE1F5E1C3696FC001450DF /* MLB Angels.ttf in Resources */,
 				8BFE1F7E1C3696FC001450DF /* LittleLordFontleroyNF.otf in Resources */,
 				8BFE1DF81C3696FC001450DF /* Holly Christmas.ttf in Resources */,
@@ -4164,6 +4254,7 @@
 				8BFE1EFB1C3696FC001450DF /* Chenier-Regular.ttf in Resources */,
 				8BFE1F9E1C3696FC001450DF /* OldNewspaperTypes.ttf in Resources */,
 				8BFE1EC61C3696FC001450DF /* IRON MAN OF WAR 001B NCV.ttf in Resources */,
+				DB66F3EB1C42656300CC8ABF /* Shape_2.png in Resources */,
 				8BC231101C144CEE000BB5CF /* image_cropper_facebook_cover.PNG in Resources */,
 				8BFE1F511C3696FC001450DF /* Calla.ttf in Resources */,
 				8BFE1FDA1C3696FC001450DF /* Dancing Script.ttf in Resources */,
@@ -4223,6 +4314,7 @@
 				8BFE1D921C3696FC001450DF /* Alpine.ttf in Resources */,
 				8BFE1E701C3696FC001450DF /* KGChasingCars.ttf in Resources */,
 				8BC2310D1C144CEE000BB5CF /* image_cropper_4X3.PNG in Resources */,
+				DB66F3EF1C42656300CC8ABF /* Shape_6.png in Resources */,
 				8BFE1D6C1C3696FC001450DF /* supercommandohalf.ttf in Resources */,
 				8BFE1E661C3696FC001450DF /* CODE Bold.otf in Resources */,
 				8BFE1F471C3696FC001450DF /* NouveauFLF.ttf in Resources */,
@@ -4272,6 +4364,7 @@
 				8BFE1DCD1C3696FC001450DF /* chawp.ttf in Resources */,
 				8BFE1E6F1C3696FC001450DF /* HFF_Pessoas_Lindas.ttf in Resources */,
 				8BFE1EA51C3696FC001450DF /* HaloHandletter.otf in Resources */,
+				DB66F3F91C42656300CC8ABF /* Shape_16.png in Resources */,
 				8BFE1FC21C3696FC001450DF /* IFC RAILROAD 2.ttf in Resources */,
 				8BFE1FA11C3696FC001450DF /* Sears_Tower.ttf in Resources */,
 				8BFE1F4E1C3696FC001450DF /* Showboat.ttf in Resources */,
