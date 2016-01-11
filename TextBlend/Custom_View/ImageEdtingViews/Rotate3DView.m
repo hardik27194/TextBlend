@@ -107,7 +107,6 @@
     
     if ([self.rotate_3d_delegate respondsToSelector:@selector(reset_3d_rotate_button_pressed:onSelectedView:)]) {
         [self.rotate_3d_delegate reset_3d_rotate_button_pressed:sender onSelectedView:self];
-        
     }
 }
 #pragma mark - Slider Value Methods -

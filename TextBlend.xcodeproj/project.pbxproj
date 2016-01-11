@@ -12,6 +12,9 @@
 		8B025F1E1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */; };
 		8B025F211C2F186B005D2C3B /* ChooseOptionCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */; };
 		8B025F241C2F18CE005D2C3B /* ChooseOptionCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */; };
+		8B821BDF1C43FC6C00DA388F /* SelectedFontSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */; };
+		8B821BE21C44230500DA388F /* ColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE11C44230500DA388F /* ColorPaletteView.m */; };
+		8B821BE51C44241F00DA388F /* ColorPaletteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */; };
 		8BACE8FF1C109F9700CEDFE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BACE8FE1C109F9700CEDFE3 /* main.m */; };
 		8BACE9021C109F9700CEDFE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BACE9011C109F9700CEDFE3 /* AppDelegate.m */; };
 		8BACE9081C109F9700CEDFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BACE9061C109F9700CEDFE3 /* Main.storyboard */; };
@@ -927,6 +930,12 @@
 		8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomView.m; sourceTree = "<group>"; };
 		8B025F221C2F18CE005D2C3B /* ChooseOptionCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionCustomCell.h; sourceTree = "<group>"; };
 		8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomCell.m; sourceTree = "<group>"; };
+		8B821BDD1C43FC6C00DA388F /* SelectedFontSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedFontSubView.h; sourceTree = "<group>"; };
+		8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedFontSubView.m; sourceTree = "<group>"; };
+		8B821BE01C44230500DA388F /* ColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteView.h; sourceTree = "<group>"; };
+		8B821BE11C44230500DA388F /* ColorPaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPaletteView.m; sourceTree = "<group>"; };
+		8B821BE31C44241F00DA388F /* ColorPaletteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteCollectionViewCell.h; sourceTree = "<group>"; };
+		8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPaletteCollectionViewCell.m; sourceTree = "<group>"; };
 		8BACE8FA1C109F9700CEDFE3 /* TextBlend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextBlend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BACE8FE1C109F9700CEDFE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BACE9001C109F9700CEDFE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2050,6 +2059,8 @@
 				8BACE9F21C10AA9200CEDFE3 /* SelectBackgroundCollectionViewCell.m */,
 				8BBF90781C15F785001510FA /* SelectFontCollectionViewCell.h */,
 				8BBF90791C15F785001510FA /* SelectFontCollectionViewCell.m */,
+				8B821BE31C44241F00DA388F /* ColorPaletteCollectionViewCell.h */,
+				8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */,
 				8B025F1C1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.h */,
 				8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */,
 				8B025F221C2F18CE005D2C3B /* ChooseOptionCustomCell.h */,
@@ -2081,6 +2092,8 @@
 				8BBF90621C15DF75001510FA /* CustomZDStickerView.m */,
 				8B025F1F1C2F186B005D2C3B /* ChooseOptionCustomView.h */,
 				8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */,
+				8B821BE01C44230500DA388F /* ColorPaletteView.h */,
+				8B821BE11C44230500DA388F /* ColorPaletteView.m */,
 			);
 			path = Custom_View;
 			sourceTree = "<group>";
@@ -2276,6 +2289,8 @@
 				8BBF90661C15E007001510FA /* AddTextView.m */,
 				8BBF90751C15F6F5001510FA /* SelectFontsView.h */,
 				8BBF90761C15F6F5001510FA /* SelectFontsView.m */,
+				8B821BDD1C43FC6C00DA388F /* SelectedFontSubView.h */,
+				8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */,
 				8BBF907B1C15FAB4001510FA /* TextToolsView.h */,
 				8BBF907C1C15FAB4001510FA /* TextToolsView.m */,
 				8BBF907E1C15FAEA001510FA /* AddColorView.h */,
@@ -4519,6 +4534,7 @@
 				8BACE9761C10A09500CEDFE3 /* Utility.m in Sources */,
 				8BACEA4E1C10AD1F00CEDFE3 /* OHAttributedLabel.m in Sources */,
 				8BACE9A51C10A48300CEDFE3 /* UIButton+WebCache.m in Sources */,
+				8B821BDF1C43FC6C00DA388F /* SelectedFontSubView.m in Sources */,
 				8BACE9701C10A09500CEDFE3 /* UIView+Toast.m in Sources */,
 				DB83E16D1C227566008F0B2C /* MyView.m in Sources */,
 				8BD2DD9F1C3D82ED0069B80C /* ChooseQuoteViewController.m in Sources */,
@@ -4530,6 +4546,7 @@
 				8BACE9A01C10A48300CEDFE3 /* SDWebImageDecoder.m in Sources */,
 				8BACE9721C10A09500CEDFE3 /* PageTableView.m in Sources */,
 				DB1F5FEE1C18866C00F425DB /* UIImage+PECrop.m in Sources */,
+				8B821BE21C44230500DA388F /* ColorPaletteView.m in Sources */,
 				DB83E14A1C227566008F0B2C /* BCMeshBuffer.m in Sources */,
 				8BACE9AA1C10A48300CEDFE3 /* UIImageView+WebCache.m in Sources */,
 				8BBF90671C15E007001510FA /* AddTextView.m in Sources */,
@@ -4589,6 +4606,7 @@
 				DB83E1591C227566008F0B2C /* HPTextViewInternal.m in Sources */,
 				8BACEA4F1C10AD1F00CEDFE3 /* OHParagraphStyle.m in Sources */,
 				DB83E1571C227566008F0B2C /* FXBlurView.m in Sources */,
+				8B821BE51C44241F00DA388F /* ColorPaletteCollectionViewCell.m in Sources */,
 				8B025F181C2E715E005D2C3B /* MessageTextViewController.m in Sources */,
 				DB83E14B1C227566008F0B2C /* BCMeshContentView.m in Sources */,
 				DB83E1791C227566008F0B2C /* SPGripViewBorderView.m in Sources */,

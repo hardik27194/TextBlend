@@ -12,8 +12,8 @@
 #import <UIKit/UIKit.h>
 #import "SelectFontCollectionViewCell.h"
 #import "ZDStickerView.h"
-
-
+#import "SelectedFontSubView.h"
+#import "SelectedFontSubView.h"
 @class SelectFontsView;
 //Delegate Functions used for handling button actions in the SelectFontsView.
 
@@ -27,7 +27,7 @@
 @end
 
 
-@interface SelectFontsView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface SelectFontsView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate,SelectFontsViewDelegate,SelectSubFontsViewDelegate>{
     
 }
 @property(nonatomic,strong)PagingCollectionView *custom_collection_view;
@@ -35,5 +35,6 @@
 @property(nonatomic,strong)id <SelectFontsViewDelegate> select_font_view_delegate;
 @property(nonatomic,strong)UIView *black_view;
 @property(nonatomic,strong)UIButton *done_check_mark_button;
+@property(nonatomic,strong)ZDStickerView *selected_sticker_view;
 
 @end

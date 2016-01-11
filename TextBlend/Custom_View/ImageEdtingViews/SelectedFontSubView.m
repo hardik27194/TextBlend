@@ -1,17 +1,21 @@
 //
-//  SelectFontsView.m
+//  SelectedFontSubView.m
 //  TextBlend
 //
-//  Created by Wayne Rooney on 07/12/15.
-//  Copyright © 2015 Wayne Rooney. All rights reserved.
+//  Created by Itesh Dutt on 11/01/16.
+//  Copyright © 2016 Wayne Rooney. All rights reserved.
 //
 
-#import "SelectFontsView.h"
+#import "SelectedFontSubView.h"
 #import "OHAttributedLabel.h"
-@implementation SelectFontsView
+@implementation SelectedFontSubView
 @synthesize custom_collection_view;
-@synthesize fonts_array;
-@synthesize black_view,done_check_mark_button,selected_sticker_view;
+@synthesize selected_sub_font_array;
+@synthesize black_view,done_check_mark_button,selected_dict;
+@synthesize select_sub_font_view_delegate;
+@synthesize selected_sticker_view;
+
+
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
@@ -39,6 +43,19 @@
     
     [self initializeCollectionView];
     
+    
+}
+
+-(void)initializeArray{
+    
+    if (self.selected_dict) {
+        NSArray *sub_font_array = [self.selected_dict valueForKey:@"FontSubArray"];
+        if (!self.selected_sub_font_array) {
+            self.selected_sub_font_array = [[NSMutableArray alloc]init];
+        }
+        self.selected_sub_font_array  =[sub_font_array mutableCopy];
+    }
+    
 }
 
 -(void)initializeCollectionView{
@@ -57,35 +74,21 @@
     [custom_collection_view registerClass:[SelectFontCollectionViewCell class] forCellWithReuseIdentifier:@"SelectFontCollectionViewCellIdentifier"];
     [custom_collection_view setUpCollectionInitParms];
     
-    if(!self.fonts_array){
-        self.fonts_array = [[NSMutableArray alloc]init];
+    if(!self.selected_sub_font_array){
+        self.selected_sub_font_array = [[NSMutableArray alloc]init];
     }
-    [self getArrayDetails];
-    
-//    for (NSString *familyName in [UIFont familyNames])
-//    {
-//        [self.fonts_array addObject:familyName];
-//    }
-    
     
 }
 
--(void)getArrayDetails{
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
-    self.fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
-  //  NSLog(@"%@",self.fonts_array);
-    NSIndexSet *indexSet=[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(4, self.fonts_array.count-1-4)];
-    [self.fonts_array removeObjectsAtIndexes:indexSet];
-}
 #pragma mark - Collection View Delegate Methods -
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;//self.fonts_array.count;
+    return 1;//self.selected_sub_font_array.count;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return self.fonts_array.count;
+    return self.selected_sub_font_array.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -94,56 +97,50 @@
     
     if (cell==nil) {
         
-        cell=[[SelectFontCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50)];
+        cell=[[SelectFontCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 70)];
     }
-    cell.contentView.frame=CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50);
+    cell.contentView.frame=CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 70);
     
     if (!cell.lbl_font_name) {
         cell.lbl_font_name = [[UILabel alloc]init];
-        cell.lbl_font_name.frame = CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50);
+        cell.lbl_font_name.frame = CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 70);
         cell.lbl_font_name.clipsToBounds=YES;
         cell.lbl_font_name.layer.cornerRadius=5;
         cell.lbl_font_name.layer.borderWidth=0.8;
+        cell.lbl_font_name.font=[UIFont systemFontOfSize:13];
+        cell.lbl_font_name.numberOfLines=0;
         [cell.contentView addSubview:cell.lbl_font_name];
         
     }
-    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, 40);
+    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, 60);
     [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
+    cell.lbl_font_name.numberOfLines=0;
     
     
-       
-    if (self.fonts_array.count>indexPath.row) {
+    
+    if (self.selected_sub_font_array.count>indexPath.row) {
         
-        NSDictionary *font_selected_dict=[self.fonts_array objectAtIndex:indexPath.row];
+        NSDictionary *font_selected_dict=[self.selected_sub_font_array objectAtIndex:indexPath.row];
         
         if ([font_selected_dict objectForKey:@"FontDisplayName"] && ![[font_selected_dict objectForKey:@"FontDisplayName"]isEqual:[NSNull null]]&& [[font_selected_dict objectForKey:@"FontDisplayName"]isKindOfClass:[NSString class]]) {
+            
             [cell.lbl_font_name setText:[font_selected_dict objectForKey:@"FontDisplayName"]];
-            
         }
         
-              NSArray *select_font_array=[font_selected_dict valueForKey:@"FontSubArray"];
-        if (select_font_array.count) {
-            
-            NSDictionary *selected_font=[select_font_array objectAtIndex:0];
-            if ([selected_font objectForKey:@"FontDisplayName"] && [[selected_font objectForKey:@"FontDisplayName"]isKindOfClass:[NSString class]]) {
-               
-                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font valueForKey:@"Arcade Future"] size:14]];
-
-            }
-
-            
+        if ([font_selected_dict objectForKey:@"FontName"] && [[font_selected_dict objectForKey:@"FontName"]isKindOfClass:[NSString class]]) {
+            [cell.lbl_font_name setFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"FontName"] size:13]];
         }
-        
-
     }
     
     
-       return cell;
+    return cell;
 }
+
+
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake( (SCREEN_WIDTH/2)-8, 50);
+    return CGSizeMake( (SCREEN_WIDTH/2)-8, 70);
     
 }
 
@@ -166,59 +163,79 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    SelectedFontSubView *select_font_sub_view=[[SelectedFontSubView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
-    select_font_sub_view.select_sub_font_view_delegate = self;
-    if (self.fonts_array.count>indexPath.row) {
-        [select_font_sub_view.custom_collection_view reloadData];
-        NSMutableDictionary *select_font=[[self.fonts_array objectAtIndex:indexPath.row] mutableCopy];
-        select_font_sub_view.selected_dict = [select_font mutableCopy];
-        select_font_sub_view.selected_sticker_view=self.selected_sticker_view;
-        [select_font_sub_view initializeArray];
+    SelectFontCollectionViewCell *cell = (SelectFontCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
 
-        [self addSubview:select_font_sub_view];
+    if (self.selected_sub_font_array.count>indexPath.row) {
+        
+        NSDictionary *font_selected_dict=[self.selected_sub_font_array objectAtIndex:indexPath.row];
+        if ([font_selected_dict objectForKey:@"FontName"] && [[font_selected_dict objectForKey:@"FontName"]isKindOfClass:[NSString class]]) {
+            [cell.lbl_font_name setFont: [UIFont fontWithName:@"Android Insomnia Regular" size:13]];
+            
+            if ([self.select_sub_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
+                [self.select_sub_font_view_delegate setSelectedFont:[UIFont fontWithName:@"Android Insomnia Regular" size:13] onSelectedView:self];
+            }
+        }
     }
+}
+/*
+-(UIFont *)setFont:(UIFont *)wqewq{
+    __block BOOL isFinished=NO;
+    UIFont *oldfont;
     
-//SelectFontCollectionViewCell *cell = (SelectFontCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-//    [self.select_font_view_delegate setFont:cell.lbl_font_name.font onSelectedView:nil];
+    if (!selected_sticker_view) {
+        return nil;
+        
+    }
+    else{
+        OHAttributedLabel *selectedLabel = (OHAttributedLabel*)[self viewWithTag:AppDel.gloabalSelectedTag];
+        
+        NSAttributedString *str = selectedLabel.attributedText;
+        [str enumerateAttributesInRange:NSMakeRange(0, [str length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
+         ^(NSDictionary *attributes, NSRange range, BOOL *stop)
+         {
+             //Do something here
+             UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
+             
+             while (!isFinished) {
+                 isFinished=YES;
+                 
+             }
+             if(!oldfont)
+             {
+                 oldfont = [UIFont boldSystemFontOfSize:25.0f];
+                 
+                 [self getFont:oldfont];
+                 
+             }
+             else{
+                 [self getFont:oldfont];
+                 
+             }
+             
+             
+         }];
+        
+        
+    }
+    if (isFinished) {
+        
+    }
+}
+
+-(void)getFont:(UIFont*)oldfont{
     
 }
+ */
 
 #pragma mark - Button Pressed Methods -
 
 
 -(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
     
-    if ([self.select_font_view_delegate respondsToSelector:@selector(select_font_done_check_mark_button_pressed:onSelectedView:)]) {
-        [self.select_font_view_delegate select_font_done_check_mark_button_pressed:sender onSelectedView:self];
+    if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {
+        [self.select_sub_font_view_delegate select_sub_font_done_check_mark_button_pressed:sender onSelectedView:self];
         
     }
-}
-
-
--(void)select_sub_font:(PagingCollectionView *)collectionView forCell:(SelectFontCollectionViewCell *)cell forIndexPath:(NSIndexPath *)indexPath{
-    
-}
-
--(void)setSelectedFont:(UIFont*)font onSelectedView:(SelectedFontSubView  *)selected_view{
-    
-    
-    if ([self.select_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
-        [self.select_font_view_delegate setFont:font onSelectedView:selected_sticker_view];
-        
-    }
-    
-}
--(void)select_sub_font_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SelectedFontSubView *)selected_view{
-    
-    [selected_view removeFromSuperview];
-    selected_view = nil;
-    if ([self.select_font_view_delegate respondsToSelector:@selector(select_font_done_check_mark_button_pressed:onSelectedView:)]) {
-        [self.select_font_view_delegate select_font_done_check_mark_button_pressed:sender onSelectedView:self];
-        
-    }
-
-    
 }
 
 

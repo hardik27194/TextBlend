@@ -341,6 +341,10 @@
 #pragma mark - Select Font Delegate Methods  -
 -(void)setFont:(UIFont*)font onSelectedView:(ZDStickerView *)selected_view;
 {
+    if (!selected_view) {
+        return;
+    }
+    
     OHAttributedLabel *selectedLabel = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
     
     NSAttributedString *str = selectedLabel.attributedText;
@@ -847,6 +851,7 @@
 //    CALayer *layer                                       = sticker.layer;
 
     sticker.transform = CGAffineTransformIdentity;
+    selected_view.intensity_slider.value=0;
 }
 #pragma mark - ZDSticker View Delegate Methods -
 
