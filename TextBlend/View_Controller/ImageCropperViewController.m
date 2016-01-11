@@ -340,10 +340,22 @@
     [self pushViewController:smallImg];
 */
     
+    UIScrollView *contentScrollView = self.image_edit_main_view.image_edit_scroll_view;
+    
+    UIGraphicsBeginImageContextWithOptions(contentScrollView.bounds.size,
+                                           YES,
+                                           self.image_edit_main_view.main_image_view.image.scale);
+    
+    //this is the key
+    CGPoint offset=contentScrollView.contentOffset;
+    CGContextTranslateCTM(UIGraphicsGetCurrentContext(), -offset.x, -offset.y);
+    
+    [contentScrollView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *visibleScrollViewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
     
-    
-    [self pushViewController:self.selected_image];
+    [self pushViewController:visibleScrollViewImage];
 
 }
 

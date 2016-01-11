@@ -843,9 +843,10 @@
 }
 -(void)reset_3d_rotate_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view
 {
-    
-        
-    
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+//    CALayer *layer                                       = sticker.layer;
+
+    sticker.transform = CGAffineTransformIdentity;
 }
 #pragma mark - ZDSticker View Delegate Methods -
 
@@ -1051,9 +1052,12 @@
 - (void)handlePinchLabel:(UIPinchGestureRecognizer *)recognizer
 {
     OHAttributedLabel *label                             = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
-    ZDStickerView *sticker                               = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
-    //    NSString *fontName                               = label.font.fontName;
-    //    CGFloat fontSize                                     = label.font.pointSize;
+    if(![label isKindOfClass:[OHAttributedLabel class]])
+    {
+        return;
+    }
+        ZDStickerView *sticker                               = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+
     __block NSString *fontName;
     __block CGFloat fontSize;
     
