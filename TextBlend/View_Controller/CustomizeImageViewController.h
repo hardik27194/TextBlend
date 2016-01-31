@@ -36,6 +36,11 @@
     EraserView *eraser_view;
     PhotoEditCustomView *photo_edit_custom_view;
     
+    CATransform3D rotationAndPerspectiveTransform1;
+    CATransform3D rotationAndPerspectiveTransform2;
+    CATransform3D rotationAndPerspectiveTransform3;
+
+    
 
 }
 @property(nonatomic,strong)UIScrollView *scroll_view;

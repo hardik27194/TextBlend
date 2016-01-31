@@ -14,7 +14,7 @@
 
 
 @implementation Rotate3DView
-@synthesize black_view,done_check_mark_button,info_text_image_view,intensity_slider,reset_3d_rotate_button,rotate_3d_delegate;
+@synthesize black_view,done_check_mark_button,info_text_image_view,intensity_sliderX,intensity_sliderY,intensity_sliderZ,reset_3d_rotate_button,rotate_3d_delegate;
 
 
 
@@ -49,26 +49,50 @@
 
 -(void)addEraserView{
     
-    int height=self.black_view.frame.size.height+10;
+    int height=self.black_view.frame.size.height+8;
+    
+//    self.info_text_image_view = [[UIImageView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-287)/2, height, 287, 40)];
+//    self.info_text_image_view.image=[UIImage imageNamed:@"rotate_3d_info_text_image.PNG"];
+//    [self addSubview:self.info_text_image_view];
+//    
+//    height+=48;
     
     
-    self.info_text_image_view = [[UIImageView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-287)/2, height, 287, 40)];
-    self.info_text_image_view.image=[UIImage imageNamed:@"rotate_3d_info_text_image.PNG"];
-    [self addSubview:self.info_text_image_view];
+    self.intensity_sliderX = [[UISlider alloc]initWithFrame:CGRectMake(20, height, SCREEN_WIDTH-40, 20)];
+    self.intensity_sliderX.value=0;
+    [self.intensity_sliderX setMaximumTrackTintColor:MIN_COLOR];
+    [self.intensity_sliderX setMaximumTrackTintColor:MAX_COLOR];
+    self.intensity_sliderX.minimumValue = -180.0;
+    self.intensity_sliderX.maximumValue = 180.0;
+    [self.intensity_sliderX setValue:0 animated:YES];
+    [self.intensity_sliderX addTarget:self action:@selector(intensity_slider_valueX_changed:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.intensity_sliderX];
     
-    height+=48;
+    height+=28;
+
+    self.intensity_sliderY = [[UISlider alloc]initWithFrame:CGRectMake(20, height, SCREEN_WIDTH-40, 20)];
+    self.intensity_sliderY.value=0;
+    [self.intensity_sliderY setMaximumTrackTintColor:MIN_COLOR];
+    [self.intensity_sliderY setMaximumTrackTintColor:MAX_COLOR];
+    self.intensity_sliderY.minimumValue = -180.0;
+    self.intensity_sliderY.maximumValue = 180.0;
+    [self.intensity_sliderY setValue:0 animated:YES];
+    [self.intensity_sliderY addTarget:self action:@selector(intensity_slider_valueY_changed:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.intensity_sliderY];
     
-    
-    self.intensity_slider = [[UISlider alloc]initWithFrame:CGRectMake(20, height, SCREEN_WIDTH-40, 20)];
-    self.intensity_slider.value=0;
-    [self.intensity_slider setMaximumTrackTintColor:MIN_COLOR];
-    [self.intensity_slider setMaximumTrackTintColor:MAX_COLOR];
-    self.intensity_slider.minimumValue = -80.0;
-    self.intensity_slider.maximumValue = 80.0;
-    [self.intensity_slider setValue:1.1 animated:YES];
-    [self.intensity_slider addTarget:self action:@selector(intensity_slider_value_changed:) forControlEvents:UIControlEventValueChanged];
-    [self addSubview:self.intensity_slider];
-    
+    height+=28;
+
+
+    self.intensity_sliderZ = [[UISlider alloc]initWithFrame:CGRectMake(20, height, SCREEN_WIDTH-40, 20)];
+    self.intensity_sliderZ.value=0;
+    [self.intensity_sliderZ setMaximumTrackTintColor:MIN_COLOR];
+    [self.intensity_sliderZ setMaximumTrackTintColor:MAX_COLOR];
+    self.intensity_sliderZ.minimumValue = -180.0;
+    self.intensity_sliderZ.maximumValue = 180.0;
+    [self.intensity_sliderZ setValue:0 animated:YES];
+    [self.intensity_sliderZ addTarget:self action:@selector(intensity_slider_valueZ_changed:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.intensity_sliderZ];
+
     height+=27;
     
     
@@ -111,12 +135,27 @@
 }
 #pragma mark - Slider Value Methods -
 
--(IBAction)intensity_slider_value_changed:(UISlider *)slider{
-    if ([self.rotate_3d_delegate respondsToSelector:@selector(rotate_3d_intensity_slider_value_changed:onSelectedView:)]) {
-        [self.rotate_3d_delegate rotate_3d_intensity_slider_value_changed:slider onSelectedView:self];
+-(IBAction)intensity_slider_valueX_changed:(UISlider *)slider{
+    if ([self.rotate_3d_delegate respondsToSelector:@selector(rotate_3d_intensity_slider_valueX_changed:onSelectedView:)]) {
+        [self.rotate_3d_delegate rotate_3d_intensity_slider_valueX_changed:slider onSelectedView:self];
+    }
+}
+
+-(IBAction)intensity_slider_valueY_changed:(UISlider *)slider{
+    if ([self.rotate_3d_delegate respondsToSelector:@selector(rotate_3d_intensity_slider_valueY_changed:onSelectedView:)]) {
+        [self.rotate_3d_delegate rotate_3d_intensity_slider_valueY_changed:slider onSelectedView:self];
         
     }
 }
+
+-(IBAction)intensity_slider_valueZ_changed:(UISlider *)slider{
+    if ([self.rotate_3d_delegate respondsToSelector:@selector(rotate_3d_intensity_slider_valueZ_changed:onSelectedView:)]) {
+        [self.rotate_3d_delegate rotate_3d_intensity_slider_valueZ_changed:slider onSelectedView:self];
+        
+    }
+}
+
+
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.

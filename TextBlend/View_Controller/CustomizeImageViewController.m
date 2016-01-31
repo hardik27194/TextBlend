@@ -71,6 +71,11 @@
     
         UIPinchGestureRecognizer *pinch                      = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchLabel:)];
         [self.image_edit_main_view addGestureRecognizer:pinch];
+    
+    rotationAndPerspectiveTransform1 = CATransform3DIdentity;
+    rotationAndPerspectiveTransform2 = CATransform3DIdentity;
+    rotationAndPerspectiveTransform3 = CATransform3DIdentity;
+
 }
 
 -(void)initializeMainImageView
@@ -803,7 +808,7 @@
 
 #pragma mark - Rotate 3D Delegate Methods -
 
--(void)rotate_3d_intensity_slider_value_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view
+-(void)rotate_3d_intensity_slider_valueX_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view
 {
 /* ZdSticker */
  ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
@@ -811,30 +816,45 @@
     {
         return;
     }
-    OHAttributedLabel *label = (OHAttributedLabel*)sticker.contentView1;
-    label.isIn3DMode = YES;
-    [sticker hideDelHandle];
+    sticker.layer.zPosition = 300;
+    CALayer *layer = sticker.layer;
+    rotationAndPerspectiveTransform1 = CATransform3DIdentity;
+    rotationAndPerspectiveTransform1.m34 = 1.0 / -500;
+    rotationAndPerspectiveTransform1 = CATransform3DRotate(rotationAndPerspectiveTransform1, slider.value* M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+    layer.transform = CATransform3DConcat(CATransform3DConcat(rotationAndPerspectiveTransform1, rotationAndPerspectiveTransform2), rotationAndPerspectiveTransform3);
+}
 
-    CALayer *layer                                       = sticker.layer;
-    layer.zPosition = 300;
-    CATransform3D rotationAndPerspectiveTransform        = CATransform3DIdentity;
-    if(slider.value  > 1)
-    {
-        rotationAndPerspectiveTransform.m34                  = -1.0 /300;
-        rotationAndPerspectiveTransform                      = CATransform3DRotate(rotationAndPerspectiveTransform, slider.value * M_PI / 180.0f, 0.0f,0.5f, 0.0f);
-    }
-    else
-    {
-        rotationAndPerspectiveTransform.m34                  = 1.0 /300;
-        rotationAndPerspectiveTransform                      = CATransform3DRotate(rotationAndPerspectiveTransform, -slider.value * M_PI / 180.0f, 0.0f,0.5f, 0.0f);
-    }
-    layer.transform                                      = rotationAndPerspectiveTransform;
+-(void)rotate_3d_intensity_slider_valueY_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view
+{
+    /* ZdSticker */
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    sticker.layer.zPosition = 300;
 
-    sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
-                                                                 sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
-    [label setNeedsDisplay];
-    [sticker setNeedsDisplay];
-    [self.image_edit_main_view  setNeedsDisplay];
+    if(sticker == nil)
+    {
+        return;
+    }
+    CALayer *layer = sticker.layer;
+    rotationAndPerspectiveTransform2 = CATransform3DIdentity;
+    rotationAndPerspectiveTransform2.m34 = 1.0 / -500;
+    rotationAndPerspectiveTransform2 = CATransform3DRotate(rotationAndPerspectiveTransform2, slider.value* M_PI / 180.0f, 1.0f, 0.0f, 0.0f);
+    layer.transform = CATransform3DConcat(CATransform3DConcat(rotationAndPerspectiveTransform1, rotationAndPerspectiveTransform2), rotationAndPerspectiveTransform3);}
+
+-(void)rotate_3d_intensity_slider_valueZ_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view
+{
+    /* ZdSticker */
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    sticker.layer.zPosition = 300;
+
+    if(sticker == nil)
+    {
+        return;
+    }
+    CALayer *layer = sticker.layer;
+    rotationAndPerspectiveTransform3 = CATransform3DIdentity;
+    rotationAndPerspectiveTransform3.m34 = 1.0 / -500;
+    rotationAndPerspectiveTransform3 = CATransform3DRotate(rotationAndPerspectiveTransform3, slider.value* M_PI / 180.0f, 0.0f, 0.0f, 1.0f);
+    layer.transform = CATransform3DConcat(CATransform3DConcat(rotationAndPerspectiveTransform1, rotationAndPerspectiveTransform2), rotationAndPerspectiveTransform3);
 }
 
 
@@ -850,9 +870,17 @@
     ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
 //    CALayer *layer                                       = sticker.layer;
 
-    sticker.transform = CGAffineTransformIdentity;
-    selected_view.intensity_slider.value=0;
+    rotationAndPerspectiveTransform1 = CATransform3DIdentity;
+    rotationAndPerspectiveTransform2 = CATransform3DIdentity;
+    rotationAndPerspectiveTransform3 = CATransform3DIdentity;
+    
+    [selected_view.intensity_sliderX setValue:0.0];
+    [selected_view.intensity_sliderY setValue:0.0];
+    [selected_view.intensity_sliderZ setValue:0.0];
+    
+   sticker.layer.transform =  CATransform3DConcat(CATransform3DConcat(rotationAndPerspectiveTransform1, rotationAndPerspectiveTransform2), rotationAndPerspectiveTransform3);
 }
+
 #pragma mark - ZDSticker View Delegate Methods -
 
 - (void)stickerViewDidLongPressed:(ZDStickerView *)sticker

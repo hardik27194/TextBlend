@@ -16,7 +16,9 @@
 @protocol Rotate3DDelegate <NSObject>
 
 @optional
--(void)rotate_3d_intensity_slider_value_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view;
+-(void)rotate_3d_intensity_slider_valueX_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view;
+-(void)rotate_3d_intensity_slider_valueY_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view;
+-(void)rotate_3d_intensity_slider_valueZ_changed:(UISlider *)slider onSelectedView:(Rotate3DView *)selected_view;
 -(void)rotate_3d_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view;
 -(void)reset_3d_rotate_button_pressed:(UIButton *)sender onSelectedView:(Rotate3DView *)selected_view;
 
@@ -27,7 +29,9 @@
 @property(nonatomic,strong)UIView *black_view;
 @property(nonatomic,strong)UIButton *done_check_mark_button;
 @property(nonatomic,strong) UIImageView *info_text_image_view;
-@property(nonatomic,strong)UISlider *intensity_slider;
+@property(nonatomic,strong)UISlider *intensity_sliderX;
+@property(nonatomic,strong)UISlider *intensity_sliderY;
+@property(nonatomic,strong)UISlider *intensity_sliderZ;
 @property(nonatomic,strong)UIButton *reset_3d_rotate_button;
 @property(nonatomic,strong)id <Rotate3DDelegate> rotate_3d_delegate;
 @end
