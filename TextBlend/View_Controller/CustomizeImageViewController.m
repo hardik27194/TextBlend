@@ -313,14 +313,14 @@
 
 -(void)colors_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
     
-    /*
+    
      if (!add_color_view) {
      add_color_view=[[AddColorView alloc]initWithFrame:BOTTOM_FRAME];
-     //        add_color_view.text_tools_delegate=self;
+     add_color_view.add_color_view_delegate = self;
      [self.view addSubview:add_color_view];
      }
      [self.view bringSubviewToFront:add_color_view];
-     */
+    
 }
 
 -(void)rotate_3d_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
@@ -343,6 +343,20 @@
     
 }
 
+#pragma mark - Add Color Delegate -
+
+-(void)updateViewWithStartColor:(UIColor *)startColor andEndColor:(UIColor *)endColor withPercenatgeValue:(CGFloat)percentage onSelectedView:(AddColorView *)selected_view withCurrentDirection:(CGFloat)directionValue{
+    //Update values
+    NSLog(@"Percentage of color %f",percentage);
+}
+-(void)add_color_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(AddColorView *)selected_view{
+    
+    if (add_color_view) {
+        [add_color_view removeFromSuperview];
+        add_color_view=  nil;
+    }
+    
+}
 #pragma mark - Select Font Delegate Methods  -
 -(void)setFont:(UIFont*)font onSelectedView:(ZDStickerView *)selected_view;
 {

@@ -26,7 +26,7 @@
 @import GoogleMobileAds;
 
 
-@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate>
+@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate,AddColorViewDelegate>
 {
     AddTextView *add_text_view;
     SelectFontsView *select_fonts_view;

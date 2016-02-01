@@ -14,6 +14,9 @@
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define buffer_width 20
 #define text_buffer 50
+#define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 145
+#define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
+#define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 @interface AddColorSelectionView(){
     CGPoint start_point;
   
@@ -22,11 +25,14 @@
 @end
 @implementation AddColorSelectionView
 @synthesize add_color_gradient_view;
+@synthesize black_view,done_check_mark_button;
+@synthesize add_color_selection_view_delegate;
 
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
         self.backgroundColor=EDITING_BACKGROUND_COLOR;
+       // [self initializeView];
         [self addToolsView];
         //[self getPopularPosts:YES];
     }
@@ -36,6 +42,21 @@
 
 
 
+-(void)initializeView{
+    self.black_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
+    self.black_view.backgroundColor=[UIColor blackColor];
+    [self addSubview:self.black_view];
+    
+    self.done_check_mark_button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.done_check_mark_button.frame=CGRectMake(SCREEN_WIDTH-35, 2, 25, 21);
+    self.done_check_mark_button.showsTouchWhenHighlighted=YES;
+    
+    [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
+    [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.black_view addSubview:self.done_check_mark_button];
+    
+    
+}
 
 -(void)addToolsView{
     
@@ -181,15 +202,15 @@
 -(IBAction)start_gesture_recognizer:(UIGestureRecognizer *)sender{
     NSLog(@"start_gesture_recognizer");
    
-    if (!self.colorPreviewView) {
-        self.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 250, SCREEN_WIDTH, 200)];
-        self.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
-        self.colorPreviewView.delegate=add_color_gradient_view;
-        [add_color_gradient_view addSubview:self.colorPreviewView];
+    if (!add_color_gradient_view.colorPreviewView) {
+        add_color_gradient_view.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, BOTTOM_FRAME.size.height-25)];
+        add_color_gradient_view.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
+        add_color_gradient_view.colorPreviewView.delegate=add_color_gradient_view;
+        [add_color_gradient_view addSubview:add_color_gradient_view.colorPreviewView];
     }
     
     add_color_gradient_view.selected_label=self.start_color_label;
-    [add_color_gradient_view bringSubviewToFront:self.colorPreviewView];
+    [add_color_gradient_view bringSubviewToFront:add_color_gradient_view.colorPreviewView];
 
 }
 
@@ -198,19 +219,26 @@
 
 -(IBAction)end_gesture_recognizer:(UIGestureRecognizer *)sender{
     NSLog(@"end_gesture_recognizer");
-    if (!self.colorPreviewView) {
-        self.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 400, SCREEN_WIDTH, SCREEN_HEIGHT-100)];
-        self.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
-        self.colorPreviewView.delegate=add_color_gradient_view;
-        [add_color_gradient_view addSubview:self.colorPreviewView];
+    if (!add_color_gradient_view.colorPreviewView) {
+        add_color_gradient_view.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, BOTTOM_FRAME.size.height-25)];
+        add_color_gradient_view.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
+        add_color_gradient_view.colorPreviewView.delegate=add_color_gradient_view;
+        [add_color_gradient_view addSubview:add_color_gradient_view.colorPreviewView];
     }
     
     add_color_gradient_view.selected_label=self.end_color_label;
 
-    [add_color_gradient_view bringSubviewToFront:self.colorPreviewView];
+    [add_color_gradient_view bringSubviewToFront:add_color_gradient_view.colorPreviewView];
 
 }
 
+
+-(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+    if ([self.add_color_selection_view_delegate respondsToSelector:@selector(add_color_selection_subview_done_check_mark_button_pressed:onSelectedView:)]) {
+        [self.add_color_selection_view_delegate add_color_selection_subview_done_check_mark_button_pressed:sender onSelectedView:self];
+        
+    }
+}
 
 /*
  // Only override drawRect: if you perform custom drawing.
