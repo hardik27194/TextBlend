@@ -12,6 +12,7 @@
 		8B025F1E1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */; };
 		8B025F211C2F186B005D2C3B /* ChooseOptionCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */; };
 		8B025F241C2F18CE005D2C3B /* ChooseOptionCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */; };
+		8B0AFA2C1C5FBFBD002DFE95 /* AddColorSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */; };
 		8B821BDF1C43FC6C00DA388F /* SelectedFontSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */; };
 		8B821BE21C44230500DA388F /* ColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE11C44230500DA388F /* ColorPaletteView.m */; };
 		8B821BE51C44241F00DA388F /* ColorPaletteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */; };
@@ -930,6 +931,8 @@
 		8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomView.m; sourceTree = "<group>"; };
 		8B025F221C2F18CE005D2C3B /* ChooseOptionCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionCustomCell.h; sourceTree = "<group>"; };
 		8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomCell.m; sourceTree = "<group>"; };
+		8B0AFA2A1C5FBFBD002DFE95 /* AddColorSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddColorSelectionView.h; sourceTree = "<group>"; };
+		8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddColorSelectionView.m; sourceTree = "<group>"; };
 		8B821BDD1C43FC6C00DA388F /* SelectedFontSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedFontSubView.h; sourceTree = "<group>"; };
 		8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedFontSubView.m; sourceTree = "<group>"; };
 		8B821BE01C44230500DA388F /* ColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteView.h; sourceTree = "<group>"; };
@@ -2295,6 +2298,8 @@
 				8BBF907C1C15FAB4001510FA /* TextToolsView.m */,
 				8BBF907E1C15FAEA001510FA /* AddColorView.h */,
 				8BBF907F1C15FAEA001510FA /* AddColorView.m */,
+				8B0AFA2A1C5FBFBD002DFE95 /* AddColorSelectionView.h */,
+				8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */,
 				8BBF90811C15FB04001510FA /* EraserView.h */,
 				8BBF90821C15FB04001510FA /* EraserView.m */,
 				8BBF90841C15FB11001510FA /* Rotate3DView.h */,
@@ -4555,6 +4560,7 @@
 				8BBF907A1C15F785001510FA /* SelectFontCollectionViewCell.m in Sources */,
 				8BE7E2B71C31D50A0032E5B5 /* UIImage+ColorPicker.m in Sources */,
 				DB83E16C1C227566008F0B2C /* MyLabel.m in Sources */,
+				8B0AFA2C1C5FBFBD002DFE95 /* AddColorSelectionView.m in Sources */,
 				8BC230E01C142A11000BB5CF /* ImageEditMainView.m in Sources */,
 				8BACE9A11C10A48300CEDFE3 /* SDWebImageDownloader.m in Sources */,
 				8BACE9711C10A09500CEDFE3 /* KILabel.m in Sources */,
