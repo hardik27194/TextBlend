@@ -25,6 +25,113 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Android Insomnia Regular.ttf</string>
+		<string>Arcade Future.otf</string>
+		<string>Arcade_Fire.ttf</string>
+		<string>ARCADE_N.TTF</string>
+		<string>ARCADE_R.TTF</string>
+		<string>Epicenter-TwoStroke.ttf</string>
+		<string>Jocoba.ttf</string>
+		<string>libertylegion3d.ttf</string>
+		<string>libertylegion3dlaser.ttf</string>
+		<string>libertylegionchrome.ttf</string>
+		<string>libertylegioncond.ttf</string>
+		<string>libertylegiongrad.ttf</string>
+		<string>libertylegionhalf.ttf</string>
+		<string>libertylegionlaser.ttf</string>
+		<string>libertylegionsemital.ttf</string>
+		<string>mechanik-Bold.ttf</string>
+		<string>MyGirlIsRetroDEMO.ttf</string>
+		<string>newmarssemital.ttf</string>
+		<string>paladinsstraight.ttf</string>
+		<string>PressStart2P.ttf</string>
+		<string>Reqruit-2.otf</string>
+		<string>SF Atarian System Extended Bold Italic.ttf</string>
+		<string>SF Square Head Italic.ttf</string>
+		<string>skymarshalexpandital.ttf</string>
+		<string>Star Force TTF.TTF</string>
+		<string>supercommando.ttf</string>
+		<string>supercommandohalf.ttf</string>
+		<string>supercommandolaser.ttf</string>
+		<string>Thumbs UP.ttf</string>
+		<string>Tricube.ttf</string>
+		<string>Ampad Brush.ttf</string>
+		<string>Art Brewery.ttf</string>
+		<string>Brush Strokes.ttf</string>
+		<string>Brushed.ttf</string>
+		<string>BTTTRIAL.ttf</string>
+		<string>CaliBrush.otf</string>
+		<string>Claudette aime le Chocolat.ttf</string>
+		<string>DarkWaters-Regular.otf</string>
+		<string>DarkWaters-Regular.ttf</string>
+		<string>Dead Island.ttf</string>
+		<string>edo.ttf</string>
+		<string>Imagination Station.ttf</string>
+		<string>LEVIBRUSH.TTF</string>
+		<string>mrsmonster.ttf</string>
+		<string>mrsmonster3d.ttf</string>
+		<string>mrsmonsteracad.ttf</string>
+		<string>Olympic Branding.ttf</string>
+		<string>Polo Brush.ttf</string>
+		<string>SilkRoad.ttf</string>
+		<string>Sin City.ttf</string>
+		<string>Stencil Brush.ttf</string>
+		<string>Sticky Things.ttf</string>
+		<string>Story Book.otf</string>
+		<string>Texas.ttf</string>
+		<string>The Best Night.ttf</string>
+		<string>the Citizens.ttf</string>
+		<string>True Lies.ttf</string>
+		<string>WARBRUSH.ttf</string>
+		<string>WolfsRain.ttf</string>
+		<string>Zing Easy.ttf</string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

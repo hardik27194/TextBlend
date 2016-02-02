@@ -127,8 +127,8 @@
             [cell.lbl_font_name setText:[font_selected_dict objectForKey:@"FontDisplayName"]];
         }
         
-        if ([font_selected_dict objectForKey:@"FontName"] && [[font_selected_dict objectForKey:@"FontName"]isKindOfClass:[NSString class]]) {
-            [cell.lbl_font_name setFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"FontName"] size:13]];
+        if ([font_selected_dict objectForKey:@"Font"] && [[font_selected_dict objectForKey:@"Font"]isKindOfClass:[NSString class]]) {
+            [cell.lbl_font_name setFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:18]];
         }
     }
     

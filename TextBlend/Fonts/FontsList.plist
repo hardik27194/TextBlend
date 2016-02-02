@@ -14,6 +14,8 @@
 				<string>Android Insomnia Regular.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Android Insomnia Regular</string>
+				<key>Font</key>
+				<string>Android Insomnia_</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -23,7 +25,9 @@
 				<key>FontName</key>
 				<string>Arcade Future.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Arcade Future</string>
+				<string>Arcade Future Display</string>
+				<key>Font</key>
+				<string>Arcade Future Display</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -33,7 +37,9 @@
 				<key>FontName</key>
 				<string>Arcade_Fire.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Arcade_Fire</string>
+				<string>Arcade Fire</string>
+				<key>Font</key>
+				<string>Arcade Fire</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -43,7 +49,9 @@
 				<key>FontName</key>
 				<string>ARCADE_N.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ARCADE_N</string>
+				<string>Arcade Normal</string>
+				<key>Font</key>
+				<string>Arcade Normal</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -53,7 +61,9 @@
 				<key>FontName</key>
 				<string>ARCADE_R.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ARCADE_R</string>
+				<string>Arcade Rounded</string>
+				<key>Font</key>
+				<string>Arcade Rounded</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -63,7 +73,9 @@
 				<key>FontName</key>
 				<string>Epicenter-TwoStroke.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Epicenter-TwoStroke</string>
+				<string>Epicenter Two Stroke</string>
+				<key>Font</key>
+				<string>EpicenterTwoStroke</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -74,6 +86,8 @@
 				<string>Jocoba.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Jocoba</string>
+				<key>Font</key>
+				<string>Jocoba</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -83,7 +97,9 @@
 				<key>FontName</key>
 				<string>libertylegion3d.ttf</string>
 				<key>FontDisplayName</key>
-				<string>libertylegion3d</string>
+				<string>Liberty Legion 3D</string>
+				<key>Font</key>
+				<string>Liberty Legion 3D</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -93,7 +109,9 @@
 				<key>FontName</key>
 				<string>libertylegion3dlaser.ttf</string>
 				<key>FontDisplayName</key>
-				<string>libertylegion3dlaser</string>
+				<string>Liberty Legion 3D Laser</string>
+				<key>Font</key>
+				<string>Liberty Legion 3D Laser</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -104,6 +122,8 @@
 				<string>libertylegionchrome.ttf</string>
 				<key>FontDisplayName</key>
 				<string>libertylegionchrome</string>
+				<key>Font</key>
+				<string>Liberty Legion Chrome</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -113,7 +133,9 @@
 				<key>FontName</key>
 				<string>libertylegioncond.ttf</string>
 				<key>FontDisplayName</key>
-				<string>libertylegioncond</string>
+				<string>Liberty Legion</string>
+				<key>Font</key>
+				<string>Liberty Legion Condensed</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -123,7 +145,9 @@
 				<key>FontName</key>
 				<string>libertylegiongrad.ttf</string>
 				<key>FontDisplayName</key>
-				<string>libertylegiongrad</string>
+				<string>Liberty Legion Gradient</string>
+				<key>Font</key>
+				<string>Liberty Legion Gradient</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -133,7 +157,9 @@
 				<key>FontName</key>
 				<string>libertylegionhalf.ttf</string>
 				<key>FontDisplayName</key>
-				<string>libertylegionhalf</string>
+				<string>Liberty Legion Halftone</string>
+				<key>Font</key>
+				<string>Liberty Legion Halftone</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -143,7 +169,9 @@
 				<key>FontName</key>
 				<string>libertylegionlaser.ttf</string>
 				<key>FontDisplayName</key>
-				<string>libertylegionlaser</string>
+				<string>Liberty Legion Laser</string>
+				<key>Font</key>
+				<string>Liberty Legion Laser</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -153,7 +181,9 @@
 				<key>FontName</key>
 				<string>libertylegionsemital.ttf</string>
 				<key>FontDisplayName</key>
-				<string>libertylegionsemital</string>
+				<string>Liberty Legion</string>
+				<key>Font</key>
+				<string>Liberty Legion Semi-Italic</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -163,7 +193,9 @@
 				<key>FontName</key>
 				<string>mechanik-Bold.ttf</string>
 				<key>FontDisplayName</key>
-				<string>mechanik-Bold</string>
+				<string>Mechanik</string>
+				<key>Font</key>
+				<string>mechanik</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -173,7 +205,9 @@
 				<key>FontName</key>
 				<string>MyGirlIsRetroDEMO.ttf</string>
 				<key>FontDisplayName</key>
-				<string>MyGirlIsRetroDEMO</string>
+				<string>My Girl Is Retro</string>
+				<key>Font</key>
+				<string>My Girl Is Retro</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -183,7 +217,9 @@
 				<key>FontName</key>
 				<string>newmarssemital.ttf</string>
 				<key>FontDisplayName</key>
-				<string>newmarssemital</string>
+				<string>New Mars</string>
+				<key>Font</key>
+				<string>New Mars Semi-Italic</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -193,7 +229,9 @@
 				<key>FontName</key>
 				<string>paladinsstraight.ttf</string>
 				<key>FontDisplayName</key>
-				<string>paladinsstraight</string>
+				<string>Paladins Straight</string>
+				<key>Font</key>
+				<string>Paladins Straight</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -204,6 +242,8 @@
 				<string>PressStart2P.ttf</string>
 				<key>FontDisplayName</key>
 				<string>PressStart2P</string>
+				<key>Font</key>
+				<string>Press Start 2P</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -214,6 +254,8 @@
 				<string>Reqruit-2.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Reqruit-2</string>
+				<key>Font</key>
+				<string>Reqruit Mk 2</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -223,7 +265,9 @@
 				<key>FontName</key>
 				<string>SF Atarian System Extended Bold Italic.ttf</string>
 				<key>FontDisplayName</key>
-				<string>SF Atarian System Extended Bold Italic</string>
+				<string>SF Atarian System Extended</string>
+				<key>Font</key>
+				<string>SF Atarian System Extended</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -233,7 +277,9 @@
 				<key>FontName</key>
 				<string>SF Square Head Italic.ttf</string>
 				<key>FontDisplayName</key>
-				<string>SF Square Head Italic</string>
+				<string>SF Square Head</string>
+				<key>Font</key>
+				<string>SF Square Head</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -243,7 +289,9 @@
 				<key>FontName</key>
 				<string>skymarshalexpandital.ttf</string>
 				<key>FontDisplayName</key>
-				<string>skymarshalexpandital</string>
+				<string>Sky Marshal Expanded</string>
+				<key>Font</key>
+				<string>Sky Marshal Expanded Italic</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -253,7 +301,9 @@
 				<key>FontName</key>
 				<string>Star Force TTF.TTF</string>
 				<key>FontDisplayName</key>
-				<string>Star Force TTF</string>
+				<string>Star Force</string>
+				<key>Font</key>
+				<string>G7 Star Force TTF</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -263,7 +313,9 @@
 				<key>FontName</key>
 				<string>supercommando.ttf</string>
 				<key>FontDisplayName</key>
-				<string>supercommando</string>
+				<string>Super Commando</string>
+				<key>Font</key>
+				<string>Super Commando</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -273,7 +325,9 @@
 				<key>FontName</key>
 				<string>supercommandohalf.ttf</string>
 				<key>FontDisplayName</key>
-				<string>supercommandohalf</string>
+				<string>Super Commando Halftone</string>
+				<key>Font</key>
+				<string>Super Commando Halftone</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -283,7 +337,9 @@
 				<key>FontName</key>
 				<string>supercommandolaser.ttf</string>
 				<key>FontDisplayName</key>
-				<string>supercommandolaser</string>
+				<string>Super Commando Laser</string>
+				<key>Font</key>
+				<string>Super Commando Laser</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -294,6 +350,8 @@
 				<string>Thumbs UP.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Thumbs UP</string>
+				<key>Font</key>
+				<string>Thumbs UP</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -303,6 +361,8 @@
 				<key>FontName</key>
 				<string>Tricube.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Tricube</string>
+				<key>Font</key>
 				<string>Tricube</string>
 				<key>IsLocked</key>
 				<false/>
@@ -321,6 +381,8 @@
 				<string>Ampad Brush.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Ampad Brush</string>
+				<key>Font</key>
+				<string>Ampad Brush</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -330,6 +392,8 @@
 				<key>FontName</key>
 				<string>Art Brewery.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Art Brewery</string>
+				<key>Font</key>
 				<string>Art Brewery</string>
 				<key>IsLocked</key>
 				<false/>
@@ -341,6 +405,8 @@
 				<string>Brush Strokes.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Brush Strokes</string>
+				<key>Font</key>
+				<string>Brush Art</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -351,6 +417,8 @@
 				<string>Brushed.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Brushed</string>
+				<key>Font</key>
+				<string>Brushed</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -360,7 +428,9 @@
 				<key>FontName</key>
 				<string>BTTTRIAL.otf</string>
 				<key>FontDisplayName</key>
-				<string>BTTTRIAL</string>
+				<string>Brushtip Travis</string>
+				<key>Font</key>
+				<string>brushtipTravis</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -370,6 +440,8 @@
 				<key>FontName</key>
 				<string>CaliBrush.otf</string>
 				<key>FontDisplayName</key>
+				<string>CaliBrush</string>
+				<key>Font</key>
 				<string>CaliBrush</string>
 				<key>IsLocked</key>
 				<false/>
@@ -381,6 +453,8 @@
 				<string>Claudette aime le Chocolat.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Claudette aime le Chocolat</string>
+				<key>Font</key>
+				<string>Claudette aime le Chocolat</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -390,7 +464,9 @@
 				<key>FontName</key>
 				<string>DarkWaters-Regular.otf</string>
 				<key>FontDisplayName</key>
-				<string>DarkWaters-Regular</string>
+				<string>Dark Waters</string>
+				<key>Font</key>
+				<string>Dark Waters</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -400,7 +476,9 @@
 				<key>FontName</key>
 				<string>DarkWaters-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>DarkWaters-Regular</string>
+				<string>Dark Waters</string>
+				<key>Font</key>
+				<string>Dark Waters</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -411,6 +489,8 @@
 				<string>Dead Island.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Dead Island</string>
+				<key>Font</key>
+				<string>Nemo Storm</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -420,7 +500,9 @@
 				<key>FontName</key>
 				<string>edo.ttf</string>
 				<key>FontDisplayName</key>
-				<string>edo</string>
+				<string>Edo</string>
+				<key>Font</key>
+				<string>Edo</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -431,6 +513,8 @@
 				<string>Imagination Station.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Imagination Station</string>
+				<key>Font</key>
+				<string>Imaginations</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -440,7 +524,9 @@
 				<key>FontName</key>
 				<string>LEVIBRUSH.TTF</string>
 				<key>FontDisplayName</key>
-				<string>LEVIBRUSH</string>
+				<string>Levi Brush</string>
+				<key>Font</key>
+				<string>LeviBrush</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -450,7 +536,9 @@
 				<key>FontName</key>
 				<string>mrsmonster.ttf</string>
 				<key>FontDisplayName</key>
-				<string>mrsmonster</string>
+				<string>Mrs. Monster</string>
+				<key>Font</key>
+				<string>Mrs. Monster</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -460,7 +548,9 @@
 				<key>FontName</key>
 				<string>mrsmonster3d.ttf</string>
 				<key>FontDisplayName</key>
-				<string>mrsmonster3d</string>
+				<string>Mrs. Monster 3D</string>
+				<key>Font</key>
+				<string>Mrs. Monster 3D</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -470,7 +560,9 @@
 				<key>FontName</key>
 				<string>mrsmonsteracad.ttf</string>
 				<key>FontDisplayName</key>
-				<string>mrsmonsteracad</string>
+				<string>Mrs. Monster Academy</string>
+				<key>Font</key>
+				<string>Mrs. Monster Academy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -480,6 +572,8 @@
 				<key>FontName</key>
 				<string>Olympic Branding.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Olympic Branding</string>
+				<key>Font</key>
 				<string>Olympic Branding</string>
 				<key>IsLocked</key>
 				<false/>
@@ -491,6 +585,8 @@
 				<string>Polo Brush.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Polo Brush</string>
+				<key>Font</key>
+				<string>Polo</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -500,6 +596,8 @@
 				<key>FontName</key>
 				<string>SilkRoad.ttf</string>
 				<key>FontDisplayName</key>
+				<string>SilkRoad</string>
+				<key>Font</key>
 				<string>SilkRoad</string>
 				<key>IsLocked</key>
 				<false/>
@@ -511,6 +609,8 @@
 				<string>Sin City.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Sin City</string>
+				<key>Font</key>
+				<string>Sin City</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -520,6 +620,8 @@
 				<key>FontName</key>
 				<string>Stencil Brush.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Stencil Brush</string>
+				<key>Font</key>
 				<string>Stencil Brush</string>
 				<key>IsLocked</key>
 				<false/>
@@ -531,6 +633,8 @@
 				<string>Sticky Things.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Sticky Things</string>
+				<key>Font</key>
+				<string>Sticky Things</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -540,6 +644,8 @@
 				<key>FontName</key>
 				<string>Story Book.otf</string>
 				<key>FontDisplayName</key>
+				<string>Story Book</string>
+				<key>Font</key>
 				<string>Story Book</string>
 				<key>IsLocked</key>
 				<false/>
@@ -551,6 +657,8 @@
 				<string>Texas.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Texas</string>
+				<key>Font</key>
+				<string>Texas</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -561,6 +669,8 @@
 				<string>The Best Night.ttf</string>
 				<key>FontDisplayName</key>
 				<string>The Best Night</string>
+				<key>Font</key>
+				<string>test</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -570,6 +680,8 @@
 				<key>FontName</key>
 				<string>the Citizens.ttf</string>
 				<key>FontDisplayName</key>
+				<string>The Citizens</string>
+				<key>Font</key>
 				<string>the Citizens</string>
 				<key>IsLocked</key>
 				<false/>
@@ -581,6 +693,8 @@
 				<string>True Lies.ttf</string>
 				<key>FontDisplayName</key>
 				<string>True Lies</string>
+				<key>Font</key>
+				<string>True Lies</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -590,7 +704,9 @@
 				<key>FontName</key>
 				<string>WARBRUSH.ttf</string>
 				<key>FontDisplayName</key>
-				<string>WARBRUSH</string>
+				<string>WAR BRUSH</string>
+				<key>Font</key>
+				<string>WAR BRUSH</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -601,6 +717,8 @@
 				<string>WolfsRain.ttf</string>
 				<key>FontDisplayName</key>
 				<string>WolfsRain</string>
+				<key>Font</key>
+				<string>WolfsRain</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -610,6 +728,8 @@
 				<key>FontName</key>
 				<string>Zing Easy.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Zing Easy</string>
+				<key>Font</key>
 				<string>Zing Easy</string>
 				<key>IsLocked</key>
 				<false/>

@@ -124,10 +124,10 @@
               NSArray *select_font_array=[font_selected_dict valueForKey:@"FontSubArray"];
         if (select_font_array.count) {
             
-            NSDictionary *selected_font=[select_font_array objectAtIndex:0];
-            if ([selected_font objectForKey:@"FontDisplayName"] && [[selected_font objectForKey:@"FontDisplayName"]isKindOfClass:[NSString class]]) {
-               
-                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font valueForKey:@"Arcade Future"] size:14]];
+            NSDictionary *selected_font=[select_font_array objectAtIndex:1];
+            if ([selected_font objectForKey:@"Font"] && [[selected_font objectForKey:@"Font"]isKindOfClass:[NSString class]]) {
+                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font objectForKey:@"Font"] size:14]];
+//                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font valueForKey:@"Arcade Future"] size:14]];
 
             }
 
