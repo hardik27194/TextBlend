@@ -116,6 +116,8 @@
     [self.direction_slider setMaximumTrackTintColor:MIN_COLOR];
     [self.direction_slider setMaximumTrackTintColor:MAX_COLOR];
     [self.direction_slider addTarget:self action:@selector(direction_value_changed:) forControlEvents:UIControlEventValueChanged];
+    [self.direction_slider setMinimumValue:0.0];
+    [self.direction_slider setMaximumValue:360.0];
     [self addSubview:self.direction_slider];
     
     

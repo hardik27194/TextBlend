@@ -345,9 +345,18 @@
 
 #pragma mark - Add Color Delegate -
 
--(void)updateViewWithStartColor:(UIColor *)startColor andEndColor:(UIColor *)endColor withPercenatgeValue:(CGFloat)percentage onSelectedView:(AddColorView *)selected_view withCurrentDirection:(CGFloat)directionValue{
+-(void)updateViewWithStartColor:(UIColor *)startColor andEndColor:(UIColor *)endColor withPercenatgeValue:(CGFloat)percentage onSelectedView:(AddColorView *)selected_view withCurrentDirection:(CGFloat)directionValue
+{
     //Update values
-    NSLog(@"Percentage of color %f",percentage);
+
+    ZDStickerView *sticker                          = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+
+    OHAttributedLabel *label = (OHAttributedLabel*)sticker.contentView1;
+    NSMutableAttributedString* string = label.attributedText.mutableCopy;
+    [string setTextColor:[UIColor colorWithPatternImage:[self gradientImagewithStartColor:startColor andEndColor:endColor withRotationAngle:directionValue]]];
+    
+    [label setAttributedText:string];
+    
 }
 -(void)add_color_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(AddColorView *)selected_view{
     
@@ -357,6 +366,77 @@
     }
     
 }
+
+- (UIImage *)gradientImagewithStartColor:(UIColor*)startColor andEndColor:(UIColor*)endColor withRotationAngle:(CGFloat)rotationAngle
+{
+    
+    ZDStickerView *sticker                          = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+    OHAttributedLabel *label = (OHAttributedLabel*)sticker.contentView1;
+
+    CGSize textSize = label.frame.size;
+    CGFloat width = textSize.width;
+    CGFloat height = textSize.height;
+    
+    // create a new bitmap image contextk
+    UIGraphicsBeginImageContext(CGSizeMake(width, height));
+    
+    // get context
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // push context to make it current (need to do this manually because we are not drawing in a UIView)
+    UIGraphicsPushContext(context);
+    
+    //draw gradient
+    CGGradientRef glossGradient;
+    CGColorSpaceRef rgbColorspace;
+    size_t num_locations = 2;
+
+    
+    const CGFloat *componentsStartColor= CGColorGetComponents(startColor.CGColor);
+    CGFloat Startred                                         = componentsStartColor[0];
+    CGFloat Startgreen                                      = componentsStartColor[1];
+    CGFloat Startblue                                        = componentsStartColor[2];
+
+    
+    const CGFloat *componentsEndColor= CGColorGetComponents(endColor.CGColor);
+    CGFloat endRed                                         = componentsEndColor[0];
+    CGFloat endGreen                                      = componentsEndColor[1];
+    CGFloat endBlue                                        = componentsEndColor[2];
+
+    
+    CGFloat locations[2] = { 0.0, 1.0 };
+    CGFloat components[8] = {Startred, Startgreen, Startblue, 1.0,  // Start color
+        endRed, endGreen, endBlue, 1.0}; // End color
+    rgbColorspace = CGColorSpaceCreateDeviceRGB();
+    glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, components, locations, num_locations);
+    
+    // Apply Rotation for Linear Gradient.
+    CGFloat degree = rotationAngle * M_PI / 180;
+    CGPoint center = CGPointMake(width/2, height/2);
+    CGPoint startPoint = CGPointMake(center.x - cos (degree) * width/2, center.y - sin(degree) * height/2);
+    CGPoint endPoint = CGPointMake(center.x + cos (degree) * width/2, center.y + sin(degree) * height/2);
+    
+    // Pass the generated Start Point and End Point. Try to Rotate.
+    CGContextDrawLinearGradient(context, glossGradient, startPoint, endPoint, kCGGradientDrawsBeforeStartLocation|kCGGradientDrawsAfterEndLocation);
+    CGGradientRelease(glossGradient);
+    CGColorSpaceRelease(rgbColorspace);
+    // pop context
+    UIGraphicsPopContext();
+    // get a UIImage from the image context
+    UIImage *gradientImageToReturn = UIGraphicsGetImageFromCurrentImageContext();
+    // clean up drawing environment
+    UIGraphicsEndImageContext();
+    return  gradientImageToReturn;
+}
+
+-(void)rotateGradientByAngle:(UISlider*)slider
+{
+    ZDStickerView *sticker                          = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+    OHAttributedLabel *label = (OHAttributedLabel*)sticker.contentView1;
+    
+    [label setTextColor:[UIColor colorWithPatternImage:[self gradientImagewithStartColor:[UIColor redColor] andEndColor:[UIColor blueColor] withRotationAngle:slider.value]]];
+}
+
 #pragma mark - Select Font Delegate Methods  -
 -(void)setFont:(UIFont*)font onSelectedView:(ZDStickerView *)selected_view;
 {
