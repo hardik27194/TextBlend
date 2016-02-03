@@ -747,7 +747,9 @@
 				<key>FontName</key>
 				<string>a_dark_wedding__2007.ttf</string>
 				<key>FontDisplayName</key>
-				<string>a_dark_wedding__2007</string>
+				<string>A Dark Wedding</string>
+				<key>Font</key>
+				<string>A Dark Wedding</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -757,7 +759,9 @@
 				<key>FontName</key>
 				<string>Alanden_.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Alanden</string>
+				<string>Alan Den</string>
+				<key>Font</key>
+				<string>Alan Den</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -767,7 +771,9 @@
 				<key>FontName</key>
 				<string>AlbertText-Bold.ttf</string>
 				<key>FontDisplayName</key>
-				<string>AlbertText-Bold</string>
+				<string>Albert Text</string>
+				<key>Font</key>
+				<string>Albert Text</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -777,7 +783,9 @@
 				<key>FontName</key>
 				<string>AlexBrush-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>AlexBrush-Regular</string>
+				<string>Alex Brush</string>
+				<key>Font</key>
+				<string>Alex Brush</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -788,6 +796,8 @@
 				<string>Alpine.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Alpine</string>
+				<key>Font</key>
+				<string>Alpine</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -797,7 +807,9 @@
 				<key>FontName</key>
 				<string>alterna.ttf</string>
 				<key>FontDisplayName</key>
-				<string>alterna</string>
+				<string>Alterna</string>
+				<key>Font</key>
+				<string>Alterna</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -808,6 +820,8 @@
 				<string>Amptmann Script.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Amptmann Script</string>
+				<key>Font</key>
+				<string>Amptmann Script</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -817,7 +831,9 @@
 				<key>FontName</key>
 				<string>Argel Font Trial.otf</string>
 				<key>FontDisplayName</key>
-				<string>Argel Font Trial</string>
+				<string>Argel Font</string>
+				<key>Font</key>
+				<string>Argel Font</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -827,7 +843,9 @@
 				<key>FontName</key>
 				<string>ARRRMB__.TTF</string>
 				<key>FontDisplayName</key>
-				<string>ARRRMB</string>
+				<string>Arrr Matey</string>
+				<key>Font</key>
+				<string>Arrr Matey BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -837,7 +855,9 @@
 				<key>FontName</key>
 				<string>BLESD___.otf</string>
 				<key>FontDisplayName</key>
-				<string>BLESD___</string>
+				<string>Blessed Day</string>
+				<key>Font</key>
+				<string>Blessed Day</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -847,7 +867,9 @@
 				<key>FontName</key>
 				<string>broken_planew.ttf</string>
 				<key>FontDisplayName</key>
-				<string>broken_planew</string>
+				<string>Broken Planewing</string>
+				<key>Font</key>
+				<string>Broken Planewing</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -857,7 +879,9 @@
 				<key>FontName</key>
 				<string>DUKEPLUS.TTF</string>
 				<key>FontDisplayName</key>
-				<string>DUKEPLUS</string>
+				<string>Duke</string>
+				<key>Font</key>
+				<string>Duke</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -867,6 +891,8 @@
 				<key>FontName</key>
 				<string>Fiddums Family.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Fiddums Family</string>
+				<key>Font</key>
 				<string>Fiddums Family</string>
 				<key>IsLocked</key>
 				<false/>
@@ -878,6 +904,8 @@
 				<string>Grafik Text.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Grafik Text</string>
+				<key>Font</key>
+				<string>Grafik Text</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -887,7 +915,9 @@
 				<key>FontName</key>
 				<string>MardianDemo.ttf</string>
 				<key>FontDisplayName</key>
-				<string>MardianDemo</string>
+				<string>Mardian Demo</string>
+				<key>Font</key>
+				<string>Mardian Demo</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -897,7 +927,9 @@
 				<key>FontName</key>
 				<string>MilasianThinPERSONAL.ttf</string>
 				<key>FontDisplayName</key>
-				<string>MilasianThinPERSONAL</string>
+				<string>Milasian Thin Personal</string>
+				<key>Font</key>
+				<string>Milasian Thin PERSONAL</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -907,7 +939,9 @@
 				<key>FontName</key>
 				<string>NinaScriptDemo.ttf</string>
 				<key>FontDisplayName</key>
-				<string>NinaScriptDemo</string>
+				<string>Nina Script Demo</string>
+				<key>Font</key>
+				<string>Nina Script Demo</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -917,7 +951,9 @@
 				<key>FontName</key>
 				<string>Pharmount_PersonalUseOnly.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Pharmount_PersonalUseOnly</string>
+				<string>Pharmount Personal Use Only</string>
+				<key>Font</key>
+				<string>Pharmount Personal Use Only</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -928,6 +964,8 @@
 				<string>Precious.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Precious</string>
+				<key>Font</key>
+				<string>Precious</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -937,7 +975,9 @@
 				<key>FontName</key>
 				<string>RecordaScript_Personal_Use_Only.ttf</string>
 				<key>FontDisplayName</key>
-				<string>RecordaScript_Personal_Use_Only</string>
+				<string>Recorda Script Personal Use Only</string>
+				<key>Font</key>
+				<string>Recorda Script Personal Use Only</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -947,7 +987,9 @@
 				<key>FontName</key>
 				<string>Respective_Slanted.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Respective_Slanted</string>
+				<string>Respective Slanted</string>
+				<key>Font</key>
+				<string>Respective Slanted</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -957,7 +999,9 @@
 				<key>FontName</key>
 				<string>rm_albion.ttf</string>
 				<key>FontDisplayName</key>
-				<string>rm_albion</string>
+				<string>RM Albion</string>
+				<key>Font</key>
+				<string>RM Albion</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -968,6 +1012,8 @@
 				<string>Sable.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Sable</string>
+				<key>Font</key>
+				<string>Sable</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -977,7 +1023,9 @@
 				<key>FontName</key>
 				<string>Seaside Heights.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Seaside Heights</string>
+				<string>Birds Of Feather</string>
+				<key>Font</key>
+				<string>Birds Of Feather</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -987,7 +1035,9 @@
 				<key>FontName</key>
 				<string>SEVEMFBR.TTF</string>
 				<key>FontDisplayName</key>
-				<string>SEVEMFBR</string>
+				<string>Seven Monkey Fury</string>
+				<key>Font</key>
+				<string>Seven Monkey Fury BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -997,7 +1047,9 @@
 				<key>FontName</key>
 				<string>SEVESBRG.TTF</string>
 				<key>FontDisplayName</key>
-				<string>SEVESBRG</string>
+				<string>Seven Swordsmen</string>
+				<key>Font</key>
+				<string>Seven Swordsmen BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1007,7 +1059,9 @@
 				<key>FontName</key>
 				<string>squealer embossed.ttf</string>
 				<key>FontDisplayName</key>
-				<string>squealer embossed</string>
+				<string>Squealer Embossed</string>
+				<key>Font</key>
+				<string>Squealer</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1017,17 +1071,9 @@
 				<key>FontName</key>
 				<string>Stackyard_PERSONAL_USE.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Stackyard_PERSONAL_USE</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>THEDREAM TRIAL.otf</string>
-				<key>FontDisplayName</key>
-				<string>THEDREAM TRIAL</string>
+				<string>Stackyard PERSONAL USE</string>
+				<key>Font</key>
+				<string>Stackyard PERSONAL USE</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1037,7 +1083,9 @@
 				<key>FontName</key>
 				<string>YaquoteScript_PersonalUse.ttf</string>
 				<key>FontDisplayName</key>
-				<string>YaquoteScript_PersonalUse</string>
+				<string>Yaquote Script</string>
+				<key>Font</key>
+				<string>Yaquote Script Personal Use</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>

@@ -23,10 +23,11 @@
 #import "Rotate3DView.h"
 #import "EraserView.h"
 #import "PhotoEditCustomView.h"
+#import "ColorPaletteView.h"
 @import GoogleMobileAds;
 
 
-@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate,AddColorViewDelegate>
+@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate,AddColorViewDelegate,ColorPaletteViewDelegate>
 {
     AddTextView *add_text_view;
     SelectFontsView *select_fonts_view;
@@ -35,7 +36,8 @@
     Rotate3DView *rotate_3d_view;
     EraserView *eraser_view;
     PhotoEditCustomView *photo_edit_custom_view;
-    
+    ColorPaletteView *color_palette_view;
+
     CATransform3D rotationAndPerspectiveTransform1;
     CATransform3D rotationAndPerspectiveTransform2;
     CATransform3D rotationAndPerspectiveTransform3;

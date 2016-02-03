@@ -22,6 +22,7 @@
 #import "UIImageView+WebCache.h"
 #import "AppConstants.h"
 #import "CustomButton.h"
+#import "ZDStickerView.h"
 
 
 //#import <SDWebImage/UIImageView+WebCache.h>

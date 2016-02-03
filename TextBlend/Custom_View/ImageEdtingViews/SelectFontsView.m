@@ -203,7 +203,7 @@
 -(void)setSelectedFont:(UIFont*)font onSelectedView:(SelectedFontSubView  *)selected_view{
     
     
-    if ([self.select_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
+    if ([self.select_font_view_delegate respondsToSelector:@selector(setFont:onSelectedView:)]) {
         [self.select_font_view_delegate setFont:font onSelectedView:selected_sticker_view];
         
     }

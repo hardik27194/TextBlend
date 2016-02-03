@@ -15,7 +15,7 @@
 @synthesize black_view,done_check_mark_button;
 @synthesize color_palette_view_delegate;
 
-
+@synthesize selected_sticker_view;
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
@@ -40,7 +40,7 @@
     [self.done_check_mark_button setImage:[UIImage imageNamed:@"done_check_mark_button.PNG"] forState:UIControlStateNormal];
     [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.done_check_mark_button];
-    
+    [self initializeArray];
     [self initializeCollectionView];
     
     
@@ -51,6 +51,37 @@
         if (!self.color_palette_array) {
             self.color_palette_array = [[NSMutableArray alloc]init];
         }
+    
+//    float INCREMENT = 0.05;
+//    for (float hue = 0.0; hue < 1.0; hue += INCREMENT) {
+//        UIColor *color = [UIColor colorWithHue:hue
+//                                    saturation:1.0
+//                                    brightness:1.0
+//                                         alpha:1.0];
+//        [self.color_palette_array addObject:color];
+//    }
+    [self.color_palette_array addObject:[UIColor blackColor]];
+    [self.color_palette_array addObject:[UIColor whiteColor]];
+
+    [self.color_palette_array addObject:[UIColor darkGrayColor]];
+    [self.color_palette_array addObject:[UIColor redColor]];
+    [self.color_palette_array addObject:[UIColor lightGrayColor]];
+
+    [self.color_palette_array addObject:[UIColor greenColor]];
+    [self.color_palette_array addObject:[UIColor blueColor]];
+    [self.color_palette_array addObject:[UIColor cyanColor]];
+    [self.color_palette_array addObject:[UIColor yellowColor]];
+    [self.color_palette_array addObject:[UIColor magentaColor]];
+    [self.color_palette_array addObject:[UIColor orangeColor]];
+    [self.color_palette_array addObject:[UIColor purpleColor]];
+    [self.color_palette_array addObject:[UIColor grayColor]];
+
+    [self.color_palette_array addObject:[UIColor brownColor]];
+
+    
+
+    
+    /*
         self.color_palette_array  =[[NSArray arrayWithObjects:
                                     [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
                                     [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0],
@@ -71,6 +102,7 @@
                                     
                                     
                                     nil]mutableCopy];
+     */
     
 }
 
@@ -90,9 +122,6 @@
     [custom_collection_view registerClass:[ColorPaletteCollectionViewCell class] forCellWithReuseIdentifier:@"ColorPaletteCollectionViewCellIdentifier"];
     [custom_collection_view setUpCollectionInitParms];
     
-    if(!self.color_palette_array){
-        self.color_palette_array = [[NSMutableArray alloc]init];
-    }
     
 }
 
@@ -160,8 +189,8 @@
         
         UIColor *selected_color=[self.color_palette_array objectAtIndex:indexPath.row];
         
-        if ([self.color_palette_view_delegate respondsToSelector:@selector(setSelectedColor:onSelectedView:)]) {
-            [self.color_palette_view_delegate setSelectedColor:selected_color onSelectedView:self];
+        if ([self.color_palette_view_delegate respondsToSelector:@selector(setSelectedColor:onSelectedView:onSelectedZticker:)]) {
+            [self.color_palette_view_delegate setSelectedColor:selected_color onSelectedView:self onSelectedZticker:self.selected_sticker_view];
         }
         
     }

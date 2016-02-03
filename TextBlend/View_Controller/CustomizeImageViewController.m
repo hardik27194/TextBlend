@@ -294,6 +294,7 @@
     if (!select_fonts_view) {
         select_fonts_view=[[SelectFontsView alloc]initWithFrame:BOTTOM_FRAME];
         select_fonts_view.select_font_view_delegate=self;
+        select_fonts_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
         [self.view addSubview:select_fonts_view];
     }
     
@@ -334,13 +335,58 @@
 }
 
 -(void)eraser_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
-    if (!eraser_view) {
-        eraser_view=[[EraserView alloc]initWithFrame:BOTTOM_FRAME];
-        eraser_view.eraser_delegate=self;
-        [self.view addSubview:eraser_view];
+//    if (!eraser_view) {
+//        eraser_view=[[EraserView alloc]initWithFrame:BOTTOM_FRAME];
+//        eraser_view.eraser_delegate=self;
+//        [self.view addSubview:eraser_view];
+//    }
+//    [self.view bringSubviewToFront:eraser_view];
+    if (!color_palette_view) {
+        color_palette_view=[[ColorPaletteView alloc]initWithFrame:BOTTOM_FRAME];
+        color_palette_view.color_palette_view_delegate=self;
+        color_palette_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+
+        [self.view addSubview:color_palette_view];
     }
-    [self.view bringSubviewToFront:eraser_view];
+    [self.view bringSubviewToFront:color_palette_view];
+
+}
+
+#pragma mark - Color Palette View Methods -
+
+-(void)setSelectedColor:(UIColor*)color onSelectedView:(ColorPaletteView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+
+    OHAttributedLabel *selected_label=   (OHAttributedLabel*)sticker_view.contentView1;
+
+    NSMutableAttributedString *res = [selected_label.attributedText mutableCopy];
     
+    [res beginEditing];
+    __block BOOL found = NO;
+    [res enumerateAttribute:NSForegroundColorAttributeName inRange:NSMakeRange(0, res.length) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
+        if (value) {
+//            UIColor *oldColor = (UIColor *)value;
+//            UIColor *newColor = color;
+            [res removeAttribute:NSForegroundColorAttributeName range:range];
+            [res addAttribute:NSForegroundColorAttributeName value:color range:range];
+            found = YES;
+        }
+    }];
+    if (!found) {
+        // No font was found - do something else?
+    }
+    [res endEditing];
+    selected_label.attributedText = res;
+    [selected_label setNeedsDisplay];
+    [sticker_view setNeedsDisplay];
+    
+}
+
+-(void)color_palette_view_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ColorPaletteView *)selected_view{
+    if (color_palette_view) {
+        [color_palette_view removeFromSuperview];
+        color_palette_view=  nil;
+    }
+
 }
 
 #pragma mark - Add Color Delegate -
@@ -1384,6 +1430,10 @@
         eraser_view = nil;
     }
     
+    if (color_palette_view) {
+        [color_palette_view removeFromSuperview];
+        color_palette_view = nil;
+    }
 }
 
 #pragma mark - Notification Methods -

@@ -163,18 +163,24 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SelectFontCollectionViewCell *cell = (SelectFontCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-
+    
+    
     if (self.selected_sub_font_array.count>indexPath.row) {
+    
         
-        NSDictionary *font_selected_dict=[self.selected_sub_font_array objectAtIndex:indexPath.row];
-        if ([font_selected_dict objectForKey:@"FontName"] && [[font_selected_dict objectForKey:@"FontName"]isKindOfClass:[NSString class]]) {
-            [cell.lbl_font_name setFont: [UIFont fontWithName:@"Android Insomnia Regular" size:13]];
+            NSDictionary *font_selected_dict=[self.selected_sub_font_array objectAtIndex:indexPath.row];
             
-            if ([self.select_sub_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
-                [self.select_sub_font_view_delegate setSelectedFont:[UIFont fontWithName:@"Android Insomnia Regular" size:13] onSelectedView:self];
+        if ([font_selected_dict objectForKey:@"Font"] && [[font_selected_dict objectForKey:@"Font"]isKindOfClass:[NSString class]]) {
+           
+            
+        if ([self.select_sub_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
+//            NSLog(@"%@",[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:18]);
+            [self.select_sub_font_view_delegate setSelectedFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:18] onSelectedView:self];
+            
             }
         }
+        
+    
     }
 }
 /*

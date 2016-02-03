@@ -13,7 +13,7 @@
 @protocol ColorPaletteViewDelegate <NSObject>
 
 @optional
--(void)setSelectedColor:(UIColor*)font onSelectedView:(ColorPaletteView  *)selected_view;
+-(void)setSelectedColor:(UIColor*)color onSelectedView:(ColorPaletteView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view;
 -(void)color_palette_view_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ColorPaletteView *)selected_view;
 
 @end
@@ -26,6 +26,8 @@
 @property(nonatomic,strong)UIView *black_view;
 @property(nonatomic,strong)NSMutableArray *color_palette_array;
 @property(nonatomic,strong)UIButton *done_check_mark_button;
+@property(nonatomic,strong)ZDStickerView *selected_sticker_view;
+
 -(void)initializeArray;
 
 
