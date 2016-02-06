@@ -1458,6 +1458,8 @@
 				<string>Bad Gong.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Bad Gong</string>
+				<key>Font</key>
+				<string>Bad Gong </string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1468,6 +1470,8 @@
 				<string>Blah blah bang.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Blah blah bang</string>
+				<key>Font</key>
+				<string>Blah blah bang</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1477,7 +1481,9 @@
 				<key>FontName</key>
 				<string>chawp.ttf</string>
 				<key>FontDisplayName</key>
-				<string>chawp</string>
+				<string>Chawp</string>
+				<key>Font</key>
+				<string>CHAWP</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1487,7 +1493,9 @@
 				<key>FontName</key>
 				<string>Colored Crayons.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Colored Crayons</string>
+				<string>Bad to the bone</string>
+				<key>Font</key>
+				<string>Bad to the bone</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1498,6 +1506,8 @@
 				<string>DK Crayon Crumble.ttf</string>
 				<key>FontDisplayName</key>
 				<string>DK Crayon Crumble</string>
+				<key>Font</key>
+				<string>DK Crayon Crumble</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1507,7 +1517,9 @@
 				<key>FontName</key>
 				<string>EraserRegular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>EraserRegular</string>
+				<string>Eraser</string>
+				<key>Font</key>
+				<string>Eraser</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1517,7 +1529,9 @@
 				<key>FontName</key>
 				<string>FFF_Tusj.ttf</string>
 				<key>FontDisplayName</key>
-				<string>FFF_Tusj</string>
+				<string>FFF Tusj</string>
+				<key>Font</key>
+				<string>FFF Tusj</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1527,6 +1541,8 @@
 				<key>FontName</key>
 				<string>Fine Blackboard.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Fine Blackboard</string>
+				<key>Font</key>
 				<string>Fine Blackboard</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1538,6 +1554,8 @@
 				<string>Firestarter Z.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Firestarter Z</string>
+				<key>Font</key>
+				<string>Firestarter Z</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1547,6 +1565,8 @@
 				<key>FontName</key>
 				<string>GrutchShaded.ttf</string>
 				<key>FontDisplayName</key>
+				<string>GrutchShaded</string>
+				<key>Font</key>
 				<string>GrutchShaded</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1558,6 +1578,8 @@
 				<string>Justaword.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Justaword</string>
+				<key>Font</key>
+				<string>Justaword</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1567,7 +1589,9 @@
 				<key>FontName</key>
 				<string>KGBlankSpaceSketch.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGBlankSpaceSketch</string>
+				<string>KG Blank Space Sketch</string>
+				<key>Font</key>
+				<string>KG Blank Space Sketch</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1577,7 +1601,9 @@
 				<key>FontName</key>
 				<string>KGBrokenVesselsSketch.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGBrokenVesselsSketch</string>
+				<string>KG Broken Vessels Sketch</string>
+				<key>Font</key>
+				<string>KG Broken Vessels Sketch</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1587,7 +1613,9 @@
 				<key>FontName</key>
 				<string>KGChasingPavements.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGChasingPavements</string>
+				<string>KG Chasing Pavements</string>
+				<key>Font</key>
+				<string>KG Chasing Pavements</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1597,7 +1625,9 @@
 				<key>FontName</key>
 				<string>KGMakesYouStronger.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGMakesYouStronger</string>
+				<string>KG Makes You Stronger</string>
+				<key>Font</key>
+				<string>KG Makes You Stronger</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1607,7 +1637,9 @@
 				<key>FontName</key>
 				<string>KGNoRegretsSketch.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGNoRegretsSketch</string>
+				<string>KG No Regrets Sketch</string>
+				<key>Font</key>
+				<string>KG No Regrets Sketch</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1617,7 +1649,9 @@
 				<key>FontName</key>
 				<string>KGSecondChancesSketch.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGSecondChancesSketch</string>
+				<string>KG Second Chances Sketch</string>
+				<key>Font</key>
+				<string>KG Second Chances Sketch</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1627,7 +1661,9 @@
 				<key>FontName</key>
 				<string>KGTangledUpInYou.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGTangledUpInYou</string>
+				<string>KG Tangled Up In You</string>
+				<key>Font</key>
+				<string>KG Tangled Up In You</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1637,7 +1673,9 @@
 				<key>FontName</key>
 				<string>KGTenThousandReasons.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGTenThousandReasons</string>
+				<string>KG Ten Thousand Reasons</string>
+				<key>Font</key>
+				<string>KG Ten Thousand Reasons</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1648,6 +1686,8 @@
 				<string>KR Rachel&apos;s Chalkboard.ttf</string>
 				<key>FontDisplayName</key>
 				<string>KR Rachel&apos;s Chalkboard</string>
+				<key>Font</key>
+				<string>KR Rachel&apos;s Chalkboard</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1657,7 +1697,9 @@
 				<key>FontName</key>
 				<string>PPETRIAL.ttf</string>
 				<key>FontDisplayName</key>
-				<string>PPETRIAL</string>
+				<string>Pencil Pete</string>
+				<key>Font</key>
+				<string>pencilPete FONT</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1667,6 +1709,8 @@
 				<key>FontName</key>
 				<string>PWChalk.ttf</string>
 				<key>FontDisplayName</key>
+				<string>PWChalk</string>
+				<key>Font</key>
 				<string>PWChalk</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1678,6 +1722,8 @@
 				<string>PWRoundedScratch.ttf</string>
 				<key>FontDisplayName</key>
 				<string>PWRoundedScratch</string>
+				<key>Font</key>
+				<string>PWRoundedScratch</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1687,7 +1733,9 @@
 				<key>FontName</key>
 				<string>RechtmanPlain.ttf</string>
 				<key>FontDisplayName</key>
-				<string>RechtmanPlain</string>
+				<string>Rechtman</string>
+				<key>Font</key>
+				<string>Rechtman</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1697,7 +1745,9 @@
 				<key>FontName</key>
 				<string>Smudgie Crayon.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Smudgie Crayon</string>
+				<string>Graffiti Crayon</string>
+				<key>Font</key>
+				<string>Graffiti Crayon</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1707,7 +1757,9 @@
 				<key>FontName</key>
 				<string>SqueakyChalkSound.ttf</string>
 				<key>FontDisplayName</key>
-				<string>SqueakyChalkSound</string>
+				<string>Squeaky Chalk Sound</string>
+				<key>Font</key>
+				<string>squeaky chalk sound</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1717,6 +1769,8 @@
 				<key>FontName</key>
 				<string>VTCAllSkratchedUpOne.ttf</string>
 				<key>FontDisplayName</key>
+				<string>VTC All Skratched Up One</string>
+				<key>Font</key>
 				<string>VTCAllSkratchedUpOne</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1727,6 +1781,8 @@
 				<key>FontName</key>
 				<string>vtks chalk 79.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Vtks Chalk</string>
+				<key>Font</key>
 				<string>vtks chalk 79</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1737,6 +1793,8 @@
 				<key>FontName</key>
 				<string>vtks noise.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Vtks Noise</string>
+				<key>Font</key>
 				<string>vtks noise</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1747,7 +1805,9 @@
 				<key>FontName</key>
 				<string>whatever it takes bold.ttf</string>
 				<key>FontDisplayName</key>
-				<string>whatever it takes bold</string>
+				<string>Whatever It Takes</string>
+				<key>Font</key>
+				<string>whatever it takes</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>

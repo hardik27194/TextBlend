@@ -74,7 +74,8 @@
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
     self.fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
   //  NSLog(@"%@",self.fonts_array);
-    NSIndexSet *indexSet=[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(4, self.fonts_array.count-1-4)];
+    CGFloat selectedFontCount=5;
+    NSIndexSet *indexSet=[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(selectedFontCount, self.fonts_array.count-selectedFontCount)];
     [self.fonts_array removeObjectsAtIndexes:indexSet];
 }
 #pragma mark - Collection View Delegate Methods -
@@ -107,7 +108,7 @@
         [cell.contentView addSubview:cell.lbl_font_name];
         
     }
-    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, 40);
+    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, 45);
     [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
     
     
