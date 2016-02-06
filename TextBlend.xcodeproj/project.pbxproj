@@ -13,6 +13,8 @@
 		8B025F211C2F186B005D2C3B /* ChooseOptionCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */; };
 		8B025F241C2F18CE005D2C3B /* ChooseOptionCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */; };
 		8B0AFA2C1C5FBFBD002DFE95 /* AddColorSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */; };
+		8B3691041C66344800A2F5D0 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3691031C66344800A2F5D0 /* Colours.m */; };
+		8B3691071C663C8500A2F5D0 /* SelectColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */; };
 		8B821BDF1C43FC6C00DA388F /* SelectedFontSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */; };
 		8B821BE21C44230500DA388F /* ColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE11C44230500DA388F /* ColorPaletteView.m */; };
 		8B821BE51C44241F00DA388F /* ColorPaletteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */; };
@@ -933,6 +935,10 @@
 		8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomCell.m; sourceTree = "<group>"; };
 		8B0AFA2A1C5FBFBD002DFE95 /* AddColorSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddColorSelectionView.h; sourceTree = "<group>"; };
 		8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddColorSelectionView.m; sourceTree = "<group>"; };
+		8B3691021C66344800A2F5D0 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		8B3691031C66344800A2F5D0 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		8B3691051C663C8500A2F5D0 /* SelectColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectColorPaletteView.h; sourceTree = "<group>"; };
+		8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectColorPaletteView.m; sourceTree = "<group>"; };
 		8B821BDD1C43FC6C00DA388F /* SelectedFontSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedFontSubView.h; sourceTree = "<group>"; };
 		8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedFontSubView.m; sourceTree = "<group>"; };
 		8B821BE01C44230500DA388F /* ColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteView.h; sourceTree = "<group>"; };
@@ -2097,6 +2103,8 @@
 				8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */,
 				8B821BE01C44230500DA388F /* ColorPaletteView.h */,
 				8B821BE11C44230500DA388F /* ColorPaletteView.m */,
+				8B3691051C663C8500A2F5D0 /* SelectColorPaletteView.h */,
+				8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */,
 			);
 			path = Custom_View;
 			sourceTree = "<group>";
@@ -2441,6 +2449,8 @@
 		8BE7E2B11C31D50A0032E5B5 /* ColorPickerView */ = {
 			isa = PBXGroup;
 			children = (
+				8B3691021C66344800A2F5D0 /* Colours.h */,
+				8B3691031C66344800A2F5D0 /* Colours.m */,
 				8BE7E2B21C31D50A0032E5B5 /* DTColorPickerImageView.h */,
 				8BE7E2B31C31D50A0032E5B5 /* DTColorPickerImageView.m */,
 				8BE7E2B41C31D50A0032E5B5 /* UIImage+ColorPicker.h */,
@@ -4543,11 +4553,13 @@
 				8BACE9701C10A09500CEDFE3 /* UIView+Toast.m in Sources */,
 				DB83E16D1C227566008F0B2C /* MyView.m in Sources */,
 				8BD2DD9F1C3D82ED0069B80C /* ChooseQuoteViewController.m in Sources */,
+				8B3691041C66344800A2F5D0 /* Colours.m in Sources */,
 				8BACE9A71C10A48300CEDFE3 /* UIImage+MultiFormat.m in Sources */,
 				DB83E1541C227566008F0B2C /* BCMeshTransformView.m in Sources */,
 				8BBF90771C15F6F5001510FA /* SelectFontsView.m in Sources */,
 				8BBF90831C15FB04001510FA /* EraserView.m in Sources */,
 				DB83E1491C227566008F0B2C /* AwesomeMenuItem.m in Sources */,
+				8B3691071C663C8500A2F5D0 /* SelectColorPaletteView.m in Sources */,
 				8BACE9A01C10A48300CEDFE3 /* SDWebImageDecoder.m in Sources */,
 				8BACE9721C10A09500CEDFE3 /* PageTableView.m in Sources */,
 				DB1F5FEE1C18866C00F425DB /* UIImage+PECrop.m in Sources */,

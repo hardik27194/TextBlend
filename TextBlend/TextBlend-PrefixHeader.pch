@@ -23,6 +23,7 @@
 #import "AppConstants.h"
 #import "CustomButton.h"
 #import "ZDStickerView.h"
+#import "DTColorPickerImageView.h"
 
 
 //#import <SDWebImage/UIImageView+WebCache.h>

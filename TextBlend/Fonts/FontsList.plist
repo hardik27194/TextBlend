@@ -1102,7 +1102,9 @@
 				<key>FontName</key>
 				<string>Candcu__.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Candcu__</string>
+				<string>Candy Cane</string>
+				<key>Font</key>
+				<string>Candy Cane (Unregistered)</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1112,7 +1114,9 @@
 				<key>FontName</key>
 				<string>Candk___.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Candk___</string>
+				<string>Candy Kisses</string>
+				<key>Font</key>
+				<string>Candy Kisses</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1122,7 +1126,9 @@
 				<key>FontName</key>
 				<string>Candr___.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Candr___</string>
+				<string>Candy Randy</string>
+				<key>Font</key>
+				<string>Candy Randy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1132,7 +1138,9 @@
 				<key>FontName</key>
 				<string>CANDSB__.TTF</string>
 				<key>FontDisplayName</key>
-				<string>CANDSB__</string>
+				<string>Candy Store BV</string>
+				<key>Font</key>
+				<string>Candy Store BV</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1142,7 +1150,9 @@
 				<key>FontName</key>
 				<string>CANDY 2.TTF</string>
 				<key>FontDisplayName</key>
-				<string>CANDY 2</string>
+				<string>Candice</string>
+				<key>Font</key>
+				<string>Candice</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1153,16 +1163,8 @@
 				<string>Candy Script.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Candy Script</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>CANDY___.otf</string>
-				<key>FontDisplayName</key>
-				<string>CANDY___</string>
+				<key>Font</key>
+				<string>Candy Script</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1172,7 +1174,9 @@
 				<key>FontName</key>
 				<string>CANDY.TTF</string>
 				<key>FontDisplayName</key>
-				<string>CANDY</string>
+				<string>Candy Cane Match</string>
+				<key>Font</key>
+				<string>Candy Cane Match</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1183,6 +1187,8 @@
 				<string>Candylicious.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Candylicious</string>
+				<key>Font</key>
+				<string>Candylicious</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1192,7 +1198,9 @@
 				<key>FontName</key>
 				<string>candystr 2.ttf</string>
 				<key>FontDisplayName</key>
-				<string>candystr 2</string>
+				<string>Candy Stripe BRK</string>
+				<key>Font</key>
+				<string>Candy Stripe (BRK)</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1202,7 +1210,9 @@
 				<key>FontName</key>
 				<string>CandyTime-2.ttf</string>
 				<key>FontDisplayName</key>
-				<string>CandyTime-2</string>
+				<string>Candy Time</string>
+				<key>Font</key>
+				<string>CandyTime</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1212,7 +1222,9 @@
 				<key>FontName</key>
 				<string>CONNR___.TTF</string>
 				<key>FontDisplayName</key>
-				<string>CONNR___</string>
+				<string>Connectline Rail</string>
+				<key>Font</key>
+				<string>ConnectlineRail</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1222,17 +1234,9 @@
 				<key>FontName</key>
 				<string>cosmosca.ttf</string>
 				<key>FontDisplayName</key>
-				<string>cosmosca</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>Double_Bubble_shadow.otf</string>
-				<key>FontDisplayName</key>
-				<string>Double_Bubble_shadow</string>
+				<string>Cosmoscandy</string>
+				<key>Font</key>
+				<string>Cosmoscandy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1242,7 +1246,9 @@
 				<key>FontName</key>
 				<string>HANDYCANDY.TTF</string>
 				<key>FontDisplayName</key>
-				<string>HANDYCANDY</string>
+				<string>Handy candy</string>
+				<key>Font</key>
+				<string>Handy candy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1253,6 +1259,8 @@
 				<string>Invader Candy.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Invader Candy</string>
+				<key>Font</key>
+				<string>Invader Candy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1262,7 +1270,9 @@
 				<key>FontName</key>
 				<string>KGCandyCaneStripe 2.ttf</string>
 				<key>FontDisplayName</key>
-				<string>KGCandyCaneStripe 2</string>
+				<string>KG Candy Cane Stripe</string>
+				<key>Font</key>
+				<string>KG Candy Cane Stripe</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1272,6 +1282,8 @@
 				<key>FontName</key>
 				<string>KR Candy Kiss.ttf</string>
 				<key>FontDisplayName</key>
+				<string>KR Candy Kiss</string>
+				<key>Font</key>
 				<string>KR Candy Kiss</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1283,6 +1295,8 @@
 				<string>KR Cane Letters.ttf</string>
 				<key>FontDisplayName</key>
 				<string>KR Cane Letters</string>
+				<key>Font</key>
+				<string>KR Cane Letters</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1292,6 +1306,8 @@
 				<key>FontName</key>
 				<string>KR Summer Candy.ttf</string>
 				<key>FontDisplayName</key>
+				<string>KR Summer Candy</string>
+				<key>Font</key>
 				<string>KR Summer Candy</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1303,6 +1319,8 @@
 				<string>Mf Candy.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Mf Candy</string>
+				<key>Font</key>
+				<string>Mf Candy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1312,7 +1330,9 @@
 				<key>FontName</key>
 				<string>mint3.ttf</string>
 				<key>FontDisplayName</key>
-				<string>mint3</string>
+				<string>Pep O Mint</string>
+				<key>Font</key>
+				<string>Pep O Mint Normal</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1323,6 +1343,8 @@
 				<string>Peppermint Canes.otf</string>
 				<key>FontDisplayName</key>
 				<string>Peppermint Canes</string>
+				<key>Font</key>
+				<string>Peppermint Canes</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1332,6 +1354,8 @@
 				<key>FontName</key>
 				<string>Pez_font.TTF</string>
 				<key>FontDisplayName</key>
+				<string>PEZ</string>
+				<key>Font</key>
 				<string>Pez_font</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1343,6 +1367,8 @@
 				<string>PinkCandyPopcornFont.ttf</string>
 				<key>FontDisplayName</key>
 				<string>PinkCandyPopcornFont</string>
+				<key>Font</key>
+				<string>PinkCandyPopcornFont</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1352,6 +1378,8 @@
 				<key>FontName</key>
 				<string>Spear_Mint.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Spear Mint</string>
+				<key>Font</key>
 				<string>Spear_Mint</string>
 				<key>IsLocked</key>
 				<false/>
@@ -1362,7 +1390,9 @@
 				<key>FontName</key>
 				<string>stripefest.ttf</string>
 				<key>FontDisplayName</key>
-				<string>stripefest</string>
+				<string>Stripefest</string>
+				<key>Font</key>
+				<string>Stripefest</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1372,7 +1402,9 @@
 				<key>FontName</key>
 				<string>SWEEHB__.TTF</string>
 				<key>FontDisplayName</key>
-				<string>SWEEHB__</string>
+				<string>Sweet Hearts BV</string>
+				<key>Font</key>
+				<string>Sweet Hearts BV</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1382,7 +1414,9 @@
 				<key>FontName</key>
 				<string>SWEETASCANDY&gt;TTF</string>
 				<key>FontDisplayName</key>
-				<string>SWEETASCANDY</string>
+				<string>Sweet as candy</string>
+				<key>Font</key>
+				<string>Sweet as candy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1392,7 +1426,9 @@
 				<key>FontName</key>
 				<string>WildRide.ttf</string>
 				<key>FontDisplayName</key>
-				<string>WildRide</string>
+				<string>Wild Ride</string>
+				<key>Font</key>
+				<string>Wild Ride</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -1402,7 +1438,9 @@
 				<key>FontName</key>
 				<string>WildRideBackfill.ttf</string>
 				<key>FontDisplayName</key>
-				<string>WildRideBackfill</string>
+				<string>Wild Ride Back Fill</string>
+				<key>Font</key>
+				<string>Wild Ride Back Fill</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>

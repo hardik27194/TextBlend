@@ -8,12 +8,14 @@
 
 #import "ColorPaletteView.h"
 #import "ColorPaletteCollectionViewCell.h"
+#import "Colours.h"
 #define WIDTH_OF_COLOR 70
 @implementation ColorPaletteView
 @synthesize custom_collection_view;
 @synthesize color_palette_array;
 @synthesize black_view,done_check_mark_button;
 @synthesize color_palette_view_delegate;
+@synthesize colorPreviewView;
 
 @synthesize selected_sticker_view;
 
@@ -41,10 +43,13 @@
     [self.done_check_mark_button addTarget:self action:@selector(done_check_mark_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.black_view addSubview:self.done_check_mark_button];
     [self initializeArray];
+    [self initializeColorPickerView];
     [self initializeCollectionView];
     
     
 }
+
+
 
 -(void)initializeArray{
     
@@ -75,8 +80,112 @@
     [self.color_palette_array addObject:[UIColor orangeColor]];
     [self.color_palette_array addObject:[UIColor purpleColor]];
     [self.color_palette_array addObject:[UIColor grayColor]];
-
     [self.color_palette_array addObject:[UIColor brownColor]];
+
+//New colors
+    
+    [self.color_palette_array addObject:[UIColor infoBlueColor]];
+    [self.color_palette_array addObject:[UIColor successColor]];
+    [self.color_palette_array addObject:[UIColor warningColor]];
+    [self.color_palette_array addObject:[UIColor dangerColor]];
+    [self.color_palette_array addObject:[UIColor antiqueWhiteColor]];
+    [self.color_palette_array addObject:[UIColor oldLaceColor]];
+    [self.color_palette_array addObject:[UIColor ivoryColor]];
+    [self.color_palette_array addObject:[UIColor seashellColor]];
+    [self.color_palette_array addObject:[UIColor ghostWhiteColor]];
+    [self.color_palette_array addObject:[UIColor snowColor]];
+    [self.color_palette_array addObject:[UIColor linenColor]];
+    [self.color_palette_array addObject:[UIColor black25PercentColor]];
+    [self.color_palette_array addObject:[UIColor black50PercentColor]];
+    [self.color_palette_array addObject:[UIColor black75PercentColor]];
+    [self.color_palette_array addObject:[UIColor warmGrayColor]];
+    [self.color_palette_array addObject:[UIColor coolGrayColor]];
+    [self.color_palette_array addObject:[UIColor charcoalColor]];
+    [self.color_palette_array addObject:[UIColor tealColor]];
+    [self.color_palette_array addObject:[UIColor steelBlueColor]];
+    [self.color_palette_array addObject:[UIColor robinEggColor]];
+    [self.color_palette_array addObject:[UIColor pastelBlueColor]];
+    [self.color_palette_array addObject:[UIColor turquoiseColor]];
+    [self.color_palette_array addObject:[UIColor skyBlueColor]];
+    [self.color_palette_array addObject:[UIColor indigoColor]];
+    [self.color_palette_array addObject:[UIColor denimColor]];
+    [self.color_palette_array addObject:[UIColor blueberryColor]];
+    [self.color_palette_array addObject:[UIColor cornflowerColor]];
+    [self.color_palette_array addObject:[UIColor babyBlueColor]];
+    [self.color_palette_array addObject:[UIColor midnightBlueColor]];
+    [self.color_palette_array addObject:[UIColor fadedBlueColor]];
+    [self.color_palette_array addObject:[UIColor icebergColor]];
+    [self.color_palette_array addObject:[UIColor waveColor]];
+    [self.color_palette_array addObject:[UIColor emeraldColor]];
+    [self.color_palette_array addObject:[UIColor grassColor]];
+    [self.color_palette_array addObject:[UIColor pastelGreenColor]];
+    [self.color_palette_array addObject:[UIColor seafoamColor]];
+    [self.color_palette_array addObject:[UIColor paleGreenColor]];
+    [self.color_palette_array addObject:[UIColor cactusGreenColor]];
+    [self.color_palette_array addObject:[UIColor chartreuseColor]];
+    [self.color_palette_array addObject:[UIColor hollyGreenColor]];
+    [self.color_palette_array addObject:[UIColor oliveColor]];
+    [self.color_palette_array addObject:[UIColor oliveDrabColor]];
+    [self.color_palette_array addObject:[UIColor moneyGreenColor]];
+    [self.color_palette_array addObject:[UIColor honeydewColor]];
+    [self.color_palette_array addObject:[UIColor limeColor]];
+    [self.color_palette_array addObject:[UIColor cardTableColor]];
+    [self.color_palette_array addObject:[UIColor salmonColor]];
+    [self.color_palette_array addObject:[UIColor brickRedColor]];
+    [self.color_palette_array addObject:[UIColor easterPinkColor]];
+    [self.color_palette_array addObject:[UIColor grapefruitColor]];
+    [self.color_palette_array addObject:[UIColor pinkColor]];
+    [self.color_palette_array addObject:[UIColor indianRedColor]];
+    [self.color_palette_array addObject:[UIColor strawberryColor]];
+    [self.color_palette_array addObject:[UIColor coralColor]];
+    [self.color_palette_array addObject:[UIColor maroonColor]];
+    [self.color_palette_array addObject:[UIColor watermelonColor]];
+    [self.color_palette_array addObject:[UIColor tomatoColor]];
+    [self.color_palette_array addObject:[UIColor pinkLipstickColor]];
+    [self.color_palette_array addObject:[UIColor paleRoseColor]];
+    [self.color_palette_array addObject:[UIColor crimsonColor]];
+    [self.color_palette_array addObject:[UIColor eggplantColor]];
+    [self.color_palette_array addObject:[UIColor pastelPurpleColor]];
+    [self.color_palette_array addObject:[UIColor palePurpleColor]];
+    [self.color_palette_array addObject:[UIColor coolPurpleColor]];
+    [self.color_palette_array addObject:[UIColor violetColor]];
+    [self.color_palette_array addObject:[UIColor plumColor]];
+    [self.color_palette_array addObject:[UIColor lavenderColor]];
+    [self.color_palette_array addObject:[UIColor raspberryColor]];
+    [self.color_palette_array addObject:[UIColor fuschiaColor]];
+    [self.color_palette_array addObject:[UIColor grapeColor]];
+    [self.color_palette_array addObject:[UIColor periwinkleColor]];
+    [self.color_palette_array addObject:[UIColor orchidColor]];
+    [self.color_palette_array addObject:[UIColor goldenrodColor]];
+    [self.color_palette_array addObject:[UIColor yellowGreenColor]];
+    [self.color_palette_array addObject:[UIColor bananaColor]];
+    [self.color_palette_array addObject:[UIColor mustardColor]];
+    [self.color_palette_array addObject:[UIColor buttermilkColor]];
+    [self.color_palette_array addObject:[UIColor goldColor]];
+    [self.color_palette_array addObject:[UIColor creamColor]];
+    [self.color_palette_array addObject:[UIColor lightCreamColor]];
+    [self.color_palette_array addObject:[UIColor wheatColor]];
+    [self.color_palette_array addObject:[UIColor beigeColor]];
+    [self.color_palette_array addObject:[UIColor peachColor]];
+    [self.color_palette_array addObject:[UIColor burntOrangeColor]];
+    [self.color_palette_array addObject:[UIColor pastelOrangeColor]];
+    [self.color_palette_array addObject:[UIColor cantaloupeColor]];
+    [self.color_palette_array addObject:[UIColor carrotColor]];
+    [self.color_palette_array addObject:[UIColor mandarinColor]];
+    [self.color_palette_array addObject:[UIColor chiliPowderColor]];
+    [self.color_palette_array addObject:[UIColor burntSiennaColor]];
+    [self.color_palette_array addObject:[UIColor chocolateColor]];
+    [self.color_palette_array addObject:[UIColor coffeeColor]];
+    [self.color_palette_array addObject:[UIColor cinnamonColor]];
+    [self.color_palette_array addObject:[UIColor almondColor]];
+    [self.color_palette_array addObject:[UIColor eggshellColor]];
+    [self.color_palette_array addObject:[UIColor sandColor]];
+    [self.color_palette_array addObject:[UIColor mudColor]];
+    [self.color_palette_array addObject:[UIColor siennaColor]];
+    [self.color_palette_array addObject:[UIColor dustColor]];
+
+    
+    
 
     
 
@@ -105,19 +214,34 @@
      */
     
 }
-
+-(void)initializeColorPickerView{
+    self.colorPreviewView = [[UIImageView alloc]initWithFrame:CGRectMake(5, (self.frame.size.height-WIDTH_OF_COLOR)/2+(25/2)-5, WIDTH_OF_COLOR, WIDTH_OF_COLOR+0.5)];
+//        self.colorPreviewView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 30, WIDTH_OF_COLOR, WIDTH_OF_COLOR)];
+    self.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
+    self.colorPreviewView.userInteractionEnabled=YES;
+    
+    [self addSubview:self.colorPreviewView];
+    
+    UITapGestureRecognizer *tap_gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(select_color_tapped:)];
+    tap_gesture.numberOfTapsRequired=1;
+    tap_gesture.delegate=self;
+    [self.colorPreviewView addGestureRecognizer:tap_gesture];
+    
+}
 -(void)initializeCollectionView{
     PagingCollectionFlowLayout *layout=[[PagingCollectionFlowLayout alloc]init];
     layout.scrollDirection=UICollectionViewScrollDirectionHorizontal;
     layout.headerReferenceSize = CGSizeZero;
-    
-    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, self.frame.size.height-25) collectionViewLayout:layout];
+    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(WIDTH_OF_COLOR+5, 25, SCREEN_WIDTH,self.frame.size.height-35) collectionViewLayout:layout];
+
+//    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, self.frame.size.height-25) collectionViewLayout:layout];
     custom_collection_view.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
     //<#CGFloat top#>, <#CGFloat left#>, <#CGFloat bottom#>, <#CGFloat right#>);
     custom_collection_view.dataSource=self;
     custom_collection_view.pagingCollectionDelegate=self;
     custom_collection_view.backgroundColor=EDITING_BACKGROUND_COLOR;
-    
+    custom_collection_view.showsHorizontalScrollIndicator=NO;
+    custom_collection_view.showsVerticalScrollIndicator=NO;
     [self addSubview:custom_collection_view];
     [custom_collection_view registerClass:[ColorPaletteCollectionViewCell class] forCellWithReuseIdentifier:@"ColorPaletteCollectionViewCellIdentifier"];
     [custom_collection_view setUpCollectionInitParms];
@@ -207,6 +331,39 @@
     }
 }
 
+-(void)select_color_tapped:(UIGestureRecognizer *)recognizer{
+    
+    if (!self.select_color_palette_view) {
+        self.select_color_palette_view=[[SelectColorPaletteView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
+        self.select_color_palette_view.select_color_palette_delegate=self;
+        self.select_color_palette_view.selected_sticker_view=self.selected_sticker_view;
+        [self addSubview:self.select_color_palette_view];
+    }
+    [self bringSubviewToFront:self.select_color_palette_view];
+}
+
+#pragma mark - Select Color Palette View Delegate Methods -
+
+-(void)setSelectedColorFromSelectColorPaletteView:(UIColor*)color onSelectedView:(SelectColorPaletteView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+    
+    if ([self.color_palette_view_delegate respondsToSelector:@selector(setSelectedColor:onSelectedView:onSelectedZticker:)]) {
+        [self.color_palette_view_delegate setSelectedColor:color onSelectedView:self onSelectedZticker:self.selected_sticker_view];
+    }
+
+}
+
+
+-(void)select_color_palette_view_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SelectColorPaletteView *)selected_view{
+    
+    [self.select_color_palette_view removeFromSuperview];
+    self.select_color_palette_view=nil;
+    
+    if ([self.color_palette_view_delegate respondsToSelector:@selector(color_palette_view_done_check_mark_button_pressed:onSelectedView:)]) {
+        [self.color_palette_view_delegate color_palette_view_done_check_mark_button_pressed:sender onSelectedView:self];
+        
+    }
+
+}
 
 /*
  // Only override drawRect: if you perform custom drawing.

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SelectColorPaletteView.h"
 @class ColorPaletteView;
 //Delegate Functions used for handling button actions in the SelectFontsView.
 
@@ -18,7 +19,7 @@
 
 @end
 
-@interface ColorPaletteView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface ColorPaletteView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate,DTColorPickerImageViewDelegate,UIGestureRecognizerDelegate,SelectColorPaletteViewDelegate>{
     
 }
 @property(nonatomic,strong)PagingCollectionView *custom_collection_view;
@@ -27,7 +28,8 @@
 @property(nonatomic,strong)NSMutableArray *color_palette_array;
 @property(nonatomic,strong)UIButton *done_check_mark_button;
 @property(nonatomic,strong)ZDStickerView *selected_sticker_view;
-
+@property(nonatomic,strong)UIImageView *colorPreviewView;
+@property(nonatomic,strong)SelectColorPaletteView *select_color_palette_view;
 -(void)initializeArray;
 
 
