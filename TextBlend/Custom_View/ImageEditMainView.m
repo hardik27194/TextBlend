@@ -38,7 +38,6 @@
         /* Call this when we have to crop and get image */
         //Create image scroll.
         
-        [self addOverlayViews];
         
         self.main_image_view  = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.selected_image.size.width, self.selected_image.size.height)];
         CGRect rect = [self areaToDrawImage:self.main_image_view.frame inView:self.frame];
@@ -58,6 +57,7 @@
         [self.image_edit_scroll_view setClipsToBounds:NO];
         [self.main_image_view setFrame:CGRectMake(0, 0, rect.size.width, rect.size.height)];
         [self.image_edit_scroll_view addSubview:self.main_image_view];
+        [self addOverlayViews];
         [self layoutOverlayViewsWithCropRect:rect];
         
     }
@@ -285,24 +285,5 @@
     return rect;
 }
 
--(void)visbleAreaToZoomWithContentSize:(CGSize)contentSizeOfScroll withFrameofScroll:(CGRect)frameOfScroll
-{
-    CGRect visibleRect;
-    CGSize scrollVwFrameSize;
-    
-    visibleRect = CGRectMake(self.image_edit_scroll_view.center.x-self.image_edit_scroll_view.frame.size.width/2, self.image_edit_scroll_view.center.y-self.image_edit_scroll_view.frame.size.height/2, self.image_edit_scroll_view.frame.size.width, self.image_edit_scroll_view.frame.size.height);
-    
-    if(scrollVwFrameSize.height > contentSizeOfScroll.height)
-    {
-        
-    }
-    else
-    {
-        
-    }
-    
-    
-    
-}
 
 @end
