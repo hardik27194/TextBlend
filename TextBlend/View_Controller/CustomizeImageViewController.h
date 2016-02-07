@@ -60,5 +60,6 @@
 @property(nonatomic,strong)CustomizeImageTopHeaderView *top_header_view;
 @property(nonatomic,strong)ImageEditMainView *image_edit_main_view;
 @property(nonatomic,assign)BOOL isFirstImageEditingOptionSelected;
+-(void)initializeView;
 
 @end

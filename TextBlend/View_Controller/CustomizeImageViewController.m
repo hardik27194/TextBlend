@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initializeView];
+//    [self initializeView];
     [self initializeAdbannerView];
     
     
@@ -1301,8 +1301,18 @@
          fontSize = oldfont.pointSize;
      }];
     
+    if(recognizer.state == UIGestureRecognizerStateBegan && [self.image_edit_main_view.gridLayer isHidden])
+    {
+        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        } completion:^(BOOL finished)
+         {
+             [self.image_edit_main_view.gridLayer setHidden:NO];
+         }];
+    }
+
     
-    if(recognizer.state == UIGestureRecognizerStateChanged){
+    if(recognizer.state == UIGestureRecognizerStateChanged)
+    {
         CGFloat factor                                       = [(UIPinchGestureRecognizer *)recognizer scale];
         if(factor > 1.0)
         {
@@ -1362,15 +1372,38 @@
         [sticker setNeedsDisplay];
         [self.image_edit_main_view setNeedsDisplay];
     }
+    else if(recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        if(![self.image_edit_main_view.gridLayer isHidden])
+        {
+            [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            } completion:^(BOOL finished)
+             {
+                 [self.image_edit_main_view.gridLayer setHidden:YES];
+             }];
+        }
+
+    }
 }
 
--(void)handlePan1:(UIPanGestureRecognizer *)recognizer {
+-(void)handlePan1:(UIPanGestureRecognizer *)recognizer
+{
     
     OHAttributedLabel *label                             = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
     ZDStickerView *sticker                               = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
     
     if (!label || !sticker) {
         return;
+    }
+    
+    if(recognizer.state == UIGestureRecognizerStateBegan && [self.image_edit_main_view.gridLayer isHidden])
+    {
+        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        } completion:^(BOOL finished)
+         {
+             [self.image_edit_main_view.gridLayer setHidden:NO];
+
+         }];
     }
     
     CGPoint translation                                  = [recognizer translationInView:self.image_edit_main_view];
@@ -1406,6 +1439,20 @@
     [sticker setNeedsDisplay];
     
     [self.image_edit_main_view setNeedsDisplay];
+    
+    if(recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        if(![self.image_edit_main_view.gridLayer isHidden])
+        {
+            [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            } completion:^(BOOL finished)
+             {
+                 [self.image_edit_main_view.gridLayer setHidden:YES];
+             }];
+        }
+        
+    }
+    
     
 }
 
