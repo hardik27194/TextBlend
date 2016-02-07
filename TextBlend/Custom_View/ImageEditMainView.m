@@ -41,6 +41,8 @@
         self.image_edit_scroll_view.maximumZoomScale = 3.0;
         self.image_edit_scroll_view.contentSize = self.main_image_view.frame.size;
         self.image_edit_scroll_view.delegate = self;
+        [self.image_edit_scroll_view.layer setBorderColor:[UIColor whiteColor].CGColor];
+        [self.image_edit_scroll_view.layer setBorderWidth:1.0];
         [self addSubview:self.image_edit_scroll_view];
 
         // Create image object and add the same to scroll view.
@@ -117,9 +119,6 @@
 - (void)layoutOverlayViewsWithCropRect:(CGRect)cropRect
 {
     self.cropRectView = cropRect;
-    [self.image_edit_scroll_view setFrame:cropRect];
-    [self.image_edit_scroll_view setContentSize:self.main_image_view.frame.size];
-    [self.image_edit_scroll_view scrollRectToVisible:CGRectMake(self.image_edit_scroll_view.center.x-self.image_edit_scroll_view.frame.size.width/2, self.image_edit_scroll_view.center.y-self.image_edit_scroll_view.frame.size.height/2, self.image_edit_scroll_view.frame.size.width, self.image_edit_scroll_view.frame.size.height) animated:NO];
     
     
     [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
@@ -140,6 +139,11 @@
                                                   CGRectGetMaxY(cropRect),
                                                   CGRectGetWidth(self.bounds),
                                                   CGRectGetHeight(self.bounds) - CGRectGetMaxY(cropRect));
+        
+        [self.image_edit_scroll_view setFrame:cropRect];
+        [self.image_edit_scroll_view setContentSize:self.main_image_view.frame.size];
+        [self.image_edit_scroll_view scrollRectToVisible:CGRectMake(self.image_edit_scroll_view.center.x-self.image_edit_scroll_view.frame.size.width/2, self.image_edit_scroll_view.center.y-self.image_edit_scroll_view.frame.size.height/2, self.image_edit_scroll_view.frame.size.width, self.image_edit_scroll_view.frame.size.height) animated:NO];
+
     } completion:NULL];
     
 }

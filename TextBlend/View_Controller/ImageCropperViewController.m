@@ -32,6 +32,8 @@
     [super viewWillAppear:animated];
     self.image_edit_main_view.selected_image=self.selected_image;
     self.image_edit_main_view.main_image_view.image=self.selected_image;
+    [self.image_edit_main_view.image_edit_scroll_view.layer setBorderWidth:1.0];
+
 }
 -(void)initializeTopHeaderView{
     self.top_header_view = [[CustomizeImageTopHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
@@ -301,7 +303,11 @@
 
 #pragma mark - Customize Top Header Delegate Methods -
 
--(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
+-(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView
+{
+    UIScrollView *contentScrollView = self.image_edit_main_view.image_edit_scroll_view;
+    [contentScrollView.layer setBorderWidth:1.0];
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -345,6 +351,7 @@
     UIGraphicsBeginImageContextWithOptions(contentScrollView.bounds.size,
                                            YES,
                                            self.image_edit_main_view.main_image_view.image.scale);
+    [contentScrollView.layer setBorderWidth:0.0];
     
     //this is the key
     CGPoint offset=contentScrollView.contentOffset;
