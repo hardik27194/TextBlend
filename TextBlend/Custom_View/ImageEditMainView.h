@@ -11,8 +11,8 @@
 
 //Image is displayed on this view after editing. However its core functionality is divided into number of views which are added on the main controller class. This class is a subclass of UIView.
 
-@interface ImageEditMainView : UIView<UIScrollViewDelegate>{
-    
+@interface ImageEditMainView : UIView<UIScrollViewDelegate>
+{
 }
 @property(nonatomic,strong)UIScrollView *image_edit_scroll_view;
 @property(nonatomic,strong)UIImageView *main_image_view;
@@ -26,6 +26,9 @@
 @property (nonatomic) UIView *rightOverlayView;
 @property (nonatomic) UIView *bottomOverlayView;
 
+@property (nonatomic) CALayer *gridLayer;
+
+
 
 
 @property (nonatomic, strong) PECropView *cropView;
@@ -33,6 +36,7 @@
 
 
 -(void)initializeView;
+-(CGRect)areaToDrawImage:(CGRect)childImageView inView:(CGRect)parentView;
 
 
 @end

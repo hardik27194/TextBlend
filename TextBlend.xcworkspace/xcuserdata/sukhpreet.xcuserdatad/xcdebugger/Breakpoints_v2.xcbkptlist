@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "476134569.541861"
+            timestampString = "476526169.471778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "894"
             endingLineNumber = "894"
-            landmarkName = "-eraser_done_check_mark_button_pressed:onSelectedView:"
+            landmarkName = "-character_spacing_slider_value_changed:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,13 +74,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "476134106.536468"
+            timestampString = "476526169.471778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "372"
             endingLineNumber = "372"
-            landmarkName = "-gradientImagewithStartColor:andEndColor:withRotationAngle:"
-            landmarkType = "5">
+            landmarkName = "@implementation CustomizeImageViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__82-[CustomizeImageViewController setSelectedColor:onSelectedView:onSelectedZticker:]_block_invoke"
+                  moduleName = "TextBlend"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/Projects/Xcode%20+/My%20Projects/TextBlend/TextBlend/TextBlend/View_Controller/CustomizeImageViewController.m"
+                  timestampString = "476533264.878338"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "373"
+                  endingLineNumber = "373"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_204"
+                  moduleName = "TextBlend"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/Projects/Xcode%20+/My%20Projects/TextBlend/TextBlend/TextBlend/View_Controller/CustomizeImageViewController.m"
+                  timestampString = "476533264.878854"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_205"
+                  moduleName = "TextBlend"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/Projects/Xcode%20+/My%20Projects/TextBlend/TextBlend/TextBlend/View_Controller/CustomizeImageViewController.m"
+                  timestampString = "476533264.879236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

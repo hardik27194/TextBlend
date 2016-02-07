@@ -30,8 +30,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.image_edit_main_view.selected_image=self.selected_image;
-    self.image_edit_main_view.main_image_view.image=self.selected_image;
     [self.image_edit_main_view.image_edit_scroll_view.layer setBorderWidth:1.0];
 
 }
@@ -141,7 +139,9 @@
 //        cropRect.size = CGSizeMake(CGRectGetWidth(cropRect), CGRectGetWidth(cropRect) * ratio);
 //    }
 //    self.image_edit_main_view.cropView.cropRect = cropRect;
-    [self.image_edit_main_view layoutOverlayViewsWithCropRect:self.image_edit_main_view.main_image_view.frame];
+    CGRect cropRect;
+    cropRect = [self.image_edit_main_view areaToDrawImage:CGRectMake(0, 0, self.image_edit_main_view.selected_image.size.width, self.image_edit_main_view.selected_image.size.height) inView:self.image_edit_main_view.frame];
+    [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
 
@@ -157,7 +157,7 @@
     cropRect.size = CGSizeMake(width, width * 394/470);
     cropRect.origin.x = (self.image_edit_main_view.frame.size.width - cropRect.size.width)/2;
     cropRect.origin.y = (self.image_edit_main_view.frame.size.height - cropRect.size.height)/2;
-    
+
     [self.image_edit_main_view layoutOverlayViewsWithCropRect:cropRect];
 }
 
@@ -347,7 +347,6 @@
 */
     
     UIScrollView *contentScrollView = self.image_edit_main_view.image_edit_scroll_view;
-    
     UIGraphicsBeginImageContextWithOptions(contentScrollView.bounds.size,
                                            YES,
                                            self.image_edit_main_view.main_image_view.image.scale);
@@ -382,6 +381,7 @@
     CustomizeImageViewController *customize_image_vc = [[CustomizeImageViewController alloc]init];
     customize_image_vc.view.backgroundColor=DARK_GRAY_COLOR;
     customize_image_vc.selected_image=image;
+    [customize_image_vc initializeView];
     [self.navigationController pushViewController:customize_image_vc animated:YES];
 }
 
