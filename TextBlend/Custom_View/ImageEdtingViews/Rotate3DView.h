@@ -34,4 +34,8 @@
 @property(nonatomic,strong)UISlider *intensity_sliderZ;
 @property(nonatomic,strong)UIButton *reset_3d_rotate_button;
 @property(nonatomic,strong)id <Rotate3DDelegate> rotate_3d_delegate;
+
+@property(nonatomic,strong)ZDStickerView *selected_sticker_view;
+
+-(void)initializeWithDefaultValues;
 @end

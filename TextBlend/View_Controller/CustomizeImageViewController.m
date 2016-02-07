@@ -247,6 +247,15 @@
     if (!photo_edit_custom_view) {
         photo_edit_custom_view=[[PhotoEditCustomView alloc]initWithFrame:BOTTOM_FRAME];
         photo_edit_custom_view.photo_edit_tool_options_delegate=self;
+        
+        photo_edit_custom_view.photo_edit_crop_slider_value = photo_edit_crop_slider_value;
+        photo_edit_custom_view.photo_edit_tone_curve_slider_value = photo_edit_tone_curve_slider_value;
+        photo_edit_custom_view.photo_edit_blur_slider_value = photo_edit_blur_slider_value;
+        photo_edit_custom_view.photo_edit_exposure_slider_value = photo_edit_exposure_slider_value;
+        photo_edit_custom_view.photo_edit_brightness_slider_value = photo_edit_brightness_slider_value;
+        photo_edit_custom_view.photo_edit_saturation_slider_value = photo_edit_saturation_slider_value;
+        photo_edit_custom_view.photo_edit_contrast_slider_value = photo_edit_contrast_slider_value;
+
         [self.view addSubview:photo_edit_custom_view];
     }
     isFirstImageEditingOptionSelected=YES;
@@ -306,6 +315,9 @@
     if (!text_tools_view) {
         text_tools_view=[[TextToolsView alloc]initWithFrame:BOTTOM_FRAME];
         text_tools_view.text_tools_delegate=self;
+        text_tools_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+        [text_tools_view initializeWithDefaultValues];
+
         [self.view addSubview:text_tools_view];
     }
     [self.view bringSubviewToFront:text_tools_view];
@@ -318,7 +330,10 @@
      if (!add_color_view) {
      add_color_view=[[AddColorView alloc]initWithFrame:BOTTOM_FRAME];
      add_color_view.add_color_view_delegate = self;
-     [self.view addSubview:add_color_view];
+     add_color_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+    [add_color_view initializeWithDefaultValues];
+
+    [self.view addSubview:add_color_view];
      }
      [self.view bringSubviewToFront:add_color_view];
     
@@ -328,6 +343,8 @@
     if (!rotate_3d_view) {
         rotate_3d_view=[[Rotate3DView alloc]initWithFrame:BOTTOM_FRAME];
         rotate_3d_view.rotate_3d_delegate=self;
+        rotate_3d_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+        [rotate_3d_view initializeWithDefaultValues];
         [self.view addSubview:rotate_3d_view];
     }
     [self.view bringSubviewToFront:rotate_3d_view];
@@ -400,7 +417,9 @@
     OHAttributedLabel *label = (OHAttributedLabel*)sticker.contentView1;
     NSMutableAttributedString* string = label.attributedText.mutableCopy;
     [string setTextColor:[UIColor colorWithPatternImage:[self gradientImagewithStartColor:startColor andEndColor:endColor withRotationAngle:directionValue]]];
-    
+    label.gradient_start_color=startColor;
+    label.gradient_end_color=endColor;
+    label.gradient_direction_slider_value = directionValue;
     [label setAttributedText:string];
     
 }
@@ -570,13 +589,24 @@
     
 }
 -(void)exposure_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
-    
+
+}
+#pragma mark - Photo Edit view Slider Delegate Methods -
+
+
+-(void)photo_edit_tone_curve_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view{
+    photo_edit_tone_curve_slider_value=slider.value;
+
 }
 
+-(void)photo_edit_crop_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view{
+    photo_edit_crop_slider_value=slider.value;
 
+}
 -(void)blur_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
 {
-    
+    photo_edit_blur_slider_value=slider.value;
+
     CGFloat blurLevel = MIN(1.0, MAX(0.0, slider.value));
     
     int boxSize = (int)(blurLevel * 0.1 * MIN(self.image_edit_main_view.main_image_view.image.size.width, self.image_edit_main_view.main_image_view.image.size.height));
@@ -651,6 +681,8 @@
 -(void)contrast_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
 {
     
+    photo_edit_contrast_slider_value=slider.value;
+
     CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
     CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
     [filter setDefaults];
@@ -675,6 +707,8 @@
 }
 -(void)exposure_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
 {
+    photo_edit_exposure_slider_value=slider.value;
+
     CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
     CIFilter *filter = [CIFilter filterWithName:@"CIExposureAdjust" keysAndValues:kCIInputImageKey, ciImage, nil];
     [filter setDefaults];
@@ -696,7 +730,8 @@
 
 
 -(void)saturation_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view{
-    
+    photo_edit_saturation_slider_value=slider.value;
+
     CIImage *ciImage = [[CIImage alloc] initWithImage:self.selected_image];
     
     CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
@@ -722,7 +757,7 @@
 }
 -(void)brightness_sliderValueChanged:(UISlider *)slider onSelectedView:(PhotoEditCustomView *)selected_view
 {
-    
+    photo_edit_brightness_slider_value=slider.value;
     CIImage *ciImage = [[CIImage alloc] initWithImage:selected_image];
     CIFilter *filter = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputImageKey, ciImage, nil];
     [filter setDefaults];
@@ -760,7 +795,7 @@
     if(selectedLabel != nil)
     {
         NSString *checkColor                                 = selectedLabel.accessibilityHint;
-        
+        selectedLabel.text_tool_opacity_slider_value=slider.value;
         if([checkColor isEqualToString:@"Image"])
         {/*
           UIImage *img                                         = _patternFinalImage;
@@ -804,6 +839,14 @@
 -(void)curve_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
 {
     
+    OHAttributedLabel *selectedLabel                     = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
+    
+    if(selectedLabel != nil)
+    {
+
+    selectedLabel.text_tool_curve_slider_value=slider.value;
+    }
+
 }
 -(void)character_spacing_slider_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
 {
@@ -813,7 +856,8 @@
     ZDStickerView *sticker                          = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
     OHAttributedLabel *label                      = (OHAttributedLabel*)[sticker viewWithTag:AppDel.gloabalSelectedTag];
     
-    
+    label.text_tool_character_spacing_slider_value=slider.value;
+
     NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
     [strattr setCharacterSpacing:f];
     
@@ -867,7 +911,8 @@
     
     OHAttributedLabel *label                             = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
     ZDStickerView *sticker                               = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
-    
+    label.text_tool_line_spacing_slider_value=slider.value;
+
     NSMutableAttributedString *strattr                   = [NSMutableAttributedString attributedStringWithAttributedString:label.attributedText];
     [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle) {
         if(label.isIn3DMode){
@@ -956,6 +1001,7 @@
     {
         return;
     }
+    sticker.rotate_3d_x_coordinate_slider_value=slider.value;
     sticker.layer.zPosition = 300;
     CALayer *layer = sticker.layer;
     rotationAndPerspectiveTransform1 = CATransform3DIdentity;
@@ -974,6 +1020,8 @@
     {
         return;
     }
+    sticker.rotate_3d_y_coordinate_slider_value=slider.value;
+
     CALayer *layer = sticker.layer;
     rotationAndPerspectiveTransform2 = CATransform3DIdentity;
     rotationAndPerspectiveTransform2.m34 = 1.0 / -500;
@@ -990,6 +1038,8 @@
     {
         return;
     }
+    sticker.rotate_3d_z_coordinate_slider_value=slider.value;
+
     CALayer *layer = sticker.layer;
     rotationAndPerspectiveTransform3 = CATransform3DIdentity;
     rotationAndPerspectiveTransform3.m34 = 1.0 / -500;
@@ -1018,6 +1068,10 @@
     [selected_view.intensity_sliderY setValue:0.0];
     [selected_view.intensity_sliderZ setValue:0.0];
     
+    sticker.rotate_3d_x_coordinate_slider_value=0;
+    sticker.rotate_3d_y_coordinate_slider_value=0;
+    sticker.rotate_3d_z_coordinate_slider_value=0;
+
    sticker.layer.transform =  CATransform3DConcat(CATransform3DConcat(rotationAndPerspectiveTransform1, rotationAndPerspectiveTransform2), rotationAndPerspectiveTransform3);
 }
 

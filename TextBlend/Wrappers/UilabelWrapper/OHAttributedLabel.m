@@ -116,6 +116,9 @@ NSDataDetector* sharedReusableDataDetector(NSTextCheckingTypes types)
 
 
 @implementation OHAttributedLabel
+@synthesize gradient_start_color,gradient_end_color,gradient_direction_slider_value;
+@synthesize text_tool_opacity_slider_value,text_tool_character_spacing_slider_value,text_tool_curve_slider_value,text_tool_line_spacing_slider_value;
+
 
 /////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Init/Dealloc

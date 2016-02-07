@@ -201,14 +201,24 @@
 
 -(IBAction)start_gesture_recognizer:(UIGestureRecognizer *)sender{
     NSLog(@"start_gesture_recognizer");
-   
+   /*
     if (!add_color_gradient_view.colorPreviewView) {
         add_color_gradient_view.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, BOTTOM_FRAME.size.height-25)];
         add_color_gradient_view.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
         add_color_gradient_view.colorPreviewView.delegate=add_color_gradient_view;
         [add_color_gradient_view addSubview:add_color_gradient_view.colorPreviewView];
     }
-    
+    */
+    if (!add_color_gradient_view.colorPreviewView) {
+        add_color_gradient_view.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(5, 30, SCREEN_WIDTH-10, BOTTOM_FRAME.size.height-25-10)];
+        add_color_gradient_view.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
+        add_color_gradient_view.colorPreviewView.clipsToBounds=YES;
+        add_color_gradient_view.colorPreviewView.delegate=add_color_gradient_view;
+        add_color_gradient_view.colorPreviewView.layer.cornerRadius=8;
+        add_color_gradient_view.colorPreviewView.layer.borderColor=[UIColor blackColor].CGColor;
+        add_color_gradient_view.colorPreviewView.layer.borderWidth=0.7;
+        [add_color_gradient_view addSubview:add_color_gradient_view.colorPreviewView];
+    }
     add_color_gradient_view.selected_label=self.start_color_label;
     [add_color_gradient_view bringSubviewToFront:add_color_gradient_view.colorPreviewView];
 
@@ -220,9 +230,19 @@
 -(IBAction)end_gesture_recognizer:(UIGestureRecognizer *)sender{
     NSLog(@"end_gesture_recognizer");
     if (!add_color_gradient_view.colorPreviewView) {
-        add_color_gradient_view.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, BOTTOM_FRAME.size.height-25)];
+//        add_color_gradient_view.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, BOTTOM_FRAME.size.height-25)];
+        add_color_gradient_view.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(5, 30, SCREEN_WIDTH-10, BOTTOM_FRAME.size.height-25-10)];
+
         add_color_gradient_view.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
         add_color_gradient_view.colorPreviewView.delegate=add_color_gradient_view;
+        
+        add_color_gradient_view.colorPreviewView.clipsToBounds=YES;
+        add_color_gradient_view.colorPreviewView.delegate=add_color_gradient_view;
+        add_color_gradient_view.colorPreviewView.layer.cornerRadius=8;
+        add_color_gradient_view.colorPreviewView.layer.borderColor=[UIColor blackColor].CGColor;
+        add_color_gradient_view.colorPreviewView.layer.borderWidth=0.7;
+        
+        
         [add_color_gradient_view addSubview:add_color_gradient_view.colorPreviewView];
     }
     

@@ -24,6 +24,7 @@
 #import "EraserView.h"
 #import "PhotoEditCustomView.h"
 #import "ColorPaletteView.h"
+
 @import GoogleMobileAds;
 
 
@@ -42,7 +43,13 @@
     CATransform3D rotationAndPerspectiveTransform2;
     CATransform3D rotationAndPerspectiveTransform3;
 
-    
+    CGFloat photo_edit_crop_slider_value;
+    CGFloat photo_edit_tone_curve_slider_value;
+    CGFloat photo_edit_blur_slider_value;
+    CGFloat photo_edit_exposure_slider_value;
+    CGFloat photo_edit_brightness_slider_value;
+    CGFloat photo_edit_saturation_slider_value;
+    CGFloat photo_edit_contrast_slider_value;
 
 }
 @property(nonatomic,strong)UIScrollView *scroll_view;

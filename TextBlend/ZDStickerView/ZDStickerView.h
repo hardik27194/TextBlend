@@ -36,6 +36,12 @@ typedef enum {
 @property (nonatomic)BOOL stickerDeleted;
 
 @property (strong, nonatomic) id <ZDStickerViewDelegate> delegate;
+//custom variables
+
+//Rotate 3D View slider values
+@property(nonatomic, assign) CGFloat rotate_3d_x_coordinate_slider_value;
+@property(nonatomic, assign) CGFloat rotate_3d_y_coordinate_slider_value;
+@property(nonatomic, assign) CGFloat rotate_3d_z_coordinate_slider_value;
 
 - (void)hideDelHandle;
 - (void)showDelHandle;

@@ -120,4 +120,16 @@ __attribute__((deprecated("You should remove links directly to from NSAttributed
 @property(nonatomic, assign) BOOL centerVertically;
 //! Allows to draw text past the bottom of the view if need. May help in rare cases (like using Emoji)
 @property(nonatomic, assign) BOOL extendBottomToFit;
+
+//custom variables
+//Gradient color view variables
+@property(nonatomic, strong) UIColor *gradient_start_color;
+@property(nonatomic, strong) UIColor *gradient_end_color;
+@property(nonatomic, assign) CGFloat gradient_direction_slider_value;
+//Text tool slider values
+@property(nonatomic, assign) CGFloat text_tool_opacity_slider_value;
+@property(nonatomic, assign) CGFloat text_tool_character_spacing_slider_value;
+@property(nonatomic, assign) CGFloat text_tool_curve_slider_value;
+@property(nonatomic, assign) CGFloat text_tool_line_spacing_slider_value;
+
 @end

@@ -11,7 +11,7 @@
 #define MIN_COLOR [UIColor greenColor]
 @implementation TextToolsView
 @synthesize black_view,done_check_mark_button,opacity_label,curve_label,character_spacing_label,line_spacing_label,opacity_slider,curve_slider,character_spacing_slider,line_spacing_slider,text_tools_delegate;
-
+@synthesize selected_sticker_view;
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
@@ -41,6 +41,39 @@
     
 }
 
+-(void)initializeWithDefaultValues{
+    if (!self.selected_sticker_view) {
+        return;
+    }
+    BOOL shouldUpdate=NO;
+    OHAttributedLabel *label =(OHAttributedLabel *) self.selected_sticker_view.contentView1;
+    if (label.text_tool_opacity_slider_value) {
+        self.opacity_slider.value=label.text_tool_opacity_slider_value;
+        shouldUpdate=YES;
+    }
+    if (label.text_tool_curve_slider_value) {
+        self.curve_slider.value=label.text_tool_curve_slider_value;
+        shouldUpdate=YES;
+        
+    }
+    
+    
+    if (label.text_tool_character_spacing_slider_value) {
+        self.character_spacing_slider.value=label.text_tool_character_spacing_slider_value;
+        shouldUpdate=YES;
+        
+    }
+    
+    if (label.text_tool_line_spacing_slider_value) {
+        self.line_spacing_slider.value=label.text_tool_line_spacing_slider_value;
+        shouldUpdate=YES;
+        
+    }
+//    if (shouldUpdate) {
+//        [self updateGradientColors];
+//    }
+    
+}
 -(void)addToolsView{
     
     int height=self.black_view.frame.size.height+5;

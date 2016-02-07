@@ -15,6 +15,7 @@
 
 @implementation Rotate3DView
 @synthesize black_view,done_check_mark_button,info_text_image_view,intensity_sliderX,intensity_sliderY,intensity_sliderZ,reset_3d_rotate_button,rotate_3d_delegate;
+@synthesize selected_sticker_view;
 
 
 
@@ -47,6 +48,22 @@
     
 }
 
+-(void)initializeWithDefaultValues{
+    if (!self.selected_sticker_view) {
+        return;
+    }
+   
+    if (self.selected_sticker_view.rotate_3d_x_coordinate_slider_value) {
+        self.intensity_sliderX.value=self.selected_sticker_view.rotate_3d_x_coordinate_slider_value;
+    }
+    if (self.selected_sticker_view.rotate_3d_y_coordinate_slider_value) {
+        self.intensity_sliderY.value=self.selected_sticker_view.rotate_3d_y_coordinate_slider_value;
+    }
+    if (self.selected_sticker_view.rotate_3d_z_coordinate_slider_value) {
+        self.intensity_sliderZ.value=self.selected_sticker_view.rotate_3d_z_coordinate_slider_value;
+    }
+    
+}
 -(void)addEraserView{
     
     int height=self.black_view.frame.size.height+8;

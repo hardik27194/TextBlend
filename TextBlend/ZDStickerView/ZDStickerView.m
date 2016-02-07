@@ -41,6 +41,7 @@
 @synthesize preventsDeleting;
 @synthesize preventsCustomButton;
 @synthesize minWidth, minHeight;
+@synthesize rotate_3d_x_coordinate_slider_value,rotate_3d_y_coordinate_slider_value,rotate_3d_z_coordinate_slider_value;
 
 /*
 // Only override drawRect: if you perform custom drawing.

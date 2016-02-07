@@ -30,6 +30,7 @@
 @synthesize selected_color;
 @synthesize add_color_view_delegate;
 @synthesize black_view,done_check_mark_button,colorPreviewView;
+@synthesize selected_sticker_view;
 
 /*
  -(id)initWithFrame:(CGRect)frame{
@@ -78,6 +79,34 @@
     [self.black_view addSubview:self.done_check_mark_button];
     
     
+}
+
+-(void)initializeWithDefaultValues{
+    if (!self.selected_sticker_view) {
+        return;
+    }
+    BOOL shouldUpdate=NO;
+    OHAttributedLabel *label =(OHAttributedLabel *) self.selected_sticker_view.contentView1;
+    if (label.gradient_start_color) {
+        color_selection_view.start_color_label.backgroundColor=label.gradient_start_color;
+        shouldUpdate=YES;
+    }
+    if (label.gradient_end_color) {
+        color_selection_view.end_color_label.backgroundColor=label.gradient_end_color;
+        shouldUpdate=YES;
+
+    }
+    
+    
+    if (label.gradient_direction_slider_value) {
+        self.direction_slider.value=label.gradient_direction_slider_value;
+        shouldUpdate=YES;
+
+    }
+    if (shouldUpdate) {
+        [self updateGradientColors];
+    }
+
 }
 
 -(void)addToolsView{

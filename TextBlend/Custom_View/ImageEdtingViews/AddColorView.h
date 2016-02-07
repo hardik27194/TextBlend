@@ -37,9 +37,11 @@
 @property(nonatomic,strong)UIView *black_view;
 @property(nonatomic,strong)UIButton *done_check_mark_button;
 @property(nonatomic,strong)DTColorPickerImageView *colorPreviewView;
+@property(nonatomic,strong)ZDStickerView *selected_sticker_view;
 
 -(void)updateGradientColors;
 -(UIColor *)setGradientCOlor;
 -(void)setText;
+-(void)initializeWithDefaultValues;
 
 @end

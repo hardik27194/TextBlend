@@ -11,6 +11,7 @@
 @implementation PhotoEditCustomView
 @synthesize image_edit_scroll_view,crop_image_button,tone_curve_button,blur_button,exposure_button,brightness_button,saturation_button,contrast_button,photo_edit_tool_options_delegate;
 @synthesize black_view,done_check_mark_button;
+@synthesize photo_edit_crop_slider_value,photo_edit_tone_curve_slider_value,photo_edit_blur_slider_value,photo_edit_exposure_slider_value,photo_edit_brightness_slider_value,photo_edit_saturation_slider_value,photo_edit_contrast_slider_value;
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
@@ -147,42 +148,38 @@
 #pragma mark - Button Pressed Methods -
 
 -(IBAction)crop_image_button_pressed:(UIButton *)sender{
+   //Not functional
+    //Slider tag value is set view is not unhide yet
+
     self.selected_button_label.text=@"Crop";
     
     if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(crop_image_button_pressed:onSelectedView:)]) {
         [self.photo_edit_tool_options_delegate crop_image_button_pressed:sender onSelectedView:self];
+        [self.commonSlider setTag:6];
+       
+        if (self.photo_edit_crop_slider_value)
+            self.commonSlider.value=self.photo_edit_crop_slider_value;
+        else
+            self.commonSlider.value=0;
+
     }
 }
-
--(IBAction)saturation_button_pressed:(UIButton *)sender{
-    self.selected_button_label.text=@"Saturation";
-    
-    if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(saturation_button_pressed:onSelectedView:)]) {
-        [self.photo_edit_tool_options_delegate saturation_button_pressed:sender onSelectedView:self];
-        [self.SliderBackView setHidden:NO];
-        [self.commonSlider setTag:4];
-    }
-}
-
-
 
 -(IBAction)tone_curve_button_pressed:(UIButton *)sender{
+    //Not functional
+    //Slider tag value is set view is not unhide yet
     self.selected_button_label.text=@"Tone Curve";
     if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(tone_curve_button_pressed:onSelectedView:)]) {
         [self.photo_edit_tool_options_delegate tone_curve_button_pressed:sender onSelectedView:self];
+        [self.commonSlider setTag:7];
+        
+        if (self.photo_edit_tone_curve_slider_value)
+            self.commonSlider.value=self.photo_edit_tone_curve_slider_value;
+        else
+            self.commonSlider.value=0;
     }
 }
 
--(IBAction)contrast_button_pressed:(UIButton *)sender{
-    self.selected_button_label.text=@"Contrast";
-    
-    if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(contrast_button_pressed:onSelectedView:)]) {
-        [self.photo_edit_tool_options_delegate contrast_button_pressed:sender onSelectedView:self];
-        [self.SliderBackView setHidden:NO];
-        [self.commonSlider setTag:5];
-        
-    }
-}
 
 -(IBAction)blur_button_pressed:(UIButton *)sender{
     self.selected_button_label.text=@"Blur";
@@ -192,9 +189,12 @@
         [self.SliderBackView setHidden:NO];
         [self.commonSlider setTag:1];
         
+        if (self.photo_edit_blur_slider_value)
+            self.commonSlider.value=self.photo_edit_blur_slider_value;
+        else
+            self.commonSlider.value=0;
     }
 }
-
 
 
 -(IBAction)exposure_button_pressed:(UIButton *)sender{
@@ -204,9 +204,13 @@
         [self.photo_edit_tool_options_delegate exposure_button_pressed:sender onSelectedView:self];
         [self.SliderBackView setHidden:NO];
         [self.commonSlider setTag:2];
+        
+        if (self.photo_edit_exposure_slider_value)
+            self.commonSlider.value=self.photo_edit_exposure_slider_value;
+        else
+            self.commonSlider.value=0;
     }
 }
-
 
 -(IBAction)brightness_button_pressed:(UIButton *)sender{
     self.selected_button_label.text=@"Brightness";
@@ -216,8 +220,50 @@
         [self.SliderBackView setHidden:NO];
         [self.commonSlider setTag:3];
         
+        if (self.photo_edit_brightness_slider_value)
+            self.commonSlider.value=self.photo_edit_brightness_slider_value;
+        else
+            self.commonSlider.value=0;
+
     }
 }
+-(IBAction)saturation_button_pressed:(UIButton *)sender{
+    self.selected_button_label.text=@"Saturation";
+    
+    if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(saturation_button_pressed:onSelectedView:)]) {
+        [self.photo_edit_tool_options_delegate saturation_button_pressed:sender onSelectedView:self];
+        [self.SliderBackView setHidden:NO];
+        [self.commonSlider setTag:4];
+        
+        if (self.photo_edit_saturation_slider_value)
+            self.commonSlider.value=self.photo_edit_saturation_slider_value;
+        else
+            self.commonSlider.value=0;
+    }
+}
+
+
+
+
+-(IBAction)contrast_button_pressed:(UIButton *)sender{
+    self.selected_button_label.text=@"Contrast";
+    
+    if ([self.photo_edit_tool_options_delegate respondsToSelector:@selector(contrast_button_pressed:onSelectedView:)]) {
+        [self.photo_edit_tool_options_delegate contrast_button_pressed:sender onSelectedView:self];
+        [self.SliderBackView setHidden:NO];
+        [self.commonSlider setTag:5];
+        
+        if (self.photo_edit_contrast_slider_value)
+            self.commonSlider.value=self.photo_edit_contrast_slider_value;
+        else
+            self.commonSlider.value=0;
+        
+    }
+}
+
+
+
+#pragma mark - Slider values delegate Methods -
 
 -(void)sliderValueChanged:(UISlider *)slider
 {
@@ -225,30 +271,57 @@
     {
         case 1:
         {
+            self.photo_edit_blur_slider_value=slider.value;
             [self.photo_edit_tool_options_delegate blur_sliderValueChanged:slider onSelectedView:self];
         }
             break;
         case 2:
         {
+            self.photo_edit_exposure_slider_value=slider.value;
+
             [self.photo_edit_tool_options_delegate exposure_sliderValueChanged:slider onSelectedView:self];
         }
             break;
         case 3:
         {
+            self.photo_edit_brightness_slider_value=slider.value;
+
             [self.photo_edit_tool_options_delegate brightness_sliderValueChanged:slider onSelectedView:self];
         }
             break;
         case 4:
         {
+            self.photo_edit_saturation_slider_value=slider.value;
+
             [self.photo_edit_tool_options_delegate saturation_sliderValueChanged:slider onSelectedView:self];
         }
             break;
         case 5:
         {
+            self.photo_edit_contrast_slider_value=slider.value;
+
             [self.photo_edit_tool_options_delegate contrast_sliderValueChanged:slider onSelectedView:self];
         }
             break;
+        case 6:
+        {
+            self.photo_edit_crop_slider_value=slider.value;
+
+            //Crop
+            [self.photo_edit_tool_options_delegate photo_edit_crop_sliderValueChanged:slider onSelectedView:self];
+        }
+            break;
+
             
+        case 7:
+        {
+            self.photo_edit_tone_curve_slider_value=slider.value;
+
+            //Tone curve
+            [self.photo_edit_tool_options_delegate photo_edit_tone_curve_sliderValueChanged:slider onSelectedView:self];
+        }
+            break;
+
         default:
             break;
     }
@@ -265,6 +338,8 @@
 -(IBAction)done_check_mark_button_subview_pressed:(UIButton *)sender{
     self.SliderBackView.hidden=YES;
 }
+
+
 
 /*
  // Only override drawRect: if you perform custom drawing.
