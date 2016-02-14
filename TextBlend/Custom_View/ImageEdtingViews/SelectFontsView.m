@@ -175,6 +175,7 @@
         NSMutableDictionary *select_font=[[self.fonts_array objectAtIndex:indexPath.row] mutableCopy];
         select_font_sub_view.selected_dict = [select_font mutableCopy];
         select_font_sub_view.selected_sticker_view=self.selected_sticker_view;
+        select_font_sub_view.selected_font_class_string=[select_font objectForKey:@"FontDisplayName"];
         [select_font_sub_view initializeArray];
 
         [self addSubview:select_font_sub_view];

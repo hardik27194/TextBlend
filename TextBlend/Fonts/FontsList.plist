@@ -5,6 +5,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -372,6 +376,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Brushed</string>
+		<key>FontImageName</key>
+		<string>brushed-font.png</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -738,7 +746,11 @@
 	</dict>
 	<dict>
 		<key>FontDisplayName</key>
-		<string>calligraphy</string>
+		<string>Calligraphy</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -1093,7 +1105,11 @@
 	</dict>
 	<dict>
 		<key>FontDisplayName</key>
-		<string>candy</string>
+		<string>Candy</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -1449,6 +1465,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>chalkboard</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -1816,6 +1836,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>christmas</string>
+		<key>FontImageName</key>
+		<string>christmas.png</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -2123,6 +2147,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>comic</string>
+		<key>FontImageName</key>
+		<string>comic-fonts.png</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -2430,6 +2458,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>cursive</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -2927,6 +2959,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -3444,6 +3480,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -3961,6 +4001,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -4478,6 +4522,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -4995,6 +5043,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -5512,6 +5564,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -6029,6 +6085,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -6546,6 +6606,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -7063,6 +7127,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -7580,6 +7648,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -8097,6 +8169,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -8614,6 +8690,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -9131,6 +9211,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -9648,6 +9732,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -10165,6 +10253,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -10682,6 +10774,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -11199,6 +11295,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -11716,6 +11816,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -12233,6 +12337,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -12750,6 +12858,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -13267,6 +13379,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -13784,6 +13900,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -14301,6 +14421,10 @@
 	<dict>
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
+		<key>FontImageName</key>
+		<string>chalkboard</string>
+		<key>IsFontOpen</key>
+		<false/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>

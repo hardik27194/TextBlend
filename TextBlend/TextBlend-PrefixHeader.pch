@@ -25,6 +25,7 @@
 #import "ZDStickerView.h"
 #import "DTColorPickerImageView.h"
 #import "OHAttributedLabel.h"
+#import "CustomizeImageTopHeaderView.h"
 
 //#import <SDWebImage/UIImageView+WebCache.h>
 // Include any system framework and library headers here that should be included in all compilation units.

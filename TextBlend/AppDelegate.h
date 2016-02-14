@@ -19,6 +19,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (strong, nonatomic)UINavigationController *navigation_controller;
 @property(nonatomic,assign) BOOL isVertical;
 
 - (void)saveContext;
@@ -39,6 +40,7 @@
 @property (nonatomic, assign) CGSize selectedSize;
 @property (nonatomic, strong) NSMutableArray *selectedItems;
 
+-(NSString *)getPlistDocumentDirectoryPath;
 
 
 @end

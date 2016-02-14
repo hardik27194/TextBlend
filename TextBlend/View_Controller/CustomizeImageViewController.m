@@ -11,6 +11,7 @@
 #import "MessageTextViewController.h"
 #import "ChooseShapeViewController.h"
 #import "ChooseQuoteViewController.h"
+#import "PurchaseFontsViewController.h"
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 145
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
@@ -163,6 +164,7 @@
 
 -(void)back_button_pressed:(UIButton *)sender onView:(CustomizeImageTopHeaderView *)selectedView{
     
+       
     if (isFirstImageEditingOptionSelected) {
         
         [self removeAllSubviews];

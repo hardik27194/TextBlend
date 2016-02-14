@@ -14,20 +14,35 @@
 
 @implementation AppDelegate
 @synthesize isVertical;
+@synthesize navigation_controller;;
 
-
+-(NSString *)getPlistDocumentDirectoryPath{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,     NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistDocumentDirectoryPath=[documentsDirectory stringByAppendingPathComponent:@"Fonts.plist"];
+    return plistDocumentDirectoryPath;
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [application setStatusBarHidden:YES];
     [self checkNetwork];
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    if (![[NSFileManager defaultManager]fileExistsAtPath:[self getPlistDocumentDirectoryPath]]) {
+        NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:plistPath]];
+        [data writeToFile:[self getPlistDocumentDirectoryPath] atomically:YES];
+        
+    }
+    
     SelectInitialImageViewController *select_image_background_vc=[[SelectInitialImageViewController alloc]init];;
 //    SelectImageBackgroundViewController *select_image_background_vc=[[SelectImageBackgroundViewController alloc]init];
-    UINavigationController *nav_vc=[[UINavigationController alloc]initWithRootViewController:select_image_background_vc];
+    self.navigation_controller=[[UINavigationController alloc]initWithRootViewController:select_image_background_vc];
 //    select_image_background_vc.view.backgroundColor=[UIColor greenColor];
-    nav_vc.navigationBarHidden=YES;
-    self.window.rootViewController=nav_vc;
+    self.navigation_controller.navigationBarHidden=YES;
+    self.window.rootViewController=self.navigation_controller;
     [self.window makeKeyAndVisible];
     
     return YES;

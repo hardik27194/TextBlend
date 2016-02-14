@@ -8,6 +8,7 @@
 
 #import "SelectedFontSubView.h"
 #import "OHAttributedLabel.h"
+#import "PurchaseFontsViewController.h"
 #define ROW_HEIGHT 60
 @implementation SelectedFontSubView
 @synthesize custom_collection_view;
@@ -15,7 +16,7 @@
 @synthesize black_view,done_check_mark_button,selected_dict;
 @synthesize select_sub_font_view_delegate;
 @synthesize selected_sticker_view;
-
+@synthesize selected_font_class_string;
 
 
 -(id)initWithFrame:(CGRect)frame{
@@ -176,6 +177,9 @@
             
         if ([self.select_sub_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
 //            NSLog(@"%@",[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:18]);
+            selected_font=[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:14];
+            UIFont *get_font=[self getSelectedFont];;
+//            get_font.pointSize
             [self.select_sub_font_view_delegate setSelectedFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:14] onSelectedView:self];
             
             }
@@ -183,6 +187,29 @@
         
     
     }
+}
+-(UIFont *)getSelectedFont{
+    OHAttributedLabel *selectedLabel = (OHAttributedLabel*)self.selected_sticker_view.contentView1;
+    
+    NSAttributedString *str = selectedLabel.attributedText;
+    __block UIFont *oldfont;
+    [str enumerateAttributesInRange:NSMakeRange(0, [str length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop)
+     {
+         //Do something here
+          oldfont= [attributes objectForKey:NSFontAttributeName];
+         if(!oldfont)
+         {
+             oldfont = [UIFont boldSystemFontOfSize:25.0f];
+         }
+         
+     }];
+    if (oldfont) {
+        return oldfont;
+
+    }
+    else
+        return nil;
 }
 /*
 -(UIFont *)setFont:(UIFont *)wqewq{
@@ -238,6 +265,14 @@
 
 
 -(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+    
+    PurchaseFontsViewController *initViewController = [[PurchaseFontsViewController alloc]init];
+    initViewController.view.backgroundColor = [UIColor whiteColor];
+    initViewController.selected_font_class_string=self.selected_font_class_string;
+    [initViewController initializeTopHeaderView];
+    [initViewController initializeView];
+    [[kAppDelegate navigation_controller] pushViewController:initViewController animated:YES];
+    
     
     if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {
         [self.select_sub_font_view_delegate select_sub_font_done_check_mark_button_pressed:sender onSelectedView:self];
