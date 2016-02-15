@@ -10,5 +10,5 @@
 
 @interface TextBlendIAPHelper : IAPHelper
 + (TextBlendIAPHelper *)sharedInstance;
-
++ (TextBlendIAPHelper *)sharedInstanceWithSelectedIdentifier:(NSString *)selected_identifier ;
 @end

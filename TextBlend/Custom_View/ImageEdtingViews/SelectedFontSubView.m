@@ -261,6 +261,14 @@
 }
  */
 
+-(NSString *)selectedProductIdentifier{
+    
+    NSLog(@"%@",[self.selected_dict valueForKey:@"ProductIdentifier"]);
+    
+    return [self.selected_dict valueForKey:@"ProductIdentifier"];
+    
+    
+}
 #pragma mark - Button Pressed Methods -
 
 
@@ -271,6 +279,7 @@
     initViewController.selected_font_class_string=self.selected_font_class_string;
     [initViewController initializeTopHeaderView];
     [initViewController initializeView];
+    initViewController.selected_product_identifier=[self selectedProductIdentifier];
     [[kAppDelegate navigation_controller] pushViewController:initViewController animated:YES];
     
     

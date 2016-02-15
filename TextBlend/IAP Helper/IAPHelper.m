@@ -69,6 +69,19 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     [_productsRequest start];
 
 }
+- (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler withSelectedIdentifier:(NSMutableSet *)selected_product_identifier
+
+{
+    
+    // a copy of the completion handler block inside the instance variable
+    _completionHandler = [completionHandler copy];
+    // Create a new instance of SKProductsRequest, which is the Apple-written class that contains the code to pull the info from iTunes Connect
+    [_productsRequest cancel];
+    _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:selected_product_identifier];
+    _productsRequest.delegate = self;
+    [_productsRequest start];
+    
+}
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 

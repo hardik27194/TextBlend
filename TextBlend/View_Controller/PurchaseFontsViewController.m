@@ -8,6 +8,7 @@
 
 #import "PurchaseFontsViewController.h"
 #import "PurchaseFontCustomCell.h"
+#import "TextBlendIAPHelper.h"
 @interface PurchaseFontsViewController ()
 
 @end
@@ -16,6 +17,8 @@
 @synthesize custom_table_view;
 @synthesize top_header_view;
 @synthesize selected_font_class_string;
+@synthesize products;
+@synthesize selected_product_identifier;
 
 
 - (void)viewDidLoad {
@@ -23,6 +26,32 @@
 //    [self initializeTopHeaderView];
 //    [self initializeView];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self reload];
+
+}
+
+
+- (void)reload {
+    
+    self.products = nil;
+    
+    NSMutableSet *selected_product=    [[NSMutableSet set]mutableCopy];
+    [selected_product addObject:self.selected_product_identifier];
+    [[TextBlendIAPHelper sharedInstanceWithSelectedIdentifier:self.selected_product_identifier] requestProductsWithCompletionHandler:^(BOOL success, NSArray *app_products) {
+        
+        if (success) {
+            
+            
+            
+            self.products = [app_products mutableCopy];
+//            [progressHud hide:TRUE];
+        }
+    } withSelectedIdentifier:selected_product];
+    
 }
 -(void)initializeTopHeaderView{
     self.top_header_view = [[CustomizeImageTopHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
@@ -163,7 +192,12 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.products.count>indexPath.row) {
+        SKProduct *product = [self.products objectAtIndex:indexPath.row];
+        [[TextBlendIAPHelper sharedInstance] buyProduct:product];
+    }
     
+   
 }
 
 // Variable height support

@@ -20,6 +20,7 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * product
 
 - (id)initWithProductIdentifiers:(NSSet *)productIdentifiers;
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler;
+- (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler withSelectedIdentifier:(NSMutableSet *)selected_product_identifier;
 - (void)buyProduct:(SKProduct *)product;
 
 - (BOOL)productPurchased:(NSString *)productIdentifier;

@@ -105,4 +105,24 @@
 #define UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION @"UPDATE_IMAGE_STICKER_VIEW_NOTIFICATION"
 
 
+#pragma mark - Product Identifiers -
+
+static NSString *brushedFont       = @"com.nayeem.brushedFont";
+static NSString *chalkboardFont       = @"com.nayeem.chalkboardFont";
+static NSString *christmasfonts       = @"com.nayeem.christmasFont";
+static NSString *comicfonts       = @"com.nayeem.comicFont";
+static NSString *graffitifonts       = @"com.nayeem.graffitiFont";
+static NSString *greetingsfonts       = @"com.nayeem.greetingFont";
+static NSString *halloweenFonts       = @"com.nayeem.halloweenFont";
+static NSString *handwrittenfonts       = @"com.nayeem.handwrittenFont";
+static NSString *main_shop_page       = @"com.nayeem.unlockAll";
+static NSString *moviefonts       = @"com.nayeem.movieFont";
+static NSString *musicFonts       = @"com.nayeem.musicFont";
+static NSString *oldNewspaperFont       = @"com.nayeem.oldNewspaperFont";
+static NSString *retroFonts       = @"com.nayeem.retroFont";
+static NSString *sportsFonts       = @"com.nayeem.sportsFont";
+static NSString *tattooFonts       = @"com.nayeem.tattooFont";
+static NSString *typewriterFonts       = @"com.nayeem.typewriterFont";
+static NSString *weddingFonts       = @"com.nayeem.weddingFont";
+
 #endif

@@ -8,6 +8,7 @@
 
 #import "SelectFontsView.h"
 #import "OHAttributedLabel.h"
+#define SELECTED_FONT_COUNT 6
 @implementation SelectFontsView
 @synthesize custom_collection_view;
 @synthesize fonts_array;
@@ -74,7 +75,7 @@
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
     self.fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
   //  NSLog(@"%@",self.fonts_array);
-    CGFloat selectedFontCount=5;
+    CGFloat selectedFontCount=SELECTED_FONT_COUNT;
     NSIndexSet *indexSet=[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(selectedFontCount, self.fonts_array.count-selectedFontCount)];
     [self.fonts_array removeObjectsAtIndexes:indexSet];
 }
@@ -125,7 +126,7 @@
               NSArray *select_font_array=[font_selected_dict valueForKey:@"FontSubArray"];
         if (select_font_array.count) {
             
-            NSDictionary *selected_font=[select_font_array objectAtIndex:1];
+            NSDictionary *selected_font=[select_font_array objectAtIndex:0];
             if ([selected_font objectForKey:@"Font"] && [[selected_font objectForKey:@"Font"]isKindOfClass:[NSString class]]) {
                 [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font objectForKey:@"Font"] size:14]];
 //                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font valueForKey:@"Arcade Future"] size:14]];
