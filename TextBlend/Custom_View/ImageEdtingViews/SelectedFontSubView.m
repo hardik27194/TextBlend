@@ -280,7 +280,9 @@
     [initViewController initializeTopHeaderView];
     [initViewController initializeView];
     initViewController.selected_product_identifier=[self selectedProductIdentifier];
-    [[kAppDelegate navigation_controller] pushViewController:initViewController animated:YES];
+//    [[kAppDelegate navigation_controller] pushViewController:initViewController animated:YES];
+    [[[kAppDelegate navigation_controller]topViewController]presentViewController:initViewController animated:YES completion:nil];
+    return;
     
     
     if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {

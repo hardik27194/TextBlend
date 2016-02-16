@@ -17,6 +17,12 @@
 @property(nonatomic,strong)NSString *selected_font_class_string;
 @property(nonatomic,strong)NSMutableArray *products;
 @property(nonatomic,strong)NSString *selected_product_identifier;
+
+@property(nonatomic,strong)UIButton *back_button;
+
+@property(nonatomic,strong)UIButton *buy_button;
+@property(nonatomic,strong)UIButton *top_scroll_button;
+
 -(void)  initializeTopHeaderView;
 -(void) initializeView;
 

@@ -72,7 +72,7 @@
 }
 
 -(void)getArrayDetails{
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
+    NSString* plistPath =[kAppDelegate getPlistDocumentDirectoryPath];//[[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
     self.fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
   //  NSLog(@"%@",self.fonts_array);
     CGFloat selectedFontCount=SELECTED_FONT_COUNT;

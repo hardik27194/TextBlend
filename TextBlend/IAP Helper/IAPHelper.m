@@ -232,6 +232,26 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     }
     
     if (selected_sk_product) {
+                
+        if ([[NSFileManager defaultManager]fileExistsAtPath:[kAppDelegate getPlistDocumentDirectoryPath]]) {
+//            NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
+            NSString* plistPath =[kAppDelegate getPlistDocumentDirectoryPath];//[[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
+            NSMutableArray *fonts_plist_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
+            NSPredicate *predicate=[NSPredicate predicateWithFormat:@"ProductIdentifier == %@",selected_sk_product.productIdentifier];;
+            NSArray *filteredArray=[fonts_plist_array filteredArrayUsingPredicate:predicate];
+            if (filteredArray.count) {
+                NSMutableDictionary *selected_font_dict=[[filteredArray lastObject]mutableCopy];
+                NSInteger selectedIndex=[fonts_plist_array indexOfObject:selected_font_dict];
+                [selected_font_dict setValue:[NSNumber numberWithBool:YES] forKey:@"IsAlreadyBought"];
+                [fonts_plist_array replaceObjectAtIndex:selectedIndex withObject:selected_font_dict];
+                [fonts_plist_array writeToFile:[kAppDelegate getPlistDocumentDirectoryPath] atomically:YES];
+
+            }
+            
+           // [data writeToFile:[kAppDelegate getPlistDocumentDirectoryPath] atomically:YES];
+            
+        }
+        
         
         NSMutableDictionary *product_detail_dict=[[NSMutableDictionary alloc]init];
         [product_detail_dict setValue:selected_sk_product.price forKey:@"price"];
@@ -239,8 +259,8 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
         [product_detail_dict setValue:payment_transaction.transactionIdentifier forKey:@"productIdentifier"];
         
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:payment_transaction.payment.productIdentifier];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:payment_transaction.payment.productIdentifier];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
         [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:nil userInfo:product_detail_dict];
     }
     

@@ -19,7 +19,7 @@
 @synthesize selected_font_class_string;
 @synthesize products;
 @synthesize selected_product_identifier;
-
+@synthesize back_button,buy_button,top_scroll_button;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,24 +54,37 @@
     
 }
 -(void)initializeTopHeaderView{
+    
+    /*
     self.top_header_view = [[CustomizeImageTopHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
     self.top_header_view.customize_screen_top_header_delegate=self;
     self.top_header_view.settings_button.hidden=YES;
     self.top_header_view.next_button.hidden=YES;
 
     [self.view addSubview:self.top_header_view];
+     */
     
 }
 -(void)initializeView{
-    self.custom_table_view=[[PageTableView alloc]initWithFrame:CGRectMake(0, 50,SCREEN_WIDTH , self.view.frame.size.height-50)];
+//    self.custom_table_view=[[PageTableView alloc]initWithFrame:CGRectMake(0, 50,SCREEN_WIDTH , self.view.frame.size.height-50)];
+    self.custom_table_view=[[PageTableView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH , self.view.frame.size.height)];
+
     self.custom_table_view.dataSource=self;
     self.custom_table_view.pagingDelegate=self;
     [self.custom_table_view setupTablePaging];
     [self.view addSubview:self.custom_table_view];
 
+    [self initializeViewButtons];
     
     
     //[self initailizeMessageTextView];
+}
+
+-(void)initializeViewButtons{
+    
+    
+    
+    
 }
 
 -(UIImage *)getSelectedImage{
@@ -186,17 +199,38 @@
     UIImage *selected_image=[self getSelectedImage];
     cell.main_image_view.image=selected_image;
     cell.main_image_view.frame=CGRectMake(0, 0, SCREEN_WIDTH, selected_image.size.height);
+    if (!self.back_button) {
+        
+        self.back_button=[UIButton buttonWithType:UIButtonTypeCustom];
+        self.back_button.frame=CGRectMake(0, 0, 60, 40);
+       // self.back_button.backgroundColor=[UIColor redColor];
+        [self.back_button addTarget:self action:@selector(back_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:self.back_button];
+        
+    }
+    if (!self.buy_button) {
+        self.buy_button=[UIButton buttonWithType:UIButtonTypeCustom];
+        self.buy_button.frame=CGRectMake(SCREEN_WIDTH-80, 185, 80, 50);
+        //self.buy_button.backgroundColor=[UIColor yellowColor];
+        [self.buy_button addTarget:self action:@selector(buy_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:self.buy_button];
+    }
+    if (!self.top_scroll_button) {
+        self.top_scroll_button=[UIButton buttonWithType:UIButtonTypeCustom];
+        self.top_scroll_button.frame=CGRectMake(0, selected_image.size.height-60, SCREEN_WIDTH, 60);
+        //self.top_scroll_button.backgroundColor=[UIColor brownColor];
+        [self.top_scroll_button addTarget:self action:@selector(top_scroll_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:self.top_scroll_button];
+    }
+    
+    
     
         return cell;
     
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.products.count>indexPath.row) {
-        SKProduct *product = [self.products objectAtIndex:indexPath.row];
-        [[TextBlendIAPHelper sharedInstance] buyProduct:product];
-    }
-    
+   
    
 }
 
@@ -249,22 +283,36 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     return nil;
 
-    UIView *footer_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
-    footer_view.backgroundColor = [UIColor clearColor];
-    
-    UIButton *top_button=[UIButton buttonWithType:UIButtonTypeCustom];
-    top_button.frame=CGRectMake(0, 0, SCREEN_WIDTH, footer_view.frame.size.height);
-    [top_button setTitle:@"Top" forState:UIControlStateNormal];
-    [footer_view addSubview:top_button];
-    return footer_view;
-    
-}
+  }
 
 -(void)tableView:(UITableView *)tableView didReachEndOfPage:(int)page{
     
 }
 
+-(IBAction)back_button_pressed:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
+-(IBAction)buy_button_pressed:(UIButton *)sender {
+    if (self.products.count) {
+        SKProduct *product = [self.products objectAtIndex:0];
+        [[TextBlendIAPHelper sharedInstance] buyProduct:product];
+    }
+    
+}
+
+-(IBAction)top_scroll_button_pressed:(UIButton *)sender {
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        [self.custom_table_view setContentOffset:CGPointZero];
+        
+    }completion:^(BOOL finished){ }];
+    
+}
+
+                                                            
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
