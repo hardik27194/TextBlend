@@ -360,70 +360,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/PurchaseFontsViewController.m"
-            timestampString = "477246057.724759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-reload"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PurchaseFontsViewController reload]"
-                  moduleName = "TextBlend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iteshdutt/Documents/All%20Previous%20Codes/External%20Projects/TextBlend/TextBlend%2026-Dec%202/TextBlend/TextBlend/View_Controller/PurchaseFontsViewController.m"
-                  timestampString = "477247756.137643"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "236">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[PurchaseFontsViewController reload]_block_invoke"
-                  moduleName = "TextBlend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iteshdutt/Documents/All%20Previous%20Codes/External%20Projects/TextBlend/TextBlend%2026-Dec%202/TextBlend/TextBlend/View_Controller/PurchaseFontsViewController.m"
-                  timestampString = "477247756.137757"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextBlend/View_Controller/PurchaseFontsViewController.m"
-            timestampString = "477246057.724759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-reload"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextBlend/View_Controller/PurchaseFontsViewController.m"
             timestampString = "477247360.8251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -452,7 +388,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/IAP Helper/IAPHelper.m"
@@ -478,6 +414,22 @@
             startingLineNumber = "89"
             endingLineNumber = "89"
             landmarkName = "-productsRequest:didReceiveResponse:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextBlend/IAP Helper/IAPHelper.m"
+            timestampString = "477338274.119622"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "-failedTransaction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

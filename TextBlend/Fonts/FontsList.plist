@@ -2206,7 +2206,7 @@
 	</dict>
 	<dict>
 		<key>FontDisplayName</key>
-		<string>comic</string>
+		<string>Comic</string>
 		<key>FontImageName</key>
 		<string>comic-fonts.png</string>
 		<key>ProductIdentifier</key>
@@ -2221,19 +2221,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>animeace.ttf</string>
-				<key>FontDisplayName</key>
-				<string>animeace</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
 				<string>BadaboomBB_Reg.otf</string>
 				<key>FontDisplayName</key>
-				<string>BadaboomBB_Reg</string>
+				<string>BadaBoom BB</string>
+				<key>Font</key>
+				<string>BadaBoom BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2243,7 +2235,9 @@
 				<key>FontName</key>
 				<string>blamblambb_hvy.ttf</string>
 				<key>FontDisplayName</key>
-				<string>blamblambb_hvy</string>
+				<string>BlamBlam Heavy</string>
+				<key>Font</key>
+				<string>BlamBlam Heavy BB </string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2253,6 +2247,8 @@
 				<key>FontName</key>
 				<string>cartoon.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Cartoon</string>
+				<key>Font</key>
 				<string>cartoon</string>
 				<key>IsLocked</key>
 				<false/>
@@ -2263,7 +2259,9 @@
 				<key>FontName</key>
 				<string>Comic Book Bold.otf</string>
 				<key>FontDisplayName</key>
-				<string>Comic Book Bold</string>
+				<string>Comic Book</string>
+				<key>Font</key>
+				<string>Comic Book</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2273,7 +2271,9 @@
 				<key>FontName</key>
 				<string>Comic Gibi Bold.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Comic Gibi Bold</string>
+				<string>Comic Gibi</string>
+				<key>Font</key>
+				<string>Comic Gibi</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2283,7 +2283,9 @@
 				<key>FontName</key>
 				<string>Comic Tragedy - BC.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Comic Tragedy - BC</string>
+				<string>Comic Tragedy</string>
+				<key>Font</key>
+				<string>Comic Tragedy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2293,6 +2295,8 @@
 				<key>FontName</key>
 				<string>Comica BD.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Comica BD</string>
+				<key>Font</key>
 				<string>Comica BD</string>
 				<key>IsLocked</key>
 				<false/>
@@ -2304,6 +2308,8 @@
 				<string>Comiccity.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Comiccity</string>
+				<key>Font</key>
+				<string>Comiccity</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2313,7 +2319,9 @@
 				<key>FontName</key>
 				<string>deathrattlebb_reg.ttf</string>
 				<key>FontDisplayName</key>
-				<string>deathrattlebb_reg</string>
+				<string>DeathRattle BB</string>
+				<key>Font</key>
+				<string>DeathRattle BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2323,7 +2331,9 @@
 				<key>FontName</key>
 				<string>electrox.ttf</string>
 				<key>FontDisplayName</key>
-				<string>electrox</string>
+				<string>Electrox</string>
+				<key>Font</key>
+				<string>Electrox</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2334,6 +2344,8 @@
 				<string>From Cartoon Blocks.ttf</string>
 				<key>FontDisplayName</key>
 				<string>From Cartoon Blocks</string>
+				<key>Font</key>
+				<string>From Cartoon Blocks</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2343,7 +2355,9 @@
 				<key>FontName</key>
 				<string>HilariousComics.ttf</string>
 				<key>FontDisplayName</key>
-				<string>HilariousComics</string>
+				<string>Hilarious Comics</string>
+				<key>Font</key>
+				<string>Hilarious Comics</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2353,7 +2367,9 @@
 				<key>FontName</key>
 				<string>InhumanBB.ttf</string>
 				<key>FontDisplayName</key>
-				<string>InhumanBB</string>
+				<string>Inhuman BB</string>
+				<key>Font</key>
+				<string>Inhuman BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2363,6 +2379,8 @@
 				<key>FontName</key>
 				<string>left hand comic.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Left Hand Comic</string>
+				<key>Font</key>
 				<string>left hand comic</string>
 				<key>IsLocked</key>
 				<false/>
@@ -2373,7 +2391,9 @@
 				<key>FontName</key>
 				<string>MISTV___.TTF</string>
 				<key>FontDisplayName</key>
-				<string>MISTV___</string>
+				<string>MisterVampire</string>
+				<key>Font</key>
+				<string>MisterVampire</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2383,6 +2403,8 @@
 				<key>FontName</key>
 				<string>Naughty Cartoons.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Naughty Cartoons</string>
+				<key>Font</key>
 				<string>Naughty Cartoons</string>
 				<key>IsLocked</key>
 				<false/>
@@ -2394,6 +2416,8 @@
 				<string>Peacenow Basic.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Peacenow Basic</string>
+				<key>Font</key>
+				<string>Peacenow Basic</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2404,6 +2428,8 @@
 				<string>PWComics.ttf</string>
 				<key>FontDisplayName</key>
 				<string>PWComics</string>
+				<key>Font</key>
+				<string>PWComics</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2413,7 +2439,9 @@
 				<key>FontName</key>
 				<string>pythia.ttf</string>
 				<key>FontDisplayName</key>
-				<string>pythia</string>
+				<string>Pythia</string>
+				<key>Font</key>
+				<string>Pythia</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2423,7 +2451,9 @@
 				<key>FontName</key>
 				<string>rm_playtime.ttf</string>
 				<key>FontDisplayName</key>
-				<string>rm_playtime</string>
+				<string>RM Playtime</string>
+				<key>Font</key>
+				<string>RM Playtime</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2433,7 +2463,9 @@
 				<key>FontName</key>
 				<string>samuraicabcooutbb.ttf</string>
 				<key>FontDisplayName</key>
-				<string>samuraicabcooutbb</string>
+				<string>SamuraiCabCo Outline</string>
+				<key>Font</key>
+				<string>SamuraiCabCo Outline BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2443,7 +2475,9 @@
 				<key>FontName</key>
 				<string>SanitariumBB.ttf</string>
 				<key>FontDisplayName</key>
-				<string>SanitariumBB</string>
+				<string>Sanitarium</string>
+				<key>Font</key>
+				<string>Sanitarium BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2453,7 +2487,9 @@
 				<key>FontName</key>
 				<string>SEVEMFBR.TTF</string>
 				<key>FontDisplayName</key>
-				<string>SEVEMFBR</string>
+				<string>Seven Monkey Fury</string>
+				<key>Font</key>
+				<string>Seven Monkey Fury BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2463,7 +2499,9 @@
 				<key>FontName</key>
 				<string>SEVESBRG.TTF</string>
 				<key>FontDisplayName</key>
-				<string>SEVESBRG.TTF</string>
+				<string>Seven Swordsmen</string>
+				<key>Font</key>
+				<string>Seven Swordsmen BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2473,7 +2511,9 @@
 				<key>FontName</key>
 				<string>shinAkibapunx.ttf</string>
 				<key>FontDisplayName</key>
-				<string>shinAkibapunx</string>
+				<string>Shin Akiba Punx</string>
+				<key>Font</key>
+				<string>Shin Akiba Punx</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2483,6 +2523,8 @@
 				<key>FontName</key>
 				<string>SketchyComic.ttf</string>
 				<key>FontDisplayName</key>
+				<string>Sketchy Comic</string>
+				<key>Font</key>
 				<string>SketchyComic</string>
 				<key>IsLocked</key>
 				<false/>
@@ -2493,7 +2535,9 @@
 				<key>FontName</key>
 				<string>umberto.ttf</string>
 				<key>FontDisplayName</key>
-				<string>umberto</string>
+				<string>Umberto</string>
+				<key>Font</key>
+				<string>Umberto</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2504,16 +2548,8 @@
 				<string>WillyWonka.ttf</string>
 				<key>FontDisplayName</key>
 				<string>WillyWonka</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<key>Font</key>
+				<string>WillyWonka</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2521,7 +2557,7 @@
 	</dict>
 	<dict>
 		<key>FontDisplayName</key>
-		<string>cursive</string>
+		<string>Cursive</string>
 		<key>FontImageName</key>
 		<string>chalkboard</string>
 		<key>ProductIdentifier</key>
@@ -2538,7 +2574,9 @@
 				<key>FontName</key>
 				<string>AguafinaScript-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>AguafinaScript-Regular</string>
+				<string>Aguafina Script</string>
+				<key>Font</key>
+				<string>Aguafina Script</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2549,6 +2587,8 @@
 				<string>Arabella.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Arabella</string>
+				<key>Font</key>
+				<string>Arabella</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2558,17 +2598,9 @@
 				<key>FontName</key>
 				<string>aramisi.ttf</string>
 				<key>FontDisplayName</key>
-				<string>aramisi</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>avocado_.otf</string>
-				<key>FontDisplayName</key>
-				<string>avocado_</string>
+				<string>Aramis</string>
+				<key>Font</key>
+				<string>Aramis</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2579,6 +2611,8 @@
 				<string>Avocado.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Avocado</string>
+				<key>Font</key>
+				<string>Avocado</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2588,7 +2622,9 @@
 				<key>FontName</key>
 				<string>b-de-bonita-shadow.ttf</string>
 				<key>FontDisplayName</key>
-				<string>b-de-bonita-shadow</string>
+				<string>B de bonita</string>
+				<key>Font</key>
+				<string>B de bonita</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2598,7 +2634,9 @@
 				<key>FontName</key>
 				<string>chancur.ttf</string>
 				<key>FontDisplayName</key>
-				<string>chancur</string>
+				<string>Chancery Cursive - DGL</string>
+				<key>Font</key>
+				<string>Chancery Cursive - DGL</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2608,7 +2646,9 @@
 				<key>FontName</key>
 				<string>colourbars.ttf</string>
 				<key>FontDisplayName</key>
-				<string>colourbars</string>
+				<string>Colourbars</string>
+				<key>Font</key>
+				<string>Colourbars</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2618,7 +2658,9 @@
 				<key>FontName</key>
 				<string>Condiment-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Condiment-Regular</string>
+				<string>Condiment</string>
+				<key>Font</key>
+				<string>Condiment</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2629,6 +2671,8 @@
 				<string>Cursive Option.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Cursive Option</string>
+				<key>Font</key>
+				<string>Cursive Option</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2638,7 +2682,9 @@
 				<key>FontName</key>
 				<string>Damion-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Damion-Regular</string>
+				<string>Damion</string>
+				<key>Font</key>
+				<string>Damion</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2648,7 +2694,9 @@
 				<key>FontName</key>
 				<string>DobkinScript.ttf</string>
 				<key>FontDisplayName</key>
-				<string>DobkinScript</string>
+				<string>Dobkin Script</string>
+				<key>Font</key>
+				<string>Dobkin Script</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2658,7 +2706,9 @@
 				<key>FontName</key>
 				<string>DSGabriele.ttf</string>
 				<key>FontDisplayName</key>
-				<string>DSGabriele</string>
+				<string>DS Gabriele</string>
+				<key>Font</key>
+				<string>DS Gabriele</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2668,7 +2718,9 @@
 				<key>FontName</key>
 				<string>Dynalight-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Dynalight-Regular</string>
+				<string>Dynalight</string>
+				<key>Font</key>
+				<string>Dynalight</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2678,7 +2730,9 @@
 				<key>FontName</key>
 				<string>goodfoot.ttf</string>
 				<key>FontDisplayName</key>
-				<string>goodfoot</string>
+				<string>Good Foot</string>
+				<key>Font</key>
+				<string>Good Foot</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2688,7 +2742,9 @@
 				<key>FontName</key>
 				<string>Italianno-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Italianno-Regular</string>
+				<string>Italianno</string>
+				<key>Font</key>
+				<string>Italianno</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2699,6 +2755,8 @@
 				<string>Kurnia.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Kurnia</string>
+				<key>Font</key>
+				<string>Kurnia</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2708,7 +2766,9 @@
 				<key>FontName</key>
 				<string>LaBelleAurore.ttf</string>
 				<key>FontDisplayName</key>
-				<string>LaBelleAurore</string>
+				<string>La Belle Aurore</string>
+				<key>Font</key>
+				<string>La Belle Aurore</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2718,7 +2778,9 @@
 				<key>FontName</key>
 				<string>LetsTraceItalic.otf</string>
 				<key>FontDisplayName</key>
-				<string>LetsTraceItalic</string>
+				<string>LetsTrace</string>
+				<key>Font</key>
+				<string>LetsTrace</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2728,7 +2790,9 @@
 				<key>FontName</key>
 				<string>Lucian Schoenschrift CAT.ttf</string>
 				<key>FontDisplayName</key>
-				<string>Lucian Schoenschrift CAT</string>
+				<string>Lucien Schoenschriftv CAT</string>
+				<key>Font</key>
+				<string>Lucien Schoenschriftv CAT</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2738,7 +2802,9 @@
 				<key>FontName</key>
 				<string>MarckScript-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>MarckScript-Regular</string>
+				<string>Marck Script</string>
+				<key>Font</key>
+				<string>Marck Script</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2748,7 +2814,9 @@
 				<key>FontName</key>
 				<string>MarketingScript-Shadow.ttf</string>
 				<key>FontDisplayName</key>
-				<string>MarketingScript-Shadow</string>
+				<string>Marketing Script Shadow</string>
+				<key>Font</key>
+				<string>Marketing Script Shadow</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2758,7 +2826,9 @@
 				<key>FontName</key>
 				<string>mathilde.otf</string>
 				<key>FontDisplayName</key>
-				<string>mathilde</string>
+				<string>Mathilde</string>
+				<key>Font</key>
+				<string>Mathilde</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2768,7 +2838,9 @@
 				<key>FontName</key>
 				<string>MervaleScript-Regular.ttf</string>
 				<key>FontDisplayName</key>
-				<string>MervaleScript-Regular</string>
+				<string>Mervale Script</string>
+				<key>Font</key>
+				<string>Mervale Script</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2778,6 +2850,8 @@
 				<key>FontName</key>
 				<string>OilBats.ttf</string>
 				<key>FontDisplayName</key>
+				<string>OilBats</string>
+				<key>Font</key>
 				<string>OilBats</string>
 				<key>IsLocked</key>
 				<false/>
@@ -2789,6 +2863,8 @@
 				<string>Otto.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Otto</string>
+				<key>Font</key>
+				<string>Otto</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2799,6 +2875,8 @@
 				<string>Popsies.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Popsies</string>
+				<key>Font</key>
+				<string>Popsies</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2808,7 +2886,9 @@
 				<key>FontName</key>
 				<string>SANTO___.TTF</string>
 				<key>FontDisplayName</key>
-				<string>SANTO___</string>
+				<string>Santos Dumont</string>
+				<key>Font</key>
+				<string>SANTOS DUMONT</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2819,6 +2899,8 @@
 				<string>Scribble.ttf</string>
 				<key>FontDisplayName</key>
 				<string>Scribble</string>
+				<key>Font</key>
+				<string>Scribble</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2828,197 +2910,9 @@
 				<key>FontName</key>
 				<string>SFBurlingtonScript-Italic.ttf</string>
 				<key>FontDisplayName</key>
-				<string>SFBurlingtonScript-Italic</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>SF Burlington Script</string>
+				<key>Font</key>
+				<string>SF Burlington Script</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>

@@ -360,6 +360,7 @@
 //        [self.view addSubview:eraser_view];
 //    }
 //    [self.view bringSubviewToFront:eraser_view];
+   
     if (!color_palette_view) {
         color_palette_view=[[ColorPaletteView alloc]initWithFrame:BOTTOM_FRAME];
         color_palette_view.color_palette_view_delegate=self;

@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
@@ -176,7 +176,35 @@
 		<string>vtks noise.ttf</string>
 		<string>whatever it takes bold.ttf</string>
 		<string>Beyond Wonderland.ttf</string>
-		<string>Bonnet__.ttfCalamityJaneNF-Bold.ttfCandle3D.ttfCFGrandNord-Regular.ttfCFTuques.ttfCHRICI__.TTFChristbaumkugeln.ttfChristmas Snow.ttfChristmas.ttfCity of Light.ttfDickensianChristmas.ttfFONTLERO.TTFFROSW___.TTFGebetbuchFraktur.ttfHolly Christmas.ttfIceCaps.ttfKingthings Christmas.ttfKR Cane Letters.ttfKR Oh Christmas Tree.TTFMerryChristmasFlake.ttfPWHappyChristmas.ttfSantasSleighFull Deluxe.ttfSANTBSB_ 2.TTFsatan_hum_sav.ttfSentinel.ttfSnowflake Letters.ttfSnowinter-Free-For-Personal-Use.ttftraditio.ttfVeryChristmess.ttf</string>
+		<string>Bonnet__.ttf
+CalamityJaneNF-Bold.ttf
+Candle3D.ttf
+CFGrandNord-Regular.ttf
+CFTuques.ttf
+CHRICI__.TTF
+Christbaumkugeln.ttf
+Christmas Snow.ttf
+Christmas.ttf
+City of Light.ttf
+DickensianChristmas.ttf
+FONTLERO.TTF
+FROSW___.TTF
+GebetbuchFraktur.ttf
+Holly Christmas.ttf
+IceCaps.ttf
+Kingthings Christmas.ttf
+KR Cane Letters.ttf
+KR Oh Christmas Tree.TTF
+MerryChristmasFlake.ttf
+PWHappyChristmas.ttf
+SantasSleighFull Deluxe.ttf
+SANTBSB_ 2.TTF
+satan_hum_sav.ttf
+Sentinel.ttf
+Snowflake Letters.ttf
+Snowinter-Free-For-Personal-Use.ttf
+traditio.ttf
+VeryChristmess.ttf</string>
 		<string>CalamityJaneNF-Bold.ttf</string>
 		<string>Candle3D.ttf</string>
 		<string>CFGrandNord-Regular.ttf</string>
@@ -205,6 +233,93 @@
 		<string>Snowinter-Free-For-Personal-Use.ttf</string>
 		<string>traditio.ttf</string>
 		<string>VeryChristmess.ttf</string>
+		<string>animeace.ttf
+BadaboomBB_Reg.otf
+blamblambb_hvy.ttf
+cartoon.ttf
+Comic Book Bold.otf
+Comic Gibi Bold.ttf
+Comic Tragedy - BC.ttf
+Comica BD.ttf
+Comiccity.ttf
+deathrattlebb_reg.ttf
+electrox.ttf
+From Cartoon Blocks.ttf
+HilariousComics.ttf
+InhumanBB.ttf
+left hand comic.ttf
+MISTV___.TTF
+Naughty Cartoons.ttf
+Peacenow Basic.ttf
+PWComics.ttf
+pythia.ttf
+rm_playtime.ttf
+samuraicabcooutbb.ttf
+SanitariumBB.ttf
+SEVEMFBR.TTF
+SEVESBRG.TTF
+shinAkibapunx.ttf
+SketchyComic.ttf
+umberto.ttf
+WillyWonka.ttf</string>
+		<string>BadaboomBB_Reg.otf</string>
+		<string>blamblambb_hvy.ttf</string>
+		<string>cartoon.ttf</string>
+		<string>Comic Book Bold.otf</string>
+		<string>Comic Gibi Bold.ttf</string>
+		<string>Comic Tragedy - BC.ttf</string>
+		<string>Comica BD.ttf</string>
+		<string>Comiccity.ttf</string>
+		<string>deathrattlebb_reg.ttf</string>
+		<string>electrox.ttf</string>
+		<string>From Cartoon Blocks.ttf</string>
+		<string>HilariousComics.ttf</string>
+		<string>InhumanBB.ttf</string>
+		<string>left hand comic.ttf</string>
+		<string>MISTV___.TTF</string>
+		<string>Naughty Cartoons.ttf</string>
+		<string>Peacenow Basic.ttf</string>
+		<string>PWComics.ttf</string>
+		<string>pythia.ttf</string>
+		<string>rm_playtime.ttf</string>
+		<string>samuraicabcooutbb.ttf</string>
+		<string>SanitariumBB.ttf</string>
+		<string>SEVEMFBR.TTF</string>
+		<string>SEVESBRG.TTF</string>
+		<string>shinAkibapunx.ttf</string>
+		<string>SketchyComic.ttf</string>
+		<string>umberto.ttf</string>
+		<string>WillyWonka.ttf</string>
+		<string>AguafinaScript-Regular.ttf</string>
+		<string>Arabella.ttf</string>
+		<string>aramisi.ttf</string>
+		<string>avocado_.otf</string>
+		<string>Avocado.ttf</string>
+		<string>b-de-bonita-shadow.ttf</string>
+		<string>chancur.ttf</string>
+		<string>colourbars.ttf</string>
+		<string>Condiment-Regular.ttf</string>
+		<string>Cursive Option.ttf</string>
+		<string>Damion-Regular.ttf</string>
+		<string>DobkinScript.ttf</string>
+		<string>DSGabriele.ttf</string>
+		<string>Dynalight-Regular.ttf</string>
+		<string>goodfoot.ttf</string>
+		<string>Italianno-Regular.ttf</string>
+		<string>Kurnia.ttf</string>
+		<string>LaBelleAurore.ttf</string>
+		<string>LetsTraceItalic.otf</string>
+		<string>Lucian Schoenschrift CAT.ttf</string>
+		<string>MarckScript-Regular.ttf</string>
+		<string>MarketingScript-Shadow.ttf</string>
+		<string>mathilde.otf</string>
+		<string>MervaleScript-Regular.ttf</string>
+		<string>OilBats.ttf</string>
+		<string>Otto.ttf</string>
+		<string>Popsies.ttf</string>
+		<string>SANTO___.TTF</string>
+		<string>Scribble.ttf</string>
+		<string>SFBurlingtonScript-Italic.ttf</string>
 		<string></string>
 		<string></string>
 		<string></string>

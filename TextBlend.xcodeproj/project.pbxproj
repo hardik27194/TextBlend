@@ -4985,7 +4985,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -5023,7 +5023,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -5048,9 +5048,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.muntaha.textblend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muntaha.tasTextOnPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 			};
 			name = Debug;
 		};
@@ -5073,9 +5073,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.muntaha.textblend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muntaha.tasTextOnPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "83351c0f-937c-4e74-99df-1b7ce8312ef5";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 			};
 			name = Release;
 		};
@@ -5087,6 +5087,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.collectionview.TextBlendTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextBlend.app/TextBlend";
 			};
 			name = Debug;
@@ -5099,6 +5100,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.collectionview.TextBlendTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextBlend.app/TextBlend";
 			};
 			name = Release;
@@ -5110,6 +5112,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.collectionview.TextBlendUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 				TEST_TARGET_NAME = TextBlend;
 				USES_XCTRUNNER = YES;
 			};
@@ -5122,6 +5125,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.collectionview.TextBlendUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "83a99d46-7076-40e2-b447-cb97452b00b3";
 				TEST_TARGET_NAME = TextBlend;
 				USES_XCTRUNNER = YES;
 			};
