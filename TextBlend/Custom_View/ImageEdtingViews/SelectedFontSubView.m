@@ -114,6 +114,13 @@
         [cell.contentView addSubview:cell.lbl_font_name];
         
     }
+    if (!cell.locked_image_view) {
+        cell.locked_image_view = [[UIImageView alloc]init];
+//        cell.lbl_font_name.clipsToBounds=YES;
+        [cell.contentView addSubview:cell.locked_image_view];
+        
+    }
+///    cell.locked_image_view.image
     cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, ROW_HEIGHT-5);
     [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
     cell.lbl_font_name.numberOfLines=0;
@@ -269,26 +276,64 @@
     
     
 }
+
+#pragma mark - Misc Functions -
+
+-(BOOL)isPaidLocked{
+    BOOL isPaidFont=YES;
+    
+    NSString* plistPath = [kAppDelegate getPlistDocumentDirectoryPath];
+    NSArray *fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"FontDisplayName == %@",self.selected_font_class_string];
+    NSArray *filteredArray=[fonts_array filteredArrayUsingPredicate:predicate];
+    if (filteredArray.count) {
+        NSDictionary *selected_font_dict=[filteredArray firstObject];
+        if ([selected_font_dict valueForKey:@"IsAlreadyBought"] && [[selected_font_dict valueForKey:@"IsAlreadyBought"] boolValue])
+            isPaidFont=NO;
+    }
+    return isPaidFont;
+
+}
 #pragma mark - Button Pressed Methods -
 
 
 -(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+    NSString *selected_product_identifier=[self selectedProductIdentifier];
+    if (!selected_product_identifier) {
+        if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {
+            [self.select_sub_font_view_delegate select_sub_font_done_check_mark_button_pressed:sender onSelectedView:self];
+            
+        }
     
-    PurchaseFontsViewController *initViewController = [[PurchaseFontsViewController alloc]init];
-    initViewController.view.backgroundColor = [UIColor whiteColor];
-    initViewController.selected_font_class_string=self.selected_font_class_string;
-    [initViewController initializeTopHeaderView];
-    [initViewController initializeView];
-    initViewController.selected_product_identifier=[self selectedProductIdentifier];
-//    [[kAppDelegate navigation_controller] pushViewController:initViewController animated:YES];
-    [[[kAppDelegate navigation_controller]topViewController]presentViewController:initViewController animated:YES completion:nil];
-    return;
-    
-    
-    if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {
-        [self.select_sub_font_view_delegate select_sub_font_done_check_mark_button_pressed:sender onSelectedView:self];
-        
     }
+    NSString* plistPath = [kAppDelegate getPlistDocumentDirectoryPath];
+    NSArray *fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"FontDisplayName == %@",self.selected_font_class_string];
+    NSArray *filteredArray=[fonts_array filteredArrayUsingPredicate:predicate];
+    if (filteredArray.count) {
+        NSDictionary *selected_font_dict=[filteredArray firstObject];
+        if ([selected_font_dict valueForKey:@"IsAlreadyBought"] && [[selected_font_dict valueForKey:@"IsAlreadyBought"] boolValue]) {
+            if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {
+                [self.select_sub_font_view_delegate select_sub_font_done_check_mark_button_pressed:sender onSelectedView:self];
+                
+            }
+        }
+        else{
+            
+            PurchaseFontsViewController *initViewController = [[PurchaseFontsViewController alloc]init];
+            initViewController.view.backgroundColor = [UIColor whiteColor];
+            initViewController.selected_font_class_string=self.selected_font_class_string;
+            [initViewController initializeTopHeaderView];
+            [initViewController initializeView];
+            initViewController.selected_product_identifier=selected_product_identifier;
+            //    [[kAppDelegate navigation_controller] pushViewController:initViewController animated:YES];
+            [[[kAppDelegate navigation_controller]topViewController]presentViewController:initViewController animated:YES completion:nil];
+        }
+    }
+   
+    
+    
+    
 }
 
 

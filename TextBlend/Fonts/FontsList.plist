@@ -12,7 +12,7 @@
 		<key>IsFontOpen</key>
 		<true/>
 		<key>IsAlreadyBought</key>
-		<false/>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -762,7 +762,7 @@
 		<key>IsFontOpen</key>
 		<true/>
 		<key>IsAlreadyBought</key>
-		<false/>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -1125,7 +1125,7 @@
 		<key>IsFontOpen</key>
 		<true/>
 		<key>IsAlreadyBought</key>
-		<false/>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -1488,7 +1488,7 @@
 		<key>IsFontOpen</key>
 		<true/>
 		<key>IsAlreadyBought</key>
-		<false/>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>
@@ -2559,13 +2559,13 @@
 		<key>FontDisplayName</key>
 		<string>Cursive</string>
 		<key>FontImageName</key>
-		<string>chalkboard</string>
+		<string>chalkboard-font.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
 		<false/>
 		<key>IsAlreadyBought</key>
-		<false/>
+		<true/>
 		<key>FontSubArray</key>
 		<array>
 			<dict>

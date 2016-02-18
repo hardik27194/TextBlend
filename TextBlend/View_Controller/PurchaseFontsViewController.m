@@ -239,7 +239,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UIImage *selected_image=[self getSelectedImage];
     return  selected_image.size.height;
-    
+    /*
     switch (indexPath.row) {
         case 0:
         {
@@ -266,6 +266,7 @@
         }
             break;
     }
+     */
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0;
