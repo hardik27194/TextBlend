@@ -372,6 +372,18 @@
 
 }
 
+-(void)shadow_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view{
+    if (!shadow_custom_view) {
+        shadow_custom_view=[[ShadowCustomView alloc]initWithFrame:BOTTOM_FRAME];
+        shadow_custom_view.shadow_tools_delegate=self;
+        shadow_custom_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+        
+        [self.view addSubview:shadow_custom_view];
+    }
+    [self.view bringSubviewToFront:shadow_custom_view];
+}
+
+
 #pragma mark - Color Palette View Methods -
 
 -(void)setSelectedColor:(UIColor*)color onSelectedView:(ColorPaletteView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
@@ -1078,6 +1090,31 @@
    sticker.layer.transform =  CATransform3DConcat(CATransform3DConcat(rotationAndPerspectiveTransform1, rotationAndPerspectiveTransform2), rotationAndPerspectiveTransform3);
 }
 
+#pragma mark - Shadow Tools Delegate Methods -
+-(void)opacity_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
+    
+}
+
+-(void)blur_radius_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
+    
+}
+
+-(void)x_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
+    
+}
+
+-(void)y_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
+}
+
+-(void)shadow_tools_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ShadowCustomView *)selected_view{
+    if (shadow_custom_view) {
+        [shadow_custom_view removeFromSuperview];
+        shadow_custom_view=  nil;
+    }
+
+}
+
+
 #pragma mark - ZDSticker View Delegate Methods -
 
 - (void)stickerViewDidLongPressed:(ZDStickerView *)sticker
@@ -1537,6 +1574,11 @@
     if (color_palette_view) {
         [color_palette_view removeFromSuperview];
         color_palette_view = nil;
+    }
+    
+    if (shadow_custom_view) {
+        [shadow_custom_view removeFromSuperview];
+        shadow_custom_view = nil;
     }
 }
 

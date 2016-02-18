@@ -10,6 +10,7 @@
 
 @implementation AddTextView
 @synthesize add_text_button,fonts_button,text_tools_button,colors_button,rotate_3d_button,eraser_button,add_text_view_delegate;
+@synthesize shadow_button;
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
@@ -23,6 +24,14 @@
 
 -(void)initializeView{
     
+    
+    self.add_text_scroll_view =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH+(SCREEN_WIDTH/3), SCREEN_HEIGHT)];
+    self.add_text_scroll_view.delegate=self;
+    self.add_text_scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH+(2*SCREEN_WIDTH)/3, SCREEN_HEIGHT);
+    self.add_text_scroll_view.contentOffset=CGPointZero;
+    [self addSubview:self.add_text_scroll_view];
+    
+    
     int width_buttons = 0;
     
     self.add_text_button = [CustomButton buttonWithType:UIButtonTypeCustom];
@@ -30,7 +39,7 @@
     [self.add_text_button setImage:[UIImage imageNamed:@"add_text_view_add_text.PNG"] forState:UIControlStateNormal];
     
     [self.add_text_button addTarget:self action:@selector(add_text_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.add_text_button];
+    [self.add_text_scroll_view addSubview:self.add_text_button];
     
     
     self.colors_button = [CustomButton buttonWithType:UIButtonTypeCustom];
@@ -38,7 +47,7 @@
     [self.colors_button setImage:[UIImage imageNamed:@"add_text_view_color.png"]
                         forState:UIControlStateNormal];
     [self.colors_button addTarget:self action:@selector(colors_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.colors_button];
+    [self.add_text_scroll_view addSubview:self.colors_button];
     
     
     width_buttons +=SCREEN_WIDTH/3;
@@ -48,14 +57,14 @@
     self.fonts_button.frame=CGRectMake(width_buttons,  0, SCREEN_WIDTH/3, self.frame.size.height/2);
     [self.fonts_button setImage:[UIImage imageNamed:@"add_text_view_fonts.PNG"] forState:UIControlStateNormal];
     [self.fonts_button addTarget:self action:@selector(fonts_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.fonts_button];
+    [self.add_text_scroll_view addSubview:self.fonts_button];
     
     
     self.rotate_3d_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.rotate_3d_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/3, self.frame.size.height/2);
     [self.rotate_3d_button setImage:[UIImage imageNamed:@"add_text_view_3d_rotate.PNG"] forState:UIControlStateNormal];
     [self.rotate_3d_button addTarget:self action:@selector(rotate_3d_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.rotate_3d_button];
+    [self.add_text_scroll_view addSubview:self.rotate_3d_button];
     
     
     width_buttons +=SCREEN_WIDTH/3;
@@ -65,14 +74,32 @@
     self.text_tools_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/3, self.frame.size.height/2);
     [self.text_tools_button setImage:[UIImage imageNamed:@"add_text_view_text_tools.PNG"] forState:UIControlStateNormal];
     [self.text_tools_button addTarget:self action:@selector(text_tools_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.text_tools_button];
+    [self.add_text_scroll_view addSubview:self.text_tools_button];
     
     
     self.eraser_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.eraser_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/3, self.frame.size.height/2);
     [self.eraser_button setImage:[UIImage imageNamed:@"add_text_view_eraser.PNG"] forState:UIControlStateNormal];
     [self.eraser_button addTarget:self action:@selector(eraser_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.eraser_button];
+    [self.add_text_scroll_view addSubview:self.eraser_button];
+    
+    
+    
+    width_buttons +=SCREEN_WIDTH/3;
+    
+    
+    self.shadow_button = [CustomButton buttonWithType:UIButtonTypeCustom];
+    self.shadow_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/3, self.frame.size.height/2);
+    [self.shadow_button setImage:[UIImage imageNamed:@"add_text_view_text_tools.PNG"] forState:UIControlStateNormal];
+    [self.shadow_button addTarget:self action:@selector(shadow_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.add_text_scroll_view addSubview:self.shadow_button];
+
+    
+    self.misc_button = [CustomButton buttonWithType:UIButtonTypeCustom];
+    self.misc_button.frame=CGRectMake(width_buttons, self.frame.size.height/2, SCREEN_WIDTH/3, self.frame.size.height/2);
+    self.misc_button.showsTouchWhenHighlighted=NO;
+    [self.add_text_scroll_view addSubview:self.misc_button];
+
     
 }
 
@@ -121,6 +148,15 @@
         [self.add_text_view_delegate eraser_button_pressed:sender onSelectedView:self];
     }
 }
+
+
+-(IBAction)shadow_button_pressed:(UIButton *)sender{
+    
+    if ([self.add_text_view_delegate respondsToSelector:@selector(shadow_button_pressed:onSelectedView:)]) {
+        [self.add_text_view_delegate shadow_button_pressed:sender onSelectedView:self];
+    }
+}
+
 
 /*
  // Only override drawRect: if you perform custom drawing.

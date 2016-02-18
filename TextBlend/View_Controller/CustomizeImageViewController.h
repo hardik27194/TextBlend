@@ -24,7 +24,7 @@
 #import "EraserView.h"
 #import "PhotoEditCustomView.h"
 #import "ColorPaletteView.h"
-
+#import "ShadowCustomView.h"
 @import GoogleMobileAds;
 
 
@@ -38,7 +38,9 @@
     EraserView *eraser_view;
     PhotoEditCustomView *photo_edit_custom_view;
     ColorPaletteView *color_palette_view;
+    ShadowCustomView *shadow_custom_view;
 
+    
     CATransform3D rotationAndPerspectiveTransform1;
     CATransform3D rotationAndPerspectiveTransform2;
     CATransform3D rotationAndPerspectiveTransform3;

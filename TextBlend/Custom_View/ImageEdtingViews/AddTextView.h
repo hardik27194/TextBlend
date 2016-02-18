@@ -29,18 +29,26 @@
 -(void)rotate_3d_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view;
 
 -(void)eraser_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view;
+-(void)shadow_button_pressed:(UIButton *)sender onSelectedView:(AddTextView *)selected_view;
+
 @end
 
 
-@interface AddTextView : UIView{
+@interface AddTextView : UIView<UIScrollViewDelegate>{
+  
     
 }
+@property(nonatomic,strong)UIScrollView *add_text_scroll_view;
+
 @property(nonatomic,strong)CustomButton *add_text_button;
 @property(nonatomic,strong)CustomButton *fonts_button;
 @property(nonatomic,strong)CustomButton *text_tools_button;
 @property(nonatomic,strong)CustomButton *colors_button;
 @property(nonatomic,strong)CustomButton *rotate_3d_button;
 @property(nonatomic,strong)CustomButton *eraser_button;
+@property(nonatomic,strong)CustomButton *shadow_button;
+@property(nonatomic,strong)CustomButton *misc_button;
+
 @property(nonatomic,strong)id <AddTextViewDelegate> add_text_view_delegate;
 
 @end
