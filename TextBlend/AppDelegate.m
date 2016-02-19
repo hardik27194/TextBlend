@@ -30,12 +30,12 @@
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
-    if (![[NSFileManager defaultManager]fileExistsAtPath:[self getPlistDocumentDirectoryPath]]) {
+    //if (![[NSFileManager defaultManager]fileExistsAtPath:[self getPlistDocumentDirectoryPath]]) {
         NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
         NSData *data = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:plistPath]];
         [data writeToFile:[self getPlistDocumentDirectoryPath] atomically:YES];
         
-    }
+    //}
     
     SelectInitialImageViewController *select_image_background_vc=[[SelectInitialImageViewController alloc]init];;
 //    SelectImageBackgroundViewController *select_image_background_vc=[[SelectImageBackgroundViewController alloc]init];

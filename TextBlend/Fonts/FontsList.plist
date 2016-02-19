@@ -2920,7 +2920,7 @@
 	</dict>
 	<dict>
 		<key>FontDisplayName</key>
-		<string>Arcade</string>
+		<string>Graffitti</string>
 		<key>FontImageName</key>
 		<string>chalkboard</string>
 		<key>ProductIdentifier</key>
@@ -2935,9 +2935,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>amsterdam.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Amsterdam Graffiti</string>
+				<key>Font</key>
+				<string>Amsterdam Graffiti</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2945,9 +2947,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Brock Vandalo.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Brock Vandalo</string>
+				<key>Font</key>
+				<string>Brock Vandalo</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2955,9 +2959,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Brooklyn-Inline.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Brooklyn</string>
+				<key>Font</key>
+				<string>Brooklyn</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2965,9 +2971,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>cigar.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Cigar</string>
+				<key>Font</key>
+				<string>Cigar</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2975,9 +2983,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>degrassi.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Degrassi</string>
+				<key>Font</key>
+				<string>Degrassi</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2985,9 +2995,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>DJGROSS.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>DJ GROSS</string>
+				<key>Font</key>
+				<string>DJ GROSS</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -2995,9 +3007,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Font (el&amp;font bubble).ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>El&amp;Font Bubble</string>
+				<key>Font</key>
+				<string>El&amp;Font Bubble</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3005,9 +3019,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Graffogie.otf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Graffogie</string>
+				<key>Font</key>
+				<string>Graffogie</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3015,9 +3031,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>graffonti.3d.drop.[fontvir.us].ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Graffonti 3d drop</string>
+				<key>Font</key>
+				<string>graffonti .3d.drop.</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3025,9 +3043,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>homeboy.TTF</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Homeboy</string>
+				<key>Font</key>
+				<string>Homeboy</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3035,9 +3055,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Inner City.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Inner City</string>
+				<key>Font</key>
+				<string>inner city</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3045,9 +3067,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>JUSTFIST.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>JUSTFIST</string>
+				<key>Font</key>
+				<string>justfist</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3055,9 +3079,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>JUSTFIST2.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>JUSTFIST2</string>
+				<key>Font</key>
+				<string>justfist2</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3065,9 +3091,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>MAELS___.TTF</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>MAELSTROM</string>
+				<key>Font</key>
+				<string>MAELSTROM</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3075,9 +3103,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>MisdemeanorDEMO-KCFonts.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Misdemeanor</string>
+				<key>Font</key>
+				<string>Misdemeanor</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3085,9 +3115,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Mostwasted.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Most Wazted</string>
+				<key>Font</key>
+				<string>Most Wazted</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3095,9 +3127,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>RESKAGRAF.TTF</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>ReskaGraf</string>
+				<key>Font</key>
+				<string>ReskaGraf</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3105,9 +3139,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>RuthlessWreckin2.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Ruthless Wreckin Two</string>
+				<key>Font</key>
+				<string>Ruthless Wreckin TWO</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3115,9 +3151,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Sprite Graffiti.otf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Sprite Graffiti</string>
+				<key>Font</key>
+				<string>Sprite Graffiti</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3125,9 +3163,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Stylin BRK.otf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Stylin BRK</string>
+				<key>Font</key>
+				<string>Stylin&apos; BRK</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3135,9 +3175,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>Take Warning.otf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Take Warning</string>
+				<key>Font</key>
+				<string>Take Warning</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3145,9 +3187,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>TheBattleCont.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>The Battle Continuez</string>
+				<key>Font</key>
+				<string>The Battle Continuez</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3155,9 +3199,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>urban decay.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Urban Decay</string>
+				<key>Font</key>
+				<string>urban decay</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3165,9 +3211,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>UrbanJungleDEMO.otf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Urban Jungle</string>
+				<key>Font</key>
+				<string>Urban Jungle</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3175,9 +3223,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>writers.ttf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Writers original</string>
+				<key>Font</key>
+				<string>Writers original</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3185,9 +3235,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>youmurdererbb_reg.otf</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>YouMurderer</string>
+				<key>Font</key>
+				<string>YouMurderer BB</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>
@@ -3195,249 +3247,11 @@
 				<key>UDID</key>
 				<string>1</string>
 				<key>FontName</key>
-				<string>.ttf</string>
+				<string>ZITGRAFF.TTF</string>
 				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
-				<key>IsLocked</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>UDID</key>
-				<string>1</string>
-				<key>FontName</key>
-				<string>.ttf</string>
-				<key>FontDisplayName</key>
-				<string>ghaf</string>
+				<string>Zit Graffiti</string>
+				<key>Font</key>
+				<string>Zit Graffiti</string>
 				<key>IsLocked</key>
 				<false/>
 			</dict>

@@ -8,7 +8,7 @@
 
 #import "SelectFontsView.h"
 #import "OHAttributedLabel.h"
-#define SELECTED_FONT_COUNT 8
+#define SELECTED_FONT_COUNT 9
 @implementation SelectFontsView
 @synthesize custom_collection_view;
 @synthesize fonts_array;
