@@ -9,7 +9,8 @@
 #import "SelectedFontSubView.h"
 #import "OHAttributedLabel.h"
 #import "PurchaseFontsViewController.h"
-#define ROW_HEIGHT 60
+#define CELL_ROW_HEIGHT 100
+
 @implementation SelectedFontSubView
 @synthesize custom_collection_view;
 @synthesize selected_sub_font_array;
@@ -99,13 +100,13 @@
     
     if (cell==nil) {
         
-        cell=[[SelectFontCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, ROW_HEIGHT)];
+        cell=[[SelectFontCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, CELL_ROW_HEIGHT)];
     }
-    cell.contentView.frame=CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, ROW_HEIGHT);
+    cell.contentView.frame=CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, CELL_ROW_HEIGHT);
     
     if (!cell.lbl_font_name) {
         cell.lbl_font_name = [[UILabel alloc]init];
-        cell.lbl_font_name.frame = CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, ROW_HEIGHT-5);
+        cell.lbl_font_name.frame = CGRectMake(5, 5, (SCREEN_WIDTH/2)-10, CELL_ROW_HEIGHT-10);
         cell.lbl_font_name.clipsToBounds=YES;
         cell.lbl_font_name.layer.cornerRadius=5;
         cell.lbl_font_name.layer.borderWidth=0.8;
@@ -121,7 +122,7 @@
         
     }
 ///    cell.locked_image_view.image
-    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, ROW_HEIGHT-5);
+    cell.lbl_font_name.frame=CGRectMake(5, 5, (SCREEN_WIDTH/2)-15, CELL_ROW_HEIGHT-10);
     [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
     cell.lbl_font_name.numberOfLines=0;
     
@@ -137,7 +138,7 @@
         }
         
         if ([font_selected_dict objectForKey:@"Font"] && [[font_selected_dict objectForKey:@"Font"]isKindOfClass:[NSString class]]) {
-            [cell.lbl_font_name setFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:14]];
+            [cell.lbl_font_name setFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:25]];
         }
     }
     
@@ -149,7 +150,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake( (SCREEN_WIDTH/2)-8, ROW_HEIGHT);
+    return CGSizeMake( (SCREEN_WIDTH/2)-8, CELL_ROW_HEIGHT);
     
 }
 
@@ -185,8 +186,7 @@
         if ([self.select_sub_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
 //            NSLog(@"%@",[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:18]);
             selected_font=[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:14];
-            UIFont *get_font=[self getSelectedFont];;
-//            get_font.pointSize
+           // UIFont *get_font=[self getSelectedFont];;
             [self.select_sub_font_view_delegate setSelectedFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:14] onSelectedView:self];
             
             }

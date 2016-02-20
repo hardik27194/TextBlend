@@ -9,6 +9,7 @@
 #import "SelectFontsView.h"
 #import "OHAttributedLabel.h"
 #define SELECTED_FONT_COUNT 9
+#define CELL_ROW_HEIGHT 90
 @implementation SelectFontsView
 @synthesize custom_collection_view;
 @synthesize fonts_array;
@@ -96,20 +97,30 @@
     
     if (cell==nil) {
         
-        cell=[[SelectFontCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50)];
+        cell=[[SelectFontCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, CELL_ROW_HEIGHT)];
     }
-    cell.contentView.frame=CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50);
+    cell.contentView.frame=CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, CELL_ROW_HEIGHT);
     
     if (!cell.lbl_font_name) {
         cell.lbl_font_name = [[UILabel alloc]init];
-        cell.lbl_font_name.frame = CGRectMake(0, 0, (SCREEN_WIDTH/2)-10, 50);
+        cell.lbl_font_name.frame = CGRectMake(5, 5, (SCREEN_WIDTH/2)-10, CELL_ROW_HEIGHT-10);
+        cell.lbl_font_name.numberOfLines=0;
         cell.lbl_font_name.clipsToBounds=YES;
         cell.lbl_font_name.layer.cornerRadius=5;
         cell.lbl_font_name.layer.borderWidth=0.8;
         [cell.contentView addSubview:cell.lbl_font_name];
         
     }
-    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, 45);
+    
+    if (!cell.locked_image_view) {
+        cell.locked_image_view = [[UIImageView alloc]initWithFrame:CGRectZero];
+        [cell.contentView addSubview:cell.locked_image_view];
+        
+    }
+    CGFloat locked_icon_height=20;
+    cell.locked_image_view.frame =CGRectMake(0, 0, locked_icon_height, locked_icon_height);
+    cell.locked_image_view.backgroundColor=[UIColor greenColor];
+    cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, CELL_ROW_HEIGHT-10);
     [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
     
     
@@ -118,17 +129,23 @@
         
         NSDictionary *font_selected_dict=[self.fonts_array objectAtIndex:indexPath.row];
         
+        
+        if ([font_selected_dict valueForKey:@"IsAlreadyBought"] && [[font_selected_dict valueForKey:@"IsAlreadyBought"] boolValue]) {
+            cell.locked_image_view.backgroundColor = [UIColor clearColor];
+        }
+        
+        
         if ([font_selected_dict objectForKey:@"FontDisplayName"] && ![[font_selected_dict objectForKey:@"FontDisplayName"]isEqual:[NSNull null]]&& [[font_selected_dict objectForKey:@"FontDisplayName"]isKindOfClass:[NSString class]]) {
             [cell.lbl_font_name setText:[font_selected_dict objectForKey:@"FontDisplayName"]];
             
         }
         
-              NSArray *select_font_array=[font_selected_dict valueForKey:@"FontSubArray"];
+        NSArray *select_font_array=[font_selected_dict valueForKey:@"FontSubArray"];
         if (select_font_array.count) {
             
             NSDictionary *selected_font=[select_font_array objectAtIndex:0];
             if ([selected_font objectForKey:@"Font"] && [[selected_font objectForKey:@"Font"]isKindOfClass:[NSString class]]) {
-                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font objectForKey:@"Font"] size:14]];
+                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font objectForKey:@"Font"] size:30]];
 //                [cell.lbl_font_name setFont:[UIFont fontWithName:[selected_font valueForKey:@"Arcade Future"] size:14]];
 
             }
@@ -145,7 +162,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake( (SCREEN_WIDTH/2)-8, 50);
+    return CGSizeMake( (SCREEN_WIDTH/2)-8, CELL_ROW_HEIGHT);
     
 }
 

@@ -150,7 +150,8 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     for (SKPaymentTransaction *transaction in transactions) {
         
         switch (transaction.transactionState) {
-                
+            NSLog(@"%ld",transaction.transactionState);
+
             case SKPaymentTransactionStatePurchased:
                 
                 [self completeTransaction:transaction];
@@ -167,7 +168,9 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
                 
                 [self restoreTransaction:transaction];
                 
-            default:
+            default:{
+                NSLog(@"%ld",transaction.transactionState);
+            }
                 
                 break;
                 
@@ -182,10 +185,11 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 - (void)completeTransaction:(SKPaymentTransaction *)transaction
 
 {
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"HideProgress" object:nil];    
+    NSLog(@"completeTransaction...");
+
+    [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_IN_APP_PURCHASE_NOTIFICATION object:[NSNumber numberWithBool:YES]];
     [self provideContentForProductIdentifier:transaction];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:transaction.payment.productIdentifier];
     
 }
 
@@ -194,7 +198,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction
 
 {
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"HideProgress" object:nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:UPDATE_IN_APP_PURCHASE_NOTIFICATION object:[NSNumber numberWithBool:YES]];
 
     NSLog(@"restoreTransaction...");
 //    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Restored successfully!" message:@"Enjoy!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -212,7 +216,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction
 {
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"HideProgress" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:[NSNumber numberWithBool:NO] userInfo:nil];
     NSLog(@"failedTransaction...");
     if (transaction.error.code != SKErrorPaymentCancelled) {
         
@@ -225,14 +229,9 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
 - (void)provideContentForProductIdentifier:(SKPaymentTransaction  *)payment_transaction {
     
-    NSLog(@"provideContentForProductIdentifier");
-    if (![_purchasedProductIdentifiers containsObject:payment_transaction.payment.productIdentifier]) {
-        [_purchasedProductIdentifiers addObject:payment_transaction.payment.productIdentifier];
-        
-    }
+   
     
-    if (selected_sk_product) {
-                
+    
         if ([[NSFileManager defaultManager]fileExistsAtPath:[kAppDelegate getPlistDocumentDirectoryPath]]) {
 //            NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
             NSString* plistPath =[kAppDelegate getPlistDocumentDirectoryPath];//[[NSBundle mainBundle] pathForResource:@"FontsList" ofType:@"plist"];
@@ -248,7 +247,6 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
             }
             
-           // [data writeToFile:[kAppDelegate getPlistDocumentDirectoryPath] atomically:YES];
             
         }
         
@@ -259,10 +257,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
         [product_detail_dict setValue:payment_transaction.transactionIdentifier forKey:@"productIdentifier"];
         
-//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:payment_transaction.payment.productIdentifier];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-        [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:nil userInfo:product_detail_dict];
-    }
+        [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:[NSNumber numberWithBool:YES] userInfo:product_detail_dict];
     
     
 }
@@ -272,5 +267,28 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
 }
 
+
+
+#pragma mark - Optional Methods -
+
+- (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray<SKPaymentTransaction *> *)transactions {
+    NSLog(@"removedTransactions");
+}
+
+// Sent when an error is encountered while adding transactions from the user's purchase history back to the queue.
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
+    NSLog(@"restoreCompletedTransactionsFailedWithError");
+
+}
+
+// Sent when all transactions from the user's purchase history have successfully been added back to the queue.
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue{
+    NSLog(@"paymentQueueRestoreCompletedTransactionsFinished");
+
+}
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedDownloads:(NSArray<SKDownload *> *)downloads{
+    NSLog(@"updatedDownloads");
+
+}
 
 @end

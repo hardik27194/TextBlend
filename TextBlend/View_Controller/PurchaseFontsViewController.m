@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updatePurchaseItem:) name:IAPHelperProductPurchasedNotification object:nil];
 //    [self initializeTopHeaderView];
 //    [self initializeView];
     // Do any additional setup after loading the view.
@@ -297,8 +298,11 @@
 
 -(IBAction)buy_button_pressed:(UIButton *)sender {
     if (self.products.count) {
+        [self updateViewInteraction:NO];
+
         SKProduct *product = [self.products objectAtIndex:0];
         [[TextBlendIAPHelper sharedInstance] buyProduct:product];
+
     }
     
 }
@@ -313,6 +317,25 @@
     
 }
 
+
+-(void)updatePurchaseItem:(NSNotification *)notification{
+    
+    [self updateViewInteraction:YES];
+
+//    if ([notification.object isKindOfClass:[NSNumber class]]) {
+//       // NSNumber *num=notification.object;
+//     
+//    }
+}
+
+-(void)updateViewInteraction:(BOOL)shouldEnable{
+
+    [self.buy_button setUserInteractionEnabled:shouldEnable];
+    [self.back_button setUserInteractionEnabled:shouldEnable];
+    [self.top_scroll_button setUserInteractionEnabled:shouldEnable];
+
+//    [self.view setUserInteractionEnabled:shouldEnable];
+}
                                                             
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
