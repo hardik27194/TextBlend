@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DTColorPickerImageView.h"
 @class AddColorView;
-
+@class AddColorSelectionView;
 @protocol AddColorViewDelegate <NSObject>
 
 @optional
@@ -38,6 +38,7 @@
 @property(nonatomic,strong)UIButton *done_check_mark_button;
 @property(nonatomic,strong)DTColorPickerImageView *colorPreviewView;
 @property(nonatomic,strong)ZDStickerView *selected_sticker_view;
+@property(nonatomic,strong)AddColorSelectionView *color_selection_view;
 
 -(void)updateGradientColors;
 -(UIColor *)setGradientCOlor;

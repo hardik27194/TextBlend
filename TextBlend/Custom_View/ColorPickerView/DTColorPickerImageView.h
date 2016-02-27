@@ -13,7 +13,9 @@ typedef void(^DTColorPickerHandler)(UIColor *__nonnull color);
 @protocol DTColorPickerImageViewDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
-@interface DTColorPickerImageView : UIImageView
+@interface DTColorPickerImageView : UIImageView{
+    UIImageView *circular_color_view;
+}
 
 @property (assign, nullable) IBOutlet id<DTColorPickerImageViewDelegate> delegate;
 

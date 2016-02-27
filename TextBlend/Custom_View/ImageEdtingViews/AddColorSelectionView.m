@@ -95,6 +95,26 @@
     [self addSubview:self.center_pan_color_image_view];
 
     [self addGesturesOnView];
+ 
+   
+    self.start_color_label.backgroundColor =[UIColor colorWithRed:0 green:0 blue:0 alpha:1]; //[self convertColorIntoRGBSpaceColor:self.start_color_label.backgroundColor];
+  //  self.end_color_label.backgroundColor = [self convertColorIntoRGBSpaceColor:self.end_color_label.backgroundColor];
+    self.end_color_label.backgroundColor =[UIColor colorWithRed:0.7019 green:0.7019 blue:0.7019 alpha:1]; //[self convertColorIntoRGBSpaceColor:self.start_color_label.backgroundColor];
+
+   }
+
+-(UIColor *)convertColorIntoRGBSpaceColor:(UIColor *)selected_color{
+    CGColorRef coloref = [selected_color CGColor];
+    const CGFloat* components = CGColorGetComponents(coloref);
+    
+    CGFloat red = components[0];
+    CGFloat green = components[1];
+    CGFloat blue = components[2];
+    CGFloat alpha =1;
+    UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    
+    
+    return color;
     
 }
 

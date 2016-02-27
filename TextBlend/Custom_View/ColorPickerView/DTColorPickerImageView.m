@@ -47,10 +47,20 @@
     if (self == nil) return nil;
     
     [self setUserInteractionEnabled:YES];
-    
+    [self addColorSelectionView];
     return self;
 }
-
+-(void)addColorSelectionView{
+    if (!circular_color_view) {
+        circular_color_view = [[UIImageView alloc]initWithFrame:CGRectMake(self.self.frame.size.width/2, self.frame.size.height/2, 20, 20)];
+        circular_color_view.clipsToBounds=YES;
+        circular_color_view.layer.borderColor = [UIColor whiteColor].CGColor;
+        circular_color_view.layer.borderWidth = 1;
+        circular_color_view.layer.cornerRadius = 10;
+        circular_color_view.userInteractionEnabled=YES;
+        [self addSubview:circular_color_view];
+    }
+}
 - (instancetype)initWithImage:(UIImage *)image
 {
     self = [super initWithImage:image];
@@ -78,7 +88,18 @@
     
     _handler = Block_copy(handler);
 }
-
+-(void)updateFrames:(CGPoint)location{
+    
+    CGRect circularFrame = circular_color_view.frame;
+    circularFrame.origin.x = location.x - (circularFrame.size.width/2);
+    circularFrame.origin.y = location.y - (circularFrame.size.height/2);
+    circular_color_view.frame = circularFrame;
+    [UIView animateWithDuration:0.2 animations:^{
+     
+    }];
+    
+    
+}
 #pragma mark - Touch events
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -104,6 +125,8 @@
 
 - (void)pickerColorAtPoint:(CGPoint)point
 {
+    [self updateFrames:point];
+
     CGPoint convertPoint = [self.image convertPoint:point fromImageView:self];
     
     UIColor *color = [self.image pickColorWithPoint:convertPoint];

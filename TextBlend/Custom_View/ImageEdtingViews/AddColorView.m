@@ -19,7 +19,6 @@
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 @interface AddColorView (){
     
-    AddColorSelectionView *color_selection_view;
     
 }
 
@@ -31,7 +30,7 @@
 @synthesize add_color_view_delegate;
 @synthesize black_view,done_check_mark_button,colorPreviewView;
 @synthesize selected_sticker_view;
-
+@synthesize color_selection_view;
 /*
  -(id)initWithFrame:(CGRect)frame{
  if (self = [super initWithFrame:frame]){
@@ -369,6 +368,13 @@
 
 - (void)imageView:(DTColorPickerImageView *)imageView didPickColorWithColor:(UIColor *)color
 {
+    
+//    UIView *Add_subview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 50)];
+//    Add_subview.backgroundColor = color_selection_view.end_color_label.backgroundColor;
+//    [imageView addSubview:Add_subview];
+//    
+//
+//    return;
     //    [self.colorPreviewView setBackgroundColor:color];
     self.selected_color=color;
     if ([color_selection_view.start_color_label isEqual:selected_label]) {

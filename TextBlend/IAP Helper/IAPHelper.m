@@ -150,8 +150,21 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     for (SKPaymentTransaction *transaction in transactions) {
         
         switch (transaction.transactionState) {
-            NSLog(@"%ld",transaction.transactionState);
-
+            case SKPaymentTransactionStatePurchasing:
+                
+                break;
+                
+                
+                
+            case SKPaymentTransactionStateDeferred:
+                
+                // Do not block your UI. Allow the user to continue using your app.
+                
+                //[self transactionDeferred:transaction];
+                
+                break;
+                
+                
             case SKPaymentTransactionStatePurchased:
                 
                 [self completeTransaction:transaction];
