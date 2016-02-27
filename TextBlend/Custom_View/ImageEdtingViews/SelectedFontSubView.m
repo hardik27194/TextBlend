@@ -9,7 +9,7 @@
 #import "SelectedFontSubView.h"
 #import "OHAttributedLabel.h"
 #import "PurchaseFontsViewController.h"
-#define CELL_ROW_HEIGHT 100
+#define CELL_ROW_HEIGHT 130
 
 @implementation SelectedFontSubView
 @synthesize custom_collection_view;
