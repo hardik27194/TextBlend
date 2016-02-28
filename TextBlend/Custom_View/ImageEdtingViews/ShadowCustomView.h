@@ -19,6 +19,9 @@
 -(void)x_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view;
 -(void)y_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view;
 -(void)shadow_tools_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ShadowCustomView *)selected_view;
+-(void)shadow_tools_color_selection:(UIColor *)selected_color onSelectedView:(ShadowCustomView *)selected_view;
+
+
 @end
 
 @interface ShadowCustomView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate>{

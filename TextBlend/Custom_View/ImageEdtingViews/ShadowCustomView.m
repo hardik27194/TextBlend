@@ -457,17 +457,15 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
     if (self.color_palette_array.count>indexPath.row) {
         
-        UIColor *selected_color=[self.color_palette_array objectAtIndex:indexPath.row];
-        
-        if ([self.color_palette_view_delegate respondsToSelector:@selector(setSelectedColor:onSelectedView:onSelectedZticker:)]) {
-            [self.color_palette_view_delegate setSelectedColor:selected_color onSelectedView:self onSelectedZticker:self.selected_sticker_view];
+        UIColor *selected_color = [self.color_palette_array objectAtIndex:indexPath.row];
+        if ([self.shadow_tools_delegate respondsToSelector:@selector(shadow_tools_color_selection:onSelectedView:)]) {
+            [self.shadow_tools_delegate shadow_tools_color_selection:selected_color onSelectedView:self];
         }
         
     }
-     */
+
 }
 
 

@@ -89,6 +89,7 @@ typedef void (^alert_completion_block)(UIAlertAction *alert_action,NSString *but
 +(CGFloat)getMaximumWidth:(CGFloat)min_width forKey:(NSString *)key_value forSelectedArray:(NSArray *)selectedArray withFont:(UIFont *)font withMaxSize:(CGSize)selectedSize;
 
 +(NSString *)getFormattedString:(NSNumber *)selected_amount_num;
++(CGGradientRef)getGradientSpaceRef:(UIColor*)startColor andEndColor:(UIColor*)endColor withPercenatgeValue:(int)percentage;;
 
 
 //+(void)setGridImage:(UIImage*)image forButton:(UIButton *)button ;

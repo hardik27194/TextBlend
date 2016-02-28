@@ -710,4 +710,804 @@
     
 }
 
+
+
++(CGGradientRef)getGradientSpaceRef:(UIColor*)startColor andEndColor:(UIColor*)endColor withPercenatgeValue:(int)percentage{
+    CGGradientRef glossGradient;
+    
+    CGColorSpaceRef rgbColorspace;
+    size_t num_locations = 9;
+    NSLog(@"Percentage %d",percentage);;
+    
+    CGFloat red_color_1;
+    CGFloat green_color_1;
+    CGFloat blue_color_1;
+    
+    CGFloat red_color_2;
+    CGFloat green_color_2;
+    CGFloat blue_color_2;
+    
+    CGFloat red_color_3;
+    CGFloat green_color_3;
+    CGFloat blue_color_3;
+    
+    CGFloat red_color_4;
+    CGFloat green_color_4;
+    CGFloat blue_color_4;
+    
+    CGFloat red_color_5;
+    CGFloat green_color_5;
+    CGFloat blue_color_5;
+    
+    CGFloat red_color_6;
+    CGFloat green_color_6;
+    CGFloat blue_color_6;
+    
+    
+    CGFloat red_color_7;
+    CGFloat green_color_7;
+    CGFloat blue_color_7;
+    
+    
+    CGFloat red_color_8;
+    CGFloat green_color_8;
+    CGFloat blue_color_8;
+    
+    CGFloat red_color_9;
+    CGFloat green_color_9;
+    CGFloat blue_color_9;
+    
+    
+    switch (percentage) {
+        case 0:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(startColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(startColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(startColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(startColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+
+            
+            
+            
+            
+        }
+            break;
+        case 1:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(startColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(startColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(startColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(startColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 2:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(startColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(startColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(startColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(startColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 3:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(startColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(startColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(startColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 4:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(startColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(startColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(endColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 5:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(startColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(endColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(endColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 6:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(endColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(endColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(endColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 7:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(endColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(endColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(endColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 8:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(endColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(endColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(endColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(endColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 9:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(endColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(endColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(endColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(endColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(endColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+        case 10:
+        {
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(endColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(endColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(endColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(endColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(endColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(endColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(endColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(endColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+  
+        default:{
+            const CGFloat *componentsStartColor1= CGColorGetComponents(startColor.CGColor);
+            red_color_1 = componentsStartColor1[0];
+            green_color_1= componentsStartColor1[1];
+            blue_color_1= componentsStartColor1[2];
+            
+            const CGFloat *componentsStartColor2= CGColorGetComponents(startColor.CGColor);
+            red_color_2 = componentsStartColor2[0];
+            green_color_2= componentsStartColor2[1];
+            blue_color_2= componentsStartColor2[2];
+            
+            
+            const CGFloat *componentsStartColor3= CGColorGetComponents(startColor.CGColor);
+            red_color_3 = componentsStartColor3[0];
+            green_color_3= componentsStartColor3[1];
+            blue_color_3= componentsStartColor3[2];
+            
+            
+            const CGFloat *componentsStartColor4= CGColorGetComponents(startColor.CGColor);
+            red_color_4 = componentsStartColor4[0];
+            green_color_4= componentsStartColor4[1];
+            blue_color_4= componentsStartColor4[2];
+            
+            
+            const CGFloat *componentsStartColor5= CGColorGetComponents(startColor.CGColor);
+            red_color_5 = componentsStartColor5[0];
+            green_color_5= componentsStartColor5[1];
+            blue_color_5 = componentsStartColor5[2];
+            
+            
+            const CGFloat *componentsStartColor6= CGColorGetComponents(startColor.CGColor);
+            red_color_6 = componentsStartColor6[0];
+            green_color_6= componentsStartColor6[1];
+            blue_color_6= componentsStartColor6[2];
+            
+            
+            const CGFloat *componentsStartColor7= CGColorGetComponents(startColor.CGColor);
+            red_color_7 = componentsStartColor7[0];
+            green_color_7= componentsStartColor7[1];
+            blue_color_7= componentsStartColor7[2];
+            
+            
+            const CGFloat *componentsStartColor8= CGColorGetComponents(startColor.CGColor);
+            red_color_8 = componentsStartColor8[0];
+            green_color_8= componentsStartColor8[1];
+            blue_color_8= componentsStartColor8[2];
+            
+            
+            const CGFloat *componentsStartColor9= CGColorGetComponents(startColor.CGColor);
+            red_color_9 = componentsStartColor9[0];
+            green_color_9= componentsStartColor9[1];
+            blue_color_9= componentsStartColor9[2];
+            
+            
+            
+            
+            
+        }
+            break;
+    }
+    
+    
+    
+    CGFloat locations[11] = { 0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8, 0.9,1.0 };
+    CGFloat components[44] = {
+        red_color_1, green_color_1, blue_color_1, 1.0,
+        red_color_1, green_color_1, blue_color_1, 1.0,
+        red_color_2, green_color_2, blue_color_2, 1.0,
+        red_color_3, green_color_3, blue_color_3, 1.0,
+        red_color_4, green_color_4, blue_color_4, 1.0,
+        red_color_5, green_color_5, blue_color_5, 1.0,
+        red_color_6, green_color_6, blue_color_6, 1.0,
+        red_color_7, green_color_7, blue_color_7, 1.0,
+        red_color_8, green_color_8, blue_color_8, 1.0,
+        red_color_9, green_color_9, blue_color_9, 1.0,
+        red_color_9, green_color_9, blue_color_9, 1.0,
+
+    
+    };
+    
+    
+    rgbColorspace = CGColorSpaceCreateDeviceRGB();
+    glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, components, locations, num_locations);
+    
+    CGColorSpaceRelease(rgbColorspace);
+
+    return glossGradient;
+    
+}
+
 @end

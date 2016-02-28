@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "478344782.188577"
+            timestampString = "478349728.581414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "725"
-            endingLineNumber = "725"
-            landmarkName = "-contrast_sliderValueChanged:onSelectedView:"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
+            landmarkName = "-exposure_sliderValueChanged:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "478344782.188577"
+            timestampString = "478349728.581414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1367"
-            endingLineNumber = "1367"
+            startingLineNumber = "1361"
+            endingLineNumber = "1361"
             landmarkName = "-handlePinchLabel:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "478344782.188577"
+            timestampString = "478349728.581414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1285"
-            endingLineNumber = "1285"
+            startingLineNumber = "1279"
+            endingLineNumber = "1279"
             landmarkName = "-func_createDefaultImageSticker:"
             landmarkType = "5">
          </BreakpointContent>
@@ -349,8 +349,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "206"
             endingLineNumber = "206"
-            landmarkName = "@implementation ShadowCustomView"
-            landmarkType = "3">
+            landmarkName = "-y_position_slider_value_changed_shadow_view:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -660,7 +660,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/Custom_View/ImageEdtingViews/AddColorView.m"
@@ -744,11 +744,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "478344776.401646"
+            timestampString = "478349728.581414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1595"
-            endingLineNumber = "1595"
+            startingLineNumber = "1589"
+            endingLineNumber = "1589"
             landmarkName = "-checkIfViewHasAlreadyAddedStickerView"
             landmarkType = "5">
             <Locations>
@@ -760,11 +760,11 @@
                   moduleName = "TextBlend"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iteshdutt/Documents/All%20Previous%20Codes/External%20Projects/TextBlend/TextBlend%2026-Dec%202/TextBlend/TextBlend/View_Controller/CustomizeImageViewController.m"
-                  timestampString = "478344783.352166"
+                  timestampString = "478350293.845596"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1595"
-                  endingLineNumber = "1595"
+                  startingLineNumber = "1589"
+                  endingLineNumber = "1589"
                   offsetFromSymbolStart = "62">
                </Location>
                <Location
@@ -775,11 +775,11 @@
                   moduleName = "TextBlend"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iteshdutt/Documents/All%20Previous%20Codes/External%20Projects/TextBlend/TextBlend%2026-Dec%202/TextBlend/TextBlend/View_Controller/CustomizeImageViewController.m"
-                  timestampString = "478344783.352308"
+                  timestampString = "478350293.845721"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1595"
-                  endingLineNumber = "1595"
+                  startingLineNumber = "1589"
+                  endingLineNumber = "1589"
                   offsetFromSymbolStart = "72">
                </Location>
             </Locations>
@@ -792,11 +792,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
-            timestampString = "478344794.302598"
+            timestampString = "478349728.581414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1598"
-            endingLineNumber = "1598"
+            startingLineNumber = "1592"
+            endingLineNumber = "1592"
             landmarkName = "-checkIfViewHasAlreadyAddedStickerView"
             landmarkType = "5">
          </BreakpointContent>
@@ -814,6 +814,54 @@
             startingLineNumber = "226"
             endingLineNumber = "226"
             landmarkName = "-text_edit_button_pressed:onSelectedView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
+            timestampString = "478345623.322875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
+            landmarkName = "-updateViewWithStartColor:andEndColor:withPercenatgeValue:onSelectedView:withCurrentDirection:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextBlend/View_Controller/CustomizeImageViewController.m"
+            timestampString = "478349728.581414"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
+            landmarkName = "-gradientImagewithStartColor:andEndColor:withRotationAngle:withPercenatgeValue:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextBlend/Global/Utility.m"
+            timestampString = "478350293.58031"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "718"
+            endingLineNumber = "718"
+            landmarkName = "+getGradientSpaceRef:andEndColor:withPercenatgeValue:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
