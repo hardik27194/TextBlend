@@ -212,7 +212,6 @@
 }
 #pragma mark - ImageEditingOptionsDelegate -
 
-
 -(void)text_edit_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
     
     if (!add_text_view) {
@@ -222,6 +221,14 @@
     }
     isFirstImageEditingOptionSelected=YES;
     [self.view bringSubviewToFront:add_text_view];
+    
+    BOOL hasAlreadyAddedStickerView = [self checkIfViewHasAlreadyAddedStickerView];
+    if (!hasAlreadyAddedStickerView) {
+        ZDStickerView *v        = [self func_createDefaultTextLabel:NEW_LABEL_DEFAULT_TEXT];
+        [self handleTapToLabels:v.gestureRecognizers.firstObject];
+        v.preventsPositionOutsideSuperview=YES;
+    }
+    
     
 }
 
@@ -1160,7 +1167,7 @@
     
     [strattr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,strattr.length)];
     
-    [strattr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:25.0f] range:NSMakeRange(0,strattr.length)];
+    [strattr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:32.0f] range:NSMakeRange(0,strattr.length)];
     
     
     [strattr modifyParagraphStylesWithBlock:^(OHParagraphStyle *paragraphStyle)
@@ -1582,6 +1589,20 @@
     }
 }
 
+-(BOOL)checkIfViewHasAlreadyAddedStickerView{
+    
+    BOOL hasAlreadyAddedStickerView=NO;
+    for (id object in self.image_edit_main_view.subviews) {
+        
+        if ([object isKindOfClass:[ZDStickerView class]]) {
+            hasAlreadyAddedStickerView = YES;
+            break;
+        }
+    }
+    
+    return hasAlreadyAddedStickerView;
+    
+}
 #pragma mark - Notification Methods -
 
 

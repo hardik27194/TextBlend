@@ -244,7 +244,9 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+//    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+
     selected_image=image;
     [picker dismissViewControllerAnimated:YES completion:^{
         // [self saveInfoDetails:info];
@@ -264,7 +266,7 @@
 -(void)choosePhoto{
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
@@ -278,7 +280,7 @@
 -(void)capturePhoto{
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
