@@ -104,14 +104,21 @@
 
     self.blur_radius_label.textAlignment=NSTextAlignmentLeft;
     self.blur_radius_label.textColor=[UIColor darkGrayColor];
+    
+    [self.blur_radius_slider setMinimumValue:0.0];
+    [self.blur_radius_slider setMaximumValue:4.0];
+    
     [self addSubview:self.blur_radius_label];
     
     
     self.opacity_slider = [[UISlider alloc]initWithFrame:CGRectMake(65, height, SCREEN_WIDTH/2-75, 30)];
     [self.opacity_slider setMaximumTrackTintColor:MIN_COLOR];
     [self.opacity_slider setMaximumTrackTintColor:MAX_COLOR];
+    [self.opacity_slider setMinimumValue:0.0];
+    [self.opacity_slider setMaximumValue:1.0];
     [self.opacity_slider addTarget:self action:@selector(opacity_value_changed:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:self.opacity_slider];
+    
     
     self.blur_radius_slider = [[UISlider alloc]initWithFrame:CGRectMake((SCREEN_WIDTH/2)+65, height, SCREEN_WIDTH/2-75, 30)];
     self.blur_radius_slider.value=0;
@@ -144,8 +151,8 @@
     
     
     self.x_position_slider = [[UISlider alloc]initWithFrame:CGRectMake(65, height, SCREEN_WIDTH/2-75, 30)];
-    self.x_position_slider.minimumValue=0.5;
-    self.x_position_slider.maximumValue = 10;
+    self.x_position_slider.minimumValue=-5.0;
+    self.x_position_slider.maximumValue = 5.0;
     [self.x_position_slider setMaximumTrackTintColor:MIN_COLOR];
     [self.x_position_slider setMaximumTrackTintColor:MAX_COLOR];
     [self.x_position_slider addTarget:self action:@selector(x_position_slider_value_changed_shadow_view:) forControlEvents:UIControlEventValueChanged];
@@ -153,8 +160,8 @@
     
     self.y_position_slider = [[UISlider alloc]initWithFrame:CGRectMake(65+(SCREEN_WIDTH/2), height, SCREEN_WIDTH/2-75, 30)];
     self.y_position_slider.value=0;
-    [self.y_position_slider setMaximumValue:40.0];
-    [self.y_position_slider setMinimumValue:3.0];
+    [self.y_position_slider setMaximumValue:5.0];
+    [self.y_position_slider setMinimumValue:-5.0];
     
     [self.y_position_slider setMaximumTrackTintColor:MIN_COLOR];
     [self.y_position_slider setMaximumTrackTintColor:MAX_COLOR];

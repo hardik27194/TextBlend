@@ -30,7 +30,6 @@
     [super viewDidLoad];
     
 //    [self initializeView];
-    [self initializeAdbannerView];
     
     
     // Do any additional setup after loading the view from its nib.
@@ -58,13 +57,15 @@
     self.scroll_view.delegate=self;
     self.scroll_view.contentSize=CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
     [self.view addSubview:self.scroll_view];
-    [self initializeTopHeaderView];
     [self initializeMainImageView];
     AppDel.mainLabelTag                                    = 499;
     AppDel.gloabalSelectedTag                            = 499;
     [self initailizeImageEditingOptionsView];
     //[self initailizeMessageTextView];
     
+    [self initializeTopHeaderView];
+    [self initializeAdbannerView];
+
     
     
     UIPanGestureRecognizer *panRecognizer1               = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan1:)];
@@ -1098,19 +1099,29 @@
 }
 
 #pragma mark - Shadow Tools Delegate Methods -
--(void)opacity_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
+-(void)opacity_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
+{
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    [sticker.layer setShadowOpacity:slider.value];
+}
+
+-(void)blur_radius_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
+{
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    [sticker.layer setShadowRadius:slider.value];
     
 }
 
--(void)blur_radius_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
-    
+-(void)x_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
+{
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    [sticker.layer setShadowOffset:CGSizeMake(slider.value, selected_view.y_position_slider.value)];
 }
 
--(void)x_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
-    
-}
-
--(void)y_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view{
+-(void)y_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
+{
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    [sticker.layer setShadowOffset:CGSizeMake(selected_view.x_position_slider.value, slider.value)];
 }
 
 -(void)shadow_tools_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ShadowCustomView *)selected_view{
