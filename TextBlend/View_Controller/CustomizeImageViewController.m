@@ -1185,7 +1185,9 @@
 
 }
 -(void)shadow_tools_color_selection:(UIColor *)selected_color onSelectedView:(ShadowCustomView *)selected_view{
-    
+
+    ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    sticker.layer.shadowColor = selected_color.CGColor;
     
     
 }
