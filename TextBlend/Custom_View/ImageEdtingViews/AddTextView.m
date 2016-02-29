@@ -82,11 +82,8 @@
     [self.eraser_button setImage:[UIImage imageNamed:@"add_text_view_eraser.PNG"] forState:UIControlStateNormal];
     [self.eraser_button addTarget:self action:@selector(eraser_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.add_text_scroll_view addSubview:self.eraser_button];
-    
-    
-    
+        
     width_buttons +=SCREEN_WIDTH/3;
-    
     
     self.shadow_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.shadow_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/3, self.frame.size.height/2);
