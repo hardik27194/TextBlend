@@ -7,11 +7,13 @@
 //
 
 #import "MessageTextViewController.h"
+#define DARK_GRAY_COLOR [UIColor colorWithRed:0.1019 green:0.1019 blue:0.1019 alpha:1]
+
 @interface MessageTextViewController ()
 {
     UIView *black_sub_view;
     UIView *selected_color_view;
-    
+    UIView *background_view;
 }
 @end
 
@@ -273,18 +275,29 @@
     if (!black_sub_view) {
         [self addSubview];
         [self addPickerColorView];
-        self.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_HEIGHT-100)];
+        
+        background_view = [[UIView alloc]initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_HEIGHT-100)];
+        background_view.backgroundColor = DARK_GRAY_COLOR;
+        [self.view addSubview:background_view];
+
+        
+        
+        self.colorPreviewView = [DTColorPickerImageView colorPickerWithFrame:CGRectMake(10, (background_view.frame.size.height-200)/2, SCREEN_WIDTH-20, 200)];
+        self.colorPreviewView.layer.cornerRadius=8;
+        self.colorPreviewView.layer.borderColor=[UIColor blackColor].CGColor;
+        self.colorPreviewView.layer.borderWidth=0.7;
+        self.colorPreviewView.clipsToBounds=YES;
         self.colorPreviewView.image=[UIImage imageNamed:@"fontcolor_bar.png"];
         self.colorPreviewView.delegate=self;
-        [self.view addSubview:self.colorPreviewView];
+        [background_view addSubview:self.colorPreviewView];
     }
     
     black_sub_view.hidden=NO;
-    self.colorPreviewView.hidden=NO;
+    background_view.hidden=NO;
     [self.view bringSubviewToFront:black_sub_view];
-    [self.view bringSubviewToFront:self.colorPreviewView];
+    [self.view bringSubviewToFront:background_view];
     [black_sub_view showViewWithAnimation];
-    [self.colorPreviewView showViewWithAnimation];
+    [background_view showViewWithAnimation];
 }
 
 -(IBAction)left_alignment_button_pressed:(UIButton *)sender{
@@ -308,7 +321,7 @@
 
 -(IBAction)back_button_pressed:(UIButton *)sender{
     [black_sub_view setHidden:YES];
-    [self.colorPreviewView setHidden:YES];
+    [background_view setHidden:YES];
     
     selected_color=nil;
     [self.message_text_view becomeFirstResponder];

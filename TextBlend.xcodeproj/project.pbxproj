@@ -73,6 +73,9 @@
 		8B821BE21C44230500DA388F /* ColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE11C44230500DA388F /* ColorPaletteView.m */; };
 		8B821BE51C44241F00DA388F /* ColorPaletteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */; };
 		8B903E501C760C2300E1D873 /* ShadowCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B903E4F1C760C2300E1D873 /* ShadowCustomView.m */; };
+		8B9D41471C8490B300F482C0 /* add_text_view_shadow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9D41461C8490B300F482C0 /* add_text_view_shadow_icon.png */; };
+		8B9D41491C84914B00F482C0 /* font_lock_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9D41481C84914B00F482C0 /* font_lock_icon.png */; };
+		8B9D414B1C84935C00F482C0 /* start_end_color_separator_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9D414A1C84935C00F482C0 /* start_end_color_separator_icon.png */; };
 		8BA69C541C70867F00D2474D /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA69C511C70867F00D2474D /* IAPHelper.m */; };
 		8BA69C5B1C70ABC200D2474D /* TextBlendIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA69C5A1C70ABC200D2474D /* TextBlendIAPHelper.m */; };
 		8BACE8FF1C109F9700CEDFE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BACE8FE1C109F9700CEDFE3 /* main.m */; };
@@ -1060,6 +1063,9 @@
 		8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPaletteCollectionViewCell.m; sourceTree = "<group>"; };
 		8B903E4E1C760C2300E1D873 /* ShadowCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowCustomView.h; sourceTree = "<group>"; };
 		8B903E4F1C760C2300E1D873 /* ShadowCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowCustomView.m; sourceTree = "<group>"; };
+		8B9D41461C8490B300F482C0 /* add_text_view_shadow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_text_view_shadow_icon.png; sourceTree = "<group>"; };
+		8B9D41481C84914B00F482C0 /* font_lock_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font_lock_icon.png; sourceTree = "<group>"; };
+		8B9D414A1C84935C00F482C0 /* start_end_color_separator_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_end_color_separator_icon.png; sourceTree = "<group>"; };
 		8BA69C501C70867F00D2474D /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		8BA69C511C70867F00D2474D /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		8BA69C591C70ABC200D2474D /* TextBlendIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlendIAPHelper.h; sourceTree = "<group>"; };
@@ -2514,6 +2520,7 @@
 		8BBF90681C15E5E7001510FA /* AddTextView */ = {
 			isa = PBXGroup;
 			children = (
+				8B9D41461C8490B300F482C0 /* add_text_view_shadow_icon.png */,
 				8BBF90691C15E5E7001510FA /* add_text_view_3d_rotate.PNG */,
 				8BBF906A1C15E5E7001510FA /* add_text_view_add_text.PNG */,
 				8BBF906B1C15E5E7001510FA /* add_text_view_color.png */,
@@ -2593,6 +2600,8 @@
 		8BC230D51C141B13000BB5CF /* General Images */ = {
 			isa = PBXGroup;
 			children = (
+				8B9D414A1C84935C00F482C0 /* start_end_color_separator_icon.png */,
+				8B9D41481C84914B00F482C0 /* font_lock_icon.png */,
 				8BE7E2B81C31D6E70032E5B5 /* fontcolor_bar.png */,
 				8B26EA811C6B8FD400687050 /* close_button.png */,
 				8BE7E2A91C31CC2A0032E5B5 /* center_aligned_icon.png */,
@@ -3900,6 +3909,7 @@
 				8B26EB061C6BBA8700687050 /* music-fonts@2x.png in Resources */,
 				8BFE1D531C3696FC001450DF /* Arcade Future.otf in Resources */,
 				8BFE1E9B1C3696FC001450DF /* ZOMBIFIED.ttf in Resources */,
+				8B9D41471C8490B300F482C0 /* add_text_view_shadow_icon.png in Resources */,
 				8BFE1F8A1C3696FC001450DF /* VTKS Tattoo Shadow.ttf in Resources */,
 				8BFE1E8E1C3696FC001450DF /* gotharctica.ttf in Resources */,
 				8BFE1F6A1C3696FC001450DF /* Station_232.ttf in Resources */,
@@ -4273,6 +4283,7 @@
 				8BFE1E1B1C3696FC001450DF /* rm_playtime.ttf in Resources */,
 				DB66F3FC1C42656300CC8ABF /* Shape_19.png in Resources */,
 				8BFE1F011C3696FC001450DF /* HeadlinerNo.45 DEMO.ttf in Resources */,
+				8B9D41491C84914B00F482C0 /* font_lock_icon.png in Resources */,
 				8BFE1DE51C3696FC001450DF /* VTCAllSkratchedUpOne.ttf in Resources */,
 				8BFE1DF01C3696FC001450DF /* Christbaumkugeln.ttf in Resources */,
 				8BFE1F081C3696FC001450DF /* News of the World regular.ttf in Resources */,
@@ -4501,6 +4512,7 @@
 				8BFE1F1D1C3696FC001450DF /* Bizon.otf in Resources */,
 				8BFE1D891C3696FC001450DF /* the Citizens.ttf in Resources */,
 				8BFE1E321C3696FC001450DF /* goodfoot.ttf in Resources */,
+				8B9D414B1C84935C00F482C0 /* start_end_color_separator_icon.png in Resources */,
 				8BFE1DEB1C3696FC001450DF /* CalamityJaneNF-Bold.ttf in Resources */,
 				8BC231151C144CEE000BB5CF /* image_cropper_original.png in Resources */,
 				8BFE1F1C1C3696FC001450DF /* BEYNO.ttf in Resources */,

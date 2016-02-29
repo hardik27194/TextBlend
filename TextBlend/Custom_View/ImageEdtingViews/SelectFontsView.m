@@ -117,9 +117,10 @@
         [cell.contentView addSubview:cell.locked_image_view];
         
     }
+    cell.locked_image_view.image = [UIImage imageNamed:@"font_lock_icon.png"];
+
     CGFloat locked_icon_height=20;
     cell.locked_image_view.frame =CGRectMake(0, 0, locked_icon_height, locked_icon_height);
-    cell.locked_image_view.backgroundColor=[UIColor greenColor];
     cell.lbl_font_name.frame=CGRectMake(1, 6, (SCREEN_WIDTH/2)-15, CELL_ROW_HEIGHT-10);
     [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
     
@@ -131,7 +132,7 @@
         
         
         if ([font_selected_dict valueForKey:@"IsAlreadyBought"] && [[font_selected_dict valueForKey:@"IsAlreadyBought"] boolValue]) {
-            cell.locked_image_view.backgroundColor = [UIColor clearColor];
+            cell.locked_image_view.image = nil;
         }
         
         

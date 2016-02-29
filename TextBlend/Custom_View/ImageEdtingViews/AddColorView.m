@@ -383,6 +383,8 @@
     }
     else
         color_selection_view.end_color_label.backgroundColor=color;
+    
+    [color_selection_view updateBufferImageViewColors];
     /*
     if (self.gradent_label.layer.sublayers.count) {
         for (CALayer *layer in self.gradent_label.layer.sublayers) {

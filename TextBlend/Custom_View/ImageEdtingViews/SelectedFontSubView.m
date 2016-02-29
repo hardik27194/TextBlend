@@ -117,15 +117,17 @@
     }
     if (!cell.locked_image_view) {
         cell.locked_image_view = [[UIImageView alloc]init];
-//        cell.lbl_font_name.clipsToBounds=YES;
         [cell.contentView addSubview:cell.locked_image_view];
         
     }
-///    cell.locked_image_view.image
+    CGFloat locked_icon_height=20;
+    cell.locked_image_view.frame =CGRectMake(0, 0, locked_icon_height, locked_icon_height);
+    
     cell.lbl_font_name.frame=CGRectMake(5, 5, (SCREEN_WIDTH/2)-15, CELL_ROW_HEIGHT-10);
     [cell.lbl_font_name setTextAlignment:NSTextAlignmentCenter];
     cell.lbl_font_name.numberOfLines=0;
-    
+    cell.locked_image_view.image = [UIImage imageNamed:@"font_lock_icon.png"];
+
     
     
     if (self.selected_sub_font_array.count>indexPath.row) {

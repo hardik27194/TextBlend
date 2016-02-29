@@ -19,7 +19,10 @@
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 @interface AddColorSelectionView(){
     CGPoint start_point;
-  
+    UIImageView *start_buffer_image_view;
+    UIImageView *end_buffer_image_view;
+    UIImageView *main_separator_image_view;
+
     
 }
 @end
@@ -90,7 +93,7 @@
     
     
     self.center_pan_color_image_view = [[UIImageView alloc]initWithFrame:CGRectMake((view_width-buffer_width)/2, height, buffer_width, self.frame.size.height)];
-    self.center_pan_color_image_view.backgroundColor =[UIColor redColor];
+  //  self.center_pan_color_image_view.image = [UIImage imageNamed:@"start_end_color_separator_icon.png"];// =[UIColor redColor];
     self.center_pan_color_image_view.userInteractionEnabled=YES;
     [self addSubview:self.center_pan_color_image_view];
 
@@ -101,6 +104,30 @@
   //  self.end_color_label.backgroundColor = [self convertColorIntoRGBSpaceColor:self.end_color_label.backgroundColor];
     self.end_color_label.backgroundColor =[UIColor colorWithRed:0.7019 green:0.7019 blue:0.7019 alpha:1]; //[self convertColorIntoRGBSpaceColor:self.start_color_label.backgroundColor];
 
+    if (!start_buffer_image_view) {
+        start_buffer_image_view = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, buffer_width/2, self.center_pan_color_image_view.frame.size.height)];
+        start_buffer_image_view.backgroundColor = self.start_color_label.backgroundColor;
+        [self.center_pan_color_image_view addSubview:start_buffer_image_view];
+        [self sendSubviewToBack:start_buffer_image_view];
+    }
+    if (!end_buffer_image_view) {
+        end_buffer_image_view = [[UIImageView alloc]initWithFrame:CGRectMake(buffer_width/2,0, buffer_width/2, self.center_pan_color_image_view.frame.size.height)];
+        end_buffer_image_view.backgroundColor = self.end_color_label.backgroundColor;
+        [self.center_pan_color_image_view addSubview:end_buffer_image_view];
+        [self sendSubviewToBack:end_buffer_image_view];
+        
+    }
+    
+    if (!main_separator_image_view) {
+        main_separator_image_view = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, buffer_width, self.center_pan_color_image_view.frame.size.height)];
+        main_separator_image_view.image = [UIImage imageNamed:@"start_end_color_separator_icon.png"];// =[UIColor redColor];
+        [self.center_pan_color_image_view addSubview:main_separator_image_view];
+        [self bringSubviewToFront:main_separator_image_view];
+        
+    }
+
+    
+    [self bringSubviewToFront:self.center_pan_color_image_view];
    }
 
 -(UIColor *)convertColorIntoRGBSpaceColor:(UIColor *)selected_color{
@@ -280,6 +307,12 @@
     }
 }
 
+
+-(void)updateBufferImageViewColors{
+    
+    start_buffer_image_view.backgroundColor = self.start_color_label.backgroundColor;
+    end_buffer_image_view.backgroundColor = self.end_color_label.backgroundColor;
+}
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.

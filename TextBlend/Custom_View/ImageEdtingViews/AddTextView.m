@@ -90,7 +90,7 @@
     
     self.shadow_button = [CustomButton buttonWithType:UIButtonTypeCustom];
     self.shadow_button.frame=CGRectMake(width_buttons, 0, SCREEN_WIDTH/3, self.frame.size.height/2);
-    [self.shadow_button setImage:[UIImage imageNamed:@"add_text_view_text_tools.PNG"] forState:UIControlStateNormal];
+    [self.shadow_button setImage:[UIImage imageNamed:@"add_text_view_shadow_icon.png"] forState:UIControlStateNormal];
     [self.shadow_button addTarget:self action:@selector(shadow_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.add_text_scroll_view addSubview:self.shadow_button];
 

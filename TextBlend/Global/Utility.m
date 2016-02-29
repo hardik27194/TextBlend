@@ -757,7 +757,7 @@
     CGFloat green_color_9;
     CGFloat blue_color_9;
     
-    
+    percentage = 10-percentage;
     switch (percentage) {
         case 0:
         {

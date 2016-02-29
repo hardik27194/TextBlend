@@ -34,5 +34,6 @@
 
 @property(nonatomic,strong)UIView *black_view;
 @property(nonatomic,strong)UIButton *done_check_mark_button;
+-(void)updateBufferImageViewColors;
 
 @end
