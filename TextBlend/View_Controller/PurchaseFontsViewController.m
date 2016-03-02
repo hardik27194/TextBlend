@@ -197,6 +197,7 @@
 
         
     }
+    
     UIImage *selected_image=[self getSelectedImage];
     cell.main_image_view.image=selected_image;
     cell.main_image_view.frame=CGRectMake(0, 0, SCREEN_WIDTH, selected_image.size.height);
@@ -211,7 +212,16 @@
     }
     if (!self.buy_button) {
         self.buy_button=[UIButton buttonWithType:UIButtonTypeCustom];
+        if (IS_IPHONE_6P) {
+            self.buy_button.frame=CGRectMake(SCREEN_WIDTH-90, 245, 90, 50);
+        }
+        else if (IS_IPHONE_6)
+            self.buy_button.frame=CGRectMake(SCREEN_WIDTH-80, 185, 80, 50);
+        else if (IS_IPHONE_5)
+            self.buy_button.frame=CGRectMake(SCREEN_WIDTH-80, 185, 80, 50);
+        else
         self.buy_button.frame=CGRectMake(SCREEN_WIDTH-80, 185, 80, 50);
+        
         //self.buy_button.backgroundColor=[UIColor yellowColor];
         [self.buy_button addTarget:self action:@selector(buy_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:self.buy_button];

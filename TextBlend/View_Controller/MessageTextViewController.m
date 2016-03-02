@@ -330,7 +330,7 @@
 }
 -(IBAction)next_button_pressed:(UIButton *)sender{
     [black_sub_view setHidden:YES];
-    [self.colorPreviewView setHidden:YES];
+    [background_view setHidden:YES];
     [self.message_text_view becomeFirstResponder];
     
 }

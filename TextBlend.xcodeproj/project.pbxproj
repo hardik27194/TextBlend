@@ -12,6 +12,7 @@
 		8B025F1E1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F1D1C2F11C4005D2C3B /* ChooseShapeCollectionViewCell.m */; };
 		8B025F211C2F186B005D2C3B /* ChooseOptionCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */; };
 		8B025F241C2F18CE005D2C3B /* ChooseOptionCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */; };
+		8B052AD51C87403200F7BE0C /* ColorPaletteGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B052AD41C87403200F7BE0C /* ColorPaletteGradientView.m */; };
 		8B0AFA2C1C5FBFBD002DFE95 /* AddColorSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */; };
 		8B26EA821C6B8FD400687050 /* close_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B26EA811C6B8FD400687050 /* close_button.png */; };
 		8B26EA851C6B93B900687050 /* PurchaseFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26EA841C6B93B900687050 /* PurchaseFontsViewController.m */; };
@@ -993,6 +994,8 @@
 		8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomView.m; sourceTree = "<group>"; };
 		8B025F221C2F18CE005D2C3B /* ChooseOptionCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionCustomCell.h; sourceTree = "<group>"; };
 		8B025F231C2F18CE005D2C3B /* ChooseOptionCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionCustomCell.m; sourceTree = "<group>"; };
+		8B052AD31C87403200F7BE0C /* ColorPaletteGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteGradientView.h; sourceTree = "<group>"; };
+		8B052AD41C87403200F7BE0C /* ColorPaletteGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPaletteGradientView.m; sourceTree = "<group>"; };
 		8B0AFA2A1C5FBFBD002DFE95 /* AddColorSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddColorSelectionView.h; sourceTree = "<group>"; };
 		8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddColorSelectionView.m; sourceTree = "<group>"; };
 		8B26EA811C6B8FD400687050 /* close_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button.png; sourceTree = "<group>"; };
@@ -2300,6 +2303,8 @@
 				8B025F201C2F186B005D2C3B /* ChooseOptionCustomView.m */,
 				8B821BE01C44230500DA388F /* ColorPaletteView.h */,
 				8B821BE11C44230500DA388F /* ColorPaletteView.m */,
+				8B052AD31C87403200F7BE0C /* ColorPaletteGradientView.h */,
+				8B052AD41C87403200F7BE0C /* ColorPaletteGradientView.m */,
 				8B3691051C663C8500A2F5D0 /* SelectColorPaletteView.h */,
 				8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */,
 			);
@@ -4848,6 +4853,7 @@
 				8BACEA501C10AD1F00CEDFE3 /* OHTouchesGestureRecognizer.m in Sources */,
 				8BACE9021C109F9700CEDFE3 /* AppDelegate.m in Sources */,
 				DB83E17B1C227566008F0B2C /* ZDStickerView.m in Sources */,
+				8B052AD51C87403200F7BE0C /* ColorPaletteGradientView.m in Sources */,
 				DB83E1531C227566008F0B2C /* BCMeshTransformAnimation.m in Sources */,
 				8BBF907D1C15FAB4001510FA /* TextToolsView.m in Sources */,
 				8BE7E2B61C31D50A0032E5B5 /* DTColorPickerImageView.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "AddColorView.h"
 #import "AddColorSelectionView.h"
+#import "ColorPaletteGradientView.h"
 #define text_buffer 50
 #define EDITING_BACKGROUND_COLOR [UIColor colorWithRed:0.7254 green:0.7254 blue:0.7254 alpha:1]
 #define MAX_COLOR [UIColor grayColor]
@@ -17,8 +18,9 @@
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 145
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
-@interface AddColorView (){
-    
+@interface AddColorView ()<ColorPaletteGradientColorViewDelegate,SelectColorPaletteViewDelegate>{
+    ColorPaletteGradientView *color_palette_view;
+    SelectColorPaletteView *select_color_palette_view;
     
 }
 
@@ -57,6 +59,8 @@
         self.backgroundColor=EDITING_BACKGROUND_COLOR;
         [self initializeView];
         [self addToolsView];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addSelectColorView) name:@"ADD_SELECTION_COLOR_NOTIFICATION" object:nil];
+
         //        self.gradent_label.text = @"Hello";
         //
         //        self.gradent_label.textColor = [UIColor colorWithPatternImage:[self gradientImage]];
@@ -109,8 +113,15 @@
 }
 
 -(void)addToolsView{
+    if (!color_palette_view) {
+        color_palette_view=[[ColorPaletteGradientView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        color_palette_view.color_palette_view_delegate=self;
+        color_palette_view.selected_sticker_view=self.selected_sticker_view;
+        
+        [self addSubview:color_palette_view];
+    }
     
-    int height=35;
+    int height=self.frame.size.height-30-42;
     
     
 //    self.gradent_label = [[UILabel alloc]initWithFrame:CGRectMake(0, height, SCREEN_WIDTH/2, 50)];
@@ -140,7 +151,7 @@
     
     height+=50;
     
-    self.direction_slider = [[UISlider alloc]initWithFrame:CGRectMake(10, height, SCREEN_WIDTH-20, 30)];
+    self.direction_slider = [[UISlider alloc]initWithFrame:CGRectMake(10, self.frame.size.height-25, SCREEN_WIDTH-20, 20)];
     [self.direction_slider setMaximumTrackTintColor:MIN_COLOR];
     [self.direction_slider setMaximumTrackTintColor:MAX_COLOR];
     [self.direction_slider addTarget:self action:@selector(direction_value_changed:) forControlEvents:UIControlEventValueChanged];
@@ -479,6 +490,58 @@
     
     return  gradientImage;
 }
+
+
+#pragma mark -Add Color Palette Gradient View Delegate Methods -
+-(void)addSelectColorView
+{
+    
+    if (!select_color_palette_view) {
+        select_color_palette_view=[[SelectColorPaletteView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
+        select_color_palette_view.select_color_palette_delegate = self;
+        select_color_palette_view.selected_sticker_view=self.selected_sticker_view;
+        [self addSubview:select_color_palette_view];
+    }
+    [self bringSubviewToFront:select_color_palette_view];
+}
+
+
+
+#pragma mark - Select Color Palette View Delegate Methods -
+
+-(void)setSelectedColorFromSelectColorPaletteView:(UIColor*)color onSelectedView:(SelectColorPaletteView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+    
+    NSLog(@"%@",sticker_view);
+    
+    if ([self.add_color_view_delegate respondsToSelector:@selector(add_color_set_selected_single_text_color:on_sticker_view:onSelectedView:)]) {
+        [self.add_color_view_delegate add_color_set_selected_single_text_color:color on_sticker_view:self.selected_sticker_view onSelectedView:self];
+    }
+    
+}
+
+
+-(void)select_color_palette_view_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SelectColorPaletteView *)selected_view{
+    
+    [select_color_palette_view removeFromSuperview];
+    select_color_palette_view=nil;
+    
+//    if ([self.color_palette_view_delegate respondsToSelector:@selector(color_palette_view_done_check_mark_button_pressed:onSelectedView:)]) {
+//        [self.color_palette_view_delegate color_palette_view_done_check_mark_button_pressed:sender onSelectedView:self];
+//        
+//    }
+    
+}
+
+-(void)setSelectedColorFromGradientView:(UIColor*)color onSelectedView:(ColorPaletteGradientView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+    NSLog(@"%@",sticker_view);
+    
+    if ([self.add_color_view_delegate respondsToSelector:@selector(add_color_set_selected_single_text_color:on_sticker_view:onSelectedView:)]) {
+        [self.add_color_view_delegate add_color_set_selected_single_text_color:color on_sticker_view:self.selected_sticker_view onSelectedView:self];
+    }
+    
+
+}
+
 
 /*
  // Only override drawRect: if you perform custom drawing.

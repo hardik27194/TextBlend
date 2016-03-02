@@ -10,6 +10,7 @@
 #import "DTColorPickerImageView.h"
 @class AddColorView;
 @class AddColorSelectionView;
+@class  ColorPaletteGradientView;
 @protocol AddColorViewDelegate <NSObject>
 
 @optional
@@ -18,6 +19,7 @@
 //-(void)select_font_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SelectFontsView *)selected_view;
 -(void)updateViewWithStartColor:(UIColor *)startColor andEndColor:(UIColor *)endColor withPercenatgeValue:(CGFloat)percentage onSelectedView:(AddColorView *)selected_view withCurrentDirection:(CGFloat)directionValue;
 -(void)add_color_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(AddColorView *)selected_view;
+-(void)add_color_set_selected_single_text_color:(UIColor *)color on_sticker_view:(ZDStickerView *)sticker_view onSelectedView:(AddColorView *)selected_view;
 
 @end
 
@@ -41,8 +43,8 @@
 @property(nonatomic,strong)AddColorSelectionView *color_selection_view;
 
 -(void)updateGradientColors;
--(UIColor *)setGradientCOlor;
--(void)setText;
+//-(UIColor *)setGradientCOlor;
+//-(void)setText;
 -(void)initializeWithDefaultValues;
 
 @end

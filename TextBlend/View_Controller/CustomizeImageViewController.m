@@ -528,7 +528,51 @@
     }
     
 }
+-(void)add_color_set_selected_single_text_color:(UIColor *)color on_sticker_view:(ZDStickerView *)sticker_view onSelectedView:(AddColorView *)selected_view{
+    
+    if (!sticker_view) {
+        return;
+    }
+    
+    ZDStickerView *sticker=sticker_view;
+    OHAttributedLabel *label=(OHAttributedLabel *)[self.view viewWithTag:sticker.tag/5000];
+    
+    __block NSMutableDictionary *attributes_dict;
+    [label.attributedText enumerateAttributesInRange:NSMakeRange(0, [label.attributedText.string length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop)
+     {
+         //Do something here
+         //NSLog(@"%@",attributes);
+         //              NSForegroundColorAttributeName : color
+         attributes_dict = [attributes mutableCopy];
+         [attributes_dict setValue:color forKey:NSForegroundColorAttributeName];
 
+         
+     }];
+
+    
+       
+    
+    for(UIView *v in self.image_edit_main_view.subviews){
+        if([v isKindOfClass:[ZDStickerView class]]){
+            ZDStickerView *sticker                               = (ZDStickerView*)v;
+            if(sticker.tag == AppDel.gloabalSelectedTag*5000){
+                [sticker showEditingHandles];
+            }else{
+                [sticker hideEditingHandles];
+            }
+        }
+    }
+    sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
+                                                                 sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
+    [sticker setNeedsDisplay];
+    
+    
+    [sticker setNeedsDisplay];
+    [self.image_edit_main_view setNeedsDisplay];
+    
+    
+}
 
 - (UIImage *)gradientImagewithStartColor:(UIColor*)startColor andEndColor:(UIColor*)endColor withRotationAngle:(CGFloat)rotationAngle withPercenatgeValue:(CGFloat)percentage
 {
