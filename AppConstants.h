@@ -13,8 +13,6 @@
 #define NET_MSG               @"No Internet Connection"
 #define AppDel                ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
-#warning TODO: Prevent exclused the iPad code. The app currently not suppotted iPad.
-//#define isPad                 (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define isPad                 NO
 
 #define SharedObj             [HMSharedClass sharedInstance]
