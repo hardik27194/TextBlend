@@ -10,6 +10,7 @@
 #import <StoreKit/StoreKit.h>
 @interface PurchaseFontsViewController : UIViewController<UITableViewDataSource,PagingDelegate,CustomizeImageHeaderButtonsDelegate>
 {
+    BOOL isTransactionSuccessful;
     
 }
 @property(nonatomic,strong)CustomizeImageTopHeaderView *top_header_view;

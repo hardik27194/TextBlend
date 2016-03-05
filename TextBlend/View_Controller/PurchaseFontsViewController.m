@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updatePurchaseItem:) name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(purchaseSuccessfulnotification:) name:UPDATE_IN_APP_PURCHASE_NOTIFICATION object:nil];
+    
 //    [self initializeTopHeaderView];
 //    [self initializeView];
     // Do any additional setup after loading the view.
@@ -302,7 +304,11 @@
 }
 
 -(IBAction)back_button_pressed:(UIButton *)sender {
-    [[NSNotificationCenter defaultCenter]postNotificationName:SELECT_INITIAL_FONT_NOTIFICATION object:nil];
+    
+    if (!isTransactionSuccessful) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:SELECT_INITIAL_FONT_NOTIFICATION object:nil];
+
+    }
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -328,7 +334,10 @@
     }completion:^(BOOL finished){ }];
     
 }
-
+-(void)purchaseSuccessfulnotification:(NSNotification *)notification{
+    
+    isTransactionSuccessful = YES;
+}
 
 -(void)updatePurchaseItem:(NSNotification *)notification{
     
@@ -352,6 +361,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 /*
