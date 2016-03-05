@@ -32,6 +32,28 @@
 }
 
 
+-(void)initializeWithDefaultValues{
+    if (!self.selected_sticker_view) {
+        return;
+    }
+    
+    if (self.selected_sticker_view.shadow_opacity_slider_value) {
+        self.opacity_slider.value=self.selected_sticker_view.shadow_opacity_slider_value;
+    }
+    
+    if (self.selected_sticker_view.shadow_blur_slider_value) {
+        self.blur_radius_slider.value=self.selected_sticker_view.shadow_blur_slider_value;
+    }
+    
+    
+    if (self.selected_sticker_view.shadow_x_position_slider_value) {
+        self.x_position_slider.value=self.selected_sticker_view.shadow_x_position_slider_value;
+    }
+    if (self.selected_sticker_view.shadow_y_position_slider_value) {
+        self.y_position_slider.value=self.selected_sticker_view.shadow_y_position_slider_value;
+    }
+    
+}
 -(void)initializeView{
     self.black_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
     self.black_view.backgroundColor=[UIColor blackColor];
@@ -51,41 +73,6 @@
     
 }
 
--(void)initializeWithDefaultValues{
-    if (!self.selected_sticker_view) {
-        return;
-    }
-   
-    /*
-    BOOL shouldUpdate=NO;
-    OHAttributedLabel *label =(OHAttributedLabel *) self.selected_sticker_view.contentView1;
-    if (self.text_tool_opacity_slider_value) {
-        self.opacity_slider.value=label.text_tool_opacity_slider_value;
-        shouldUpdate=YES;
-    }
-    if (label.text_tool_blur_radius_slider_value) {
-        self.blur_radius_slider.value=label.text_tool_blur_radius_slider_value;
-        shouldUpdate=YES;
-        
-    }
-    
-    
-    if (label.text_tool_x_position_slider_value) {
-        self.x_position_slider.value=label.text_tool_x_position_slider_value;
-        shouldUpdate=YES;
-        
-    }
-    
-    if (label.text_tool_y_position_slider_value) {
-        self.y_position_slider.value=label.text_tool_y_position_slider_value;
-        shouldUpdate=YES;
-        
-    }
-    //    if (shouldUpdate) {
-    //        [self updateGradientColors];
-    //    }
-    */
-}
 -(void)addToolsView{
     
     int height=self.black_view.frame.size.height+5;

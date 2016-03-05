@@ -18,6 +18,7 @@
 #define HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW 145
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
+
 @interface AddColorView ()<ColorPaletteGradientColorViewDelegate,SelectColorPaletteViewDelegate>{
     ColorPaletteGradientView *color_palette_view;
     SelectColorPaletteView *select_color_palette_view;
@@ -114,7 +115,7 @@
 
 -(void)addToolsView{
     if (!color_palette_view) {
-        color_palette_view=[[ColorPaletteGradientView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        color_palette_view=[[ColorPaletteGradientView alloc]initWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, 35)];
         color_palette_view.color_palette_view_delegate=self;
         color_palette_view.selected_sticker_view=self.selected_sticker_view;
         
@@ -525,10 +526,10 @@
     [select_color_palette_view removeFromSuperview];
     select_color_palette_view=nil;
     
-//    if ([self.color_palette_view_delegate respondsToSelector:@selector(color_palette_view_done_check_mark_button_pressed:onSelectedView:)]) {
-//        [self.color_palette_view_delegate color_palette_view_done_check_mark_button_pressed:sender onSelectedView:self];
-//        
-//    }
+    if ([self.add_color_view_delegate respondsToSelector:@selector(add_color_done_check_mark_button_pressed:onSelectedView:)]) {
+        [self.add_color_view_delegate add_color_done_check_mark_button_pressed:sender onSelectedView:self];
+        
+    }
     
 }
 

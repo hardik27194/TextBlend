@@ -42,7 +42,7 @@
 @synthesize preventsCustomButton;
 @synthesize minWidth, minHeight;
 @synthesize rotate_3d_x_coordinate_slider_value,rotate_3d_y_coordinate_slider_value,rotate_3d_z_coordinate_slider_value;
-
+@synthesize shadow_opacity_slider_value,shadow_blur_slider_value,shadow_x_position_slider_value,shadow_y_position_slider_value;
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

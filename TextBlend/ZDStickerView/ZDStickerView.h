@@ -42,6 +42,11 @@ typedef enum {
 @property(nonatomic, assign) CGFloat rotate_3d_x_coordinate_slider_value;
 @property(nonatomic, assign) CGFloat rotate_3d_y_coordinate_slider_value;
 @property(nonatomic, assign) CGFloat rotate_3d_z_coordinate_slider_value;
+//Shadow slider values
+@property(nonatomic, assign) CGFloat shadow_opacity_slider_value;
+@property(nonatomic, assign) CGFloat shadow_blur_slider_value;
+@property(nonatomic, assign) CGFloat shadow_x_position_slider_value;
+@property(nonatomic, assign) CGFloat shadow_y_position_slider_value;
 
 - (void)hideDelHandle;
 - (void)showDelHandle;

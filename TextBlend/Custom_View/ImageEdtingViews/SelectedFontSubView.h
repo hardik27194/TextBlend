@@ -24,6 +24,7 @@
 
 @interface SelectedFontSubView : UIView<PagingCollectionDelegate,UICollectionViewDataSource,UICollectionViewDelegate>{
     UIFont *selected_font;
+    BOOL isAnyFontSeleceted;
 }
 @property(nonatomic,strong)PagingCollectionView *custom_collection_view;
 @property(nonatomic,strong)id <SelectSubFontsViewDelegate> select_sub_font_view_delegate;
@@ -33,7 +34,7 @@
 @property(nonatomic,strong)NSMutableArray *selected_sub_font_array;
 @property(nonatomic,strong)ZDStickerView *selected_sticker_view;
 @property(nonatomic,strong)NSString *selected_font_class_string;
-
+@property(nonatomic,strong)UIFont *initial_selected_font;
 
 @property(nonatomic,strong)UIButton *done_check_mark_button;
 -(void)initializeArray;

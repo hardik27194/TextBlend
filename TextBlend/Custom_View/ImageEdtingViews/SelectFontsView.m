@@ -14,6 +14,7 @@
 @synthesize custom_collection_view;
 @synthesize fonts_array;
 @synthesize black_view,done_check_mark_button,selected_sticker_view;
+@synthesize initial_selected_font;
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){

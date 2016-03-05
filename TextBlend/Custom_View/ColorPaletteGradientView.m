@@ -9,7 +9,7 @@
 #import "ColorPaletteGradientView.h"
 #import "ColorPaletteCollectionViewCell.h"
 #import "Colours.h"
-#define WIDTH_OF_COLOR 40
+#define WIDTH_OF_COLOR 35
 
 
 @implementation ColorPaletteGradientView

@@ -16,7 +16,10 @@
 #define CENTRE_FRAME CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT-100-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 #define BOTTOM_FRAME CGRectMake(0, SCREEN_HEIGHT-HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW-50, SCREEN_WIDTH +(2*SCREEN_WIDTH)/3, HEIGHT_OF_IMAGE_EDITNG_TOOL_VIEW)
 @interface CustomizeImageViewController ()<UIScrollViewDelegate>
-
+{
+    UIFont *initial_selected_font_for_purchase;
+    
+}
 @property (strong, nonatomic) OHAttributedLabel *lblAdd;
 @end
 
@@ -28,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeToIntitalFontAfterPurchaseFailNotification:) name:SELECT_INITIAL_FONT_NOTIFICATION object:nil];
     
 //    [self initializeView];
     
@@ -314,9 +318,23 @@
         select_fonts_view=[[SelectFontsView alloc]initWithFrame:BOTTOM_FRAME];
         select_fonts_view.select_font_view_delegate=self;
         select_fonts_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+        
+        
         [self.view addSubview:select_fonts_view];
     }
+    OHAttributedLabel *selectedLabel = (OHAttributedLabel*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag];
     
+    NSAttributedString *str = selectedLabel.attributedText;
+    
+    [str enumerateAttributesInRange:NSMakeRange(0, [str length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop)
+     {
+         //Do something here
+         UIFont *oldfont = [attributes objectForKey:NSFontAttributeName];
+         initial_selected_font_for_purchase=oldfont;
+         
+     }];
+
     [self.view bringSubviewToFront:select_fonts_view];
     
 }
@@ -385,7 +403,8 @@
         shadow_custom_view=[[ShadowCustomView alloc]initWithFrame:BOTTOM_FRAME];
         shadow_custom_view.shadow_tools_delegate=self;
         shadow_custom_view.selected_sticker_view=[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
-        
+        [shadow_custom_view initializeWithDefaultValues];
+
         [self.view addSubview:shadow_custom_view];
     }
     [self.view bringSubviewToFront:shadow_custom_view];
@@ -396,29 +415,11 @@
 
 -(void)setSelectedColor:(UIColor*)color onSelectedView:(ColorPaletteView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
 
-    OHAttributedLabel *selected_label=   (OHAttributedLabel*)sticker_view.contentView1;
-
-    NSMutableAttributedString *res = [selected_label.attributedText mutableCopy];
-    
-    [res beginEditing];
-    __block BOOL found = NO;
-    [res enumerateAttribute:NSForegroundColorAttributeName inRange:NSMakeRange(0, res.length) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
-        if (value) {
-//            UIColor *oldColor = (UIColor *)value;
-//            UIColor *newColor = color;
-            [res removeAttribute:NSForegroundColorAttributeName range:range];
-            [res addAttribute:NSForegroundColorAttributeName value:color range:range];
-            found = YES;
-        }
-    }];
-    if (!found) {
-        // No font was found - do something else?
+    if (!sticker_view) {
+        return;
     }
-    [res endEditing];
-    selected_label.attributedText = res;
-    [selected_label setNeedsDisplay];
-    [sticker_view setNeedsDisplay];
     
+    [self setSelectedOnStickerView:sticker_view withColor:color];
 }
 
 -(void)color_palette_view_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ColorPaletteView *)selected_view{
@@ -528,49 +529,15 @@
     }
     
 }
+
+
 -(void)add_color_set_selected_single_text_color:(UIColor *)color on_sticker_view:(ZDStickerView *)sticker_view onSelectedView:(AddColorView *)selected_view{
     
     if (!sticker_view) {
         return;
     }
     
-    ZDStickerView *sticker=sticker_view;
-    OHAttributedLabel *label=(OHAttributedLabel *)[self.view viewWithTag:sticker.tag/5000];
-    
-    __block NSMutableDictionary *attributes_dict;
-    [label.attributedText enumerateAttributesInRange:NSMakeRange(0, [label.attributedText.string length]) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:
-     ^(NSDictionary *attributes, NSRange range, BOOL *stop)
-     {
-         //Do something here
-         //NSLog(@"%@",attributes);
-         //              NSForegroundColorAttributeName : color
-         attributes_dict = [attributes mutableCopy];
-         [attributes_dict setValue:color forKey:NSForegroundColorAttributeName];
-
-         
-     }];
-
-    
-       
-    
-    for(UIView *v in self.image_edit_main_view.subviews){
-        if([v isKindOfClass:[ZDStickerView class]]){
-            ZDStickerView *sticker                               = (ZDStickerView*)v;
-            if(sticker.tag == AppDel.gloabalSelectedTag*5000){
-                [sticker showEditingHandles];
-            }else{
-                [sticker hideEditingHandles];
-            }
-        }
-    }
-    sticker.deltaAngle                                   = atan2(sticker.frame.origin.y+sticker.bounds.size.height - sticker.center.y,
-                                                                 sticker.frame.origin.x+sticker.bounds.size.width - sticker.center.x);
-    [sticker setNeedsDisplay];
-    
-    
-    [sticker setNeedsDisplay];
-    [self.image_edit_main_view setNeedsDisplay];
-    
+    [self setSelectedOnStickerView:sticker_view withColor:color];
     
 }
 
@@ -670,6 +637,7 @@
 
 
 -(void)select_font_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SelectFontsView *)selected_view{
+    initial_selected_font_for_purchase=nil;
     if (select_fonts_view) {
         [select_fonts_view removeFromSuperview];
         select_fonts_view=  nil;
@@ -1198,13 +1166,24 @@
 #pragma mark - Shadow Tools Delegate Methods -
 -(void)opacity_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
 {
+    
     ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    if (!sticker) {
+        return;
+    }
+    sticker.shadow_opacity_slider_value=slider.value;
     [sticker.layer setShadowOpacity:slider.value];
+
+
 }
 
 -(void)blur_radius_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
 {
     ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    if (!sticker) {
+        return;
+    }
+    sticker.shadow_blur_slider_value=slider.value;
     [sticker.layer setShadowRadius:slider.value];
     
 }
@@ -1212,12 +1191,20 @@
 -(void)x_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
 {
     ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    if (!sticker) {
+        return;
+    }
+    sticker.shadow_x_position_slider_value=slider.value;
     [sticker.layer setShadowOffset:CGSizeMake(slider.value, selected_view.y_position_slider.value)];
 }
 
 -(void)y_position_slider_value_changed_shadow_view:(UISlider *)slider onSelectedView:(ShadowCustomView *)selected_view
 {
     ZDStickerView *sticker = (ZDStickerView*)[self.image_edit_main_view  viewWithTag:AppDel.gloabalSelectedTag*5000];
+    if (!sticker) {
+        return;
+    }
+    sticker.shadow_y_position_slider_value=slider.value;
     [sticker.layer setShadowOffset:CGSizeMake(selected_view.x_position_slider.value, slider.value)];
 }
 
@@ -1703,6 +1690,35 @@
     }
 }
 
+-(void)setSelectedOnStickerView:(ZDStickerView *)sticker_view withColor:(UIColor*)color{
+    OHAttributedLabel *selected_label=   (OHAttributedLabel*)sticker_view.contentView1;
+    
+    NSMutableAttributedString *res = [selected_label.attributedText mutableCopy];
+    
+    [res beginEditing];
+    __block BOOL found = NO;
+    [res enumerateAttribute:NSForegroundColorAttributeName inRange:NSMakeRange(0, res.length) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
+        if (value) {
+            //            UIColor *oldColor = (UIColor *)value;
+            //            UIColor *newColor = color;
+            [res removeAttribute:NSForegroundColorAttributeName range:range];
+            [res addAttribute:NSForegroundColorAttributeName value:color range:range];
+            found = YES;
+        }
+    }];
+    if (!found) {
+        // No font was found - do something else?
+    }
+    [res endEditing];
+    selected_label.attributedText = res;
+    [selected_label setNeedsDisplay];
+    [sticker_view setNeedsDisplay];
+    
+}
+
+
+
+
 -(BOOL)checkIfViewHasAlreadyAddedStickerView{
     
     BOOL hasAlreadyAddedStickerView=NO;
@@ -1836,6 +1852,19 @@
     selected_label.attributedText = res;
     [selected_label setNeedsDisplay];
     [selected_sticker_view setNeedsDisplay];
+    
+}
+-(void)changeToIntitalFontAfterPurchaseFailNotification:(NSNotification *)notificaton{
+    
+    if (!initial_selected_font_for_purchase) {
+        return;
+    }
+    ZDStickerView *sticker                          = (ZDStickerView*)[self.image_edit_main_view viewWithTag:AppDel.gloabalSelectedTag*5000];
+    if (!sticker) {
+        return;
+    }
+    
+    [self setFont:initial_selected_font_for_purchase onSelectedView:sticker];
     
 }
 

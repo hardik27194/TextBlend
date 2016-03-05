@@ -36,5 +36,6 @@
 @property(nonatomic,strong)UIView *black_view;
 @property(nonatomic,strong)UIButton *done_check_mark_button;
 @property(nonatomic,strong)ZDStickerView *selected_sticker_view;
+@property(nonatomic,strong)UIFont *initial_selected_font;
 
 @end

@@ -18,6 +18,7 @@
 @synthesize select_sub_font_view_delegate;
 @synthesize selected_sticker_view;
 @synthesize selected_font_class_string;
+@synthesize initial_selected_font;
 
 
 -(id)initWithFrame:(CGRect)frame{
@@ -188,6 +189,7 @@
         if ([self.select_sub_font_view_delegate respondsToSelector:@selector(setSelectedFont:onSelectedView:)]) {
 //            NSLog(@"%@",[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:18]);
             selected_font=[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:14];
+            isAnyFontSeleceted=YES;
            // UIFont *get_font=[self getSelectedFont];;
             [self.select_sub_font_view_delegate setSelectedFont:[UIFont fontWithName:[font_selected_dict objectForKey:@"Font"] size:14] onSelectedView:self];
             
@@ -300,11 +302,19 @@
 
 
 -(IBAction)done_check_mark_button_pressed:(UIButton *)sender{
+   
+    if (!isAnyFontSeleceted) {
+        if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {
+            [self.select_sub_font_view_delegate select_sub_font_done_check_mark_button_pressed:sender onSelectedView:self];
+            return;
+        }
+    }
+
     NSString *selected_product_identifier=[self selectedProductIdentifier];
     if (!selected_product_identifier) {
         if ([self.select_sub_font_view_delegate respondsToSelector:@selector(select_sub_font_done_check_mark_button_pressed:onSelectedView:)]) {
             [self.select_sub_font_view_delegate select_sub_font_done_check_mark_button_pressed:sender onSelectedView:self];
-            
+            return;
         }
     
     }

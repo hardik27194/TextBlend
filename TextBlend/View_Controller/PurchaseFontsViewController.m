@@ -302,6 +302,8 @@
 }
 
 -(IBAction)back_button_pressed:(UIButton *)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:SELECT_INITIAL_FONT_NOTIFICATION object:nil];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
