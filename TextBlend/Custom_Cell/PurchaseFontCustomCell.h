@@ -15,6 +15,8 @@
 @property(nonatomic,strong)UILabel *name_label;
 @property(nonatomic,strong)UILabel *fonts_label;
 @property(nonatomic,strong)UIButton *font_amount_button;
+@property(nonatomic,strong)UIButton *scroll_to_top_button;
+
 @property(nonatomic,strong)UIImageView *main_image_view;
 
 @end

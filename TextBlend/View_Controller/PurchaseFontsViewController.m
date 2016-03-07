@@ -90,17 +90,26 @@
     
 }
 
--(UIImage *)getSelectedImage{
+-(UIImage *)getSelectedImageForIndexPath:(NSIndexPath *)indexPath{
     UIImage *selected_image=nil;
     NSString* plistPath = [kAppDelegate getPlistDocumentDirectoryPath];
     NSArray *fonts_array = [[NSArray arrayWithContentsOfFile:plistPath] mutableCopy];
     NSPredicate *predicate=[NSPredicate predicateWithFormat:@"FontDisplayName == %@",self.selected_font_class_string];
     NSArray *filteredArray=[fonts_array filteredArrayUsingPredicate:predicate];
     if (filteredArray.count) {
+        
         NSDictionary *selected_font_dict=[filteredArray firstObject];
-        selected_image = [UIImage imageNamed:[selected_font_dict valueForKey:@"FontImageName"]];
+        if (indexPath.row) {
+            selected_image = [UIImage imageNamed:[selected_font_dict valueForKey:@"FontImageName"]];
+
+        }
+        else
+        selected_image = [UIImage imageNamed:[selected_font_dict valueForKey:@"FontHeaderImageName"]];
         
     }
+    selected_image = [Utility resizeImage:selected_image withWidth:SCREEN_WIDTH withHeight:(SCREEN_WIDTH*selected_image.size.height)/selected_image.size.width ];
+    
+    
     return selected_image;
 
 }
@@ -131,8 +140,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([self getSelectedImage]) {
-        return 1;
+    if ([self getSelectedImageForIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]) {
+        return 2;
     }
     return 0;//self.like_list_array.count;//+10;
     
@@ -196,22 +205,58 @@
         cell.font_amount_button.layer.borderColor = [UIColor greenColor].CGColor;
         cell.font_amount_button.layer.borderWidth =0.8;
         cell.font_amount_button.layer.cornerRadius = 4;
+        [cell.font_amount_button addTarget:self action:@selector(buy_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.font_amount_button setTitle:@"$ 1.99" forState:UIControlStateNormal];
+        cell.font_amount_button.titleLabel.font = [UIFont systemFontOfSize:12];
+        [cell.contentView addSubview:cell.font_amount_button];
 
         
     }
-    
-    UIImage *selected_image=[self getSelectedImage];
+    if (!cell.scroll_to_top_button) {
+        cell.scroll_to_top_button=[UIButton buttonWithType:UIButtonTypeCustom];
+        cell.scroll_to_top_button.frame=CGRectZero;
+        [cell.scroll_to_top_button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [cell.scroll_to_top_button setTitle:@"Top" forState:UIControlStateNormal];
+        [cell.scroll_to_top_button addTarget:self action:@selector(top_scroll_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [cell.contentView addSubview:cell.scroll_to_top_button];
+        
+        
+    }
+    UIImage *selected_image=[self getSelectedImageForIndexPath:indexPath];
     cell.main_image_view.image=selected_image;
     cell.main_image_view.frame=CGRectMake(0, 0, SCREEN_WIDTH, selected_image.size.height);
+    
     if (!self.back_button) {
         
         self.back_button=[UIButton buttonWithType:UIButtonTypeCustom];
-        self.back_button.frame=CGRectMake(0, 0, 60, 40);
-       // self.back_button.backgroundColor=[UIColor redColor];
+        self.back_button.frame=CGRectMake(15,13, 32, 24);
+        self.back_button.showsTouchWhenHighlighted=YES;
+        [self.back_button setImage:[UIImage imageNamed:@"back_button.png"] forState:UIControlStateNormal];
         [self.back_button addTarget:self action:@selector(back_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.contentView addSubview:self.back_button];
+        [self.view addSubview:self.back_button];
         
     }
+    [self.view bringSubviewToFront:self.back_button];
+    
+    if (!indexPath.row) {
+        cell.scroll_to_top_button.frame = CGRectZero;
+        if (IS_IPHONE_6P) {
+            cell.font_amount_button.frame=CGRectMake(SCREEN_WIDTH-90, selected_image.size.height-162, 70, 30);
+  
+        }
+        else if (IS_IPHONE_6){
+            cell.font_amount_button.frame=CGRectMake(SCREEN_WIDTH-90, selected_image.size.height-147, 70, 30);
+
+        }
+        else
+        cell.font_amount_button.frame=CGRectMake(SCREEN_WIDTH-90, selected_image.size.height-130, 70, 30);
+    }
+    else{
+        cell.scroll_to_top_button.frame = CGRectMake(0, selected_image.size.height-80, SCREEN_WIDTH, 80);
+        cell.font_amount_button.frame=CGRectZero;
+    }
+    /*
     if (!self.buy_button) {
         self.buy_button=[UIButton buttonWithType:UIButtonTypeCustom];
         if (IS_IPHONE_6P) {
@@ -228,13 +273,14 @@
         [self.buy_button addTarget:self action:@selector(buy_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:self.buy_button];
     }
-    if (!self.top_scroll_button) {
-        self.top_scroll_button=[UIButton buttonWithType:UIButtonTypeCustom];
-        self.top_scroll_button.frame=CGRectMake(0, selected_image.size.height-60, SCREEN_WIDTH, 60);
-        //self.top_scroll_button.backgroundColor=[UIColor brownColor];
-        [self.top_scroll_button addTarget:self action:@selector(top_scroll_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.contentView addSubview:self.top_scroll_button];
-    }
+     if (!self.top_scroll_button) {
+     self.top_scroll_button=[UIButton buttonWithType:UIButtonTypeCustom];
+     self.top_scroll_button.frame=CGRectMake(0, selected_image.size.height-60, SCREEN_WIDTH, 60);
+     //self.top_scroll_button.backgroundColor=[UIColor brownColor];
+     [self.top_scroll_button addTarget:self action:@selector(top_scroll_button_pressed:) forControlEvents:UIControlEventTouchUpInside];
+     [cell.contentView addSubview:self.top_scroll_button];
+     }
+     */
     
     
     
@@ -250,7 +296,9 @@
 // Variable height support
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIImage *selected_image=[self getSelectedImage];
+    UIImage *selected_image=[self getSelectedImageForIndexPath:indexPath];
+    selected_image = [Utility resizeImage:selected_image withWidth:SCREEN_WIDTH withHeight:(SCREEN_WIDTH*selected_image.size.height)/selected_image.size.width ];
+
     return  selected_image.size.height;
     /*
     switch (indexPath.row) {
@@ -302,6 +350,7 @@
 -(void)tableView:(UITableView *)tableView didReachEndOfPage:(int)page{
     
 }
+#pragma mark - Button Pressed Methods -
 
 -(IBAction)back_button_pressed:(UIButton *)sender {
     

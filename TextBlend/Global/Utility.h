@@ -90,7 +90,7 @@ typedef void (^alert_completion_block)(UIAlertAction *alert_action,NSString *but
 
 +(NSString *)getFormattedString:(NSNumber *)selected_amount_num;
 +(CGGradientRef)getGradientSpaceRef:(UIColor*)startColor andEndColor:(UIColor*)endColor withPercenatgeValue:(int)percentage;;
-
++(UIImage *)imageResize :(UIImage*)img andResizeTo:(CGSize)newSize;
 
 //+(void)setGridImage:(UIImage*)image forButton:(UIButton *)button ;
 //+(void)loadAudioForURL:(NSString*)sound_url inView:(UIView*)view ;
