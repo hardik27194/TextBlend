@@ -221,6 +221,41 @@
 		8BE7E51E1C2FE27F008B009B /* photo_edit_tool_exposure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E5171C2FE27F008B009B /* photo_edit_tool_exposure.png */; };
 		8BE7E51F1C2FE27F008B009B /* photo_edit_tool_saturation.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E5181C2FE27F008B009B /* photo_edit_tool_saturation.png */; };
 		8BE7E5201C2FE27F008B009B /* photo_edit_tool_tone_curve.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E5191C2FE27F008B009B /* photo_edit_tool_tone_curve.png */; };
+		8BF51EAE1C8DDF4E00FBE3D0 /* brushed-font.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E7C1C8DDF4E00FBE3D0 /* brushed-font.png */; };
+		8BF51EAF1C8DDF4E00FBE3D0 /* brushed_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E7D1C8DDF4E00FBE3D0 /* brushed_header.png */; };
+		8BF51EB01C8DDF4E00FBE3D0 /* chalkboard-font.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E7F1C8DDF4E00FBE3D0 /* chalkboard-font.png */; };
+		8BF51EB11C8DDF4E00FBE3D0 /* chalkboard_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E801C8DDF4E00FBE3D0 /* chalkboard_header.png */; };
+		8BF51EB21C8DDF4E00FBE3D0 /* christmas.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E821C8DDF4E00FBE3D0 /* christmas.png */; };
+		8BF51EB31C8DDF4E00FBE3D0 /* christmas_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E831C8DDF4E00FBE3D0 /* christmas_header.png */; };
+		8BF51EB41C8DDF4E00FBE3D0 /* comic-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E851C8DDF4E00FBE3D0 /* comic-fonts.png */; };
+		8BF51EB51C8DDF4E00FBE3D0 /* comic_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E861C8DDF4E00FBE3D0 /* comic_header.png */; };
+		8BF51EB61C8DDF4E00FBE3D0 /* main_shop_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E871C8DDF4E00FBE3D0 /* main_shop_page.png */; };
+		8BF51EB71C8DDF4E00FBE3D0 /* main_shop_page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E881C8DDF4E00FBE3D0 /* main_shop_page@2x.png */; };
+		8BF51EB81C8DDF4E00FBE3D0 /* main_shop_page@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E891C8DDF4E00FBE3D0 /* main_shop_page@3x.png */; };
+		8BF51EB91C8DDF4E00FBE3D0 /* graffiti-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E8B1C8DDF4E00FBE3D0 /* graffiti-fonts.png */; };
+		8BF51EBA1C8DDF4E00FBE3D0 /* graffiti_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E8C1C8DDF4E00FBE3D0 /* graffiti_header.png */; };
+		8BF51EBB1C8DDF4E00FBE3D0 /* greetings-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E8E1C8DDF4E00FBE3D0 /* greetings-fonts.png */; };
+		8BF51EBC1C8DDF4E00FBE3D0 /* greetings_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E8F1C8DDF4E00FBE3D0 /* greetings_header.png */; };
+		8BF51EBD1C8DDF4E00FBE3D0 /* halloween-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E911C8DDF4E00FBE3D0 /* halloween-fonts.png */; };
+		8BF51EBE1C8DDF4E00FBE3D0 /* halloween_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E921C8DDF4E00FBE3D0 /* halloween_header.png */; };
+		8BF51EBF1C8DDF4E00FBE3D0 /* handwritten.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E941C8DDF4E00FBE3D0 /* handwritten.png */; };
+		8BF51EC01C8DDF4E00FBE3D0 /* handwritten_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E951C8DDF4E00FBE3D0 /* handwritten_header.png */; };
+		8BF51EC11C8DDF4E00FBE3D0 /* movie-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E971C8DDF4E00FBE3D0 /* movie-fonts.png */; };
+		8BF51EC21C8DDF4E00FBE3D0 /* movie_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E981C8DDF4E00FBE3D0 /* movie_header.png */; };
+		8BF51EC31C8DDF4E00FBE3D0 /* music-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E9A1C8DDF4E00FBE3D0 /* music-fonts.png */; };
+		8BF51EC41C8DDF4E00FBE3D0 /* music_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E9B1C8DDF4E00FBE3D0 /* music_header.png */; };
+		8BF51EC51C8DDF4E00FBE3D0 /* old-newspaper-font.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E9D1C8DDF4E00FBE3D0 /* old-newspaper-font.png */; };
+		8BF51EC61C8DDF4E00FBE3D0 /* old-newspaper_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E9E1C8DDF4E00FBE3D0 /* old-newspaper_header.png */; };
+		8BF51EC71C8DDF4E00FBE3D0 /* retro-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EA01C8DDF4E00FBE3D0 /* retro-fonts.png */; };
+		8BF51EC81C8DDF4E00FBE3D0 /* retro_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EA11C8DDF4E00FBE3D0 /* retro_header.png */; };
+		8BF51EC91C8DDF4E00FBE3D0 /* sports-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EA31C8DDF4E00FBE3D0 /* sports-fonts.png */; };
+		8BF51ECA1C8DDF4E00FBE3D0 /* sports_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EA41C8DDF4E00FBE3D0 /* sports_header.png */; };
+		8BF51ECB1C8DDF4E00FBE3D0 /* tattoo-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EA61C8DDF4E00FBE3D0 /* tattoo-fonts.png */; };
+		8BF51ECC1C8DDF4E00FBE3D0 /* tattoo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EA71C8DDF4E00FBE3D0 /* tattoo_header.png */; };
+		8BF51ECD1C8DDF4E00FBE3D0 /* typewriter-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EA91C8DDF4E00FBE3D0 /* typewriter-fonts.png */; };
+		8BF51ECE1C8DDF4E00FBE3D0 /* typewriter_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EAA1C8DDF4E00FBE3D0 /* typewriter_header.png */; };
+		8BF51ECF1C8DDF4E00FBE3D0 /* weeding-fonts.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EAC1C8DDF4E00FBE3D0 /* weeding-fonts.png */; };
+		8BF51ED01C8DDF4E00FBE3D0 /* weeding_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51EAD1C8DDF4E00FBE3D0 /* weeding_header.png */; };
 		8BFE1D521C3696FC001450DF /* Android Insomnia Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE1AA81C3696FB001450DF /* Android Insomnia Regular.ttf */; };
 		8BFE1D531C3696FC001450DF /* Arcade Future.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE1AA91C3696FB001450DF /* Arcade Future.otf */; };
 		8BFE1D541C3696FC001450DF /* Arcade_Fire.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE1AAA1C3696FB001450DF /* Arcade_Fire.ttf */; };
@@ -1287,6 +1322,41 @@
 		8BE7E5171C2FE27F008B009B /* photo_edit_tool_exposure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_edit_tool_exposure.png; sourceTree = "<group>"; };
 		8BE7E5181C2FE27F008B009B /* photo_edit_tool_saturation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_edit_tool_saturation.png; sourceTree = "<group>"; };
 		8BE7E5191C2FE27F008B009B /* photo_edit_tool_tone_curve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_edit_tool_tone_curve.png; sourceTree = "<group>"; };
+		8BF51E7C1C8DDF4E00FBE3D0 /* brushed-font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-font.png"; sourceTree = "<group>"; };
+		8BF51E7D1C8DDF4E00FBE3D0 /* brushed_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brushed_header.png; sourceTree = "<group>"; };
+		8BF51E7F1C8DDF4E00FBE3D0 /* chalkboard-font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chalkboard-font.png"; sourceTree = "<group>"; };
+		8BF51E801C8DDF4E00FBE3D0 /* chalkboard_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chalkboard_header.png; sourceTree = "<group>"; };
+		8BF51E821C8DDF4E00FBE3D0 /* christmas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = christmas.png; sourceTree = "<group>"; };
+		8BF51E831C8DDF4E00FBE3D0 /* christmas_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = christmas_header.png; sourceTree = "<group>"; };
+		8BF51E851C8DDF4E00FBE3D0 /* comic-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comic-fonts.png"; sourceTree = "<group>"; };
+		8BF51E861C8DDF4E00FBE3D0 /* comic_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comic_header.png; sourceTree = "<group>"; };
+		8BF51E871C8DDF4E00FBE3D0 /* main_shop_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_shop_page.png; sourceTree = "<group>"; };
+		8BF51E881C8DDF4E00FBE3D0 /* main_shop_page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_shop_page@2x.png"; sourceTree = "<group>"; };
+		8BF51E891C8DDF4E00FBE3D0 /* main_shop_page@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_shop_page@3x.png"; sourceTree = "<group>"; };
+		8BF51E8B1C8DDF4E00FBE3D0 /* graffiti-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graffiti-fonts.png"; sourceTree = "<group>"; };
+		8BF51E8C1C8DDF4E00FBE3D0 /* graffiti_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graffiti_header.png; sourceTree = "<group>"; };
+		8BF51E8E1C8DDF4E00FBE3D0 /* greetings-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greetings-fonts.png"; sourceTree = "<group>"; };
+		8BF51E8F1C8DDF4E00FBE3D0 /* greetings_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greetings_header.png; sourceTree = "<group>"; };
+		8BF51E911C8DDF4E00FBE3D0 /* halloween-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "halloween-fonts.png"; sourceTree = "<group>"; };
+		8BF51E921C8DDF4E00FBE3D0 /* halloween_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = halloween_header.png; sourceTree = "<group>"; };
+		8BF51E941C8DDF4E00FBE3D0 /* handwritten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handwritten.png; sourceTree = "<group>"; };
+		8BF51E951C8DDF4E00FBE3D0 /* handwritten_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handwritten_header.png; sourceTree = "<group>"; };
+		8BF51E971C8DDF4E00FBE3D0 /* movie-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movie-fonts.png"; sourceTree = "<group>"; };
+		8BF51E981C8DDF4E00FBE3D0 /* movie_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_header.png; sourceTree = "<group>"; };
+		8BF51E9A1C8DDF4E00FBE3D0 /* music-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-fonts.png"; sourceTree = "<group>"; };
+		8BF51E9B1C8DDF4E00FBE3D0 /* music_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_header.png; sourceTree = "<group>"; };
+		8BF51E9D1C8DDF4E00FBE3D0 /* old-newspaper-font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "old-newspaper-font.png"; sourceTree = "<group>"; };
+		8BF51E9E1C8DDF4E00FBE3D0 /* old-newspaper_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "old-newspaper_header.png"; sourceTree = "<group>"; };
+		8BF51EA01C8DDF4E00FBE3D0 /* retro-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retro-fonts.png"; sourceTree = "<group>"; };
+		8BF51EA11C8DDF4E00FBE3D0 /* retro_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retro_header.png; sourceTree = "<group>"; };
+		8BF51EA31C8DDF4E00FBE3D0 /* sports-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sports-fonts.png"; sourceTree = "<group>"; };
+		8BF51EA41C8DDF4E00FBE3D0 /* sports_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports_header.png; sourceTree = "<group>"; };
+		8BF51EA61C8DDF4E00FBE3D0 /* tattoo-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tattoo-fonts.png"; sourceTree = "<group>"; };
+		8BF51EA71C8DDF4E00FBE3D0 /* tattoo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tattoo_header.png; sourceTree = "<group>"; };
+		8BF51EA91C8DDF4E00FBE3D0 /* typewriter-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typewriter-fonts.png"; sourceTree = "<group>"; };
+		8BF51EAA1C8DDF4E00FBE3D0 /* typewriter_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = typewriter_header.png; sourceTree = "<group>"; };
+		8BF51EAC1C8DDF4E00FBE3D0 /* weeding-fonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weeding-fonts.png"; sourceTree = "<group>"; };
+		8BF51EAD1C8DDF4E00FBE3D0 /* weeding_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weeding_header.png; sourceTree = "<group>"; };
 		8BFE1AA81C3696FB001450DF /* Android Insomnia Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Android Insomnia Regular.ttf"; sourceTree = "<group>"; };
 		8BFE1AA91C3696FB001450DF /* Arcade Future.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arcade Future.otf"; sourceTree = "<group>"; };
 		8BFE1AAA1C3696FB001450DF /* Arcade_Fire.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arcade_Fire.ttf; sourceTree = "<group>"; };
@@ -2539,6 +2609,7 @@
 		8BC230A81C141235000BB5CF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8BF51E7A1C8DDF4E00FBE3D0 /* InAppPurchaseUpdatedImages */,
 				8B26EA891C6BAF5F00687050 /* InAppPurchaseImages */,
 				8BE7E5121C2FE27F008B009B /* PhotoEditTool */,
 				8BBF90681C15E5E7001510FA /* AddTextView */,
@@ -2691,6 +2762,176 @@
 				8BE7E5191C2FE27F008B009B /* photo_edit_tool_tone_curve.png */,
 			);
 			path = PhotoEditTool;
+			sourceTree = "<group>";
+		};
+		8BF51E7A1C8DDF4E00FBE3D0 /* InAppPurchaseUpdatedImages */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E7B1C8DDF4E00FBE3D0 /* Brushed_fonts */,
+				8BF51E7E1C8DDF4E00FBE3D0 /* Chalkboard_fonts */,
+				8BF51E811C8DDF4E00FBE3D0 /* Christmas_fonts */,
+				8BF51E841C8DDF4E00FBE3D0 /* comic_fonts */,
+				8BF51E871C8DDF4E00FBE3D0 /* main_shop_page.png */,
+				8BF51E881C8DDF4E00FBE3D0 /* main_shop_page@2x.png */,
+				8BF51E891C8DDF4E00FBE3D0 /* main_shop_page@3x.png */,
+				8BF51E8A1C8DDF4E00FBE3D0 /* slice graffiti_fonts */,
+				8BF51E8D1C8DDF4E00FBE3D0 /* slice greetings_fonts */,
+				8BF51E901C8DDF4E00FBE3D0 /* slice halloween_fonts */,
+				8BF51E931C8DDF4E00FBE3D0 /* slice handwritten_fonts */,
+				8BF51E961C8DDF4E00FBE3D0 /* slice movie_fonts */,
+				8BF51E991C8DDF4E00FBE3D0 /* slice music_fonts */,
+				8BF51E9C1C8DDF4E00FBE3D0 /* slice old newspaper_fonts */,
+				8BF51E9F1C8DDF4E00FBE3D0 /* slice retro_fonts */,
+				8BF51EA21C8DDF4E00FBE3D0 /* slice sports_fonts */,
+				8BF51EA51C8DDF4E00FBE3D0 /* slice tattoo_fonts */,
+				8BF51EA81C8DDF4E00FBE3D0 /* slice typewriter_fonts */,
+				8BF51EAB1C8DDF4E00FBE3D0 /* slice weeding font_fonts */,
+			);
+			path = InAppPurchaseUpdatedImages;
+			sourceTree = "<group>";
+		};
+		8BF51E7B1C8DDF4E00FBE3D0 /* Brushed_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E7C1C8DDF4E00FBE3D0 /* brushed-font.png */,
+				8BF51E7D1C8DDF4E00FBE3D0 /* brushed_header.png */,
+			);
+			path = Brushed_fonts;
+			sourceTree = "<group>";
+		};
+		8BF51E7E1C8DDF4E00FBE3D0 /* Chalkboard_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E7F1C8DDF4E00FBE3D0 /* chalkboard-font.png */,
+				8BF51E801C8DDF4E00FBE3D0 /* chalkboard_header.png */,
+			);
+			path = Chalkboard_fonts;
+			sourceTree = "<group>";
+		};
+		8BF51E811C8DDF4E00FBE3D0 /* Christmas_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E821C8DDF4E00FBE3D0 /* christmas.png */,
+				8BF51E831C8DDF4E00FBE3D0 /* christmas_header.png */,
+			);
+			path = Christmas_fonts;
+			sourceTree = "<group>";
+		};
+		8BF51E841C8DDF4E00FBE3D0 /* comic_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E851C8DDF4E00FBE3D0 /* comic-fonts.png */,
+				8BF51E861C8DDF4E00FBE3D0 /* comic_header.png */,
+			);
+			path = comic_fonts;
+			sourceTree = "<group>";
+		};
+		8BF51E8A1C8DDF4E00FBE3D0 /* slice graffiti_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E8B1C8DDF4E00FBE3D0 /* graffiti-fonts.png */,
+				8BF51E8C1C8DDF4E00FBE3D0 /* graffiti_header.png */,
+			);
+			path = "slice graffiti_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51E8D1C8DDF4E00FBE3D0 /* slice greetings_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E8E1C8DDF4E00FBE3D0 /* greetings-fonts.png */,
+				8BF51E8F1C8DDF4E00FBE3D0 /* greetings_header.png */,
+			);
+			path = "slice greetings_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51E901C8DDF4E00FBE3D0 /* slice halloween_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E911C8DDF4E00FBE3D0 /* halloween-fonts.png */,
+				8BF51E921C8DDF4E00FBE3D0 /* halloween_header.png */,
+			);
+			path = "slice halloween_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51E931C8DDF4E00FBE3D0 /* slice handwritten_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E941C8DDF4E00FBE3D0 /* handwritten.png */,
+				8BF51E951C8DDF4E00FBE3D0 /* handwritten_header.png */,
+			);
+			path = "slice handwritten_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51E961C8DDF4E00FBE3D0 /* slice movie_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E971C8DDF4E00FBE3D0 /* movie-fonts.png */,
+				8BF51E981C8DDF4E00FBE3D0 /* movie_header.png */,
+			);
+			path = "slice movie_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51E991C8DDF4E00FBE3D0 /* slice music_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E9A1C8DDF4E00FBE3D0 /* music-fonts.png */,
+				8BF51E9B1C8DDF4E00FBE3D0 /* music_header.png */,
+			);
+			path = "slice music_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51E9C1C8DDF4E00FBE3D0 /* slice old newspaper_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51E9D1C8DDF4E00FBE3D0 /* old-newspaper-font.png */,
+				8BF51E9E1C8DDF4E00FBE3D0 /* old-newspaper_header.png */,
+			);
+			path = "slice old newspaper_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51E9F1C8DDF4E00FBE3D0 /* slice retro_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51EA01C8DDF4E00FBE3D0 /* retro-fonts.png */,
+				8BF51EA11C8DDF4E00FBE3D0 /* retro_header.png */,
+			);
+			path = "slice retro_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51EA21C8DDF4E00FBE3D0 /* slice sports_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51EA31C8DDF4E00FBE3D0 /* sports-fonts.png */,
+				8BF51EA41C8DDF4E00FBE3D0 /* sports_header.png */,
+			);
+			path = "slice sports_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51EA51C8DDF4E00FBE3D0 /* slice tattoo_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51EA61C8DDF4E00FBE3D0 /* tattoo-fonts.png */,
+				8BF51EA71C8DDF4E00FBE3D0 /* tattoo_header.png */,
+			);
+			path = "slice tattoo_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51EA81C8DDF4E00FBE3D0 /* slice typewriter_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51EA91C8DDF4E00FBE3D0 /* typewriter-fonts.png */,
+				8BF51EAA1C8DDF4E00FBE3D0 /* typewriter_header.png */,
+			);
+			path = "slice typewriter_fonts";
+			sourceTree = "<group>";
+		};
+		8BF51EAB1C8DDF4E00FBE3D0 /* slice weeding font_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BF51EAC1C8DDF4E00FBE3D0 /* weeding-fonts.png */,
+				8BF51EAD1C8DDF4E00FBE3D0 /* weeding_header.png */,
+			);
+			path = "slice weeding font_fonts";
 			sourceTree = "<group>";
 		};
 		8BFE1AA61C3696FB001450DF /* Fonts */ = {
@@ -3900,6 +4141,7 @@
 				8BFE1E941C3696FC001450DF /* Scream Again.ttf in Resources */,
 				8BC231141C144CEE000BB5CF /* image_cropper_iPhone5_6_wallpaper.PNG in Resources */,
 				8BFE1F701C3696FC001450DF /* BLACEB__.TTF in Resources */,
+				8BF51EB71C8DDF4E00FBE3D0 /* main_shop_page@2x.png in Resources */,
 				8BFE1D5E1C3696FC001450DF /* libertylegionhalf.ttf in Resources */,
 				8BFE1E571C3696FC001450DF /* Sprite Graffiti.otf in Resources */,
 				8BFE1D901C3696FC001450DF /* AlbertText-Bold.ttf in Resources */,
@@ -3913,6 +4155,7 @@
 				8BFE1FB21C3696FC001450DF /* ArgosGeorgeContour.ttf in Resources */,
 				8B26EB061C6BBA8700687050 /* music-fonts@2x.png in Resources */,
 				8BFE1D531C3696FC001450DF /* Arcade Future.otf in Resources */,
+				8BF51EC61C8DDF4E00FBE3D0 /* old-newspaper_header.png in Resources */,
 				8BFE1E9B1C3696FC001450DF /* ZOMBIFIED.ttf in Resources */,
 				8B9D41471C8490B300F482C0 /* add_text_view_shadow_icon.png in Resources */,
 				8BFE1F8A1C3696FC001450DF /* VTKS Tattoo Shadow.ttf in Resources */,
@@ -3943,6 +4186,7 @@
 				8BFE1D991C3696FC001450DF /* DUKEPLUS.TTF in Resources */,
 				8BFE1DDB1C3696FC001450DF /* KGSecondChancesSketch.ttf in Resources */,
 				8BFE1F1F1C3696FC001450DF /* Distractor-Roman.ttf in Resources */,
+				8BF51EBE1C8DDF4E00FBE3D0 /* halloween_header.png in Resources */,
 				8BFE1F851C3696FC001450DF /* Prison Tattoo 2.ttf in Resources */,
 				8BFE1D8D1C3696FC001450DF /* Zing Easy.ttf in Resources */,
 				8BFE1D7D1C3696FC001450DF /* mrsmonster.ttf in Resources */,
@@ -3982,6 +4226,7 @@
 				8B26EB091C6BBA8700687050 /* old-newspaper-font@2x.png in Resources */,
 				8BFE1E1C1C3696FC001450DF /* samuraicabcooutbb.ttf in Resources */,
 				8BFE1DAC1C3696FC001450DF /* Candcu__.ttf in Resources */,
+				8BF51EBD1C8DDF4E00FBE3D0 /* halloween-fonts.png in Resources */,
 				8BFE1E631C3696FC001450DF /* Amperzand.ttf in Resources */,
 				8BFE1D661C3696FC001450DF /* Reqruit-2.otf in Resources */,
 				8BE7E51D1C2FE27F008B009B /* photo_edit_tool_crop.png in Resources */,
@@ -3997,6 +4242,7 @@
 				8BFE1DC01C3696FC001450DF /* Mf Candy.ttf in Resources */,
 				8BFE1DF71C3696FC001450DF /* GebetbuchFraktur.ttf in Resources */,
 				8BFE1F801C3696FC001450DF /* Lupusbl.ttf in Resources */,
+				8BF51EC11C8DDF4E00FBE3D0 /* movie-fonts.png in Resources */,
 				8BFE1DBC1C3696FC001450DF /* KGCandyCaneStripe 2.ttf in Resources */,
 				8BFE1EA41C3696FC001450DF /* Haiku's Script version 08.ttf in Resources */,
 				8B26EB151C6BBA8700687050 /* typewriter-fonts@2x.png in Resources */,
@@ -4007,17 +4253,20 @@
 				8BFE1E821C3696FC001450DF /* bloodcrow.ttf in Resources */,
 				DB83E1691C227566008F0B2C /* loading@2x.png in Resources */,
 				8BFE1EF51C3696FC001450DF /* wickermanor.ttf in Resources */,
+				8BF51EC91C8DDF4E00FBE3D0 /* sports-fonts.png in Resources */,
 				8BFE1ED51C3696FC001450DF /* Van Helsing.ttf in Resources */,
 				8BFE1F2D1C3696FC001450DF /* Nexa Light.otf in Resources */,
 				8BFE1F811C3696FC001450DF /* MardianDemo.ttf in Resources */,
 				8BFE1DC51C3696FC001450DF /* Spear_Mint.ttf in Resources */,
 				8BFE1E741C3696FC001450DF /* Myra 4F Caps Light.otf in Resources */,
 				8BFE1DC71C3696FC001450DF /* SWEEHB__.TTF in Resources */,
+				8BF51EBA1C8DDF4E00FBE3D0 /* graffiti_header.png in Resources */,
 				8BFE1F3E1C3696FC001450DF /* CircusOrnate.ttf in Resources */,
 				8BFE1E841C3696FC001450DF /* Bloodthirsty.ttf in Resources */,
 				DB66F3ED1C42656300CC8ABF /* Shape_4.png in Resources */,
 				8BC230DB1C141B13000BB5CF /* next_button.png in Resources */,
 				DB83E15D1C227566008F0B2C /* KVNProgressView.xib in Resources */,
+				8BF51ECE1C8DDF4E00FBE3D0 /* typewriter_header.png in Resources */,
 				8BFE1D591C3696FC001450DF /* libertylegion3d.ttf in Resources */,
 				8BFE1EC41C3696FC001450DF /* Ghoulish.ttf in Resources */,
 				8BFE1DB51C3696FC001450DF /* candystr 2.ttf in Resources */,
@@ -4060,6 +4309,7 @@
 				8B26EB001C6BBA8700687050 /* main_shop_page@2x.png in Resources */,
 				8BFE1E381C3696FC001450DF /* MarckScript-Regular.ttf in Resources */,
 				8BE7E50E1C2FE270008B009B /* image_editing_screen_colorize.png in Resources */,
+				8BF51EAE1C8DDF4E00FBE3D0 /* brushed-font.png in Resources */,
 				8BFE1EC91C3696FC001450DF /* MATRIX.ttf in Resources */,
 				8BFE1D611C3696FC001450DF /* mechanik-Bold.ttf in Resources */,
 				8BFE1D7F1C3696FC001450DF /* mrsmonsteracad.ttf in Resources */,
@@ -4067,6 +4317,7 @@
 				8B26EAEF1C6BBA8700687050 /* christmas@3x.png in Resources */,
 				8BFE1DFE1C3696FC001450DF /* PWHappyChristmas.ttf in Resources */,
 				8BFE1D721C3696FC001450DF /* Brush Strokes.ttf in Resources */,
+				8BF51ECD1C8DDF4E00FBE3D0 /* typewriter-fonts.png in Resources */,
 				8BFE1F5C1C3696FC001450DF /* lpsports2.ttf in Resources */,
 				8BFE1EFC1C3696FC001450DF /* DK Courant.ttf in Resources */,
 				DB66F3F21C42656300CC8ABF /* Shape_9.png in Resources */,
@@ -4096,6 +4347,7 @@
 				8BFE1FCB1C3696FC001450DF /* allenois free ( DaFont ).ttf in Resources */,
 				8B26EB161C6BBA8700687050 /* typewriter-fonts@3x.png in Resources */,
 				8BFE1EE61C3696FC001450DF /* MetalMania-Regular.ttf in Resources */,
+				8BF51EC01C8DDF4E00FBE3D0 /* handwritten_header.png in Resources */,
 				8BFE1FE21C3696FC001450DF /* Redressed.ttf in Resources */,
 				8BFE1F8C1C3696FC001450DF /* 1942.ttf in Resources */,
 				8BFE1E201C3696FC001450DF /* shinAkibapunx.ttf in Resources */,
@@ -4123,6 +4375,7 @@
 				8BFE1E0F1C3696FC001450DF /* Comiccity.ttf in Resources */,
 				8BFE1F9D1C3696FC001450DF /* Old Typewriter2.0.ttf in Resources */,
 				8BBF90731C15E5E7001510FA /* add_text_view_fonts.PNG in Resources */,
+				8BF51EAF1C8DDF4E00FBE3D0 /* brushed_header.png in Resources */,
 				8BFE1DD51C3696FC001450DF /* Justaword.ttf in Resources */,
 				8BFE1FDF1C3696FC001450DF /* Heather.ttf in Resources */,
 				8BFE1DD61C3696FC001450DF /* KGBlankSpaceSketch.ttf in Resources */,
@@ -4132,6 +4385,7 @@
 				8BFE1DCE1C3696FC001450DF /* Colored Crayons.ttf in Resources */,
 				8BFE1DB61C3696FC001450DF /* CandyTime-2.ttf in Resources */,
 				DB66F3FD1C42656300CC8ABF /* Shape_20.png in Resources */,
+				8BF51EBF1C8DDF4E00FBE3D0 /* handwritten.png in Resources */,
 				8BFE1E031C3696FC001450DF /* Snowflake Letters.ttf in Resources */,
 				8BFE1DE31C3696FC001450DF /* Smudgie Crayon.ttf in Resources */,
 				8BFE1D9E1C3696FC001450DF /* NinaScriptDemo.ttf in Resources */,
@@ -4139,11 +4393,13 @@
 				8BFE1E5C1C3696FC001450DF /* UrbanJungleDEMO.otf in Resources */,
 				8BC230BE1C141235000BB5CF /* image_editing_screen_saying.PNG in Resources */,
 				8BFE1D701C3696FC001450DF /* Ampad Brush.ttf in Resources */,
+				8BF51ED01C8DDF4E00FBE3D0 /* weeding_header.png in Resources */,
 				8BFE1ECA1C3696FC001450DF /* MotionPicture_PersonalUseOnly.ttf in Resources */,
 				DB1F5FEC1C18866C00F425DB /* PEPhotoCropEditor.bundle in Resources */,
 				8BE7E51C1C2FE27F008B009B /* photo_edit_tool_contrast.png in Resources */,
 				8BFE1F251C3696FC001450DF /* LobsterTwo-Bold.ttf in Resources */,
 				8BFE1F231C3696FC001450DF /* Langdon.otf in Resources */,
+				8BF51ECC1C8DDF4E00FBE3D0 /* tattoo_header.png in Resources */,
 				8BFE1F5A1C3696FC001450DF /* KR Snowboarder.ttf in Resources */,
 				8BFE1EB41C3696FC001450DF /* Skinny-Regular.otf in Resources */,
 				8BFE1F0C1C3696FC001450DF /* Old printing press_FREE-version.ttf in Resources */,
@@ -4225,11 +4481,13 @@
 				8BFE1F591C3696FC001450DF /* KR Hockey Fun.ttf in Resources */,
 				8BFE1E5E1C3696FC001450DF /* youmurdererbb_reg.otf in Resources */,
 				8BFE1EB51C3696FC001450DF /* TheGreatEscape.ttf in Resources */,
+				8BF51EC81C8DDF4E00FBE3D0 /* retro_header.png in Resources */,
 				8BFE1E511C3696FC001450DF /* MisdemeanorDEMO-KCFonts.ttf in Resources */,
 				8BFE1FB91C3696FC001450DF /* Belshaw.ttf in Resources */,
 				8BFE1E111C3696FC001450DF /* electrox.ttf in Resources */,
 				8BBF90711C15E5E7001510FA /* add_text_view_color.png in Resources */,
 				8BFE1EA01C3696FC001450DF /* DJB Brewhaus Special.ttf in Resources */,
+				8BF51EB81C8DDF4E00FBE3D0 /* main_shop_page@3x.png in Resources */,
 				DB83E1641C227566008F0B2C /* errorTriangle.png in Resources */,
 				8BFE1DDF1C3696FC001450DF /* PPETRIAL.ttf in Resources */,
 				8B26EB121C6BBA8700687050 /* tattoo-fonts@2x.png in Resources */,
@@ -4255,6 +4513,7 @@
 				8BFE1DF11C3696FC001450DF /* Christmas Snow.ttf in Resources */,
 				8BFE1DD81C3696FC001450DF /* KGChasingPavements.ttf in Resources */,
 				DB18BF521C268F500086EE58 /* ZDBtn2.png in Resources */,
+				8BF51EBB1C8DDF4E00FBE3D0 /* greetings-fonts.png in Resources */,
 				8BFE1E0B1C3696FC001450DF /* Comic Book Bold.otf in Resources */,
 				8BBF906F1C15E5E7001510FA /* add_text_view_3d_rotate.PNG in Resources */,
 				8BC230F21C144806000BB5CF /* ImageCropperViewController.xib in Resources */,
@@ -4269,6 +4528,7 @@
 				8B26EB131C6BBA8700687050 /* tattoo-fonts@3x.png in Resources */,
 				8BFE1DA51C3696FC001450DF /* Seaside Heights.ttf in Resources */,
 				DB83E1611C227566008F0B2C /* alertViewBG@2x.png in Resources */,
+				8BF51EC41C8DDF4E00FBE3D0 /* music_header.png in Resources */,
 				DB7D2A2A1C145E7C00076342 /* tempHouse.jpg in Resources */,
 				8BFE1DB21C3696FC001450DF /* CANDY.TTF in Resources */,
 				8BFE1F131C3696FC001450DF /* Walbaum-Fraktur-Shadow-Bold.ttf in Resources */,
@@ -4279,6 +4539,7 @@
 				8BFE1F2A1C3696FC001450DF /* Monthoers.ttf in Resources */,
 				8BFE1DA71C3696FC001450DF /* SEVESBRG.TTF in Resources */,
 				8BFE1E431C3696FC001450DF /* Brock Vandalo.ttf in Resources */,
+				8BF51EB01C8DDF4E00FBE3D0 /* chalkboard-font.png in Resources */,
 				8BFE1FC91C3696FC001450DF /* AlexBrush-Regular 3.ttf in Resources */,
 				8BFE1ED91C3696FC001450DF /* ArtDystopia.ttf in Resources */,
 				8BFE1F601C3696FC001450DF /* MLB Pirates.ttf in Resources */,
@@ -4291,6 +4552,7 @@
 				8B9D41491C84914B00F482C0 /* font_lock_icon.png in Resources */,
 				8BFE1DE51C3696FC001450DF /* VTCAllSkratchedUpOne.ttf in Resources */,
 				8BFE1DF01C3696FC001450DF /* Christbaumkugeln.ttf in Resources */,
+				8BF51ECA1C8DDF4E00FBE3D0 /* sports_header.png in Resources */,
 				8BFE1F081C3696FC001450DF /* News of the World regular.ttf in Resources */,
 				8B26EB171C6BBA8700687050 /* weeding-fonts.png in Resources */,
 				8BFE1E441C3696FC001450DF /* Brooklyn-Inline.ttf in Resources */,
@@ -4306,12 +4568,14 @@
 				8BFE1E501C3696FC001450DF /* MAELS___.TTF in Resources */,
 				8BFE1F2C1C3696FC001450DF /* Nexa Bold.otf in Resources */,
 				8BFE1DE11C3696FC001450DF /* PWRoundedScratch.ttf in Resources */,
+				8BF51EB61C8DDF4E00FBE3D0 /* main_shop_page.png in Resources */,
 				8BFE1E6D1C3696FC001450DF /* HEAVTUB_.TTF in Resources */,
 				8BFE1DFC1C3696FC001450DF /* KR Oh Christmas Tree.TTF in Resources */,
 				8BFE1DD91C3696FC001450DF /* KGMakesYouStronger.ttf in Resources */,
 				8B26EAF41C6BBA8700687050 /* graffiti-fonts@2x.png in Resources */,
 				8BFE1ED41C3696FC001450DF /* twilight New Moon.ttf in Resources */,
 				8BFE1E4E1C3696FC001450DF /* JUSTFIST.ttf in Resources */,
+				8BF51ECB1C8DDF4E00FBE3D0 /* tattoo-fonts.png in Resources */,
 				8BFE1E1A1C3696FC001450DF /* pythia.ttf in Resources */,
 				8B26EAEE1C6BBA8700687050 /* christmas@2x.png in Resources */,
 				8BFE1E641C3696FC001450DF /* Archive.otf in Resources */,
@@ -4326,6 +4590,7 @@
 				8BC2310A1C144CEE000BB5CF /* image_cropper_3X2.PNG in Resources */,
 				8BFE1F571C3696FC001450DF /* interceptorp.ttf in Resources */,
 				8BFE1E6A1C3696FC001450DF /* gabrielle.ttf in Resources */,
+				8BF51EB31C8DDF4E00FBE3D0 /* christmas_header.png in Resources */,
 				8BFE1D601C3696FC001450DF /* libertylegionsemital.ttf in Resources */,
 				8B26EB021C6BBA8700687050 /* movie-fonts.png in Resources */,
 				8BE7E51B1C2FE27F008B009B /* photo_edit_tool_brightness.png in Resources */,
@@ -4361,8 +4626,10 @@
 				8BFE1E061C3696FC001450DF /* VeryChristmess.ttf in Resources */,
 				8BFE1FC71C3696FC001450DF /* a_dark_wedding__2007.ttf in Resources */,
 				8BFE1F0A1C3696FC001450DF /* NEWYORKR.TTF in Resources */,
+				8BF51EC21C8DDF4E00FBE3D0 /* movie_header.png in Resources */,
 				8BFE1EA71C3696FC001450DF /* Housegrind_Personal_Use_Only.ttf in Resources */,
 				8BFE1E121C3696FC001450DF /* From Cartoon Blocks.ttf in Resources */,
+				8BF51EB51C8DDF4E00FBE3D0 /* comic_header.png in Resources */,
 				8BFE1D8C1C3696FC001450DF /* WolfsRain.ttf in Resources */,
 				8BFE1E991C3696FC001450DF /* The Cramps.ttf in Resources */,
 				8BFE1F541C3696FC001450DF /* Fine College.ttf in Resources */,
@@ -4444,6 +4711,7 @@
 				8BFE1E851C3696FC001450DF /* blooods_.ttf in Resources */,
 				8BFE1F971C3696FC001450DF /* happydays.ttf in Resources */,
 				8BFE1ED01C3696FC001450DF /* Tangled.ttf in Resources */,
+				8BF51EB41C8DDF4E00FBE3D0 /* comic-fonts.png in Resources */,
 				8BFE1DFF1C3696FC001450DF /* SantasSleighFull Deluxe.ttf in Resources */,
 				8BFE1FC61C3696FC001450DF /* Sho-CardCapsNF.otf in Resources */,
 				8B26EB191C6BBA8700687050 /* weeding-fonts@3x.png in Resources */,
@@ -4468,6 +4736,7 @@
 				8BFE1F191C3696FC001450DF /* Anders.ttf in Resources */,
 				8BFE1F8F1C3696FC001450DF /* atwriter.ttf in Resources */,
 				8BFE1DF61C3696FC001450DF /* FROSW___.TTF in Resources */,
+				8BF51EB11C8DDF4E00FBE3D0 /* chalkboard_header.png in Resources */,
 				8BFE1E0A1C3696FC001450DF /* cartoon.ttf in Resources */,
 				8BFE1FA91C3696FC001450DF /* AbrilFatface-Regular.ttf in Resources */,
 				8BFE1EF41C3696FC001450DF /* vtks Rude Metal Shadow.ttf in Resources */,
@@ -4508,6 +4777,7 @@
 				8BFE1DA41C3696FC001450DF /* Sable.ttf in Resources */,
 				8BFE1FA81C3696FC001450DF /* xero4.ttf in Resources */,
 				8B26EAEB1C6BBA8700687050 /* chalkboard-font@2x.png in Resources */,
+				8BF51EB91C8DDF4E00FBE3D0 /* graffiti-fonts.png in Resources */,
 				8BFE1E2D1C3696FC001450DF /* Cursive Option.ttf in Resources */,
 				8BFE1D961C3696FC001450DF /* ARRRMB__.TTF in Resources */,
 				8BFE1FE61C3696FC001450DF /* YoureInvited.otf in Resources */,
@@ -4553,7 +4823,9 @@
 				8B26EB0E1C6BBA8700687050 /* sports-fonts.png in Resources */,
 				8BFE1FB71C3696FC001450DF /* Becker.ttf in Resources */,
 				8BFE1D741C3696FC001450DF /* BTTTRIAL.ttf in Resources */,
+				8BF51EC71C8DDF4E00FBE3D0 /* retro-fonts.png in Resources */,
 				8BFE1F4A1C3696FC001450DF /* Prisma.ttf in Resources */,
+				8BF51EC51C8DDF4E00FBE3D0 /* old-newspaper-font.png in Resources */,
 				8BFE1E761C3696FC001450DF /* Oswald-Light.ttf in Resources */,
 				8BC231121C144CEE000BB5CF /* image_cropper_instagram_post.png in Resources */,
 				8BFE1F4F1C3696FC001450DF /* Titania Shadow.ttf in Resources */,
@@ -4561,6 +4833,7 @@
 				8BFE1ED61C3696FC001450DF /* WillyWonka.ttf in Resources */,
 				8BFE1E521C3696FC001450DF /* Mostwasted.ttf in Resources */,
 				8BFE1DA21C3696FC001450DF /* Respective_Slanted.ttf in Resources */,
+				8BF51EC31C8DDF4E00FBE3D0 /* music-fonts.png in Resources */,
 				8BFE1ED71C3696FC001450DF /* zreaks nfi.ttf in Resources */,
 				8BFE1E2A1C3696FC001450DF /* chancur.ttf in Resources */,
 				8BC230C31C141235000BB5CF /* initial_screen_camera_roll.PNG in Resources */,
@@ -4686,6 +4959,7 @@
 				8BFE1D8E1C3696FC001450DF /* a_dark_wedding__2007.ttf in Resources */,
 				8B26EB011C6BBA8700687050 /* main_shop_page@3x.png in Resources */,
 				8BE7E2AF1C31CC2A0032E5B5 /* left_aligned_icon.png in Resources */,
+				8BF51EBC1C8DDF4E00FBE3D0 /* greetings_header.png in Resources */,
 				8BFE1FAD1C3696FC001450DF /* Alisandra Demo.ttf in Resources */,
 				8BFE1F101C3696FC001450DF /* TheMainEventDEMO.ttf in Resources */,
 				8BFE1D6E1C3696FC001450DF /* Thumbs UP.ttf in Resources */,
@@ -4696,6 +4970,8 @@
 				8BFE1EA91C3696FC001450DF /* KGEmpireofDirt.ttf in Resources */,
 				8BC230C21C141235000BB5CF /* initial_screen_camera.PNG in Resources */,
 				8BFE1F141C3696FC001450DF /* Aileron-Black.otf in Resources */,
+				8BF51ECF1C8DDF4E00FBE3D0 /* weeding-fonts.png in Resources */,
+				8BF51EB21C8DDF4E00FBE3D0 /* christmas.png in Resources */,
 				8BFE1F791C3696FC001450DF /* GoldMiner Font001.otf in Resources */,
 				8BFE1E141C3696FC001450DF /* InhumanBB.ttf in Resources */,
 				8BFE1D691C3696FC001450DF /* skymarshalexpandital.ttf in Resources */,

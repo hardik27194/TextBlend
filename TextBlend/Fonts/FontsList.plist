@@ -6,7 +6,9 @@
 		<key>FontDisplayName</key>
 		<string>Arcade</string>
 		<key>FontImageName</key>
-		<string>chalkboard</string>
+		<string>chalkboard-font.png</string>
+		<key>FontHeaderImageName</key>
+		<string>chalkboard_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
@@ -382,6 +384,8 @@
 		<string>Brushed</string>
 		<key>FontImageName</key>
 		<string>brushed-font.png</string>
+		<key>FontHeaderImageName</key>
+		<string>brushed_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
@@ -757,6 +761,8 @@
 		<string>Calligraphy</string>
 		<key>FontImageName</key>
 		<string>chalkboard</string>
+		<key>FontHeaderImageName</key>
+		<string>chalkboard_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
@@ -1120,6 +1126,8 @@
 		<string>Candy</string>
 		<key>FontImageName</key>
 		<string>chalkboard</string>
+		<key>FontHeaderImageName</key>
+		<string>chalkboard_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
@@ -1482,7 +1490,9 @@
 		<key>FontDisplayName</key>
 		<string>Chalkboard</string>
 		<key>FontImageName</key>
-		<string>chalkboard</string>
+		<string>chalkboard-font.png</string>
+		<key>FontHeaderImageName</key>
+		<string>chalkboard_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.chalkboardFont</string>
 		<key>IsFontOpen</key>
@@ -1858,6 +1868,8 @@
 		<string>christmas</string>
 		<key>FontImageName</key>
 		<string>christmas.png</string>
+		<key>FontHeaderImageName</key>
+		<string>christmas_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.christmasFont</string>
 		<key>IsFontOpen</key>
@@ -2209,6 +2221,8 @@
 		<string>Comic</string>
 		<key>FontImageName</key>
 		<string>comic-fonts.png</string>
+		<key>FontHeaderImageName</key>
+		<string>comic_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.comicFont</string>
 		<key>IsFontOpen</key>
@@ -2560,6 +2574,8 @@
 		<string>Cursive</string>
 		<key>FontImageName</key>
 		<string>chalkboard-font.png</string>
+		<key>FontHeaderImageName</key>
+		<string>chalkboard_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
@@ -2922,7 +2938,9 @@
 		<key>FontDisplayName</key>
 		<string>Graffitti</string>
 		<key>FontImageName</key>
-		<string>chalkboard</string>
+		<string>graffiti-fonts.png</string>
+		<key>FontHeaderImageName</key>
+		<string>graffiti_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
@@ -3262,6 +3280,8 @@
 		<string>Arcade</string>
 		<key>FontImageName</key>
 		<string>chalkboard</string>
+		<key>FontHeaderImageName</key>
+		<string>chalkboard_header.png</string>
 		<key>ProductIdentifier</key>
 		<string>com.nayeem.brushedFont</string>
 		<key>IsFontOpen</key>
