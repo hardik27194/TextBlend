@@ -294,6 +294,17 @@
 
 -(void)colorize_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
     
+    if (!colorize_effect_view) {
+        colorize_effect_view=[[ColorizeEffectView alloc]initWithFrame:BOTTOM_FRAME];
+        colorize_effect_view.colorize_effect_delegate=self;
+        colorize_effect_view.original_image= self.image_edit_main_view.selected_image;
+        [colorize_effect_view.custom_collection_view reloadData];
+        [self.view addSubview:colorize_effect_view];
+    }
+    isFirstImageEditingOptionSelected=YES;
+    [self.view bringSubviewToFront:colorize_effect_view];
+
+    
 }
 
 -(void)effects_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
@@ -868,8 +879,22 @@
     self.image_edit_main_view.main_image_view.image = result;
     
 }
+#pragma mark - Colorize View Delegate Methods -
 
+-(void)colorize_effect_set_image:(UIImage *)image onSelectedView:(ColorizeEffectView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+    
+    self.image_edit_main_view.selected_image = image;
+    self.selected_image = image;
+    self.image_edit_main_view.main_image_view.image=image;
 
+}
+-(void)colorize_effect_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ColorizeEffectView *)selected_view{
+    
+    if (colorize_effect_view) {
+        [colorize_effect_view removeFromSuperview];
+        colorize_effect_view =  nil;
+    }
+}
 #pragma mark - Text Tools View Delegate Methods -
 
 -(void)opacity_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
@@ -1687,6 +1712,16 @@
     if (shadow_custom_view) {
         [shadow_custom_view removeFromSuperview];
         shadow_custom_view = nil;
+    }
+    if (colorize_effect_view) {
+        if (colorize_effect_view.original_image) {
+            self.image_edit_main_view.selected_image = colorize_effect_view.original_image;
+            self.selected_image = colorize_effect_view.original_image;
+            self.image_edit_main_view.main_image_view.image=colorize_effect_view.original_image;
+
+        }
+        [colorize_effect_view removeFromSuperview];
+        colorize_effect_view = nil;
     }
 }
 
