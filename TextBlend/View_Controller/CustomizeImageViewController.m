@@ -289,7 +289,16 @@
 }
 
 -(void)filters_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
-    
+    if (!filter_effect_view) {
+        filter_effect_view=[[FilterEffectCustomView alloc]initWithFrame:BOTTOM_FRAME];
+        filter_effect_view.filter_effect_delegate=self;
+        filter_effect_view.original_image= self.image_edit_main_view.selected_image;
+        [filter_effect_view.custom_collection_view reloadData];
+        [self.view addSubview:filter_effect_view];
+    }
+    isFirstImageEditingOptionSelected=YES;
+    [self.view bringSubviewToFront:filter_effect_view];
+
 }
 
 -(void)colorize_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
@@ -895,6 +904,24 @@
         colorize_effect_view =  nil;
     }
 }
+
+#pragma mark - Filter Effect Delegate Methods -
+-(void)filter_effect_set_image:(UIImage *)image onSelectedView:(FilterEffectCustomView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+    
+    self.image_edit_main_view.selected_image = image;
+    self.selected_image = image;
+    self.image_edit_main_view.main_image_view.image=image;
+    
+}
+-(void)filter_effect_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(FilterEffectCustomView *)selected_view{
+    
+    if (filter_effect_view) {
+        [filter_effect_view removeFromSuperview];
+        filter_effect_view =  nil;
+    }
+}
+
+
 #pragma mark - Text Tools View Delegate Methods -
 
 -(void)opacity_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
@@ -1723,6 +1750,21 @@
         [colorize_effect_view removeFromSuperview];
         colorize_effect_view = nil;
     }
+    
+    
+    if (filter_effect_view) {
+        if (filter_effect_view.original_image) {
+            self.image_edit_main_view.selected_image = filter_effect_view.original_image;
+            self.selected_image = filter_effect_view.original_image;
+            self.image_edit_main_view.main_image_view.image=filter_effect_view.original_image;
+            
+        }
+        [filter_effect_view removeFromSuperview];
+        filter_effect_view = nil;
+    }
+    
+    
+    
 }
 
 -(void)setSelectedOnStickerView:(ZDStickerView *)sticker_view withColor:(UIColor*)color{

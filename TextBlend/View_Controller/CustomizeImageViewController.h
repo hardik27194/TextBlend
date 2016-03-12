@@ -26,10 +26,11 @@
 #import "ColorPaletteView.h"
 #import "ShadowCustomView.h"
 #import "ColorizeEffectView.h"
+#import "FilterEffectCustomView.h"
 @import GoogleMobileAds;
 
 
-@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate,AddColorViewDelegate,ColorPaletteViewDelegate,ShadowToolsDelegate,ColorizeEffectDelegate>
+@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate,AddColorViewDelegate,ColorPaletteViewDelegate,ShadowToolsDelegate,ColorizeEffectDelegate,FilterEffectDelegate>
 {
     AddTextView *add_text_view;
     SelectFontsView *select_fonts_view;
@@ -41,6 +42,7 @@
     ColorPaletteView *color_palette_view;
     ShadowCustomView *shadow_custom_view;
     ColorizeEffectView *colorize_effect_view;
+    FilterEffectCustomView *filter_effect_view;
 
     
     CATransform3D rotationAndPerspectiveTransform1;

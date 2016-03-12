@@ -16,6 +16,7 @@
 		8B0433CA1C908CE4004C0543 /* ColorizeEffectCustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0433C91C908CE4004C0543 /* ColorizeEffectCustomCollectionViewCell.m */; };
 		8B052AD51C87403200F7BE0C /* ColorPaletteGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B052AD41C87403200F7BE0C /* ColorPaletteGradientView.m */; };
 		8B0AFA2C1C5FBFBD002DFE95 /* AddColorSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */; };
+		8B14F7A21C93CD2E0057E3EA /* FilterEffectCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14F7A11C93CD2E0057E3EA /* FilterEffectCustomView.m */; };
 		8B26EA821C6B8FD400687050 /* close_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B26EA811C6B8FD400687050 /* close_button.png */; };
 		8B26EA851C6B93B900687050 /* PurchaseFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26EA841C6B93B900687050 /* PurchaseFontsViewController.m */; };
 		8B26EA881C6B96F900687050 /* PurchaseFontCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26EA871C6B96F900687050 /* PurchaseFontCustomCell.m */; };
@@ -988,6 +989,8 @@
 		8B052AD41C87403200F7BE0C /* ColorPaletteGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPaletteGradientView.m; sourceTree = "<group>"; };
 		8B0AFA2A1C5FBFBD002DFE95 /* AddColorSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddColorSelectionView.h; sourceTree = "<group>"; };
 		8B0AFA2B1C5FBFBD002DFE95 /* AddColorSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddColorSelectionView.m; sourceTree = "<group>"; };
+		8B14F7A01C93CD2E0057E3EA /* FilterEffectCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterEffectCustomView.h; sourceTree = "<group>"; };
+		8B14F7A11C93CD2E0057E3EA /* FilterEffectCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterEffectCustomView.m; sourceTree = "<group>"; };
 		8B26EA811C6B8FD400687050 /* close_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button.png; sourceTree = "<group>"; };
 		8B26EA831C6B93B900687050 /* PurchaseFontsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseFontsViewController.h; sourceTree = "<group>"; };
 		8B26EA841C6B93B900687050 /* PurchaseFontsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseFontsViewController.m; sourceTree = "<group>"; };
@@ -2603,6 +2606,8 @@
 				8BE7E5061C2FCB1B008B009B /* PhotoEditCustomView.m */,
 				8B0433C41C90892F004C0543 /* ColorizeEffectView.h */,
 				8B0433C51C90892F004C0543 /* ColorizeEffectView.m */,
+				8B14F7A01C93CD2E0057E3EA /* FilterEffectCustomView.h */,
+				8B14F7A11C93CD2E0057E3EA /* FilterEffectCustomView.m */,
 			);
 			path = ImageEditingMainViews;
 			sourceTree = "<group>";
@@ -4963,6 +4968,7 @@
 				DB83E1561C227566008F0B2C /* DAProgressOverlayView.m in Sources */,
 				8BA69C541C70867F00D2474D /* IAPHelper.m in Sources */,
 				DB83E15F1C227566008F0B2C /* UIImage+KVNImageEffects.m in Sources */,
+				8B14F7A21C93CD2E0057E3EA /* FilterEffectCustomView.m in Sources */,
 				DB83E1501C227566008F0B2C /* BCMeshTransform+DemoTransforms.m in Sources */,
 				DB83E1521C227566008F0B2C /* BCMeshTransform.mm in Sources */,
 				8BACE99C1C10A48300CEDFE3 /* MKAnnotationView+WebCache.m in Sources */,
