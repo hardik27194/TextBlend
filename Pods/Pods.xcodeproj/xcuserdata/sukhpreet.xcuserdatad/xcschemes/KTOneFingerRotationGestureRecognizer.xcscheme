@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '30C3696611914A7E3BEF4F70'
+               BlueprintIdentifier = '60482A91052288457536845A'
                BlueprintName = 'KTOneFingerRotationGestureRecognizer'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libKTOneFingerRotationGestureRecognizer.a'>

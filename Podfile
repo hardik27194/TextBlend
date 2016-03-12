@@ -8,3 +8,4 @@ pod "KTOneFingerRotationGestureRecognizer"
 pod "AAShareBubbles"
 pod "SIAlertView"
 pod "AFNetworking", "~> 2.0"
+pod 'ACEDrawingView'

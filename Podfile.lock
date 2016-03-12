@@ -1,5 +1,6 @@
 PODS:
   - AAShareBubbles (1.1.0)
+  - ACEDrawingView (1.3.7)
   - AFNetworking (2.6.3):
     - AFNetworking/NSURLConnection (= 2.6.3)
     - AFNetworking/NSURLSession (= 2.6.3)
@@ -29,10 +30,11 @@ PODS:
   - GPUImage (0.1.7)
   - KTOneFingerRotationGestureRecognizer (1.0.0)
   - SIAlertView (1.3)
-  - SVProgressHUD (HEAD based on 2.0-beta)
+  - SVProgressHUD (HEAD based on 2.0-beta8)
 
 DEPENDENCIES:
   - AAShareBubbles
+  - ACEDrawingView
   - AFNetworking (~> 2.0)
   - FMDB
   - GPUImage
@@ -42,11 +44,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AAShareBubbles: 960610d6a3c4da57d7cd295f4bec68790307bce8
+  ACEDrawingView: 325b5cd00125766c6df9b30aa3a7b68866d2ce16
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   KTOneFingerRotationGestureRecognizer: 2cde33c14c92957b3e341bcd3a72670e6aa10565
   SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
-  SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
+  SVProgressHUD: 6e48a1dda09ce3b58adc41d013baed3a8e8980ff
 
 COCOAPODS: 0.39.0
