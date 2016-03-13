@@ -215,7 +215,7 @@
     PagingCollectionFlowLayout *layout=[[PagingCollectionFlowLayout alloc]init];
     layout.scrollDirection=UICollectionViewScrollDirectionHorizontal;
     layout.headerReferenceSize = CGSizeZero;
-    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 25, SCREEN_WIDTH,CELL_ROW_HEIGHT) collectionViewLayout:layout];
+    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 35, SCREEN_WIDTH,CELL_ROW_HEIGHT) collectionViewLayout:layout];
     
     //    custom_collection_view=[[PagingCollectionView alloc]initWithFrame:CGRectMake(0, 25, SCREEN_WIDTH, self.frame.size.height-25) collectionViewLayout:layout];
     custom_collection_view.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);

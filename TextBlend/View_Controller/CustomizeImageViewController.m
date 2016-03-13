@@ -325,7 +325,7 @@
     {
         filter_effect_view=[[FilterEffectCustomView alloc]initWithFrame:BOTTOM_FRAME];
         filter_effect_view.filter_effect_delegate=self;
-        filter_effect_view.original_image= self.image_edit_main_view.selected_image;
+        filter_effect_view.original_image= [Utility decode:self.image_edit_main_view.selected_image];
         [filter_effect_view.custom_collection_view reloadData];
         [self.view addSubview:filter_effect_view];
     }
@@ -339,7 +339,7 @@
     if (!colorize_effect_view) {
         colorize_effect_view=[[ColorizeEffectView alloc]initWithFrame:BOTTOM_FRAME];
         colorize_effect_view.colorize_effect_delegate=self;
-        colorize_effect_view.original_image= self.image_edit_main_view.selected_image;
+        colorize_effect_view.original_image= [Utility decode:self.image_edit_main_view.selected_image];
         [colorize_effect_view.custom_collection_view reloadData];
         [self.view addSubview:colorize_effect_view];
     }

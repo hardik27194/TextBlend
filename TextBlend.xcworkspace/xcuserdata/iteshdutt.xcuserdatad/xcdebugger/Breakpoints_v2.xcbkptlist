@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "730"
             endingLineNumber = "730"
-            landmarkName = "-blur_sliderValueChanged:onSelectedView:"
+            landmarkName = "-contrast_button_pressed:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1427"
             endingLineNumber = "1427"
-            landmarkName = "-handleTapToLabels:"
+            landmarkName = "-addGesturesToView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -159,7 +159,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "425"
             endingLineNumber = "425"
-            landmarkName = "-shadow_button_pressed:onSelectedView:"
+            landmarkName = "-rotate_3d_button_pressed:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -573,7 +573,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "445"
             endingLineNumber = "445"
-            landmarkName = "-color_palette_view_done_check_mark_button_pressed:onSelectedView:"
+            landmarkName = "-eraser_button_pressed:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -637,7 +637,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "441"
             endingLineNumber = "441"
-            landmarkName = "-setSelectedColor:onSelectedView:onSelectedZticker:"
+            landmarkName = "-eraser_button_pressed:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -781,7 +781,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1803"
             endingLineNumber = "1803"
-            landmarkName = "-checkIfViewHasAlreadyAddedStickerView"
+            landmarkName = "-setSelectedOnStickerView:withColor:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -797,8 +797,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "543"
             endingLineNumber = "543"
-            landmarkName = "-updateViewWithStartColor:andEndColor:withPercenatgeValue:onSelectedView:withCurrentDirection:"
-            landmarkType = "5">
+            landmarkName = "@implementation CustomizeImageViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -845,8 +845,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "529"
             endingLineNumber = "529"
-            landmarkName = "-updateViewWithStartColor:andEndColor:withPercenatgeValue:onSelectedView:withCurrentDirection:"
-            landmarkType = "5">
+            landmarkName = "@implementation CustomizeImageViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1005,7 +1005,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "895"
             endingLineNumber = "895"
-            landmarkName = "-colorize_effect_set_image:onSelectedView:onSelectedZticker:"
+            landmarkName = "-saturation_sliderValueChanged:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1021,7 +1021,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "902"
             endingLineNumber = "902"
-            landmarkName = "-colorize_effect_done_check_mark_button_pressed:onSelectedView:"
+            landmarkName = "-brightness_sliderValueChanged:onSelectedView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

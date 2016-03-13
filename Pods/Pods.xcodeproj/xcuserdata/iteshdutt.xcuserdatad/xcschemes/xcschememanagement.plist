@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>ACEDrawingView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -47,7 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>09BCACE2D4B6477EAB5896999BD26675</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>106C3541EEB89BE432BBE227158E770D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>202FBED94601DC7C50F8A8837831C11C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2B1CB56A5F4491950E9BBE77A7CBD3E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,6 +93,11 @@
 			<true/>
 		</dict>
 		<key>75FA014F77D88ECA243329F267BCD7DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E280E4B07402E38C72C413CBA2087DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
