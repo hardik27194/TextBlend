@@ -41,8 +41,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.image_edit_main_view.selected_image=self.selected_image;
-    self.image_edit_main_view.main_image_view.image=self.selected_image;
+//    self.image_edit_main_view.selected_image=self.selected_image;
+//    self.image_edit_main_view.main_image_view.image=self.selected_image;
     
 }
 -(void)initializeTopHeaderView{
@@ -178,6 +178,21 @@
         return;
     }
     
+    if(self.isDrawOptionSelected)
+    {
+        for(UIGestureRecognizer*recoganizer in self.image_edit_main_view.gestureRecognizers)
+        {
+            if([recoganizer isKindOfClass:[UIPanGestureRecognizer class]])
+            {
+                [recoganizer setEnabled:YES];
+            }
+        }        self.isDrawOptionSelected = NO;
+        [drawing_view cleanup];
+        [drawing_view removeFromSuperview];
+        drawing_view = nil;
+        return;
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -284,12 +299,30 @@
     [self.navigationController pushViewController:choose_quote_vc animated:YES];
 }
 
--(void)draw_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
-    
+-(void)draw_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view
+{
+    for(UIGestureRecognizer*recoganizer in self.image_edit_main_view.gestureRecognizers)
+    {
+        if([recoganizer isKindOfClass:[UIPanGestureRecognizer class]])
+        {
+            [recoganizer setEnabled:NO];
+        }
+    }
+
+    if (!drawing_view)
+    {
+        drawing_view=[[DrawingTool alloc]initWithFrame:BOTTOM_FRAME];
+        [self.view addSubview:drawing_view];
+        drawing_view.imageEditorVw = self.image_edit_main_view;
+        [drawing_view setup];
+        drawing_view.parentController = self;
+    }
+    self.isDrawOptionSelected = YES;
 }
 
 -(void)filters_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
-    if (!filter_effect_view) {
+    if (!filter_effect_view)
+    {
         filter_effect_view=[[FilterEffectCustomView alloc]initWithFrame:BOTTOM_FRAME];
         filter_effect_view.filter_effect_delegate=self;
         filter_effect_view.original_image= self.image_edit_main_view.selected_image;

@@ -900,6 +900,7 @@
 		DB66F3FC1C42656300CC8ABF /* Shape_19.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E71C42656300CC8ABF /* Shape_19.png */; };
 		DB66F3FD1C42656300CC8ABF /* Shape_20.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E81C42656300CC8ABF /* Shape_20.png */; };
 		DB66F3FE1C42656300CC8ABF /* Shape_21.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66F3E91C42656300CC8ABF /* Shape_21.png */; };
+		DB735C5E1C94AE3E002D0C9A /* DrawingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB735C5D1C94AE3E002D0C9A /* DrawingTool.m */; };
 		DB7D2A291C145E7C00076342 /* tempHorse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB7D2A261C145E7C00076342 /* tempHorse.jpg */; };
 		DB7D2A2A1C145E7C00076342 /* tempHouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB7D2A271C145E7C00076342 /* tempHouse.jpg */; };
 		DB7D2A2B1C145E7C00076342 /* tempColor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB7D2A281C145E7C00076342 /* tempColor.jpg */; };
@@ -1961,6 +1962,8 @@
 		DB66F3E71C42656300CC8ABF /* Shape_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_19.png; path = Resources/Shapes/Shape_19.png; sourceTree = "<group>"; };
 		DB66F3E81C42656300CC8ABF /* Shape_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_20.png; path = Resources/Shapes/Shape_20.png; sourceTree = "<group>"; };
 		DB66F3E91C42656300CC8ABF /* Shape_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shape_21.png; path = Resources/Shapes/Shape_21.png; sourceTree = "<group>"; };
+		DB735C5C1C94AE3E002D0C9A /* DrawingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingTool.h; sourceTree = "<group>"; };
+		DB735C5D1C94AE3E002D0C9A /* DrawingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingTool.m; sourceTree = "<group>"; };
 		DB7D2A261C145E7C00076342 /* tempHorse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempHorse.jpg; sourceTree = "<group>"; };
 		DB7D2A271C145E7C00076342 /* tempHouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempHouse.jpg; sourceTree = "<group>"; };
 		DB7D2A281C145E7C00076342 /* tempColor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempColor.jpg; sourceTree = "<group>"; };
@@ -2236,6 +2239,8 @@
 				8B052AD41C87403200F7BE0C /* ColorPaletteGradientView.m */,
 				8B3691051C663C8500A2F5D0 /* SelectColorPaletteView.h */,
 				8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */,
+				DB735C5C1C94AE3E002D0C9A /* DrawingTool.h */,
+				DB735C5D1C94AE3E002D0C9A /* DrawingTool.m */,
 			);
 			path = Custom_View;
 			sourceTree = "<group>";
@@ -4926,6 +4931,7 @@
 				8BACE99D1C10A48300CEDFE3 /* NSData+ImageContentType.m in Sources */,
 				8BACEA4B1C10AD1F00CEDFE3 /* OHASBasicHTMLParser.m in Sources */,
 				8BBF907A1C15F785001510FA /* SelectFontCollectionViewCell.m in Sources */,
+				DB735C5E1C94AE3E002D0C9A /* DrawingTool.m in Sources */,
 				8BE7E2B71C31D50A0032E5B5 /* UIImage+ColorPicker.m in Sources */,
 				DB83E16C1C227566008F0B2C /* MyLabel.m in Sources */,
 				8B0AFA2C1C5FBFBD002DFE95 /* AddColorSelectionView.m in Sources */,

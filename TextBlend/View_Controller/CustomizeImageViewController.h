@@ -27,6 +27,7 @@
 #import "ShadowCustomView.h"
 #import "ColorizeEffectView.h"
 #import "FilterEffectCustomView.h"
+#import "DrawingTool.h"
 @import GoogleMobileAds;
 
 
@@ -43,6 +44,8 @@
     ShadowCustomView *shadow_custom_view;
     ColorizeEffectView *colorize_effect_view;
     FilterEffectCustomView *filter_effect_view;
+    DrawingTool *drawing_view;
+    
 
     
     CATransform3D rotationAndPerspectiveTransform1;
@@ -66,6 +69,8 @@
 @property(nonatomic,strong)CustomizeImageTopHeaderView *top_header_view;
 @property(nonatomic,strong)ImageEditMainView *image_edit_main_view;
 @property(nonatomic,assign)BOOL isFirstImageEditingOptionSelected;
+@property(nonatomic,assign)BOOL isDrawOptionSelected;
+
 -(void)initializeView;
 
 @end

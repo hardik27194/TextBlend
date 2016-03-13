@@ -44,7 +44,8 @@
         
         self.image_edit_scroll_view =[[UIScrollView alloc]initWithFrame:rect];
         self.image_edit_scroll_view.minimumZoomScale = 1.0;
-        self.image_edit_scroll_view.maximumZoomScale = 3.0;
+        self.image_edit_scroll_view.maximumZoomScale = MIN(self.selected_image.size.height/rect.size.height, self.selected_image.size.width/rect.size.width);
+        NSLog(@"%f",self.image_edit_scroll_view.maximumZoomScale);
         self.image_edit_scroll_view.delegate = self;
         [self.image_edit_scroll_view.layer setBorderColor:[UIColor whiteColor].CGColor];
         [self.image_edit_scroll_view.layer setBorderWidth:1.0];
@@ -128,8 +129,8 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    //    return self.main_image_view;
-    return nil;
+        return self.main_image_view;
+//    return nil;
 }
 
 -(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
