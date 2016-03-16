@@ -350,7 +350,17 @@
 }
 
 -(void)effects_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
-    
+    if (!fx_effect_view)
+    {
+        fx_effect_view=[[FXEffectView alloc]initWithFrame:BOTTOM_FRAME];
+        fx_effect_view.fx_effect_delegate=self;
+        fx_effect_view.original_image= [Utility decode:self.image_edit_main_view.selected_image];
+        [fx_effect_view.custom_collection_view reloadData];
+        [self.view addSubview:fx_effect_view];
+    }
+    isFirstImageEditingOptionSelected=YES;
+    [self.view bringSubviewToFront:fx_effect_view];
+
 }
 
 -(void)spalsh_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
@@ -954,7 +964,21 @@
     }
 }
 
+#pragma mark - FX Effect Delegate Methods -
 
+-(void)fx_effect_set_image:(UIImage *)image onSelectedView:(FXEffectView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+    
+    self.image_edit_main_view.selected_image = image;
+    self.selected_image = image;
+    self.image_edit_main_view.main_image_view.image=image;
+    
+}
+-(void)fx_effect_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(FXEffectView *)selected_view{
+    if (fx_effect_view) {
+        [fx_effect_view removeFromSuperview];
+        fx_effect_view =  nil;
+    }
+}
 #pragma mark - Text Tools View Delegate Methods -
 
 -(void)opacity_value_changed:(UISlider *)slider onSelectedView:(TextToolsView *)selected_view
@@ -1794,6 +1818,18 @@
         }
         [filter_effect_view removeFromSuperview];
         filter_effect_view = nil;
+    }
+    
+    
+    if (fx_effect_view) {
+        if (fx_effect_view.original_image) {
+            self.image_edit_main_view.selected_image = fx_effect_view.original_image;
+            self.selected_image = fx_effect_view.original_image;
+            self.image_edit_main_view.main_image_view.image=fx_effect_view.original_image;
+            
+        }
+        [fx_effect_view removeFromSuperview];
+        fx_effect_view = nil;
     }
     
     

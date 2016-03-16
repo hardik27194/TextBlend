@@ -22,6 +22,8 @@
 		8B26EA881C6B96F900687050 /* PurchaseFontCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26EA871C6B96F900687050 /* PurchaseFontCustomCell.m */; };
 		8B3691041C66344800A2F5D0 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3691031C66344800A2F5D0 /* Colours.m */; };
 		8B3691071C663C8500A2F5D0 /* SelectColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */; };
+		8B529C371C986690002D3D9C /* FXEffectSubSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B529C361C986690002D3D9C /* FXEffectSubSelectedView.m */; };
+		8B529C3A1C987600002D3D9C /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B529C391C987600002D3D9C /* UIImage+Utility.m */; };
 		8B821BDF1C43FC6C00DA388F /* SelectedFontSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */; };
 		8B821BE21C44230500DA388F /* ColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE11C44230500DA388F /* ColorPaletteView.m */; };
 		8B821BE51C44241F00DA388F /* ColorPaletteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */; };
@@ -173,6 +175,18 @@
 		8BE7E51E1C2FE27F008B009B /* photo_edit_tool_exposure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E5171C2FE27F008B009B /* photo_edit_tool_exposure.png */; };
 		8BE7E51F1C2FE27F008B009B /* photo_edit_tool_saturation.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E5181C2FE27F008B009B /* photo_edit_tool_saturation.png */; };
 		8BE7E5201C2FE27F008B009B /* photo_edit_tool_tone_curve.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7E5191C2FE27F008B009B /* photo_edit_tool_tone_curve.png */; };
+		8BF331801C971DD100316CA6 /* effects_bloom_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF331751C971DD100316CA6 /* effects_bloom_effect.png */; };
+		8BF331811C971DD100316CA6 /* effects_bump_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF331761C971DD100316CA6 /* effects_bump_effect.png */; };
+		8BF331821C971DD100316CA6 /* effects_gloom_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF331771C971DD100316CA6 /* effects_gloom_effect.png */; };
+		8BF331831C971DD100316CA6 /* effects_highlight_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF331781C971DD100316CA6 /* effects_highlight_effect.png */; };
+		8BF331841C971DD100316CA6 /* effects_hue_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF331791C971DD100316CA6 /* effects_hue_effect.png */; };
+		8BF331851C971DD100316CA6 /* effects_original_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3317A1C971DD100316CA6 /* effects_original_effect.png */; };
+		8BF331861C971DD100316CA6 /* effects_pinch_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3317B1C971DD100316CA6 /* effects_pinch_effect.png */; };
+		8BF331871C971DD100316CA6 /* effects_pixellate_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3317C1C971DD100316CA6 /* effects_pixellate_effect.png */; };
+		8BF331881C971DD100316CA6 /* effects_posterize_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3317D1C971DD100316CA6 /* effects_posterize_effect.png */; };
+		8BF331891C971DD100316CA6 /* effects_splash_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3317E1C971DD100316CA6 /* effects_splash_effect.png */; };
+		8BF3318A1C971DD100316CA6 /* effects_spot_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3317F1C971DD100316CA6 /* effects_spot_effect.png */; };
+		8BF3318D1C971DFC00316CA6 /* FXEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF3318C1C971DFC00316CA6 /* FXEffectView.m */; };
 		8BF51EAE1C8DDF4E00FBE3D0 /* brushed-font.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E7C1C8DDF4E00FBE3D0 /* brushed-font.png */; };
 		8BF51EAF1C8DDF4E00FBE3D0 /* brushed_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E7D1C8DDF4E00FBE3D0 /* brushed_header.png */; };
 		8BF51EB01C8DDF4E00FBE3D0 /* chalkboard-font.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF51E7F1C8DDF4E00FBE3D0 /* chalkboard-font.png */; };
@@ -1001,6 +1015,10 @@
 		8B3691031C66344800A2F5D0 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		8B3691051C663C8500A2F5D0 /* SelectColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectColorPaletteView.h; sourceTree = "<group>"; };
 		8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectColorPaletteView.m; sourceTree = "<group>"; };
+		8B529C351C986690002D3D9C /* FXEffectSubSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXEffectSubSelectedView.h; sourceTree = "<group>"; };
+		8B529C361C986690002D3D9C /* FXEffectSubSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXEffectSubSelectedView.m; sourceTree = "<group>"; };
+		8B529C381C987600002D3D9C /* UIImage+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
+		8B529C391C987600002D3D9C /* UIImage+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
 		8B821BDD1C43FC6C00DA388F /* SelectedFontSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedFontSubView.h; sourceTree = "<group>"; };
 		8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedFontSubView.m; sourceTree = "<group>"; };
 		8B821BE01C44230500DA388F /* ColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteView.h; sourceTree = "<group>"; };
@@ -1230,6 +1248,19 @@
 		8BE7E5171C2FE27F008B009B /* photo_edit_tool_exposure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_edit_tool_exposure.png; sourceTree = "<group>"; };
 		8BE7E5181C2FE27F008B009B /* photo_edit_tool_saturation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_edit_tool_saturation.png; sourceTree = "<group>"; };
 		8BE7E5191C2FE27F008B009B /* photo_edit_tool_tone_curve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_edit_tool_tone_curve.png; sourceTree = "<group>"; };
+		8BF331751C971DD100316CA6 /* effects_bloom_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_bloom_effect.png; sourceTree = "<group>"; };
+		8BF331761C971DD100316CA6 /* effects_bump_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_bump_effect.png; sourceTree = "<group>"; };
+		8BF331771C971DD100316CA6 /* effects_gloom_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_gloom_effect.png; sourceTree = "<group>"; };
+		8BF331781C971DD100316CA6 /* effects_highlight_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_highlight_effect.png; sourceTree = "<group>"; };
+		8BF331791C971DD100316CA6 /* effects_hue_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_hue_effect.png; sourceTree = "<group>"; };
+		8BF3317A1C971DD100316CA6 /* effects_original_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_original_effect.png; sourceTree = "<group>"; };
+		8BF3317B1C971DD100316CA6 /* effects_pinch_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_pinch_effect.png; sourceTree = "<group>"; };
+		8BF3317C1C971DD100316CA6 /* effects_pixellate_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_pixellate_effect.png; sourceTree = "<group>"; };
+		8BF3317D1C971DD100316CA6 /* effects_posterize_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_posterize_effect.png; sourceTree = "<group>"; };
+		8BF3317E1C971DD100316CA6 /* effects_splash_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_splash_effect.png; sourceTree = "<group>"; };
+		8BF3317F1C971DD100316CA6 /* effects_spot_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effects_spot_effect.png; sourceTree = "<group>"; };
+		8BF3318B1C971DFC00316CA6 /* FXEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXEffectView.h; sourceTree = "<group>"; };
+		8BF3318C1C971DFC00316CA6 /* FXEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXEffectView.m; sourceTree = "<group>"; };
 		8BF51E7C1C8DDF4E00FBE3D0 /* brushed-font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-font.png"; sourceTree = "<group>"; };
 		8BF51E7D1C8DDF4E00FBE3D0 /* brushed_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brushed_header.png; sourceTree = "<group>"; };
 		8BF51E7F1C8DDF4E00FBE3D0 /* chalkboard-font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chalkboard-font.png"; sourceTree = "<group>"; };
@@ -2241,6 +2272,8 @@
 				8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */,
 				DB735C5C1C94AE3E002D0C9A /* DrawingTool.h */,
 				DB735C5D1C94AE3E002D0C9A /* DrawingTool.m */,
+				8B529C351C986690002D3D9C /* FXEffectSubSelectedView.h */,
+				8B529C361C986690002D3D9C /* FXEffectSubSelectedView.m */,
 			);
 			path = Custom_View;
 			sourceTree = "<group>";
@@ -2262,6 +2295,8 @@
 				8BACE95A1C10A09400CEDFE3 /* TTTAttributedLabel */,
 				8BACE95D1C10A09400CEDFE3 /* Utility.h */,
 				8BACE95E1C10A09400CEDFE3 /* Utility.m */,
+				8B529C381C987600002D3D9C /* UIImage+Utility.h */,
+				8B529C391C987600002D3D9C /* UIImage+Utility.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -2473,6 +2508,7 @@
 		8BC230A81C141235000BB5CF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8BF331741C971DD100316CA6 /* FX_Effects_View */,
 				8BF51E7A1C8DDF4E00FBE3D0 /* InAppPurchaseUpdatedImages */,
 				8BE7E5121C2FE27F008B009B /* PhotoEditTool */,
 				8BBF90681C15E5E7001510FA /* AddTextView */,
@@ -2613,6 +2649,8 @@
 				8B0433C51C90892F004C0543 /* ColorizeEffectView.m */,
 				8B14F7A01C93CD2E0057E3EA /* FilterEffectCustomView.h */,
 				8B14F7A11C93CD2E0057E3EA /* FilterEffectCustomView.m */,
+				8BF3318B1C971DFC00316CA6 /* FXEffectView.h */,
+				8BF3318C1C971DFC00316CA6 /* FXEffectView.m */,
 			);
 			path = ImageEditingMainViews;
 			sourceTree = "<group>";
@@ -2629,6 +2667,24 @@
 				8BE7E5191C2FE27F008B009B /* photo_edit_tool_tone_curve.png */,
 			);
 			path = PhotoEditTool;
+			sourceTree = "<group>";
+		};
+		8BF331741C971DD100316CA6 /* FX_Effects_View */ = {
+			isa = PBXGroup;
+			children = (
+				8BF331751C971DD100316CA6 /* effects_bloom_effect.png */,
+				8BF331761C971DD100316CA6 /* effects_bump_effect.png */,
+				8BF331771C971DD100316CA6 /* effects_gloom_effect.png */,
+				8BF331781C971DD100316CA6 /* effects_highlight_effect.png */,
+				8BF331791C971DD100316CA6 /* effects_hue_effect.png */,
+				8BF3317A1C971DD100316CA6 /* effects_original_effect.png */,
+				8BF3317B1C971DD100316CA6 /* effects_pinch_effect.png */,
+				8BF3317C1C971DD100316CA6 /* effects_pixellate_effect.png */,
+				8BF3317D1C971DD100316CA6 /* effects_posterize_effect.png */,
+				8BF3317E1C971DD100316CA6 /* effects_splash_effect.png */,
+				8BF3317F1C971DD100316CA6 /* effects_spot_effect.png */,
+			);
+			path = FX_Effects_View;
 			sourceTree = "<group>";
 		};
 		8BF51E7A1C8DDF4E00FBE3D0 /* InAppPurchaseUpdatedImages */ = {
@@ -4024,13 +4080,16 @@
 				8BF51EC61C8DDF4E00FBE3D0 /* old-newspaper_header.png in Resources */,
 				8BFE1E9B1C3696FC001450DF /* ZOMBIFIED.ttf in Resources */,
 				8B9D41471C8490B300F482C0 /* add_text_view_shadow_icon.png in Resources */,
+				8BF331861C971DD100316CA6 /* effects_pinch_effect.png in Resources */,
 				8BFE1F8A1C3696FC001450DF /* VTKS Tattoo Shadow.ttf in Resources */,
 				8BFE1E8E1C3696FC001450DF /* gotharctica.ttf in Resources */,
 				8BFE1F6A1C3696FC001450DF /* Station_232.ttf in Resources */,
 				8BFE1ED21C3696FC001450DF /* Transformers.ttf in Resources */,
 				8BFE1ECF1C3696FC001450DF /* Spectre 007.otf in Resources */,
+				8BF331891C971DD100316CA6 /* effects_splash_effect.png in Resources */,
 				8BFE1F021C3696FC001450DF /* IndiePressDemo.otf in Resources */,
 				8BFE1E9F1C3696FC001450DF /* Designer-Notes.ttf in Resources */,
+				8BF331831C971DD100316CA6 /* effects_highlight_effect.png in Resources */,
 				8BFE1E2E1C3696FC001450DF /* Damion-Regular.ttf in Resources */,
 				8BFE1D571C3696FC001450DF /* Epicenter-TwoStroke.ttf in Resources */,
 				8BFE1F951C3696FC001450DF /* gabriele-br.TTF in Resources */,
@@ -4088,6 +4147,7 @@
 				8BFE1F641C3696FC001450DF /* NFL Packers.ttf in Resources */,
 				8BFE1E1C1C3696FC001450DF /* samuraicabcooutbb.ttf in Resources */,
 				8BFE1DAC1C3696FC001450DF /* Candcu__.ttf in Resources */,
+				8BF3318A1C971DD100316CA6 /* effects_spot_effect.png in Resources */,
 				8BF51EBD1C8DDF4E00FBE3D0 /* halloween-fonts.png in Resources */,
 				8BFE1E631C3696FC001450DF /* Amperzand.ttf in Resources */,
 				8BFE1D661C3696FC001450DF /* Reqruit-2.otf in Resources */,
@@ -4429,6 +4489,7 @@
 				8BFE1D851C3696FC001450DF /* Sticky Things.ttf in Resources */,
 				8BFE1DE41C3696FC001450DF /* SqueakyChalkSound.ttf in Resources */,
 				8BFE1E611C3696FC001450DF /* akaDora.ttf in Resources */,
+				8BF331881C971DD100316CA6 /* effects_posterize_effect.png in Resources */,
 				8BFE1DA31C3696FC001450DF /* rm_albion.ttf in Resources */,
 				8BC2310A1C144CEE000BB5CF /* image_cropper_3X2.PNG in Resources */,
 				8BFE1F571C3696FC001450DF /* interceptorp.ttf in Resources */,
@@ -4517,6 +4578,7 @@
 				8BFE1F531C3696FC001450DF /* emilio 20.ttf in Resources */,
 				DB83E1601C227566008F0B2C /* alertViewBG.png in Resources */,
 				8BFE1D791C3696FC001450DF /* Dead Island.ttf in Resources */,
+				8BF331871C971DD100316CA6 /* effects_pixellate_effect.png in Resources */,
 				8BFE1F0F1C3696FC001450DF /* SerialPublicationDEMO.ttf in Resources */,
 				8BFE1E261C3696FC001450DF /* aramisi.ttf in Resources */,
 				8BC230C81C141235000BB5CF /* initial_screen_settings.PNG in Resources */,
@@ -4547,6 +4609,7 @@
 				8BF51EB41C8DDF4E00FBE3D0 /* comic-fonts.png in Resources */,
 				8BFE1DFF1C3696FC001450DF /* SantasSleighFull Deluxe.ttf in Resources */,
 				8BFE1FC61C3696FC001450DF /* Sho-CardCapsNF.otf in Resources */,
+				8BF331801C971DD100316CA6 /* effects_bloom_effect.png in Resources */,
 				8BFE1D5B1C3696FC001450DF /* libertylegionchrome.ttf in Resources */,
 				8BFE1FCA1C3696FC001450DF /* Alisandra Demo.ttf in Resources */,
 				8BFE1DCA1C3696FC001450DF /* WildRideBackfill.ttf in Resources */,
@@ -4573,12 +4636,14 @@
 				8BFE1F271C3696FC001450DF /* Lombok.otf in Resources */,
 				8BC2310B1C144CEE000BB5CF /* image_cropper_3X4.PNG in Resources */,
 				8BFE1EA61C3696FC001450DF /* HarabaraHand.ttf in Resources */,
+				8BF331851C971DD100316CA6 /* effects_original_effect.png in Resources */,
 				8BFE1FBC1C3696FC001450DF /* BiedermeierKursiv.ttf in Resources */,
 				8BFE1F1B1C3696FC001450DF /* BELLABOO-Regular.ttf in Resources */,
 				8BFE1E2F1C3696FC001450DF /* DobkinScript.ttf in Resources */,
 				8BFE1E6B1C3696FC001450DF /* Gladifilthefte.ttf in Resources */,
 				8BFE1FAE1C3696FC001450DF /* Amptmann Script.ttf in Resources */,
 				8BFE1DBE1C3696FC001450DF /* KR Cane Letters.ttf in Resources */,
+				8BF331821C971DD100316CA6 /* effects_gloom_effect.png in Resources */,
 				8BFE1F091C3696FC001450DF /* NewsflashBB.ttf in Resources */,
 				8BFE1EFA1C3696FC001450DF /* CFNelsonOldNewsPaper.ttf in Resources */,
 				8BFE1D821C3696FC001450DF /* SilkRoad.ttf in Resources */,
@@ -4593,6 +4658,7 @@
 				8BFE1E6C1C3696FC001450DF /* GNEC____.TTF in Resources */,
 				8BBF90721C15E5E7001510FA /* add_text_view_eraser.PNG in Resources */,
 				8BFE1E361C3696FC001450DF /* LetsTraceItalic.otf in Resources */,
+				8BF331841C971DD100316CA6 /* effects_hue_effect.png in Resources */,
 				8BFE1FA21C3696FC001450DF /* SpecialElite.ttf in Resources */,
 				8BFE1F441C3696FC001450DF /* GramophoneShadedNF.ttf in Resources */,
 				8BFE1F8E1C3696FC001450DF /* anchorless_echo.ttf in Resources */,
@@ -4678,6 +4744,7 @@
 				8BFE1F391C3696FC001450DF /* BRIDGE.TTF in Resources */,
 				8BFE1ED31C3696FC001450DF /* True Lies.ttf in Resources */,
 				8BFE1DEF1C3696FC001450DF /* CHRICI__.TTF in Resources */,
+				8BF331811C971DD100316CA6 /* effects_bump_effect.png in Resources */,
 				8BFE1EC71C3696FC001450DF /* Jurassic Park.ttf in Resources */,
 				8BFE1ECE1C3696FC001450DF /* Sin City.ttf in Resources */,
 				8BFE1F381C3696FC001450DF /* breamcatcher.ttf in Resources */,
@@ -4946,6 +5013,7 @@
 				DB83E15B1C227566008F0B2C /* KVNProgress.m in Sources */,
 				8BBF90861C15FB11001510FA /* Rotate3DView.m in Sources */,
 				8BACEA501C10AD1F00CEDFE3 /* OHTouchesGestureRecognizer.m in Sources */,
+				8B529C3A1C987600002D3D9C /* UIImage+Utility.m in Sources */,
 				8BACE9021C109F9700CEDFE3 /* AppDelegate.m in Sources */,
 				DB83E17B1C227566008F0B2C /* ZDStickerView.m in Sources */,
 				8B052AD51C87403200F7BE0C /* ColorPaletteGradientView.m in Sources */,
@@ -4970,6 +5038,7 @@
 				8BACEA4A1C10AD1F00CEDFE3 /* NSTextCheckingResult+ExtendedURL.m in Sources */,
 				8BACE9771C10A09500CEDFE3 /* NetworkEngine.m in Sources */,
 				DB1F5FED1C18866C00F425DB /* PEResizeControl.m in Sources */,
+				8BF3318D1C971DFC00316CA6 /* FXEffectView.m in Sources */,
 				8BC230F11C144806000BB5CF /* ImageCropperViewController.m in Sources */,
 				DB83E1561C227566008F0B2C /* DAProgressOverlayView.m in Sources */,
 				8BA69C541C70867F00D2474D /* IAPHelper.m in Sources */,
@@ -4981,6 +5050,7 @@
 				8BACE9A41C10A48300CEDFE3 /* SDWebImagePrefetcher.m in Sources */,
 				8BACEA4C1C10AD1F00CEDFE3 /* OHASBasicMarkupParser.m in Sources */,
 				8BACE8FF1C109F9700CEDFE3 /* main.m in Sources */,
+				8B529C371C986690002D3D9C /* FXEffectSubSelectedView.m in Sources */,
 				DB83E15C1C227566008F0B2C /* KVNProgressConfiguration.m in Sources */,
 				DB83E16B1C227566008F0B2C /* MessageComposerView.m in Sources */,
 				8BACE9A21C10A48300CEDFE3 /* SDWebImageDownloaderOperation.m in Sources */,

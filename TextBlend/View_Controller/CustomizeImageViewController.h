@@ -28,6 +28,7 @@
 #import "ColorizeEffectView.h"
 #import "FilterEffectCustomView.h"
 #import "DrawingTool.h"
+#import "FXEffectView.h"
 @import GoogleMobileAds;
 
 
@@ -44,6 +45,8 @@
     ShadowCustomView *shadow_custom_view;
     ColorizeEffectView *colorize_effect_view;
     FilterEffectCustomView *filter_effect_view;
+    FXEffectView *fx_effect_view;
+
     DrawingTool *drawing_view;
     
 
