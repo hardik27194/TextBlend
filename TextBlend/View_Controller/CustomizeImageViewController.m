@@ -711,7 +711,8 @@
 #pragma mark - PhotoEditToolOptionsDelegate Methods -
 
 -(void)photo_edit_tool_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(PhotoEditCustomView *)selected_view{
-    
+    isFirstImageEditingOptionSelected = NO;
+
     if (photo_edit_custom_view) {
         [photo_edit_custom_view removeFromSuperview];
         photo_edit_custom_view  = nil;
@@ -941,7 +942,8 @@
 
 }
 -(void)colorize_effect_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(ColorizeEffectView *)selected_view{
-    
+    isFirstImageEditingOptionSelected = NO;
+
     if (colorize_effect_view) {
         [colorize_effect_view removeFromSuperview];
         colorize_effect_view =  nil;
@@ -957,7 +959,7 @@
     
 }
 -(void)filter_effect_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(FilterEffectCustomView *)selected_view{
-    
+    isFirstImageEditingOptionSelected = NO;
     if (filter_effect_view) {
         [filter_effect_view removeFromSuperview];
         filter_effect_view =  nil;
@@ -974,6 +976,8 @@
     
 }
 -(void)fx_effect_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(FXEffectView *)selected_view{
+    isFirstImageEditingOptionSelected = NO;
+
     if (fx_effect_view) {
         [fx_effect_view removeFromSuperview];
         fx_effect_view =  nil;
