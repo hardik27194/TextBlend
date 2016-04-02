@@ -24,6 +24,7 @@
 		8B3691071C663C8500A2F5D0 /* SelectColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3691061C663C8500A2F5D0 /* SelectColorPaletteView.m */; };
 		8B529C371C986690002D3D9C /* FXEffectSubSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B529C361C986690002D3D9C /* FXEffectSubSelectedView.m */; };
 		8B529C3A1C987600002D3D9C /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B529C391C987600002D3D9C /* UIImage+Utility.m */; };
+		8B7F76FE1C9B0DE2005BB983 /* SplashEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F76FD1C9B0DE2005BB983 /* SplashEffectView.m */; };
 		8B821BDF1C43FC6C00DA388F /* SelectedFontSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */; };
 		8B821BE21C44230500DA388F /* ColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE11C44230500DA388F /* ColorPaletteView.m */; };
 		8B821BE51C44241F00DA388F /* ColorPaletteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B821BE41C44241F00DA388F /* ColorPaletteCollectionViewCell.m */; };
@@ -1019,6 +1020,8 @@
 		8B529C361C986690002D3D9C /* FXEffectSubSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXEffectSubSelectedView.m; sourceTree = "<group>"; };
 		8B529C381C987600002D3D9C /* UIImage+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
 		8B529C391C987600002D3D9C /* UIImage+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
+		8B7F76FC1C9B0DE2005BB983 /* SplashEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashEffectView.h; sourceTree = "<group>"; };
+		8B7F76FD1C9B0DE2005BB983 /* SplashEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashEffectView.m; sourceTree = "<group>"; };
 		8B821BDD1C43FC6C00DA388F /* SelectedFontSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedFontSubView.h; sourceTree = "<group>"; };
 		8B821BDE1C43FC6C00DA388F /* SelectedFontSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedFontSubView.m; sourceTree = "<group>"; };
 		8B821BE01C44230500DA388F /* ColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteView.h; sourceTree = "<group>"; };
@@ -2651,6 +2654,8 @@
 				8B14F7A11C93CD2E0057E3EA /* FilterEffectCustomView.m */,
 				8BF3318B1C971DFC00316CA6 /* FXEffectView.h */,
 				8BF3318C1C971DFC00316CA6 /* FXEffectView.m */,
+				8B7F76FC1C9B0DE2005BB983 /* SplashEffectView.h */,
+				8B7F76FD1C9B0DE2005BB983 /* SplashEffectView.m */,
 			);
 			path = ImageEditingMainViews;
 			sourceTree = "<group>";
@@ -5032,6 +5037,7 @@
 				8BACE9AB1C10A48300CEDFE3 /* UIView+WebCacheOperation.m in Sources */,
 				8BACE99F1C10A48300CEDFE3 /* SDWebImageCompat.m in Sources */,
 				DB83E16E1C227566008F0B2C /* UIImage+FX.m in Sources */,
+				8B7F76FE1C9B0DE2005BB983 /* SplashEffectView.m in Sources */,
 				DB1F5FEB1C18866C00F425DB /* PECropViewController.m in Sources */,
 				DB83E1511C227566008F0B2C /* BCMeshTransform+Interpolation.m in Sources */,
 				DB83E14D1C227566008F0B2C /* BCMeshShader.m in Sources */,

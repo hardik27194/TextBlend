@@ -364,7 +364,16 @@
 }
 
 -(void)spalsh_button_pressed:(UIButton *)sender onSelectedView:(ImageEditingOptionsView *)selected_view{
-    
+    if (!splash_effect_view)
+    {
+        splash_effect_view=[[SplashEffectView alloc]initWithFrame:BOTTOM_FRAME];
+        splash_effect_view.splash_effect_delegate=self;
+        splash_effect_view.original_image= [Utility decode:self.image_edit_main_view.selected_image];
+        [splash_effect_view setUp];
+        [self.view addSubview:splash_effect_view];
+    }
+    isFirstImageEditingOptionSelected=YES;
+    [self.view bringSubviewToFront:splash_effect_view];
 }
 
 #pragma mark - Add Text View -
@@ -982,6 +991,23 @@
         [fx_effect_view removeFromSuperview];
         fx_effect_view =  nil;
     }
+}
+
+#pragma mark - FX Effect Delegate Methods -
+
+-(void)splash_effect_set_image:(UIImage *)image onSelectedView:(SplashEffectView  *)selected_view onSelectedZticker:(ZDStickerView *)sticker_view{
+    self.image_edit_main_view.selected_image = image;
+    self.selected_image = image;
+    self.image_edit_main_view.main_image_view.image=image;
+
+    
+}
+-(void)splash_effect_done_check_mark_button_pressed:(UIButton *)sender onSelectedView:(SplashEffectView *)selected_view{
+    if (splash_effect_view) {
+        [splash_effect_view removeFromSuperview];
+        splash_effect_view =  nil;
+    }
+
 }
 #pragma mark - Text Tools View Delegate Methods -
 
@@ -1836,6 +1862,18 @@
         fx_effect_view = nil;
     }
     
+    
+    if (splash_effect_view) {
+        if (splash_effect_view.original_image) {
+            self.image_edit_main_view.selected_image = splash_effect_view.original_image;
+            self.selected_image = splash_effect_view.original_image;
+            self.image_edit_main_view.main_image_view.image=splash_effect_view.original_image;
+            
+        }
+        [splash_effect_view removeFromSuperview];
+        splash_effect_view = nil;
+    }
+
     
     
 }

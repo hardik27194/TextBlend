@@ -29,10 +29,11 @@
 #import "FilterEffectCustomView.h"
 #import "DrawingTool.h"
 #import "FXEffectView.h"
+#import "SplashEffectView.h"
 @import GoogleMobileAds;
 
 
-@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate,AddColorViewDelegate,ColorPaletteViewDelegate,ShadowToolsDelegate,ColorizeEffectDelegate,FilterEffectDelegate,FXEffectDelegate>
+@interface CustomizeImageViewController : UIViewController<GADBannerViewDelegate,UIScrollViewDelegate,ImageEditingOptionsDelegate,CustomizeImageHeaderButtonsDelegate,AddTextViewDelegate,ZDStickerViewDelegate,SelectFontsViewDelegate,TextToolsDelegate,EraserDelegate,Rotate3DDelegate,PhotoEditToolOptionsDelegate,AddColorViewDelegate,ColorPaletteViewDelegate,ShadowToolsDelegate,ColorizeEffectDelegate,FilterEffectDelegate,FXEffectDelegate,SplashEffectDelegate>
 {
     AddTextView *add_text_view;
     SelectFontsView *select_fonts_view;
@@ -46,6 +47,7 @@
     ColorizeEffectView *colorize_effect_view;
     FilterEffectCustomView *filter_effect_view;
     FXEffectView *fx_effect_view;
+    SplashEffectView *splash_effect_view;
 
     DrawingTool *drawing_view;
     
